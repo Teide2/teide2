@@ -1,7 +1,23 @@
 /*******************************************************************************
 ** TareasComunes.cpp: tareas comunes.
 **
-** author: M-S Hern醤dez-Garc韆
+** author: M-S Hern谩ndez-Garc铆a
+**
+**  This file is part of TEIDE2.
+**
+**  TEIDE2 is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Foobar is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**
 *******************************************************************************/
 
 
@@ -51,7 +67,7 @@ double CalcularMediaR(double *v, unsigned n, unsigned rec)
 
 	// primero hay que ordenar el vector de entrada
 	qsort((void *)v, n, sizeof(double), ordfun);
-	// eliminamos los extremos en el c醠culo
+	// eliminamos los extremos en el c谩lculo
 	if (n > (2 * rec))
 	{
 		lb = rec;
@@ -101,7 +117,7 @@ double CalcularModa(double *v, unsigned n)
 	return valor;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Funci髇 de ordenaci髇 de menor a mayor tama駉 para vectores
+// Funci贸n de ordenaci贸n de menor a mayor tama帽o para vectores
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int ordfun(const void *A, const void *B)
 {
@@ -118,7 +134,7 @@ int ordfun(const void *A, const void *B)
 	return 0;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Funci髇 de ordenaci髇 de los registros donantes.
+// Funci贸n de ordenaci贸n de los registros donantes.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     int OrdenacionMatrizRegistrosDonantes(const void *A, const void *B)
     {
@@ -135,7 +151,7 @@ int ordfun(const void *A, const void *B)
       return 0;
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Funci髇 de ordenaci髇 de las variables a traves de su peso.
+// Funci贸n de ordenaci贸n de las variables a traves de su peso.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     int OrdenacionPesosVariablesDescendente(const void *A, const void *B)
     {
