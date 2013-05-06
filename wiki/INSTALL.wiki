@@ -35,7 +35,7 @@ Para Oracle necesitamos qsqloci4.dll. Se puede obtener de la siguiente manera:
 Estas dll se incorporan a la carpeta "TEIDE2\plugins\dqldrivers\" de nuestro proyecto.
 
 Junto al ejecutable (Teide2.exe) necesitamos de las dll: 
-* QtCore4.dll, QtGui4.dll, QtSqlp4.dll, QtSvg4.dll y QtXml4.dll que puedes encontrar en %QTDIR%\bin 
+* QtCore4.dll, QtGui4.dll, QtSql4.dll, QtSvg4.dll y QtXml4.dll que puedes encontrar en %QTDIR%\bin 
 * qwt.dll. Que puedes obtener de las librerías Qwt de la siguiente manera:
       cd %qwtDIR%\
       qmake qwt.pro
