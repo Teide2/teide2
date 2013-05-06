@@ -1278,7 +1278,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
    void TFrmPrincipal::MitAcercaDeClick()
    {
     QMessageBox::about(this, QMainWindow::tr( "Acerca de Teide2" ),
-                       QApplication::translate("",  "<center><p><h1>Programa para depurar encuestas.</h1></p><p>Copyright M Salom\303\251 Hern\303\241ndez Garc\303\255a y Juan Jos\303\251 Salazar Gonz\303\241lez.</p><p>Versi\303\263n 2.0. / " , 0, QApplication::UnicodeUTF8) + QString::number(DAY, 10) + " " + mes.at(MONTH) + " " + QString::number(YEAR, 10) + QApplication::translate("", ".</p><p>Universidad de La Laguna.</p><p>Todos los derechos reservados.</p><p>Uso de las herramientas:</p><p>  Qt  http://www.qtsoftware.com/</p><p>  Qwt  http://qwt.sourceforge.net/</p></center>" , 0, QApplication::UnicodeUTF8) );
+                       QApplication::translate("",  "<center><p><h1>Programa para depurar encuestas.</h1></p><p>M Salom\303\251 Hern\303\241ndez Garc\303\255a y Juan Jos\303\251 Salazar Gonz\303\241lez.</p><p>Versi\303\263n 2.0. / " , 0, QApplication::UnicodeUTF8) + QString::number(DAY, 10) + " " + mes.at(MONTH) + " " + QString::number(YEAR, 10) + QApplication::translate("", ".</p><p>Universidad de La Laguna.</p><p>Uso de las herramientas:</p><p>  Qt  http://www.qtsoftware.com/</p><p>  Qwt  http://qwt.sourceforge.net/</p></center>" , 0, QApplication::UnicodeUTF8) );
    }
   
    void TFrmPrincipal::MitOpcionesClick()
