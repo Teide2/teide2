@@ -1,7 +1,23 @@
 /*******************************************************************************
 ** Edits.cpp: contiene todo lo necesario para trabajar con la solapa Reglas.
 **
-** author: M-S Hern醤dez-Garc韆
+** author: M-S Hern谩ndez-Garc铆a
+**
+**  This file is part of TEIDE2.
+**
+**  TEIDE2 is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Foobar is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**
 *******************************************************************************/
 
 #include "Edits.h"
@@ -225,11 +241,11 @@ TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSql
       this->NombreBaseDatos = NombreBaseDatos;
       this->Xml = Xml;
       this->Excel = excel;
-      // Conexi髇 a la base de MicroDatos
+      // Conexi贸n a la base de MicroDatos
       AdqConsulta = AdcConexionBD;
       query2 = new QSqlQuery(QString::null, *AdcConexionBD);
 
-      // Creaci髇 de la cadena de atributos para la consulta SQL
+      // Creaci贸n de la cadena de atributos para la consulta SQL
       for (i = 0; i < (NUM_ATRIBUTOS_EDIT - 1); i++)
         VariablesALeer = VariablesALeer + ATRIBUTOS_EDIT[i] + ", ";
       VariablesALeer = VariablesALeer + ATRIBUTOS_EDIT[NUM_ATRIBUTOS_EDIT - 1];
@@ -266,7 +282,7 @@ TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSql
       // Fijar la cantidad de datos
       FijarCantidadDatos();
 
-      // Cargar las variables y missing en la lista de selecci髇
+      // Cargar las variables y missing en la lista de selecci贸n
       CargarVariablesEnLista();
       CargarMissingEnLista();
 
@@ -277,10 +293,10 @@ TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSql
       view->setModel(model);
       FijarAnchoColumnasRejilla();
 
-      // Creaci髇 del vector de informaci髇 de edits
+      // Creaci贸n del vector de informaci贸n de edits
       VectorInfoEdits = new TInfoEdits[NumEdits + MAX_EDITS];
 
-      // Iconos de validaci髇
+      // Iconos de validaci贸n
       IconoBien = RUTA_ICONO_BIEN;
       IconoMal = RUTA_ICONO_MAL;
 
@@ -411,7 +427,7 @@ void TFmeEdits::ajustarSize ()
       this->MemLogs = FmeVariablesAsociadas->GetMemLogs();
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Actualizar la informaci髇 de la Variable actual.
+// Actualizar la informaci贸n de la Variable actual.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::ActualizarInformacionVariable(unsigned IndiceVariable)
     {
@@ -440,7 +456,7 @@ void TFmeEdits::ajustarSize ()
       VectorInfoEdits[view->currentIndex().row()].Lexico = Lexico;
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Actualizar la validacion del edit cuando no existe ning鷑 error.
+// Actualizar la validacion del edit cuando no existe ning煤n error.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::ActualizarValidacionEditSinError()
     {
@@ -451,23 +467,23 @@ void TFmeEdits::ajustarSize ()
       VectorInfoEdits[view->currentIndex().row()].Lexico = true;
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  Actualizar la informaci髇 de validaci髇 del edit.
+//  Actualizar la informaci贸n de validaci贸n del edit.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::ActualizarValidacionEdit(unsigned IndiceEdit)
     {
-      // Validaci髇 sint醕tica
+      // Validaci贸n sint谩ctica
       if (VectorInfoEdits[IndiceEdit].Sintactico)
         ImgValidacionSintactica->setIcon(QIcon(IconoBien));
       else
         ImgValidacionSintactica->setIcon(QIcon(IconoMal));
-      // Validaci髇 l閤ica
+      // Validaci贸n l茅xica
       if (VectorInfoEdits[IndiceEdit].Lexico)
         ImgValidacionLexica->setIcon(QIcon(IconoBien));
       else
         ImgValidacionLexica->setIcon(QIcon(IconoMal));
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Actualizar el mensaje de pantalla sobre inserci髇 de edit.
+// Actualizar el mensaje de pantalla sobre inserci贸n de edit.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::ActualizarMensajeEditActual()
     {
@@ -621,13 +637,13 @@ void TFmeEdits::ajustarSize ()
       CbxMissing->setCurrentIndex(0);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Cargar los edits en la rejilla de visualizaci髇.
+// Cargar los edits en la rejilla de visualizaci贸n.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::CargarEditsEnRejilla()
     {
       unsigned i, j;      
 
-      // Fijar el n鷐ero de filas de la rejilla
+      // Fijar el n煤mero de filas de la rejilla
       MatrizEditsS = new QString*[(NumEdits == 0) ? 1 + MAX_EDITS : NumEdits + MAX_EDITS];
 
       view->verticalHeader()->setDefaultSectionSize(20);
@@ -712,7 +728,7 @@ void TFmeEdits::ajustarSize ()
       FijarIdsFilasRejilla();      
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Compactar el vector de informaci髇 de edit.
+// Compactar el vector de informaci贸n de edit.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::CompactarVectorInfoEdits()
     {
@@ -747,7 +763,7 @@ void TFmeEdits::ajustarSize ()
       NumVariables = FmeVariablesAsociadas->GetNumVariables();
       VectorPertenenciaEdits = new QSet<unsigned>[NumVariables];
 
-      // Rellenar el vector de pertenencia de edits expl韈itos
+      // Rellenar el vector de pertenencia de edits expl铆citos
       for (j = 0; j < NumVariables; j++)
       {
         VectorPertenenciaEdits[j].clear();
@@ -782,7 +798,7 @@ void TFmeEdits::ajustarSize ()
       }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Deshabilitar los controles para la gesti髇 de edits.
+// Deshabilitar los controles para la gesti贸n de edits.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::DeshabilitarControlesEdit()
     {
@@ -790,7 +806,7 @@ void TFmeEdits::ajustarSize ()
       CbxOperadores->setEnabled(false);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Escribir mensaje de informaci髇 en la barra de estado.
+// Escribir mensaje de informaci贸n en la barra de estado.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::EscribirInformacion()
     {
@@ -805,14 +821,14 @@ void TFmeEdits::ajustarSize ()
       }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Devuelve TRUE si el Edit actual es sint醕tica y l閤icamente correcto.
+// Devuelve TRUE si el Edit actual es sint谩ctica y l茅xicamente correcto.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     bool TFmeEdits::EditActualCorrecto()
     {
       return ((VectorInfoEdits[view->currentIndex().row()].Sintactico) && (VectorInfoEdits[view->currentIndex().row()].Lexico));
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Devuelve TRUE si el Edit por par醡etros es sint醕tica y l閤icamente correcto.
+// Devuelve TRUE si el Edit por par谩metros es sint谩ctica y l茅xicamente correcto.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     bool TFmeEdits::EditCorrecto(unsigned IndiceEdit)
     {
@@ -835,7 +851,7 @@ void TFmeEdits::ajustarSize ()
         view->setColumnWidth(i, ANCHOS_EDIT[i]);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Fijar los t韙ulos de las columnas de la rejilla.
+// Fijar los t铆tulos de las columnas de la rejilla.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::FijarTitulosColumnasRejilla()
     {
@@ -974,7 +990,7 @@ void TFmeEdits::ajustarSize ()
       return Lista;
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Habilitar los controles para la gesti髇 de edits.
+// Habilitar los controles para la gesti贸n de edits.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::HabilitarControlesEdit()
     {
@@ -982,16 +998,16 @@ void TFmeEdits::ajustarSize ()
       CbxOperadores->setEnabled(true);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Inicializar la rejilla de visualizaci髇 de Variables.
+// Inicializar la rejilla de visualizaci贸n de Variables.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::InicializarRejillaVariable()
     {
       unsigned j;
       QString s;      
 
-      // Establecemos el n鷐ero de filas y columnas
+      // Establecemos el n煤mero de filas y columnas
       VectorDatosS = new QString[FmeVariablesAsociadas->GetNumAtributos()];      
-      // Establecemos los t韙ulos en la primera fila
+      // Establecemos los t铆tulos en la primera fila
       for (j = 0; j < (unsigned)FmeVariablesAsociadas->GetNumAtributos(); j++)
       {
         listaH2.append(FmeVariablesAsociadas->getlistaH(j));        
@@ -1088,7 +1104,7 @@ void TFmeEdits::ajustarSize ()
 
       if (listaH.at(view->currentIndex().column()) == "CONDICION")
       {
-	// Insertar el texto del edit en la condici髇        
+	// Insertar el texto del edit en la condici贸n        
         QString id = model->headerData(view->currentIndex().row(), Qt::Vertical, Qt::DisplayRole).toString();
 
 	if (Xml) {
@@ -1161,13 +1177,13 @@ void TFmeEdits::ajustarSize ()
         ListaIds[view->currentIndex().row()] = id.toInt();
 	MatrizEditsS[view->currentIndex().row()][0] = EdtEdit->text();
 
-	// Validaci髇 sint醕tica y l閤ico
+	// Validaci贸n sint谩ctica y l茅xico
 	ValidarEditActual();
-	// Actualizar la validaci髇 del edit
+	// Actualizar la validaci贸n del edit
 	ActualizarValidacionEdit(view->currentIndex().row());
-	// Actualizar la informaci髇
+	// Actualizar la informaci贸n
         EscribirInformacion();
-        // Mostrar la informaci髇 asociada al edit
+        // Mostrar la informaci贸n asociada al edit
         MostrarInfoAsociada(view->currentIndex().row(), 0, true);
         // Mensaje informativo
         ActualizarMensajeEditActual();        
@@ -1250,7 +1266,7 @@ void TFmeEdits::ajustarSize ()
       MostrarInfoAsociada(0, 0, true);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Mostrar la informaci髇 asociada a la fila y a la columna.
+// Mostrar la informaci贸n asociada a la fila y a la columna.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::MostrarInfoAsociada(unsigned Fila, unsigned Columna, bool Fijar)
     {
@@ -1354,7 +1370,7 @@ void TFmeEdits::ajustarSize ()
       }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Validar la sintaxis y el l閤ico de la Edit actual.
+// Validar la sintaxis y el l茅xico de la Edit actual.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::ValidarEditActual()
     {
@@ -1417,7 +1433,7 @@ void TFmeEdits::ajustarSize ()
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PULSAR EL BOT覰 DE MODIFICAR EDIT.
+// PULSAR EL BOT脫N DE MODIFICAR EDIT.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::ButModificarEditClick()
     {
@@ -1425,7 +1441,7 @@ void TFmeEdits::ajustarSize ()
       ModificarEdit();
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PULSAR EL BOT覰 DE INSERTAR EDIT.
+// PULSAR EL BOT脫N DE INSERTAR EDIT.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::ButInsertarEditClick()
     {
@@ -1433,7 +1449,7 @@ void TFmeEdits::ajustarSize ()
       InsertarEdit();
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PULSAR EL BOT覰 DE BORRAR EDIT.
+// PULSAR EL BOT脫N DE BORRAR EDIT.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::ButBorrarEditClick()
     {
@@ -1441,7 +1457,7 @@ void TFmeEdits::ajustarSize ()
       BorrarEdit();
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PULSAR EL BOT覰 DE INFORMACION DE ERROR.
+// PULSAR EL BOT脫N DE INFORMACION DE ERROR.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::ButValidacionSintacticaClick()
     {
@@ -1465,7 +1481,7 @@ void TFmeEdits::ajustarSize ()
       }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PULSAR EL BOT覰 DE IR AL SIGUIENTE EDIT INCORRECTO.
+// PULSAR EL BOT脫N DE IR AL SIGUIENTE EDIT INCORRECTO.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::ButSigEditMalClick()
     {
@@ -1515,7 +1531,7 @@ void TFmeEdits::ajustarSize ()
       EdtEdit->setFocus();
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PRESIONAR UNA TECLA EN EL EDIT DE EDICI覰 DE EDITS.
+// PRESIONAR UNA TECLA EN EL EDIT DE EDICI脫N DE EDITS.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::EdtEditKeyDown()
     {
@@ -1545,7 +1561,7 @@ void TFmeEdits::ajustarSize ()
       EdtIrA->setText("");
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// TOMAR POSESI覰 DEL CONTROL EL EDIT DE EDICION DE EDITS.
+// TOMAR POSESI脫N DEL CONTROL EL EDIT DE EDICION DE EDITS.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::EdtEditEnter()
     {
