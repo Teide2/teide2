@@ -1,7 +1,23 @@
 /*******************************************************************************
 ** Teide2.cpp: programa principal.
 **
-** author: M-S Hern·ndez-GarcÌa
+** author: M-S Hern√°ndez-Garc√≠a
+**
+**  This file is part of TEIDE2.
+**
+**  TEIDE2 is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Foobar is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**
 *******************************************************************************/
 
 
@@ -805,14 +821,14 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
           }else
               (*Cadenas_Missing)->removeLast();
           num--;
-          MemLogs->append("ERROR: " + tr("La tabla missing tiene m·s de 4 valores missing, se han tomado 4"));
+          MemLogs->append("ERROR: " + tr("La tabla missing tiene m√°s de 4 valores missing, se han tomado 4"));
           QApplication::processEvents();
           break;
         }
         if (NOPROCEDE.contains(Literal, Qt::CaseSensitive)) ok = true;
       }      
       if (!ok) {
-          MemLogs->append("ERROR: " + tr("La tabla missing no tiene al menos el valor NO_PROCEDE Û No_Procede Û NoProcede (obligatorio)"));
+          MemLogs->append("ERROR: " + tr("La tabla missing no tiene al menos el valor NO_PROCEDE √≥ No_Procede √≥ NoProcede (obligatorio)"));
           QApplication::processEvents();
           return false;
       }
@@ -983,7 +999,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
                      }else
                          (*Cadenas_Missing)->removeLast();
                      num--;
-                     MemLogs->append("ERROR: " + tr("La tabla missing tiene m·s de 4 valores missing, se han tomado los 4 primeros"));
+                     MemLogs->append("ERROR: " + tr("La tabla missing tiene m√°s de 4 valores missing, se han tomado los 4 primeros"));
                      QApplication::processEvents();
                      break;
                    }
@@ -997,7 +1013,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
         n = n.nextSibling();
       }
       if (!ok) {
-          MemLogs->append("ERROR: " + tr("La tabla missing no tiene al menos el valor NO_PROCEDE Û No_Procede Û NoProcede (obligatorio)", 0, QApplication::UnicodeUTF8));
+          MemLogs->append("ERROR: " + tr("La tabla missing no tiene al menos el valor NO_PROCEDE √≥ No_Procede √≥ NoProcede (obligatorio)", 0, QApplication::UnicodeUTF8));
           QApplication::processEvents();
           return false;
       }
