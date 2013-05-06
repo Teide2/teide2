@@ -1,136 +1,120 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 *                                                                           *
-*                       Fecha: Abril, 2013		                    *
-*                       Autora: M-S Hernández-García                        *
+*                       Fecha: Abril, 2013		                              *
+*                       Autora: M-S HernÃ¡ndez-GarcÃ­a                        *
 *                                                                           *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 /****************************************************************************
-**  								           **
-**  Breve descripción del proyecto.                                        **
+**  								                                                       **
+**  Breve descripciÃ³n del proyecto.                                        **
 **                                                                         **
 ****************************************************************************/
-  Las siglas TEIDE2 proceden de “Técnicas de Edición e Imputación de Datos 
-Estadísticos, versión 2”.
-  Los institutos de estadística reciben gran cantidad de datos a través de
+  Las siglas TEIDE2 proceden de Â“TÃ©cnicas de EdiciÃ³n e ImputaciÃ³n de Datos 
+EstadÃ­sticos, versiÃ³n 2Â”.
+  Los institutos de estadÃ­stica reciben gran cantidad de datos a travÃ©s de
 encuestas. De la calidad de estas encuestas dependen las conclusiones que se
 extraen. Por ello es fundamental depurar las encuestas, eliminando los errores
-inherentes. A este fin se dedica gran cantidad de recursos económicos y humanos.
-TEIDE2 es una herramienta informática que intenta reducir estos esfuerzos
-automatizando al máximo la detección de incoherencia y la imputación de valores
-perdidos, a la vez que se mantienen las propiedades estadísticas de la encuesta
+inherentes. A este fin se dedica gran cantidad de recursos econÃ³micos y humanos.
+TEIDE2 es una herramienta informÃ¡tica que intenta reducir estos esfuerzos
+automatizando al mÃ¡ximo la detecciÃ³n de incoherencia y la imputaciÃ³n de valores
+perdidos, a la vez que se mantienen las propiedades estadÃ­sticas de la encuesta
 original.
-  Esta aplicación toma como datos de entrada:
+  Esta aplicaciÃ³n toma como datos de entrada:
     - Variables: es lo que identifica a una o varias preguntas.
     - Microdatos: son los valores que toman cada una de las variables en cada
                   cuestionario, donde un cuestionario es un registro o fila.
     - Reglas: son las reglas que tienen que cumplir los registros para que se
               consideren correctos.
-  Además de las reglas en TEIDE también se incluyen los filtros que indican 
+  AdemÃ¡s de las reglas en TEIDE tambiÃ©n se incluyen los filtros que indican 
 cuando una variable debe tomar el valor NO_PROCEDE.
-  Cuando se han cargado los datos se procede a la depuración o edición. Se
+  Cuando se han cargado los datos se procede a la depuraciÃ³n o ediciÃ³n. Se
 detectan que registros son incorrectos, esto sucede cuando los valores de una 
-variable no están dentro de un rango señalado o no cumplen una determinada regla.
+variable no estÃ¡n dentro de un rango seÃ±alado o no cumplen una determinada regla.
   Una vez detectados los registros correctos e incorrectos se procede  a la 
-imputación o corrección de los mismos. En este caso se usa la metodología del 
-registro donante usando el criterio de modificar el menor número de variables 
-(Fellegi & Holt 1979). Los registros donantes son aquéllos que se han considerado 
-correctos. El donante más próximo (el más que se le parece según una “función de 
-distancia”) propone valores al registro incorrecto para su total corrección.
-  Si ya se ha realizado la edición e imputación TEIDE2 muestra un informe con
-los datos obtenidos: como puede ser el número de registros imputados, variables
+imputaciÃ³n o correcciÃ³n de los mismos. En este caso se usa la metodologÃ­a del 
+registro donante usando el criterio de modificar el menor nÃºmero de variables 
+(Fellegi & Holt 1979). Los registros donantes son aquÃ©llos que se han considerado 
+correctos. El donante mÃ¡s prÃ³ximo (el mÃ¡s que se le parece segÃºn una Â“funciÃ³n de 
+distanciaÂ”) propone valores al registro incorrecto para su total correcciÃ³n.
+  Si ya se ha realizado la ediciÃ³n e imputaciÃ³n TEIDE2 muestra un informe con
+los datos obtenidos: como puede ser el nÃºmero de registros imputados, variables
 modificadas, registros donantes, etc.
   TEIDE2 permite la entrada de datos desde ficheros Microsoft Access. Los 
-objetivos logrados en estos últimos meses han sido: la posibilidad de introducir
-también los datos de entrada mediante tablas Microsoft Excel, ficheros XML y 
+objetivos logrados en estos Ãºltimos meses han sido: la posibilidad de introducir
+tambiÃ©n los datos de entrada mediante tablas Microsoft Excel, ficheros XML y 
 mediante tablas en Oracle.
 ******************************************************************************
  
 
 /*****************************************************************************
-**				   				            **
-**  Descripción del árbol de directorios del proyecto.                      **
+**				   				                                                       **
+**  DescripciÃ³n del Ã¡rbol de directorios del proyecto.                      **
 **                                                                          **
 *****************************************************************************/
- En trunk podemos encontrar 2 directorios:
-    * directorio src: donde se encuentra el código fuente (.cpp, .h, .pro,
+ En trunk podemos encontrar:
+    * directorio src: donde se encuentra el cÃ³digo fuente (.cpp, .h, .pro,
                      .l, .y, .rc y .ico).
-    * directorio executable: contiene todo lo necesario para poder ejecutar 
-                             Teide2.exe.
-      o .dll: librerías necesarias.
-      o Teide2.exe: ejecutable.
-      o directorio data: contiene las tablas de datos.
-        - sample.accdb y sample.mdb: tablas en Access.
-        - sample.xls y sample.xlsx: tablas en Excel.
-        - directorio SAMPLE: contiene todos los ficheros en XML.
-      o directorio doc: contiene el directorio help con los ficheros .html 
-                        útiles como ayuda o documentación.
-      o directorio images: contienes todas las imágenes utilizadas en la 
-                           aplicación.
-      o directorio metafiles: contiene los ficheros .vme necesarios para 
-                              identificar las tablas o datos de entrada.
-      o directorio plugin: contiene el directorio sqldrivers con las dll 
-                           necesarias para leer los datos de entrada de Access
-                           u Oracle.
-      o directorio stats: lugar donde se guardan los datos de salida.
+    * directorio help: Ayuda Teide2.
+    * README: este fichero.
+    * gpl.txt: tipo de licencia.
+
  *****************************************************************************
  
 
 /*****************************************************************************
-**							   	            **
+**							   	                                                       **
 **  Obtener el proyecto.                                                    **
 **                                                                          **
 *****************************************************************************/
 En http://code.google.com/p/teide2/source/browse/#svn%2Ftrunk se encuentra el 
-código fuente (src), el fichero Teide2.exe y todas las carpetas y dll necesarias 
-para la ejecución (executable).
+cÃ³digo fuente (src). En http://code.google.com/p/teide2/downloads/list se 
+encuentra TEIDE2.zip con los binarios y librerÃ­as necesarias para la ejecuciÃ³n.
 ******************************************************************************
 
 
 /*****************************************************************************
-**							                    **
+**							                                                            **
 **  Requisitos del proyecto.                                                **
 **                                                                          **
 *****************************************************************************/
-Este proyecto ha sido realizado haciendo uso de las librerías Qt y Qwt es por 
-lo que necesitamos algunas dll aportadas por estas librerías para la ejecución 
-de la aplicación. Como se ha compilado con MinGW también depende de algunas dll 
-de este compilador. La aplicación incluye junto con el fichero exe las dll 
-necesarias, pero en el caso de compilar el código fuente con otra versión de
-MinGW, Qt o Qwt habrá que usar las dll de las versiones utilizadas.
+Este proyecto ha sido realizado haciendo uso de las librerÃ­as Qt y Qwt es por 
+lo que necesitamos algunas dll aportadas por estas librerÃ­as para la ejecuciÃ³n 
+de la aplicaciÃ³n. Como se ha compilado con MinGW tambiÃ©n depende de algunas dll 
+de este compilador. La aplicaciÃ³n incluye junto con el fichero exe las dll 
+necesarias, pero en el caso de compilar el cÃ³digo fuente con otra versiÃ³n de
+MinGW, Qt o Qwt habrÃ¡ que usar las dll de las versiones utilizadas.
 ******************************************************************************
 
 
 /*****************************************************************************
-**									    **
-**  Instalación del proyecto.                                               **
+**									                                                        **
+**  InstalaciÃ³n del proyecto.                                               **
 **                                                                          **
 *****************************************************************************/
-Este proyecto no requiere instalación, la aplicación se puede ejecutar con sólo
-la descarga total de la carpeta executable incluida en el repositorio. Ya que 
-esta carpeta tiene todo lo necesario para la correcta ejecución del fichero 
-Teide2.exe.
+Este proyecto no requiere instalaciÃ³n, la aplicaciÃ³n se puede ejecutar con sÃ³lo
+la descarga del fichero TEIDE2.zip incluido en el repositorio (Downloads). Ya 
+que este fichero tiene todo lo necesario para la correcta ejecuciÃ³n de Teide2.
 ******************************************************************************
 
 
 /*****************************************************************************
-**									    **
-**  Documentación del proyecto.                                             **
+**									                                                        **
+**  DocumentaciÃ³n del proyecto.                                             **
 **                                                                          **
 *****************************************************************************/
- En la carpeta doc incluida en la carpeta executable se encuentra toda la 
- documentación necesaria (Ayuda.html).
+ En la carpeta help se encuentra toda la documentaciÃ³n necesaria (Ayuda.html).
  *****************************************************************************
 
 
 /*****************************************************************************
-**									    **
-**  Información adicional.                                                  **
+**									                                                        **
+**  InformaciÃ³n adicional.                                                  **
 **                                                                          **
 *****************************************************************************/
-Este proyecto se ha ido desarrollando durante 5 años con el fin de ser 
-presentado como proyecto de tesis. En un primer momento esta aplicación sólo 
-trabajaba con tablas en Microsoft Access, a lo largo de los años se introdujo 
-la posibilidad de trabajar con XML y Oracle. Y ahora en los últimos meses se 
+Este proyecto se ha ido desarrollando durante 5 aÃ±os con el fin de ser 
+presentado como proyecto de tesis. En un primer momento esta aplicaciÃ³n sÃ³lo 
+trabajaba con tablas en Microsoft Access, a lo largo de los aÃ±os se introdujo 
+la posibilidad de trabajar con XML y Oracle. Y ahora en los Ãºltimos meses se 
 ha realizado una mejora en el uso de ficheros de entrada en XML, Oracle y se 
-dado la opción de tomar los datos desde tablas en Microsoft Excel 
+dado la opciÃ³n de tomar los datos desde tablas en Microsoft Excel 
 (http://teide2.wordpress.com/).
