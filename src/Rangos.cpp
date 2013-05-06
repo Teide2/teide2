@@ -2,7 +2,23 @@
 ** Rangos.cpp: contiene todo lo necesario para trabajar con la solapa
 **             Eval. rangos y filtros.
 **
-** author: M-S Hernández-García
+** author: M-S HernÃ¡ndez-GarcÃ­a
+**
+**  This file is part of TEIDE2.
+**
+**  TEIDE2 is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Foobar is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**
 *******************************************************************************/
 
 #include "Rangos.h"
@@ -1043,7 +1059,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
           VectorExclusionFiltros[j] = true;
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Excluir los registros que estïan por encima del umbral especificado.
+// Excluir los registros que estÃ¯an por encima del umbral especificado.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeRangos::ExcluirRegistros()
     {
@@ -2079,14 +2095,14 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
        FrmCambiarMicrodato->hide();
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PINCHAR LA OPCION DE MENU DE AUMENTAR EL TAMAÑO DE LAS COLUMNAS.
+// PINCHAR LA OPCION DE MENU DE AUMENTAR EL TAMAÃ‘O DE LAS COLUMNAS.
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeRangos::MitAumentarColumnasClick()
     {
       FijarAnchoColumnasRejilla(view->columnWidth(2) + 50);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PINCHAR LA OPCION DE MENU DE DISMINUIR EL TAMAÑO DE LAS COLUMNAS.
+// PINCHAR LA OPCION DE MENU DE DISMINUIR EL TAMAÃ‘O DE LAS COLUMNAS.
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeRangos::MitDisminuirColumnasClick()
     {
