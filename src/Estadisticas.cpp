@@ -2,7 +2,23 @@
 ** Estadisticas.cpp: contiene todo lo necesario para trabajar con la solapa
 **                   Estadisticas.
 **
-** author: M-S Hern�ndez-Garc�a
+** author: M-S Hernández-García
+**
+**  This file is part of TEIDE2.
+**
+**  TEIDE2 is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Foobar is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**
 *******************************************************************************/
 
 #include "Estadisticas.h"
@@ -489,7 +505,7 @@
       MemInfo->append("");
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Generar las estadisticas de la secci�n de rangos.
+// Generar las estadisticas de la secciï¿½n de rangos.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEstadisticas::GenerarEstadisticasRangos()
     {
@@ -1206,7 +1222,7 @@
 
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// A�adir una linea al fichero de ejecuciones.
+// Añadir una linea al fichero de ejecuciones.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEstadisticas::AddExecutionLine()
     {
