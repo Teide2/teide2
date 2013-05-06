@@ -1,8 +1,24 @@
 /*******************************************************************************
 ** CheckPoblacion.cpp: permite comparar diferentes bases de datos o tablas de
-**                     datos con variables en común y relacionadas.
+**                     datos con variables en comÃºn y relacionadas.
 **
-** author: M-S Hernández-García
+** author: M-S HernÃ¡ndez-GarcÃ­a
+**
+**  This file is part of TEIDE2.
+**
+**  TEIDE2 is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Foobar is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**
 *******************************************************************************/
 
 #include "CheckPoblacion.h"
@@ -39,7 +55,7 @@ TFrmCheckPoblacion::TFrmCheckPoblacion(QWidget* parent, const char* name, Qt::Wi
       // Asociar las clases
       AsociarClases(FmeMicroDatosAsociados);
 
-      // Conexión a la base de MicroDatos
+      // ConexiÃ³n a la base de MicroDatos
       AdqConsulta = AdcConexionBD;
 
       // Fijar la cantidad de datos
@@ -71,7 +87,7 @@ TFrmCheckPoblacion::TFrmCheckPoblacion(QWidget* parent, const char* name, Qt::Wi
     void TFrmCheckPoblacion::inicio()
     {
       QMessageBox msgBox;
-      msgBox.setText(tr("¿Son la misma base de datos?\n(si la respuesta es NO, recuerde que deben estar las dos en la carpeta data)."));
+      msgBox.setText(tr("Â¿Son la misma base de datos?\n(si la respuesta es NO, recuerde que deben estar las dos en la carpeta data)."));
       QPushButton *YesButton = msgBox.addButton(tr("SI"), QMessageBox::AcceptRole);
       QPushButton *NotButton = msgBox.addButton(tr("NO"), QMessageBox::NoRole);
       msgBox.setIcon(QMessageBox::Question);
@@ -99,7 +115,7 @@ TFrmCheckPoblacion::TFrmCheckPoblacion(QWidget* parent, const char* name, Qt::Wi
     }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// PULSAR EL BOTÓN DE GUARDAR INFORME.
+// PULSAR EL BOTÃ“N DE GUARDAR INFORME.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFrmCheckPoblacion::ButGuardarInformeClick()
     {      
