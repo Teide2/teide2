@@ -1,0 +1,50 @@
+Introducción
+============
+
+Con el código viene un fichero llamado Teide2.pro que se puede abrir con Qt Creator que a su vez permitirá acceder a todo el proyecto.
+
+Con esta herramienta podemos compilar, depurar y ejecutar nuestra aplicación.
+
+Decir que Qt dispone de un paquete binario que incluye las librerías Qt y Qt Creator:
+
+    Para Linux a 32 bits
+    Para Linux a 64 bits
+    Para Mac
+    Para Windows a 32 bits con MinGW
+    Para Windows a 32 bits con Visual Studio 2010
+
+NOTA: En el caso de necesitar para otras plataformas, por ejemplo Windows a 64 bits, también se permite descargar el código fuente de las librerías y compilarlas en tu plataforma.
+
+Construyendo librerías
+======================
+
+WINDOWS
+-------
+
+Este proyecto necesita de algunas dll para la entrada de datos a través de Microsoft Access, Excel u Oracle.
+Para Access y Excel, necesitamos qsqlodbc4.dll. Se puede obtener de la siguiente manera:
+    cd %QTDIR%\src\plugins\sqldrivers\odbc
+    qmake odbc.pro
+    make
+Para Oracle necesitamos qsqloci4.dll. Se puede obtener de la siguiente manera:
+    set INCLUDE=%INCLUDE%;c:\oracle\oci\include
+    set LIB=%LIB%;c:\oracle\oci\lib
+    cd %QTDIR%\src\plugins\sqldrivers\oci
+    qmake oci.pro
+    make
+Estas dll se incorporan a la carpeta "TEIDE2\plugins\dqldrivers\" de nuestro proyecto.
+
+Junto al ejecutable (Teide2.exe) necesitamos de las dll: 
+* QtCore4.dll, QtGui4.dll, QtSqlp4.dll, QtSvg4.dll y QtXml4.dll que puedes encontrar en %QTDIR%\bin 
+* qwt.dll. Que puedes obtener de las librerías Qwt de la siguiente manera:
+      cd %qwtDIR%\
+      qmake qwt.pro
+      make
+
+En caso de compilarse el código con MinGW, necesitaremos de las dll de este compilador: libgcc_s_dw2-1.dll, libstdc++-6.dll y mingwm10.dll.
+
+LINUX
+-----
+
+ En caso de compilar en Linux las librerías necesarias tendrán un nombre similar y la forma de obtenerla es igual que en Windows:
+libqsqloci.so, libQtCore.so.4, libQtGui.so.4, libQtSql.so.4, libQtSvg.so.4, libQtXml.so.4 y libqwt.so
