@@ -2,7 +2,23 @@
 ** Imputacion.cpp: contiene todo lo necesario para trabajar con la solapa
 **                   Imputacion.
 **
-** author: M-S Hern醤dez-Garc韆
+** author: M-S Hern谩ndez-Garc铆a
+**
+**  This file is part of TEIDE2.
+**
+**  TEIDE2 is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Foobar is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**
 *******************************************************************************/
 
 #include "Imputacion.h"
@@ -1399,17 +1415,17 @@
       }
       if (cont == 0) imputable2 = false;  // si no tiene ningun edit, que dependa solo de los rangos
       menu2->addSeparator();      
-      if (ImpManualCorrecto[registro]) menu2->addAction(" ** Imputaci髇 manual err髇ea");
+      if (ImpManualCorrecto[registro]) menu2->addAction(" ** Imputaci贸n manual err贸nea");
       else {
         if ((!ConjuntoRegistrosDonantes.empty()) && (ImputacionVar[registro])) {
-          menu2->addAction(" ** Imputaci髇 err髇ea de variables num閞icas");
-          if (ImpManualIncorrecto[registro]) menu2->addAction(" ** Imputaci髇 manual err髇ea");
+          menu2->addAction(" ** Imputaci贸n err贸nea de variables num茅ricas");
+          if (ImpManualIncorrecto[registro]) menu2->addAction(" ** Imputaci贸n manual err贸nea");
         }else if ((numVariablesRT != numVariablesRI) || ((numVariablesET != 0) && (!imputable2))) {
-                menu2->addAction(" ** No tiene variables b醩icas a imputar imputables");
-                if (ImpManualIncorrecto[registro]) menu2->addAction(" ** Imputaci髇 manual err髇ea");
+                menu2->addAction(" ** No tiene variables b谩sicas a imputar imputables");
+                if (ImpManualIncorrecto[registro]) menu2->addAction(" ** Imputaci贸n manual err贸nea");
               }else {
                  menu2->addAction(" ** No tiene un registro donante adecuado");
-                 if (ImpManualIncorrecto[registro]) menu2->addAction(" ** Imputaci髇 manual err髇ea");
+                 if (ImpManualIncorrecto[registro]) menu2->addAction(" ** Imputaci贸n manual err贸nea");
               }
      }
     }
