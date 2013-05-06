@@ -2,7 +2,23 @@
 ** Variables.cpp: contiene todo lo necesario para trabajar con la solapa
 **                variables.
 **
-** author: M-S Hernández-García
+** author: M-S HernÃ¡ndez-GarcÃ­a
+**
+**  This file is part of TEIDE2.
+**
+**  TEIDE2 is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Foobar is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**
 *******************************************************************************/
 
 
@@ -393,7 +409,7 @@
       int i = 0;
       QString Aviso;
       bool filtro_vacio = false; // indica si el filtro es vacio
-      int pos = -1; //indica si el filtro es vacio la posición de la columna sentido_filtro
+      int pos = -1; //indica si el filtro es vacio la posiciÃ³n de la columna sentido_filtro
 
       // Fijar el numero de filas de la rejilla      
       MatrizVariablesS = new QString*[NumVariables];
@@ -1051,7 +1067,7 @@
       FrmMostrarMapping->Mostrar("MISSING", CodigosMissing, LiteralesMissing);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Crea vectores con los código y literales de los missing.
+// Crea vectores con los cÃ³digo y literales de los missing.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeVariables::CrearCodigosLiteralesMissing()                                       
     {
@@ -2202,7 +2218,7 @@
       view->setFocus();
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Muestra la información dependiendo de la seleccion de las diferentes rejillas.
+// Muestra la informaciÃ³n dependiendo de la seleccion de las diferentes rejillas.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeVariables::SgrRejillaSelectCell(const QModelIndex& index)
     {      
