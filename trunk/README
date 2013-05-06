@@ -55,6 +55,7 @@ mediante tablas en Oracle.
     * directorio src: donde se encuentra el código fuente (.cpp, .h, .pro,
                      .l, .y, .rc y .ico).
     * directorio help: Ayuda Teide2.
+    * INSTALL: fichero de información de la instalación, compilación y ejecución
     * README: este fichero.
     * gpl.txt: tipo de licencia.
 
