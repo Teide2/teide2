@@ -1,7 +1,23 @@
 /*******************************************************************************
 ** Gobal.h: contiene variables globales.
 **
-** author: M-S Hernández-García
+** author: M-S HernÃ¡ndez-GarcÃ­a
+**
+**  This file is part of TEIDE2.
+**
+**  TEIDE2 is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Foobar is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**
 *******************************************************************************/
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -30,17 +46,17 @@
 using namespace std;  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#define LANG_SP     // descomentar para idioma español
-//#define LANG_EN     // descomentar idioma inglés
-//#define SHAREWARE   // versión shareware de la aplicación
+#define LANG_SP     // descomentar para idioma espaÃ±ol
+//#define LANG_EN     // descomentar idioma inglÃ©s
+//#define SHAREWARE   // versiÃ³n shareware de la aplicaciÃ³n
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 typedef
 	enum {T_CONTINUO, T_DISCRETO, T_MIXTO, T_IGNORABLE} TTipoVariable;
 
-// T_CONTINUO: Variable contínua (valores reales) entre un máximo y un mínimo especificados
+// T_CONTINUO: Variable contÃ­nua (valores reales) entre un mÃ¡ximo y un mÃ­nimo especificados
 // T_DISCRETO: Variable discreta dentro de una lista de valores concretos especificados
-// T_MIXTO: Variable discreta (valores enteros) entre un máximo y un mínimo especificados
+// T_MIXTO: Variable discreta (valores enteros) entre un mÃ¡ximo y un mÃ­nimo especificados
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 typedef
@@ -169,8 +185,8 @@ const unsigned MAX_REGISTROS_DONANTES = 500;
 const double MAX_PESO_VARIABLE = 100;
 const int UMBRAL_CC = 1;
 const QString NUM_REGISTROS_A_CARGAR = "ALL";
-// Para hogares usar la siguiente configuración: ALFA=10, BETA1=100, BETA2=10, GAMMA=5
-// Para población usar la siguiente configuración: ALFA=0, BETA1=100, BETA2=0, GAMMA=0
+// Para hogares usar la siguiente configuraciÃ³n: ALFA=10, BETA1=100, BETA2=10, GAMMA=5
+// Para poblaciÃ³n usar la siguiente configuraciÃ³n: ALFA=0, BETA1=100, BETA2=0, GAMMA=0
 const unsigned PESO_ALFA = 10;
 const unsigned PESO_BETA1 = 100;
 const unsigned PESO_BETA2 = 10;
@@ -192,7 +208,7 @@ const QString EXTRATITULO = "";
 #define STR0024 "VARIABLES"
 #define STR0026 "REGLAS"
 #define STR0028 "EVAL. DE OTRAS REGLAS"
-#define STR0031 "Contaminación"
+#define STR0031 "ContaminaciÃ³n"
 #define STR0049 "Variable"
 #define STR0053 "Variables"
 
