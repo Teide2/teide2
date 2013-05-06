@@ -2,7 +2,23 @@
 ** MicroDatos.cpp: contiene todo lo necesario para trabajar con la solapa
 **                   Microdatos.
 **
-** author: M-S Hernández-García
+** author: M-S HernÃ¡ndez-GarcÃ­a
+**
+**  This file is part of TEIDE2.
+**
+**  TEIDE2 is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Foobar is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+**
 *******************************************************************************/
 
 
@@ -318,7 +334,7 @@
       }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Se chequea que el dato no este vacío.
+// Se chequea que el dato no este vacÃ­o.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeMicroDatos::ChequearCompletitudRegistros()
     {
@@ -368,7 +384,7 @@
       }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Se cálcula las estadísticas.
+// Se cÃ¡lcula las estadÃ­sticas.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeMicroDatos::CalcularEstadisticas()
     {
@@ -422,7 +438,7 @@
       FijarFormatoRejilla();
 
       IndiceVariable = 0;  // indice de la variable en la tabla
-      ultimoIndiceVariable = 0;   // indice en que se quedo al añadir en la anterior tabla
+      ultimoIndiceVariable = 0;   // indice en que se quedo al aÃ±adir en la anterior tabla
 
       if (Xml) {
         QDomDocument *doc = new QDomDocument("?xml");
@@ -630,14 +646,14 @@
       ValoresContaminados = ceil((double)NumRegistros / (double)2) * c;
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Muestra la infomación en la parte de abajo de la pantalla.
+// Muestra la infomaciÃ³n en la parte de abajo de la pantalla.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeMicroDatos::EscribirInformacion()
     {
       LabBarraEstado0->setText(QString::number(model->rowCount(view->currentIndex()), 10) + " " + tr("registros") + ", " + QString::number(NumVariables, 10) + " " + (QString)STR0053);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Crea el tamaño de la rejilla principal, junto con las cabeceras.
+// Crea el tamaÃ±o de la rejilla principal, junto con las cabeceras.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeMicroDatos::FijarFormatoRejilla()
     {
@@ -815,7 +831,7 @@
       listaV2.append("");      
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Muestra la información en la tabla varaibles, en el mapping y en la parte de abajo de la pantalla.
+// Muestra la informaciÃ³n en la tabla varaibles, en el mapping y en la parte de abajo de la pantalla.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeMicroDatos::MostrarInfoAsociada(unsigned Fila, unsigned Columna, unsigned numreg, bool Fijar)
     {
@@ -1364,7 +1380,7 @@
       FijarAnchoColumnasRejilla(view->columnWidth (1) - 50);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Trata la visualización de los registros en la tabla principal.
+// Trata la visualizaciÃ³n de los registros en la tabla principal.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeMicroDatos::VisualizarRegCloseUp(int index)
     {
