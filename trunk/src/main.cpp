@@ -67,17 +67,15 @@ int main( int argc, char ** argv )
     scrollarea->setWidget(w2);
     if (qApp->desktop ()->availableGeometry(-1).width() < 1100) {
          w2->setGeometry(0, 0, 1276, 714);
-         scrollarea->setWindowFlags(Qt::WindowMinimizeButtonHint);
-         //QMessageBox::warning(0, "Warning", "entra1", "&Ok");
+         scrollarea->setWindowFlags(Qt::WindowMinimizeButtonHint);         
     }
-    //QObject::connect(scrollarea, SIGNAL(miSignal()), w2, SLOT(ajustarSize()));
+    
     w2->asignar(scrollarea);
     w2->PrimeraEjecucion();
     w2->ContandoEjecucion();
     a.setActiveWindow( w2 );
     QString start = QCoreApplication::applicationDirPath();
     QString meta = QDir::convertSeparators("/images/teide.png");
-    //scrollarea->setWindowIcon(QPixmap(qPixmapFromMimeSource(start+meta)));
     scrollarea->setWindowIcon(QPixmap((start+meta)));
 
     TFrmFlash *FrmFlash = new TFrmFlash(0, "entrada", Qt::SplashScreen);
@@ -96,33 +94,5 @@ int main( int argc, char ** argv )
         QObject::connect( counter, SIGNAL(timeout()), w2, SLOT( HacerBatchMode()) );
     }
 
-    return a.exec();
-    /*TFrmPrincipal *w2 = new TFrmPrincipal(0, argc, argv);
-    QLineEdit *edit1 = new QLineEdit(w2);
-    edit1->setGeometry(20,100,100,100);
-    edit1->show();
-    QLineEdit *edit2 = new QLineEdit(w2);
-    edit2->setGeometry(120,100,100,100);
-    edit2->show();
-    QLineEdit *edit3 = new QLineEdit(w2);
-    edit3->setGeometry(220,100,100,100);
-    edit3->show();
-    QLineEdit *edit4 = new QLineEdit(w2);
-    edit4->setGeometry(320,100,100,100);
-    edit4->show();
-    double valor, rangoMin, rangoMax;
-    valor = 252.98765;
-    rangoMin=0;
-    rangoMax=200000;
-    if ((fabs(valor - rangoMin) < 0.000001) || (fabs(valor - rangoMax) < 0.000001) || ((valor > rangoMin) && (valor < rangoMax))){
-                edit1->setText("si1");
-                edit2->setText("si2");
-            }
-
-
-
-
-
-    w2->show();
-    return a.exec();*/
+    return a.exec();    
 }
