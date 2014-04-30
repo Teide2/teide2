@@ -32,7 +32,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
       connect(qApp->desktop (), SIGNAL(resized(int)), this, SLOT(probando(int)));
 
       //this->setMaximumSize(scrollarea->viewport());
-      if (qApp->desktop ()->availableGeometry(1).width() < 1100) {
+      if (qApp->desktop ()->/*availableGeometry(1).*/width() < 1100) {
           /*if (windowState() == Qt::WindowMaximized) {
             this->showFullScreen();
           }else*/
@@ -48,9 +48,6 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
       
       MitNuevoMetafile = new QAction(this);
       MitNuevoMetafile->setObjectName(("MitNuevoMetafile"));
-      QFont font;
-      font.setFamily(("Tahoma"));
-      MitNuevoMetafile->setFont(font);
       MitAbrirMetafile = new QAction(this);
       MitAbrirMetafile->setObjectName(("MitAbrirMetafile"));
       MitCerrarMetafile = new QAction(this);
@@ -78,7 +75,6 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
       PctContenedorPrincipal = new QTabWidget(this);
       PctContenedorPrincipal->setObjectName(("PctContenedorPrincipal"));
       PctContenedorPrincipal->setGeometry(QRect(0, 40, this->width(), this->height()-40));
-      PctContenedorPrincipal->setFont(font);
       PctContenedorPrincipal->setVisible(false);
       PanCargarMetafile = new QFrame(this);
       PanCargarMetafile->setObjectName(("PanCargarMetafile"));
@@ -93,7 +89,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
       PanTitulo->setFrameShadow(QFrame::Raised);
       LabTitulo = new QLabel(PanTitulo);
       LabTitulo->setObjectName(("LabTitulo"));
-      LabTitulo->setGeometry(QRect(8, 8, 211, 18));
+      LabTitulo->setGeometry(QRect(8, 8, 251, 18));
       MemLogs = new QTextEdit(PanCargarMetafile);
       MemLogs->setObjectName(("MemLogs"));
       MemLogs->setGeometry(QRect(0, 33, PanCargarMetafile->width()-5, this->height()-233));
@@ -112,10 +108,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
       MmnMenuPrincipal = new QMenuBar(this);
       MmnMenuPrincipal->setObjectName(("MmnMenuPrincipal"));
       MmnMenuPrincipal->setGeometry(QRect(0, 0, 1319, 29));
-      QFont font1;
-      font1.setFamily(("MS Shell Dlg 2"));
-      font1.setPointSize(9);
-      MmnMenuPrincipal->setFont(font1);
+
       MitPrincipal = new QMenu(MmnMenuPrincipal);
       MitPrincipal->setObjectName(("MitPrincipal"));
       MitAyuda = new QMenu(MmnMenuPrincipal);
@@ -142,26 +135,26 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
       MitAyuda->addSeparator();
       MitAyuda->addAction(MitAcercaDe);
 
-      MitNuevoMetafile->setText(QApplication::translate("TFrmPrincipal", "&Nuevo Metafile", 0, QApplication::UnicodeUTF8));
-      MitNuevoMetafile->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+N", 0, QApplication::UnicodeUTF8));
-      MitAbrirMetafile->setText(QApplication::translate("TFrmPrincipal", "&Abrir Metafile", 0, QApplication::UnicodeUTF8));
-      MitAbrirMetafile->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+A", 0, QApplication::UnicodeUTF8));
-      MitCerrarMetafile->setText(QApplication::translate("TFrmPrincipal", "&Cerrar Metafile", 0, QApplication::UnicodeUTF8));
-      MitCerrarMetafile->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+K", 0, QApplication::UnicodeUTF8));
-      MitOpciones->setText(QApplication::translate("TFrmPrincipal", "&Opciones", 0, QApplication::UnicodeUTF8));
-      MitOpciones->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+O", 0, QApplication::UnicodeUTF8));
-      MitProcederPasoAPaso->setText(QApplication::translate("TFrmPrincipal", "&Proceder paso a paso", 0, QApplication::UnicodeUTF8));
-      MitProcederPasoAPaso->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+P", 0, QApplication::UnicodeUTF8));
-      MitProcederCompleto->setText(QApplication::translate("TFrmPrincipal", "Proceder &completo", 0, QApplication::UnicodeUTF8));
-      MitProcederCompleto->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+C", 0, QApplication::UnicodeUTF8));
-      MitCheckPoblacion->setText(QApplication::translate("TFrmPrincipal", "C&hequear poblaci\303\263n...", 0, QApplication::UnicodeUTF8));
-      MitSalir->setText(QApplication::translate("TFrmPrincipal", "&Salir", 0, QApplication::UnicodeUTF8));
-      MitSalir->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+X", 0, QApplication::UnicodeUTF8));
-      MitAyudaTEIDE2->setText(QApplication::translate("TFrmPrincipal", "Ayuda de &TEIDE2", 0, QApplication::UnicodeUTF8));
-      MitAcercaDe->setText(QApplication::translate("TFrmPrincipal", "&Acerca de...", 0, QApplication::UnicodeUTF8));
-      LabTitulo->setText(QApplication::translate("TFrmPrincipal", "Progreso de la carga del metafile...", 0, QApplication::UnicodeUTF8));
-      MitPrincipal->setTitle(QApplication::translate("TFrmPrincipal", "&Principal", 0, QApplication::UnicodeUTF8));
-      MitAyuda->setTitle(QApplication::translate("TFrmPrincipal", "&Ayuda", 0, QApplication::UnicodeUTF8));
+      MitNuevoMetafile->setText(QApplication::translate("TFrmPrincipal", "&Nuevo Metafile", 0));
+      MitNuevoMetafile->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+N", 0));
+      MitAbrirMetafile->setText(QApplication::translate("TFrmPrincipal", "&Abrir Metafile", 0));
+      MitAbrirMetafile->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+A", 0));
+      MitCerrarMetafile->setText(QApplication::translate("TFrmPrincipal", "&Cerrar Metafile", 0));
+      MitCerrarMetafile->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+K", 0));
+      MitOpciones->setText(QApplication::translate("TFrmPrincipal", "&Opciones", 0));
+      MitOpciones->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+O", 0));
+      MitProcederPasoAPaso->setText(QApplication::translate("TFrmPrincipal", "&Proceder paso a paso", 0));
+      MitProcederPasoAPaso->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+P", 0));
+      MitProcederCompleto->setText(QApplication::translate("TFrmPrincipal", "Proceder &completo", 0));
+      MitProcederCompleto->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+C", 0));
+      MitCheckPoblacion->setText(QApplication::translate("TFrmPrincipal", "C&hequear poblaci\303\263n...", 0));
+      MitSalir->setText(QApplication::translate("TFrmPrincipal", "&Salir", 0));
+      MitSalir->setShortcut(QApplication::translate("TFrmPrincipal", "Ctrl+X", 0));
+      MitAyudaTEIDE2->setText(QApplication::translate("TFrmPrincipal", "Ayuda de &TEIDE2", 0));
+      MitAcercaDe->setText(QApplication::translate("TFrmPrincipal", "&Acerca de...", 0));
+      LabTitulo->setText(QApplication::translate("TFrmPrincipal", "Progreso de la carga del metafile...", 0));
+      MitPrincipal->setTitle(QApplication::translate("TFrmPrincipal", "&Principal", 0));
+      MitAyuda->setTitle(QApplication::translate("TFrmPrincipal", "&Ayuda", 0));
     
       connect(MitNuevoMetafile, SIGNAL(triggered()), this, SLOT(MitNuevoMetafileClick()));
       connect(MitAbrirMetafile, SIGNAL(triggered()), this, SLOT(MitAbrirMetafileClick()));
@@ -205,13 +198,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
         }else {
                scrollarea->setWindowFlags(Qt::WindowMinMaxButtonsHint);               
         }
-        scrollarea->setWindowState(Qt::WindowNoState);
-        //QMessageBox::warning(0, "Warning", "entra1", "&Ok");
-        /*if (scrollarea->windowState() == Qt::WindowMaximized)
-            resize(this->visibleRegion().boundingRect().width()-5,this->visibleRegion().boundingRect().height()-5);//hij->resize(hij->maximumSize());//hij->resize(viewport()->size());
-        else*/
-        //resize(1276,746);
-        //scrollarea->resize(800, 600);
+        scrollarea->setWindowState(Qt::WindowNoState);        
         scrollarea->show();
     }
     void TFrmPrincipal::resizeEvent ( QResizeEvent * event )
@@ -240,8 +227,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
         }
     }
     void TFrmPrincipal::ajustarSize()
-    {
-        //QMainWindow::resizeEvent(event);
+    {        
        if (segundaEjecucion)
        {
             PctContenedorPrincipal->setGeometry(QRect(0, 40, this->width(), this->height()+25/*-40*/));
@@ -296,7 +282,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
 
       // Apertura del metafile
       QString valor = NombreMetafile;      
-      valor = QDir::convertSeparators(valor);
+      valor = QDir::toNativeSeparators(valor);
 
       QFile file(valor);
       if (!file.exists())
@@ -349,17 +335,16 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
 
     void TFrmPrincipal::continuarCargaMetafile(QString NombreMetafile, QString NombreBaseDatos)
     {
-      QString Aux, Aux2, NombreConjunto, Vinculo, Key, Nor, Cota, Conjunto, CondicionLectura;
+      QString Aux, Aux2, NombreConjunto, Key, Nor, Cota, Conjunto, CondicionLectura;
       QStringList *TablasMicroDatos, *VariablesTrabajo, *ListaIds, *Cadenas_Missing;
-      QString SufCont, SufNor;
       unsigned NumRegistros;
       QString CadenaConexionBD;
       bool correcto = true;
       int Num_valores_missing;
       QString mens;
 
-      NombreBaseDatos = QDir::convertSeparators(NombreBaseDatos);
-      MemLogs->append(QApplication::translate("", "Creando la conexi\303\263n a la base de datos", 0, QApplication::UnicodeUTF8) + " \"" + NombreBaseDatos + "\"");
+      NombreBaseDatos = QDir::toNativeSeparators(NombreBaseDatos);
+      MemLogs->append(QApplication::translate("", "Creando la conexi\303\263n a la base de datos", 0) + " \"" + NombreBaseDatos + "\"");
       QApplication::processEvents();
 
       if (!Oracle) {
@@ -431,7 +416,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
           (FmeMicroDatos = new TFmeMicroDatos(this, "microdatos", Qt::Widget, &AdcConexionBD, FmeVariables, TablasMicroDatos, NumRegistros, ListaIds, Key, Cota, FrmAbrirMetafile->ContaminarMicrodatos(), FrmAbrirMetafile->GetPorcentajeContaminacion(), Oracle, Xml, NombreBaseDatos, PctContenedorPrincipal, Excel, Nor))->setParent(VentanaMicroDatos);
         else
           (FmeMicroDatos = new TFmeMicroDatos(this, "microdatos", Qt::Widget, &AdcConexionBD, FmeVariables, TablasMicroDatos, NumRegistros, ListaIds, Key, Cota, false, 0, Oracle, Xml, NombreBaseDatos, PctContenedorPrincipal, Excel, Nor))->setParent(VentanaMicroDatos);
-        //qDebug() << FmeMicroDatos->GetMatrizMicroDatosS()[0][46];
+
         // Creacion de los Edits
         VentanaEdits = CrearNuevaHoja(tr("REGLAS"), true);
         if (Excel) Aux = "[" +  GetValorTag(NombreMetafile, "EDT") + "$]";
@@ -474,13 +459,13 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
           EXTRATITULO2 = " (" + Conjunto + " [" + QString::number(FmeMicroDatos->GetNumRegistros(), 10) + tr(" regs.") + "," + QString::number(FmeVariables->GetNumVariables(), 10) + tr(" vars.]") + Aux;
           scrollarea->actualizartitulo(QMainWindow::tr(QString(TITULOAPP + EXTRATITULO2).toLatin1(), ""));
           DatosCargados = true;
-          //qDebug() << FmeMicroDatos->GetMatrizMicroDatosS()[0][46];
+
           InstanteFinalizacion = QTime::currentTime();
           double tiempo = InstanteComienzo.secsTo(InstanteFinalizacion);
 
           FmeEstadisticas->SetTiempoCargaDatos(tiempo);
           if (!BatchMode) {
-              TMensajeCarga *mensajeBox = new TMensajeCarga(this, Qt::Window, QApplication::translate("", "El proceso de carga termin\303\263 de manera satisfactoria\nPulse aqu\303\255 para acceder a las funcionalidades del sistema", 0, QApplication::UnicodeUTF8) + "\n" + QString::number(InstanteComienzo.secsTo(InstanteFinalizacion), 10) + " sec." + "\n\n", MemLogs->toPlainText());
+              TMensajeCarga *mensajeBox = new TMensajeCarga(this, Qt::Window, QApplication::translate("", "El proceso de carga termin\303\263 de manera satisfactoria\nPulse aqu\303\255 para acceder a las funcionalidades del sistema", 0) + "\n" + QString::number(InstanteComienzo.secsTo(InstanteFinalizacion), 10) + " sec." + "\n\n", MemLogs->toPlainText());
               mensajeBox->show();              
           }else Actualizacion_interfaz_usuario();
         }else {
@@ -633,16 +618,16 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
       }
       else
       {
-        //try
-        //{
+        try
+        {
           NumRegistros = Nor.toInt();          
-        /*}
+        }
         catch(...)
         {
-          MemLogs->append("ERROR: " + QApplication::translate("", "El valor especificado para NOR no es un n\303\272mero entero v\303\241lido", 0, QApplication::UnicodeUTF8));
+          MemLogs->append("ERROR: " + QApplication::translate("", "El valor especificado para NOR no es un n\303\272mero entero v\303\241lido", 0));
           QApplication::processEvents();
           return false;
-        }*/
+        }
         if (CondicionLectura.isEmpty())
           Cota = "";//Cota = " WHERE (ID >= 1) AND (ID <= " + QString::number(NumRegistros, 10) + ")";
         else
@@ -708,7 +693,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
             (*VariablesTrabajo)->append(Variable);
           else
           {
-            MemLogs->append("ERROR: " + QMainWindow::tr("Variable") + " " + Variable + " " + QMainWindow::tr("de la tabla") + " \"" + TablasMicroDatos->at(0) + "\" " + QApplication::translate("", "est\303\241 duplicada. No puede estar en m\303\241s de una tabla.", 0, QApplication::UnicodeUTF8));
+            MemLogs->append("ERROR: " + QMainWindow::tr("Variable") + " " + Variable + " " + QMainWindow::tr("de la tabla") + " \"" + TablasMicroDatos->at(0) + "\" " + QApplication::translate("", "est\303\241 duplicada. No puede estar en m\303\241s de una tabla.", 0));
             QApplication::processEvents();
             return false;
           }
@@ -754,7 +739,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
 
         if (size_tabla(query2) != (*ListaIds)->size())
         {
-          MemLogs->append("ERROR: " + QApplication::translate("", "El tama\303\261o de la tabla", 0, QApplication::UnicodeUTF8) + " \"" + TablasMicroDatos->at(i) + "\" " + QMainWindow::tr("es incorrecto"));
+          MemLogs->append("ERROR: " + QApplication::translate("", "El tama\303\261o de la tabla", 0) + " \"" + TablasMicroDatos->at(i) + "\" " + QMainWindow::tr("es incorrecto"));
           QApplication::processEvents();
           return false;
         }
@@ -788,7 +773,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
               (*VariablesTrabajo)->append(Variable);
             else
             {
-              MemLogs->append("ERROR: " + QMainWindow::tr("Variable") + " " + Variable + " " + QMainWindow::tr("de la tabla") + " \"" + TablasMicroDatos->at(i) + "\" " + QApplication::translate("", "est\303\241 duplicada. No puede estar en m\303\241s de una tabla.", 0, QApplication::UnicodeUTF8));
+              MemLogs->append("ERROR: " + QMainWindow::tr("Variable") + " " + Variable + " " + QMainWindow::tr("de la tabla") + " \"" + TablasMicroDatos->at(i) + "\" " + QApplication::translate("", "est\303\241 duplicada. No puede estar en m\303\241s de una tabla.", 0));
               QApplication::processEvents();
               return false;
             }
@@ -832,9 +817,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
           QApplication::processEvents();
           return false;
       }
-      /*MemLogs->append("num " + QString::number(num, 10));
-      MemLogs->append(" tam " + QString::number((*Cadenas_Missing)->size(), 10));
-      QApplication::processEvents();*/
+
       *Num_valores_missing = num;
 
       return true;
@@ -852,9 +835,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
     QString CondicionLectura, QString NombreTablaMissing, int *Num_valores_missing, QStringList **Cadenas_Missing)
     {
       unsigned i;
-      QString CadenaSQL;      
-      QString Variable;
-      QString s;
+      QString CadenaSQL;
       unsigned NumRegistros2;
 
       MemLogs->append(QMainWindow::tr("Realizando comprobaciones de microdatos"));
@@ -877,7 +858,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
           file.close();
           return false;
         }
-        MemLogs->append(QMainWindow::tr("Fichero xml cumple con el estandar W3C/XML"));
+        //MemLogs->append(QMainWindow::tr("Fichero xml cumple con el estandar W3C/XML"));
 
         QDomElement root = doc->documentElement();
         if (!root.tagName().contains("dataroot"))
@@ -888,7 +869,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
            file.close();
            return false;
          }
-        MemLogs->append(QMainWindow::tr("Leyendo fichero xml"));
+        //MemLogs->append(QMainWindow::tr("Leyendo fichero xml"));
         QApplication::processEvents();
         if (i == 0) {
           *VariablesTrabajo = new QStringList();
@@ -919,7 +900,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
                         (*VariablesTrabajo)->append(e1.tagName());
                       else
                       {
-                        MemLogs->append("ERROR: " + QMainWindow::tr("Variable") + " " + e1.tagName() + " " + QMainWindow::tr("de la tabla") + " \"" + TablasMicroDatos->at(i) + "\" " + QApplication::translate("", "est\303\241 duplicada en algunos conjuntos de microdatos", 0, QApplication::UnicodeUTF8));
+                        MemLogs->append("ERROR: " + QMainWindow::tr("Variable") + " " + e1.tagName() + " " + QMainWindow::tr("de la tabla") + " \"" + TablasMicroDatos->at(i) + "\" " + QApplication::translate("", "est\303\241 duplicada en algunos conjuntos de microdatos", 0));
                         QApplication::processEvents();
                         return false;
                       }
@@ -945,7 +926,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
         }
         if ((i != 0) && (NumRegistros2 != NumRegistros))
         {          
-          MemLogs->append("ERROR: " + QApplication::translate("", "El tama\303\261o de la tabla", 0, QApplication::UnicodeUTF8) + " \"" + TablasMicroDatos->at(i) + "\" " + QMainWindow::tr("es incorrecto: ") + QString::number(NumRegistros2));
+          MemLogs->append("ERROR: " + QApplication::translate("", "El tama\303\261o de la tabla", 0) + " \"" + TablasMicroDatos->at(i) + "\" " + QMainWindow::tr("es incorrecto: ") + QString::number(NumRegistros2));
           QApplication::processEvents();
           return false;
         }
@@ -1012,8 +993,9 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
         }
         n = n.nextSibling();
       }
+      delete doc;
       if (!ok) {
-          MemLogs->append("ERROR: " + tr("La tabla missing no tiene al menos el valor NO_PROCEDE ó No_Procede ó NoProcede (obligatorio)", 0, QApplication::UnicodeUTF8));
+          MemLogs->append("ERROR: " + tr("La tabla missing no tiene al menos el valor NO_PROCEDE ó No_Procede ó NoProcede (obligatorio)", 0));
           QApplication::processEvents();
           return false;
       }
@@ -1027,37 +1009,21 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFrmPrincipal::LiberarConjuntosDatos()
     {
-      if (DatosCargados) {
-          //QMessageBox::warning(this, "Warning", "1", "&Ok");
-        //QMessageBox::warning(this, "Warning", "No ha introducido el tab <NOM>", "&Ok");
+      if (DatosCargados) {        
         if (!FmeVariables->isHidden()) FmeVariables->hide();
-        delete FmeVariables;
-        //QMessageBox::warning(this, "Warning", "2", "&Ok");
-        //if (!VentanaVariables->isHidden()) VentanaVariables->hide();
-        //delete VentanaVariables;
-        //QMessageBox::warning(this, "Warning", "3", "&Ok");
+        delete FmeVariables;        
         if (!FmeMicroDatos->isHidden()) FmeMicroDatos->hide();
-        delete FmeMicroDatos;
-        //QMessageBox::warning(this, "Warning", "4", "&Ok");
-        //if (!VentanaMicroDatos->isHidden()) VentanaMicroDatos->hide();
-        //delete VentanaMicroDatos;
-        //  QMessageBox::warning(this, "Warning", "5", "&Ok");
+        delete FmeMicroDatos;        
         if (!FmeEdits->isHidden()) FmeEdits->hide();
-        delete FmeEdits;
-        //if (!VentanaEdits->isHidden()) VentanaEdits->hide();
-        //delete VentanaEdits;
-        //QMessageBox::warning(this, "Warning", "6", "&Ok");
+        delete FmeEdits;       
         if (!FrmIrAVariable->isHidden()) FrmIrAVariable->hide();
-        delete FrmIrAVariable;
-        //  QMessageBox::warning(this, "Warning", "7", "&Ok");
+        delete FrmIrAVariable;       
         if (!FrmCheckPoblacion->isHidden()) FrmCheckPoblacion->hide();
-        delete FrmCheckPoblacion;
-        //  QMessageBox::warning(this, "Warning", "8", "&Ok");
+        delete FrmCheckPoblacion;       
         if (!FrmCambiarMicrodato->isHidden()) FrmCambiarMicrodato->hide();
         delete FrmCambiarMicrodato;
         if (!FrmOpciones->isHidden()) FrmOpciones->hide();
-        delete FrmOpciones;
-        //  QMessageBox::warning(this, "Warning", "10", "&Ok");
+        delete FrmOpciones;        
       }
    }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1080,7 +1046,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
    void TFrmPrincipal::ButAceptarMetafileClick()
    {
       if (FrmAbrirMetafile->GetNombreMetafile() == "")
-        QMessageBox::warning(FrmAbrirMetafile, "Warning",  QApplication::translate("", "No ha introducido ning\303\272n fichero", 0, QApplication::UnicodeUTF8), "&Ok");
+        QMessageBox::warning(FrmAbrirMetafile, "Warning",  QApplication::translate("", "No ha introducido ning\303\272n fichero", 0), "&Ok");
       else {
         if (FrmAbrirMetafile->MetafileCorrrecto())
         {
@@ -1100,30 +1066,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
    void TFrmPrincipal::MitSalirClick()
    {
     //cerrar base de datos
-    if (conexion) AdcConexionBD.close();
-    //LiberarConjuntosDatos();
-    //disconnect(PctContenedorPrincipal, SIGNAL(currentChanged ( int ) ), 0, 0);
-    //PctContenedorPrincipal->disconnect();
-    /*switch (Fase)
-    {
-      case FASE_INICIAL: PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaRangos));
-                         break;
-      case FASE_RANGOS: PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaRangos));
-                         break;
-      case FASE_TEST: PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaRangos));
-                      PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaTest));
-                      break;
-      case FASE_IMPUTACION: PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaRangos));
-                            PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaTest));
-                            PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaImputacion));
-                            break;
-      case FASE_ESTADISTICAS: PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaRangos));
-                              PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaTest));
-                              PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaImputacion));
-                              PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaEstadisticas));
-                              break;
-      default : break;
-    }*/
+    if (conexion) AdcConexionBD.close();    
     LiberarConjuntosDatos();
     disconnect(PctContenedorPrincipal, SIGNAL(currentChanged ( int ) ), 0, 0);
     PctContenedorPrincipal->clear();
@@ -1140,50 +1083,36 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
     extern bool mens1;
     mens1 = true;
     if (conexion) AdcConexionBD.close();  //cerrar base de datos o conexion
-    //LiberarConjuntosDatos();
+
     MitCerrarMetafile->setEnabled(false);
     MitAbrirMetafile->setEnabled(true);
     MitProcederPasoAPaso->setEnabled(false);
     MitProcederCompleto->setEnabled(false);
     MitOpciones->setEnabled(false);
     MitCheckPoblacion->setEnabled(false);
-    //disconnect(PctContenedorPrincipal, SIGNAL(currentChanged ( int ) ), 0, 0);
-    //PctContenedorPrincipal->disconnect();
-    //if (!PctContenedorPrincipal->isHidden()) PctContenedorPrincipal->hide();
 
     switch (Fase)
     {
-      case FASE_INICIAL: //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaRangos));
-                         break;
-      case FASE_RANGOS: //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaRangos));
-                         delete FmeVariables->GetVisualizarVar();
+      case FASE_INICIAL: break;
+      case FASE_RANGOS:  delete FmeVariables->GetVisualizarVar();
                          delete FmeMicroDatos->GetVisualizarReg();
                          delete FmeEdits->GetVisualizarEd();
                          delete FmeRangos->GetVisualizarReg();
                          break;
-      case FASE_TEST: //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaRangos));
-                      //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaTest));
-                      delete FmeVariables->GetVisualizarVar();
+      case FASE_TEST: delete FmeVariables->GetVisualizarVar();
                       delete FmeMicroDatos->GetVisualizarReg();
                       delete FmeEdits->GetVisualizarEd();
                       delete FmeRangos->GetVisualizarReg();
                       delete FmeTest->GetVisualizarReg();
                       break;
-      case FASE_IMPUTACION: //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaRangos));
-                            //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaTest));
-                            //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaImputacion));
-                            delete FmeVariables->GetVisualizarVar();
+      case FASE_IMPUTACION: delete FmeVariables->GetVisualizarVar();
                             delete FmeMicroDatos->GetVisualizarReg();
                             delete FmeEdits->GetVisualizarEd();
                             delete FmeRangos->GetVisualizarReg();
                             delete FmeTest->GetVisualizarReg();
                             delete FmeImputacion->GetVisualizarReg();
                             break;
-      case FASE_ESTADISTICAS: //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaRangos));
-                              //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaTest));
-                              //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaImputacion));
-                              //PctContenedorPrincipal->removeTab(PctContenedorPrincipal->indexOf(VentanaEstadisticas));
-                              delete FmeVariables->GetVisualizarVar();
+      case FASE_ESTADISTICAS: delete FmeVariables->GetVisualizarVar();
                               delete FmeMicroDatos->GetVisualizarReg();
                               delete FmeEdits->GetVisualizarEd();
                               delete FmeRangos->GetVisualizarReg();
@@ -1209,7 +1138,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
    void TFrmPrincipal::MitAccesstoXMLClick()
    {
     QString start = QCoreApplication::applicationDirPath();
-    QString meta = QDir::convertSeparators("/metafiles");
+    QString meta = QDir::toNativeSeparators("/metafiles");
 
     QString NombreMetafile = QFileDialog::getOpenFileName(this, QMainWindow::tr("Abrir fichero metafile"), start+meta, "VME (*.vme)");
     ficheroXML fx;
@@ -1238,12 +1167,11 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
 	  FmeTest->PanContenedor->hide();
           PctContenedorPrincipal->addTab(VentanaTest, tr("EVAL. DE OTRAS REGLAS"));
           PctContenedorPrincipal->setCurrentWidget(VentanaTest);
-          FmeTest->TestearMicroDatos();
-          //FmeTest->GbxHistogramaDblClick();
+          FmeTest->TestearMicroDatos();          
 	  Fase = TTipoFase(Fase + 1);
 	}
 	else
-          QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8),  QMainWindow::tr("Existen reglas no validadas\nCorrija las reglas e intentelo de nuevo"), "&Ok");
+          QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0),  QMainWindow::tr("Existen reglas no validadas\nCorrija las reglas e intentelo de nuevo"), "&Ok");
         break;
       case FASE_TEST:
         FmeImputacion->SetPermImputacManual(true);
@@ -1268,7 +1196,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
         FmeImputacion->SetPermImputacManual(false);
         break;
       case FASE_ESTADISTICAS:
-        QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8),  QApplication::translate("", "Se ha llegado al final del proceso de edici\303\263n e imputaci\303\263n\nGuarde los datos en la ventana de imputaci\303\263n\nGuarde el informe en la ventana de estad\303\255sticas\n\nTambi\303\251n puede cerrar este metafile para cargar uno nuevo y trabajar sobre \303\251l", 0, QApplication::UnicodeUTF8), "&Ok");
+        QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0),  QApplication::translate("", "Se ha llegado al final del proceso de edici\303\263n e imputaci\303\263n\nGuarde los datos en la ventana de imputaci\303\263n\nGuarde el informe en la ventana de estad\303\255sticas\n\nTambi\303\251n puede cerrar este metafile para cargar uno nuevo y trabajar sobre \303\251l", 0), "&Ok");
         break;
       default:
 	break;
@@ -1278,7 +1206,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
    void TFrmPrincipal::MitAcercaDeClick()
    {
     QMessageBox::about(this, QMainWindow::tr( "Acerca de Teide2" ),
-                       QApplication::translate("",  "<center><p><h1>Programa para depurar encuestas.</h1></p><p>M Salom\303\251 Hern\303\241ndez Garc\303\255a y Juan Jos\303\251 Salazar Gonz\303\241lez.</p><p>Versi\303\263n 2.0. / " , 0, QApplication::UnicodeUTF8) + QString::number(DAY, 10) + " " + mes.at(MONTH) + " " + QString::number(YEAR, 10) + QApplication::translate("", ".</p><p>Universidad de La Laguna.</p><p>Uso de las herramientas:</p><p>  Qt  http://www.qtsoftware.com/</p><p>  Qwt  http://qwt.sourceforge.net/</p></center>" , 0, QApplication::UnicodeUTF8) );
+                       QApplication::translate("",  "<center><p><h1>Programa para depurar encuestas.</h1></p><p>M Salom\303\251 Hern\303\241ndez Garc\303\255a y Juan Jos\303\251 Salazar Gonz\303\241lez.</p><p>Versi\303\263n 2.0. / " , 0) + QString::number(DAY, 10) + " " + mes.at(MONTH) + " " + QString::number(YEAR, 10) + QApplication::translate("", ".</p><p>Universidad de La Laguna.</p><p>Uso de las herramientas:</p><p>  Qt  http://www.qtsoftware.com/</p><p>  Qwt  http://qwt.sourceforge.net/</p></center>" , 0) );
    }
   
    void TFrmPrincipal::MitOpcionesClick()
@@ -1297,7 +1225,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
     TTipoFase i;
     if (!BatchMode)
     {
-      if (QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8),  QApplication::translate("", "Va a proceder a realizar el proceso completo de edici\303\263n e imputaci\303\263n\n\302\277Est\303\241 seguro que desea continuar?", 0, QApplication::UnicodeUTF8), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok) == QMessageBox::Ok) {
+      if (QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0),  QApplication::translate("", "Va a proceder a realizar el proceso completo de edici\303\263n e imputaci\303\263n\n\302\277Est\303\241 seguro que desea continuar?", 0), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok) == QMessageBox::Ok) {
         for (i = Fase; i < FASE_ESTADISTICAS; i = (TTipoFase)(i+1))
           MitProcederPasoAPasoClick();
       }
@@ -1316,7 +1244,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    void TFrmPrincipal::HacerBatchMode()
    {
-      AbrirUnMetafile(QDir::convertSeparators(QCoreApplication::applicationDirPath()+"/metafiles/"+nomMet));
+      AbrirUnMetafile(QDir::toNativeSeparators(QCoreApplication::applicationDirPath()+"/metafiles/"+nomMet));
       if (DatosCargados) MitProcederCompletoClick();
    }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

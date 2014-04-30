@@ -98,16 +98,16 @@
       menu->addAction( QObject::tr(""));
 
       this->setWindowTitle(QApplication::translate("TFmeVariables", "Form"));
-      view->setToolTip(QApplication::translate("TFmeVariables", "Rejilla de visualizaci\303\263n de variables.", 0, QApplication::UnicodeUTF8));
-      LabIrAVariablePorNombre->setText(QApplication::translate("TFmeVariables", "Ir a var. (nom)", 0, QApplication::UnicodeUTF8));
-      LabIrAtributo->setText(QApplication::translate("TFmeVariables", "Ir a atributo", 0, QApplication::UnicodeUTF8));
-      LabIrAVariablePorNumero->setText(QApplication::translate("TFmeVariables", "Ir a var. (num)", 0, QApplication::UnicodeUTF8));
-      CbxIrAVariablePorNombre->setToolTip(QApplication::translate("TFmeVariables", "Seleccione la variable que desea visualizar.", 0, QApplication::UnicodeUTF8));
-      CbxIrAAtributo->setToolTip(QApplication::translate("TFmeVariables", "Seleccione el atributo que desea visualizar.", 0, QApplication::UnicodeUTF8));
-      EdtIrAVariablePorNumero->setToolTip(QApplication::translate("TFmeVariables", "Indique un n\303\272mero de variable y pulse ENTER parar ir a ella.", 0, QApplication::UnicodeUTF8));
-      VisualizarVar->setToolTip(QApplication::translate("TFmeVariables", "Seleccione el modo de vizualizaci\303\263n de las variables.", 0, QApplication::UnicodeUTF8));
-      VisualizarVar->addItem(QApplication::translate("TFmeVariables", "Visualizar todas", 0, QApplication::UnicodeUTF8));
-      VisualizarVar->addItem(QApplication::translate("TFmeVariables", "Visualizar variables de trabajo", 0, QApplication::UnicodeUTF8));
+      view->setToolTip(QApplication::translate("TFmeVariables", "Rejilla de visualizaci\303\263n de variables.", 0));
+      LabIrAVariablePorNombre->setText(QApplication::translate("TFmeVariables", "Ir a var. (nom)", 0));
+      LabIrAtributo->setText(QApplication::translate("TFmeVariables", "Ir a atributo", 0));
+      LabIrAVariablePorNumero->setText(QApplication::translate("TFmeVariables", "Ir a var. (num)", 0));
+      CbxIrAVariablePorNombre->setToolTip(QApplication::translate("TFmeVariables", "Seleccione la variable que desea visualizar.", 0));
+      CbxIrAAtributo->setToolTip(QApplication::translate("TFmeVariables", "Seleccione el atributo que desea visualizar.", 0));
+      EdtIrAVariablePorNumero->setToolTip(QApplication::translate("TFmeVariables", "Indique un n\303\272mero de variable y pulse ENTER parar ir a ella.", 0));
+      VisualizarVar->setToolTip(QApplication::translate("TFmeVariables", "Seleccione el modo de vizualizaci\303\263n de las variables.", 0));
+      VisualizarVar->addItem(QApplication::translate("TFmeVariables", "Visualizar todas", 0));
+      VisualizarVar->addItem(QApplication::translate("TFmeVariables", "Visualizar variables de trabajo", 0));
 
       QObject::connect(CbxIrAVariablePorNombre, SIGNAL(activated ( const int & ) ), this, SLOT(CbxIrAVariablePorNombreCloseUp(const int &)));
       QObject::connect(VisualizarVar, SIGNAL(activated ( const int & ) ), this, SLOT(VisualizarVarCloseUp(const int &)));
@@ -144,8 +144,7 @@
 
       // Consulta de Variables
       QString Campos = RealizarConsultaVariables();
-      //MemLogs->append("num atr0 " + QString::number(NumAtributos, 10));
-      //QApplication::processEvents();
+
       if (Campos == "false") *correcto = false;
       else {
         // Inicializar el vector de informacion de variables
@@ -296,15 +295,16 @@
         QDomElement e, e1;
         QDomNode n1;
 
-        QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTablaMissing));
+        QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTablaMissing));
         if ((!file .open(QIODevice::ReadOnly)) || (!doc->setContent(&file)))
         {
           MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombreTablaMissing + "\"]");
           QApplication::processEvents();
           file.close();
+          delete doc;
           return false;
         }
-        MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
+        //MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
         QDomElement root = doc->documentElement();
         if (!root.tagName().contains("dataroot"))
          if (root.tagName() != "ROWSET")
@@ -312,9 +312,10 @@
            MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombreTablaMissing + "\"]");
            QApplication::processEvents();
            file.close();
+           delete doc;
            return false;
          }
-        MemLogs->append(tr("Leyendo fichero xml"));
+        //MemLogs->append(tr("Leyendo fichero xml"));
         QApplication::processEvents();
         CadenaSQL = NombreTablaMissing;
         CadenaSQL.replace(".xml", "", Qt::CaseInsensitive);
@@ -342,6 +343,7 @@
           n = n.nextSibling();
         }
         file.close();
+        delete doc;
       }else {
         CadenaSQL = "SELECT CODIGO, DESCRIPCION FROM " + NombreTablaMissing;
         QSqlQuery query(CadenaSQL, *AdqConsulta);
@@ -429,15 +431,16 @@
         infvar = rang = filt = nom = infofilt = sent = id = tipo = imp = nproc = mapping = impnum = peso = "";
         QMap<QString, QString> miss;
 
-        QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+        QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
         if ((!file .open(QIODevice::ReadOnly)) || (!doc->setContent(&file)))
         {
           MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombreTabla + "\"]");
           QApplication::processEvents();
           file.close();
+          delete doc;
           return;
         }
-        MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
+        //MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
         QDomElement root = doc->documentElement();
         if (!root.tagName().contains("dataroot"))
          if (root.tagName() != "ROWSET")
@@ -445,9 +448,10 @@
            MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombreTabla + "\"]");
            QApplication::processEvents();
            file.close();
+           delete doc;
            return;
          }
-        MemLogs->append(tr("Leyendo fichero xml"));
+        //MemLogs->append(tr("Leyendo fichero xml"));
         QApplication::processEvents();
         str = NombreTabla;
         str.replace(".xml", "", Qt::CaseInsensitive);
@@ -508,8 +512,7 @@
                     }
                   imp = "";
                 }else
-                  if (NOPROCEDE.contains(listaH.at(j)))  {
-                    //MemLogs->append("nop "+nproc+" filt "+filt);
+                  if (NOPROCEDE.contains(listaH.at(j)))  {                    
                     if (nproc.contains("0")) {
                         if (!filt.isEmpty()) {
                           MatrizVariablesS[IndiceVariable][j] = "True";
@@ -536,7 +539,7 @@
                     }else
                          if (listaH.at(j) == "MAPPING") { // si es mapping
                             if (!mapping.isEmpty()) {
-                              QFile filem(QDir::convertSeparators(NombreBaseDatos + mapping + ".xml"));
+                              QFile filem(QDir::toNativeSeparators(NombreBaseDatos + mapping + ".xml"));
                               if (filem.exists ()) {    // si existe la tabla, en color negro                                
                                 m.append(mapping);
                               }
@@ -601,8 +604,7 @@
               }              
             } // fin for
             filt = "";
-            nom = "";
-            //MemLogs->append("Aviso "+Aviso);
+            nom = "";            
             if (filtro_vacio && (pos != -1)) {
                 MatrizVariablesS[IndiceVariable][pos] = "";
                 MatrizVariablesT[i][pos] = "";
@@ -643,7 +645,7 @@
                     }else
                          if (listaH.at(j) == "MAPPING") { // si es mapping
                             if (!mapping.isEmpty()) {
-                              QFile filem(QDir::convertSeparators(NombreBaseDatos + mapping + ".xml"));
+                              QFile filem(QDir::toNativeSeparators(NombreBaseDatos + mapping + ".xml"));
                               if (filem.exists ()) {    // si existe la tabla, en color negro
                                 m.append(mapping);
                               }
@@ -707,10 +709,9 @@
           n = n.nextSibling();
         }
         file.close();
+        delete doc;
       }else {        
-        Campos += ", SENTIDO_FILTRO";
-        //MemLogs->append("num atrX "+QString::number(NumAtributos, 10));
-        //QApplication::processEvents();
+        Campos += ", SENTIDO_FILTRO";        
         QSqlQuery query1("SELECT " + Campos + ", ID FROM " + NombreTabla + " ORDER BY ID", *AdqConsulta);
         QSqlRecord record1 = query1.record();
         if (record1.indexOf("SENTIDO_FILTRO") == -1) Campos.remove(", SENTIDO_FILTRO");
@@ -850,10 +851,7 @@
     void TFmeVariables::ChequearCompletitudAtributos()
     {
       unsigned i, j;
-      QString Atributo;
-      //MemLogs->append("num var "+QString::number(NumVariables, 10));
-      //MemLogs->append("num atr "+QString::number(NumAtributos, 10));
-      //QApplication::processEvents();
+      QString Atributo;     
       for (i = 0; i < (unsigned)NumVariables; i++)
       {
         for (j = 0; j < (unsigned)NumAtributos; j++)
@@ -863,12 +861,11 @@
           Atributo = MatrizVariablesS[i][j];          
           if (Atributo.isEmpty())
           {
-            MemLogs->append("ERROR: i" + QString::number(i+1) + tr(" Atributo ") + listaH.at(j) + "; " + (QString)STR0049 + " " + GetNombreVariable(i) + " " + QApplication::translate("", "est\303\241 vac\303\255o", 0, QApplication::UnicodeUTF8));
+            MemLogs->append("ERROR: i" + QString::number(i+1) + tr(" Atributo ") + listaH.at(j) + "; " + (QString)STR0049 + " " + GetNombreVariable(i) + " " + QApplication::translate("", "est\303\241 vac\303\255o", 0));
             QApplication::processEvents();
           }
         }
-      }
-      //MemLogs->append("fin");
+      }      
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Carga los valores missing.
@@ -991,7 +988,7 @@
         QDomElement e, e1;
         QDomNode n1;
 
-        QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTablaMapping + ".xml"));
+        QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTablaMapping + ".xml"));
         if ((!file .open(QIODevice::ReadOnly)) || (!doc->setContent(&file)))
         {
           file.close();
@@ -1003,6 +1000,7 @@
          if (root.tagName() != "ROWSET")
          {
            file.close();
+           delete doc;
            return;
          }
         Codigos = new QStringList();
@@ -1035,6 +1033,7 @@
 
         delete Codigos;
         delete Literales;
+        delete doc;
       }else {
         if (Excel) CadenaSQL = "SELECT * FROM [" + NombreTablaMapping + "$] ORDER BY CODIGO";
         else CadenaSQL = "SELECT * FROM " + NombreTablaMapping + " ORDER BY CODIGO";
@@ -1100,7 +1099,7 @@
         if (TablaMapping != "")
         {
           if (Xml) {
-            QFile file(QDir::convertSeparators(NombreBaseDatos + TablaMapping));
+            QFile file(QDir::toNativeSeparators(NombreBaseDatos + TablaMapping));
             if (file.exists()) {
               VectorInfoVariables[j].MappingValido = true;
             }else {
@@ -1189,7 +1188,7 @@
 		  Resultado = GetValoresDeRegresion((char*)Imp.toLatin1().data(), &mc);
 		  if (!Resultado)
 		  {
-		    Error = QApplication::translate("", "Ecuaci\303\263n de regresi\303\263n", 0, QApplication::UnicodeUTF8) + " " + Imp + "; " + (QString)STR0049 + " " + GetNombreVariable(i) + " " + QApplication::translate("", "est\303\241 mal escrita", 0, QApplication::UnicodeUTF8);
+            Error = QApplication::translate("", "Ecuaci\303\263n de regresi\303\263n", 0) + " " + Imp + "; " + (QString)STR0049 + " " + GetNombreVariable(i) + " " + QApplication::translate("", "est\303\241 mal escrita", 0);
                     MemLogs->append("ERROR: " + Error);
                     QApplication::processEvents();
 		  }
@@ -1202,7 +1201,7 @@
 		      v = GetIndiceVariable(Var);
 		      if ((v < 0) && (Var != "B0"))
                       {
-                        Error = QApplication::translate("", "Ecuaci\303\263n de regresi\303\263n", 0, QApplication::UnicodeUTF8) + " " + Imp + "; " + (QString)STR0049 + " " + GetNombreVariable(i) + " " + QApplication::translate("", "est\303\241 mal escrita", 0, QApplication::UnicodeUTF8);
+                        Error = QApplication::translate("", "Ecuaci\303\263n de regresi\303\263n", 0) + " " + Imp + "; " + (QString)STR0049 + " " + GetNombreVariable(i) + " " + QApplication::translate("", "est\303\241 mal escrita", 0);
                         MemLogs->append("ERROR: " + Error);
                         QApplication::processEvents();
                       }                      
@@ -1633,7 +1632,7 @@
       for (int i = 0; i < NOPROCEDE.size(); i++)
         if (Cadenas_Missing->contains(NOPROCEDE.at(i)))
             Noprocede = NOPROCEDE.at(i);
-      //Edit = "IF NOT (" + Filtro + ") THEN (" + NombreVariable + " = " + Noprocede + ")";
+
       if (MatrizVariablesS[IndiceVariable][IndiceColumna] == "a")
             Edit = "IF NOT(" + Filtro + ") THEN (" + NombreVariable + " = " + Noprocede + ")";
       else
@@ -1642,15 +1641,7 @@
         else
             if (MatrizVariablesS[IndiceVariable][IndiceColumna] == "c")
                 Edit = "(" + Filtro + ") <=> (" + NombreVariable + " != " + Noprocede + ")";
-      /*if (model->data(view->indexAt(QPoint(view->columnViewportPosition(GetIndiceAtributo("SENTIDO_FILTRO")), view->rowViewportPosition(IndiceVariable))), Qt::DisplayRole) == "a")
-            Edit = "IF NOT(" + Filtro + ") THEN (" + NombreVariable + " = " + Noprocede + ")";
-      else
-        if (model->data(view->indexAt(QPoint(view->columnViewportPosition(GetIndiceAtributo("SENTIDO_FILTRO")), view->rowViewportPosition(IndiceVariable))), Qt::DisplayRole) == "b")
-            Edit = "IF (" + Filtro + ") then (" + NombreVariable + " != " + Noprocede + ")";
-        else
-            if (model->data(view->indexAt(QPoint(view->columnViewportPosition(GetIndiceAtributo("SENTIDO_FILTRO")), view->rowViewportPosition(IndiceVariable))), Qt::DisplayRole) == "c")
-                Edit = "(" + Filtro + ") <=> (" + NombreVariable + " != " + Noprocede + ")";*/
-      return Edit;      
+      return Edit;
     }
 
     unsigned TFmeVariables::GetNumFiltrosVariable(unsigned IndiceVariable)
@@ -1762,10 +1753,8 @@
 
       void TFmeVariables::FijarCantidadDatos()
       {
-          QSqlQuery query("SELECT * FROM " + NombreTabla, *AdqConsulta);
-          //QSqlRecord record = query.record();
-          NumVariables = query.size();
-          //NumAtributos = record.count(); // devuelve el numero de campo del record
+          QSqlQuery query("SELECT * FROM " + NombreTabla, *AdqConsulta);          
+          NumVariables = query.size();          
       }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Comprueba que el tipo de rango concuerda con los valores de rango dados.
@@ -1781,12 +1770,11 @@
           {
             Rango = GetValorAtributo(i, ATR_RANGO);
             Tipo = GetTipoVariable(i);
-            Resultado = GetValoresDeRango((char*)Rango.toLatin1().data(), &VectorInfoVariables[i].ValoresRango);
-            //qDebug() << VectorInfoVariables[i].ValoresRango.front() << " " << VectorInfoVariables[i].ValoresRango.back();
+            Resultado = GetValoresDeRango((char*)Rango.toLatin1().data(), &VectorInfoVariables[i].ValoresRango);            
             Error = tr("Rango") + " " + Rango + "; " + (QString)STR0049 + " " + GetNombreVariable(i);
             if (Resultado == ERROR_RANGO)
             {
-              Error += " " + QApplication::translate("", "est\303\241 mal escrita", 0, QApplication::UnicodeUTF8);
+              Error += " " + QApplication::translate("", "est\303\241 mal escrita", 0);
               MemLogs->append("ERROR: " + Error);
               QApplication::processEvents();
             }
@@ -1830,7 +1818,7 @@
         QDomElement e, e1;
         QDomNode n1;
 
-        QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+        QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
         if ((file.open(QIODevice::ReadOnly)) && (doc->setContent(&file))) {
           QDomElement root = doc->documentElement();
           n = root.firstChild();
@@ -1857,6 +1845,7 @@
           }
           file.close();
         }
+        delete doc;
       }else {
         double entero;        
         QSqlQuery query("SELECT NOMBRE, TIPO FROM " + NombreTabla + " ORDER BY ID", *AdqConsulta);
@@ -1893,10 +1882,7 @@
           LabBarraEstado2->setText("VARIABLE " + QString::number(Fila+1, 10) + "/" + QString::number(numvar, 10) + "  (" + listaH.at(Columna) + ")");
 
           if (Fijar) {
-            view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(Columna), view->rowViewportPosition(Fila))));
-            /*QColor rojo = view->currentIndex().model()->data(view->currentIndex(), Qt::BackgroundRole).value<QColor>();
-            QString color = rojo.name();
-            setStyleSheet("selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 " + color + ", stop: 1 gray);");*/
+            view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(Columna), view->rowViewportPosition(Fila))));            
           }
         }
     }
@@ -1931,15 +1917,16 @@
         QDomElement e, e1;
         QDomNode n1;
         QString nom, tipo;
-        QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+        QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
         if ((!file.open(QIODevice::ReadOnly)) || (!doc->setContent(&file)))
         {
           MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombreTabla + "\"]");
           QApplication::processEvents();
           file.close();
+          delete doc;
           return "false";
         }
-        MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
+        //MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
         QDomElement root = doc->documentElement();
         if (!root.tagName().contains("dataroot"))
          if (root.tagName() != "ROWSET")
@@ -1947,9 +1934,10 @@
            MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombreTabla + "\"]");
            QApplication::processEvents();
            file.close();
+           delete doc;
            return "false";
          }
-        MemLogs->append(tr("Leyendo fichero xml"));
+        //MemLogs->append(tr("Leyendo fichero xml"));
         QApplication::processEvents();
 
         ListaVariablesIgnorables = new QStringList();
@@ -1994,6 +1982,7 @@
           tam++;
         }
         file.close();
+        delete doc;
       }else {        
         CadenaSQL = "SELECT " + Campos + ", ID FROM " + NombreTabla + " ORDER BY ID";      
         QSqlQuery query(CadenaSQL, *AdqConsulta);
@@ -2034,16 +2023,14 @@
         for (i = 0; i < (unsigned)ListaVariables->size(); i++)
           if (!ListaCheck->contains(ListaVariables->at(i)))
           {            
-            MemLogs->append("ERROR: " + (QString)STR0049 + " " + ListaVariables->at(i) + " " + QApplication::translate("", "se usa en los microdatos pero no est\303\241 definida en las variables. Compruebe que esa variable se llama igual en los microdatos y el campo nombre de variables. Compruebe MAYUSCULAS y minusculas.", 0, QApplication::UnicodeUTF8));
+            MemLogs->append("ERROR: " + (QString)STR0049 + " " + ListaVariables->at(i) + " " + QApplication::translate("", "se usa en los microdatos pero no est\303\241 definida en las variables. Compruebe que esa variable se llama igual en los microdatos y el campo nombre de variables. Compruebe MAYUSCULAS y minusculas.", 0));
             QApplication::processEvents();  return "false"; break;
           }
       }
       delete ListaCheck;
 
       NumVariables = ListaVariables->size();
-      NumAtributos = NUM_ATRIBUTOS_VARIABLE + Num_valores_missing;
-      //MemLogs->append("Num atr1 " + QString::number(NumAtributos, 10));
-      //QApplication::processEvents();
+      NumAtributos = NUM_ATRIBUTOS_VARIABLE + Num_valores_missing;      
       return Campos;
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2058,8 +2045,8 @@
       double rangoMax;
 
       TipoVariable = GetTipoVariable(IndiceVariable);
-      //try
-      //{
+      try
+      {
         // Admision de valores missing
         for (j = 0; j < Num_valores_missing; j++)
         {
@@ -2094,37 +2081,34 @@
             rangoMin = VectorInfoVariables[IndiceVariable].ValoresRango.front();
             rangoMax = VectorInfoVariables[IndiceVariable].ValoresRango.back();
             if ((fabs(Valor - rangoMin) < 0.000001) || (fabs(Valor - rangoMax) < 0.000001) || ((Valor > rangoMin) && (Valor < rangoMax)))
-            //if ((Valor >= VectorInfoVariables[IndiceVariable].ValoresRango.front()) && (Valor <= VectorInfoVariables[IndiceVariable].ValoresRango.back()) && ((Valor - floor(Valor)) == 0))
-            //if ((Valor >= rangoMin) && (Valor <= rangoMax) && ((Valor - floor(Valor)) == 0))
-            //if ((Valor - VectorInfoVariables[IndiceVariable].ValoresRango.front()>= 0.0000001) && (Valor - VectorInfoVariables[IndiceVariable].ValoresRango.back()<=0.0000001) && ((Valor - floor(Valor)) == 0))
-              return true;
+               return true;
             else
               return false;
           default:
             return false;
         }
-      /*}
+      }
       catch (...)
       {
         return false;
-      }*/
+      }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Indica si una variable esta en un filtro.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     bool TFmeVariables::VariableEnFiltro(unsigned IndiceVariable, unsigned IndiceFiltro)
     {
-      //try
-      //{
+      try
+      {
         if (VectorInfoVariables[IndiceFiltro].VariablesDeFiltro.contains(IndiceVariable))
           return true;
         else
           return false;
-      /*}
+      }
       catch (...)
       {
         return false;
-      }*/
+      }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Evalua el filtro.
@@ -2148,7 +2132,7 @@
         Filtro = GetValorAtributo(i, ATR_FILTRO);        
         if ((!Filtro.isEmpty()) && (EvaluarExpresionFiltros((char*)Filtro.toLatin1().data(), &MapTest, &mappM) > 1))
         {          
-          MemLogs->append("ERROR: " + tr("Filtro") + " " + Filtro + "; " + (QString)STR0049 + " " + GetNombreVariable(i) + " " + QApplication::translate("", "est\303\241 mal escrita", 0, QApplication::UnicodeUTF8));
+          MemLogs->append("ERROR: " + tr("Filtro") + " " + Filtro + "; " + (QString)STR0049 + " " + GetNombreVariable(i) + " " + QApplication::translate("", "est\303\241 mal escrita", 0));
           QApplication::processEvents();
           return false;
         }        

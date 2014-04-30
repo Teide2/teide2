@@ -60,6 +60,7 @@ public slots:
 
 private:
     QWidget* padre;
+    QString information;
 
 };
 

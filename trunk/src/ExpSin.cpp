@@ -1326,14 +1326,14 @@ TResultado EvaluarExpresion(char* Expresion, QMap<QString,double> *MapValores, Q
         if ((ErrorSintactico == false) && (ErrorLexico == false)){
                 return (TResultado)Resultado;	}				/* Sin errores */
         if ((ErrorSintactico == true) && (ErrorLexico == false)){
-            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), "Error Sintactico\n" + yychar, QMessageBox::Ok, QMessageBox::NoButton);
+            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), "Error Sintactico\n" + yychar, QMessageBox::Ok, QMessageBox::NoButton);
             return ERROR_SINTACTICO;}				/* Error sintáctico */
         if ((ErrorSintactico == false) && (ErrorLexico == true)){
-            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), "Error Lexico\n" + cadena2, QMessageBox::Ok, QMessageBox::NoButton);
+            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), "Error Lexico\n" + cadena2, QMessageBox::Ok, QMessageBox::NoButton);
                 return ERROR_LEXICO;	}						/* Error léxico */
         if ((ErrorSintactico == true) && (ErrorLexico == true)){
             //QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), cadena, QMessageBox::Ok, QMessageBox::NoButton);
-            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), "Error Sintactico y Lexico\n" + cadena2 , QMessageBox::Ok, QMessageBox::NoButton);
+            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), "Error Sintactico y Lexico\n" + cadena2 , QMessageBox::Ok, QMessageBox::NoButton);
             return ERROR_SINTACTICO_Y_LEXICO;}	/* Error sintáctico y léxico */
 
   return (TResultado)Resultado;
@@ -1355,24 +1355,24 @@ TResultado EvaluarExpresionFiltros(char* Expresion, QMap<QString,double> *MapVal
   yyparse();
   if ((!cadena.isEmpty()) && (!botonCancelar)) {
      if (mens1) {
-       ret = QMessageBox::warning(0, QApplication::translate("", "Warning en un filtro", 0, QApplication::UnicodeUTF8), "En el filtro " + (QString)Expresion + ".\nEl operador " + cadena + " devuelve TRUE (1) ó FALSE (0).", "Ok" , "Ignorar mensajes");
+       ret = QMessageBox::warning(0, QApplication::translate("", "Warning en un filtro", 0), "En el filtro " + (QString)Expresion + ".\nEl operador " + cadena + " devuelve TRUE (1) ó FALSE (0).", "Ok" , "Ignorar mensajes");
        if (ret == 1) botonCancelar = true;
-       //QMessageBox::warning(0, QApplication::translate("", "Warning en un edit", 0, QApplication::UnicodeUTF8), "valor ret " + QString::number(ret, 10), "Ok");
+       //QMessageBox::warning(0, QApplication::translate("", "Warning en un edit", 0), "valor ret " + QString::number(ret, 10), "Ok");
      }else
-       ret = QMessageBox::warning(0, QApplication::translate("", "Warning en un filtro", 0, QApplication::UnicodeUTF8), "En el filtro " + (QString)Expresion + ".\nEl operador " + cadena + " devuelve TRUE (1) ó FALSE (0).", "Ok");
+       ret = QMessageBox::warning(0, QApplication::translate("", "Warning en un filtro", 0), "En el filtro " + (QString)Expresion + ".\nEl operador " + cadena + " devuelve TRUE (1) ó FALSE (0).", "Ok");
   }
   cadena = "";
         if ((ErrorSintactico == false) && (ErrorLexico == false)){
                 return (TResultado)Resultado;	}				/* Sin errores */
         if ((ErrorSintactico == true) && (ErrorLexico == false)){
-            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), "Error Sintactico\n" + yychar, QMessageBox::Ok, QMessageBox::NoButton);
+            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), "Error Sintactico\n" + yychar, QMessageBox::Ok, QMessageBox::NoButton);
             return ERROR_SINTACTICO;}				/* Error sintáctico */
         if ((ErrorSintactico == false) && (ErrorLexico == true)){
-            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), "Error Lexico\n" + cadena2, QMessageBox::Ok, QMessageBox::NoButton);
+            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), "Error Lexico\n" + cadena2, QMessageBox::Ok, QMessageBox::NoButton);
                 return ERROR_LEXICO;	}						/* Error léxico */
         if ((ErrorSintactico == true) && (ErrorLexico == true)){
-            //QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), cadena, QMessageBox::Ok, QMessageBox::NoButton);
-            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), "Error Sintactico y Lexico\n" + cadena2 , QMessageBox::Ok, QMessageBox::NoButton);
+            //QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), cadena, QMessageBox::Ok, QMessageBox::NoButton);
+            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), "Error Sintactico y Lexico\n" + cadena2 , QMessageBox::Ok, QMessageBox::NoButton);
             return ERROR_SINTACTICO_Y_LEXICO;}	/* Error sintáctico y léxico */
 
   return (TResultado)Resultado;
@@ -1396,14 +1396,14 @@ TResultado EvaluarExpresion(char* Expresion, QMap<QString,double> *MapValores, Q
   yyparse();
   if ((!cadena.isEmpty()) && (!botonCancelar)) {
      if (mens1) {
-       ret = QMessageBox::warning(0, QApplication::translate("", "Warning en una regla", 0, QApplication::UnicodeUTF8), "En la regla " + (QString)Expresion + ".\nEl operador " + cadena + " devuelve TRUE (1) ó FALSE (0).", "Ok" , "Ignorar mensajes");
+       ret = QMessageBox::warning(0, QApplication::translate("", "Warning en una regla", 0), "En la regla " + (QString)Expresion + ".\nEl operador " + cadena + " devuelve TRUE (1) ó FALSE (0).", "Ok" , "Ignorar mensajes");
        if (ret == 1) botonCancelar = true;
-       //QMessageBox::warning(0, QApplication::translate("", "Warning en un edit", 0, QApplication::UnicodeUTF8), "valor ret " + QString::number(ret, 10), "Ok");
+       //QMessageBox::warning(0, QApplication::translate("", "Warning en un edit", 0), "valor ret " + QString::number(ret, 10), "Ok");
      }else
-       ret = QMessageBox::warning(0, QApplication::translate("", "Warning en una regla", 0, QApplication::UnicodeUTF8), "En la regla " + (QString)Expresion + ".\nEl operador " + cadena + " devuelve TRUE (1) ó FALSE (0).", "Ok");
+       ret = QMessageBox::warning(0, QApplication::translate("", "Warning en una regla", 0), "En la regla " + (QString)Expresion + ".\nEl operador " + cadena + " devuelve TRUE (1) ó FALSE (0).", "Ok");
      cadena = "";
   }
-  //QMessageBox::warning(0, QApplication::translate("", "Warning en un edit", 0, QApplication::UnicodeUTF8), "valor ret " + QString::number(ret, 10) + " cadena " + cadena, "Ok");
+  //QMessageBox::warning(0, QApplication::translate("", "Warning en un edit", 0), "valor ret " + QString::number(ret, 10) + " cadena " + cadena, "Ok");
 
   if ((ErrorSintactico == false) && (ErrorLexico == false)){
      return (TResultado)Resultado;	}				/* Sin errores */

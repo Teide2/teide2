@@ -43,11 +43,11 @@ TFrmPedirExpresion::TFrmPedirExpresion(QWidget* parent, const char* name, Qt::Wi
       ButCancelar->setObjectName(QString::fromUtf8("ButCancelar"));
       ButCancelar->setGeometry(QRect(136, 30, 73, 25));
 
-      this->setWindowTitle(QApplication::translate("TFrmPedirExpresion", "Petici\303\263n de expresi\303\263n", 0, QApplication::UnicodeUTF8));
-      Texto->setText(QApplication::translate("TFrmPedirExpresion", "Introduzca la expresi\303\263n ", 0, QApplication::UnicodeUTF8));
-      EdtExpresion->setToolTip(QApplication::translate("TFrmPedirExpresion", "Expresi\303\263n para visualizar unos determinados registros", 0, QApplication::UnicodeUTF8));
-      ButAceptar->setText(QApplication::translate("TFrmPedirExpresion", "&Aceptar", 0, QApplication::UnicodeUTF8));
-      ButCancelar->setText(QApplication::translate("TFrmPedirExpresion", "&Cancelar", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFrmPedirExpresion", "Petici\303\263n de expresi\303\263n", 0));
+      Texto->setText(QApplication::translate("TFrmPedirExpresion", "Introduzca la expresi\303\263n ", 0));
+      EdtExpresion->setToolTip(QApplication::translate("TFrmPedirExpresion", "Expresi\303\263n para visualizar unos determinados registros", 0));
+      ButAceptar->setText(QApplication::translate("TFrmPedirExpresion", "&Aceptar", 0));
+      ButCancelar->setText(QApplication::translate("TFrmPedirExpresion", "&Cancelar", 0));
 
       QMetaObject::connectSlotsByName(this);
     }

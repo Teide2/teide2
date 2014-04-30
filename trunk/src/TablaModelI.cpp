@@ -31,13 +31,15 @@
   }
   void TablaModelI::setCurrencyMap(QString ** &map)   // cuando modifiquemos la matriz
   {
-     distances = map;     
-     reset();
+      beginResetModel();
+      distances = map;
+      endResetModel();      
   }
   void TablaModelI::setCurrencyCabec(QStringList &cabecV)   // cuando modifiquemos las cabeceras
   {
+     beginResetModel();
      cabeceraV = cabecV;
-     reset();
+     endResetModel();     
   }
   void TablaModelI::setMatrizImputacion(bool **m) { MatrizImputacion = m;}
   void TablaModelI::setConjuntoRegistrosDonantes(QSet<unsigned> crd) { ConjuntoRegistrosDonantes = crd;}
@@ -97,7 +99,6 @@
         return QColor(color);
       }else   return QColor(Qt::white);    // blanco
     }
-    //QWidget::setStyleSheet("selection-color: black;selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 red, stop: 1 gray);");
     return QVariant();
   }
 
@@ -134,12 +135,7 @@
     }
     if (role == Qt::ForegroundRole)
       return QColor(Qt::white);
-    if (role == Qt::FontRole) {
-      QFont font;
-      font.setFamily(("Tahoma"));
-      font.setPointSize( 8 );      
-      return QFont(font);
-    }
+
     return QVariant();
   }
 

@@ -26,11 +26,11 @@
 
 #include <QtCore/QVariant>
 #include <QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QLabel>
-#include <QtGui/QWidget>
+#include <QApplication>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QLabel>
+#include <QWidget>
 #include <QMessageBox>
 
 class TFrmPedirExpresion : public QFrame

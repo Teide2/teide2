@@ -28,9 +28,6 @@ TFrmCheckPoblacion::TFrmCheckPoblacion(QWidget* parent, const char* name, Qt::Wi
       if (this->objectName().isEmpty())
         this->setObjectName(QString::fromUtf8("TFrmCheckPoblacion"));
       this->resize(403, 384);
-      QFont font;
-      font.setFamily(QString::fromUtf8("Tahoma"));
-      this->setFont(font);
 
       MemInfo = new QTextEdit(this);
       MemInfo->setObjectName(QString::fromUtf8("MemInfo"));
@@ -46,8 +43,8 @@ TFrmCheckPoblacion::TFrmCheckPoblacion(QWidget* parent, const char* name, Qt::Wi
       ButGuardarInforme->setObjectName(QString::fromUtf8("ButGuardarInforme"));
       ButGuardarInforme->setGeometry(QRect(308, 355, 91, 25));
 
-      this->setWindowTitle(QApplication::translate("TFrmCheckPoblacion", "Chequear poblaci\303\263n...", 0, QApplication::UnicodeUTF8));
-      ButGuardarInforme->setText(QApplication::translate("TFrmCheckPoblacion", "Guardar", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFrmCheckPoblacion", "Chequear poblaci\303\263n...", 0));
+      ButGuardarInforme->setText(QApplication::translate("TFrmCheckPoblacion", "Guardar", 0));
 
       QObject::connect(ButGuardarInforme, SIGNAL(clicked()), this, SLOT(ButGuardarInformeClick()));
       QMetaObject::connectSlotsByName(this);
@@ -63,7 +60,7 @@ TFrmCheckPoblacion::TFrmCheckPoblacion(QWidget* parent, const char* name, Qt::Wi
       padre = parent;
       NombBD1 = BaseDatos;
       TablaDatos1 = TablaDatos;
-      QString valor = NombBD1.section(QDir::convertSeparators("/"), -1);
+      QString valor = NombBD1.section(QDir::toNativeSeparators("/"), -1);
 
       if ((valor.contains( ".mdb" ) > 0) || (valor.contains( ".xls" ) > 0)) {
         Oracle = false;
@@ -120,7 +117,7 @@ TFrmCheckPoblacion::TFrmCheckPoblacion(QWidget* parent, const char* name, Qt::Wi
     void TFrmCheckPoblacion::ButGuardarInformeClick()
     {      
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators(start + "/" + DIRECTORIO_STATS);
+      QString meta = QDir::toNativeSeparators(start + "/" + DIRECTORIO_STATS);
       QString NombreFichero = QFileDialog::getSaveFileName(this, tr("Guardar fichero informe" ), meta, "TXT (*.txt)");
 
       if (!NombreFichero.isEmpty()) {
@@ -244,7 +241,7 @@ TFrmCheckPoblacion::TFrmCheckPoblacion(QWidget* parent, const char* name, Qt::Wi
            }*/
         }else{
            start = QCoreApplication::applicationDirPath();
-           meta = QDir::convertSeparators(start+"/data/"+BD2);
+           meta = QDir::toNativeSeparators(start+"/data/"+BD2);
            QFile file(meta);
            if ((file.exists()) || (Oracle)){   //comprobar que la BD2 existe
              if (!DosBD) {
@@ -426,7 +423,7 @@ TFrmCheckPoblacion::TFrmCheckPoblacion(QWidget* parent, const char* name, Qt::Wi
     {
         TFrmAyudaChequear *ayudaCheq = new TFrmAyudaChequear(0, "AyudaChequear", Qt::Widget, padre);
         nuevo = new QScrollArea(0);
-        nuevo->setWindowTitle(QApplication::translate("TFrmCheckPoblacion", "Ayuda", 0, QApplication::UnicodeUTF8));
+        nuevo->setWindowTitle(QApplication::translate("TFrmCheckPoblacion", "Ayuda", 0));
         nuevo->setWindowFlags(Qt::WindowMinimizeButtonHint);
         nuevo->setMaximumSize(ayudaCheq->width()+5, ayudaCheq->height()+5);
         nuevo->setGeometry(padre->width()/2 - 5, 35, ayudaCheq->width()+5, 800);

@@ -32,24 +32,28 @@
 
   void TablaModelT::setCurrencyMap(QString ** &map)   // cuando modifiquemos la matriz
   {
-     distances = map;     
-     reset();
+     beginResetModel();
+     distances = map;
+     endResetModel();     
   }
   void TablaModelT::setCurrencyCabec(QStringList &cabecH, QStringList &cabecV)   // cuando modifiquemos las cabeceras
   {
+     beginResetModel();
      cabeceraH = cabecH;
      cabeceraV = cabecV;
-     reset();
+     endResetModel();     
   }
   void TablaModelT::setCurrencyCabecV(QStringList &cabecV)   // cuando modifiquemos la cabecera vertical
   {
+     beginResetModel();
      cabeceraV = cabecV;
-     reset();
+     endResetModel();     
   }
   void TablaModelT::setCurrencyCabecH(QStringList &cabecH)   // cuando modifiquemos la cabecera vertical
   {
+     beginResetModel();
      cabeceraH = cabecH;
-     reset();
+     endResetModel();     
   }
   void TablaModelT::setVectorTotalesPorFilas(unsigned *v) { VectorTotalesPorFilas = v;}
   void TablaModelT::setVectorExclusionRegistros(bool *v1) { VectorExclusionRegistros = v1;}
@@ -157,12 +161,7 @@
     }
     if (role == Qt::ForegroundRole)
       return QColor(Qt::white);
-    if (role == Qt::FontRole) {
-      QFont font;
-      font.setFamily(("Tahoma"));
-      font.setPointSize( 8 );      
-      return QFont(font);
-    }
+
     return QVariant();
   }
 

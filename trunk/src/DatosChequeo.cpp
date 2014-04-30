@@ -29,10 +29,7 @@ TFrmDatosChequeo::TFrmDatosChequeo(QWidget* parent, const char* name, Qt::Window
       if (this->objectName().isEmpty())
         this->setObjectName(QString::fromUtf8("TFrmDatosChequeo"));
 
-      QFont font;
-      font.setFamily(QString::fromUtf8("Tahoma"));
-      this->setFont(font);
-      QPalette palette( QApplication::palette() );      
+      QPalette palette( QApplication::palette() );
       panel1 = new QFrame(this);      
       panel1->setFrameShape(QFrame::Box);
       panel1->setFrameShadow(QFrame::Raised);
@@ -76,20 +73,18 @@ TFrmDatosChequeo::TFrmDatosChequeo(QWidget* parent, const char* name, Qt::Window
       LabBD1 = new QLabel(panel1);
       LabBD1->setObjectName(QString::fromUtf8("LabBD1"));
       LabBD1->setGeometry(QRect(8, 8, 227, 18));
-      LabBD1->setText(QApplication::translate("TFrmDatosChequeo", "Indicar BD 1", 0, QApplication::UnicodeUTF8));
+      LabBD1->setText(QApplication::translate("TFrmDatosChequeo", "Indicar BD 1", 0));
       EdtBD1 = new QLineEdit(panel1);
       EdtBD1->setObjectName(QString::fromUtf8("EdtBD1"));
       EdtBD1->setGeometry(QRect(8, 27, 500, 23));
-      EdtBD1->setText(nomBD.section(QDir::convertSeparators("/"), -1));
-      //EdtBD1->setText(nomBD.section('\\', -1));
-      EdtBD1->setReadOnly (true);
-      //QPalette palette( QApplication::palette() );
+      EdtBD1->setText(nomBD.section(QDir::toNativeSeparators("/"), -1));     
+      EdtBD1->setReadOnly (true);      
       palette.setColor( QPalette::Active, QPalette::Base, Qt::gray );
       EdtBD1->setPalette(palette);
       LabBD2 = new QLabel(panel1);
       LabBD2->setObjectName(QString::fromUtf8("LabBD2"));
       LabBD2->setGeometry(QRect(8, 52, 227, 18));
-      LabBD2->setText(QApplication::translate("TFrmDatosChequeo", "Indicar BD 2", 0, QApplication::UnicodeUTF8));
+      LabBD2->setText(QApplication::translate("TFrmDatosChequeo", "Indicar BD 2", 0));
       EdtBD2 = new QLineEdit(panel1);
       EdtBD2->setObjectName(QString::fromUtf8("EdtBD2"));
       EdtBD2->setGeometry(QRect(8, 72, 500, 23));
@@ -97,7 +92,7 @@ TFrmDatosChequeo::TFrmDatosChequeo(QWidget* parent, const char* name, Qt::Window
       {
         EdtBD2->setReadOnly (true);
         EdtBD2->setPalette(palette);
-        EdtBD2->setText(nomBD.section(QDir::convertSeparators("/"), -1));
+        EdtBD2->setText(nomBD.section(QDir::toNativeSeparators("/"), -1));
       }
 
       LabTD1 = new QLabel(panel2);
@@ -145,10 +140,10 @@ TFrmDatosChequeo::TFrmDatosChequeo(QWidget* parent, const char* name, Qt::Window
       LabTanto->setObjectName(QString::fromUtf8("LabTanto"));
       LabTanto->setGeometry(QRect(125, 35, 30, 18));
 
-      ChbActC = new QCheckBox(QApplication::translate("TFrmDatosChequeo", "Tipo de encuesta, datos personales de individuo en hogares", 0, QApplication::UnicodeUTF8), panel5);
+      ChbActC = new QCheckBox(QApplication::translate("TFrmDatosChequeo", "Tipo de encuesta, datos personales de individuo en hogares", 0), panel5);
       ChbActC->setObjectName(QString::fromUtf8("ChbActC"));
       ChbActC->setGeometry(QRect(8, 8, 371, 17));
-      GbActC = new QGroupBox(QApplication::translate("TFrmDatosChequeo", "Encuesta especial", 0, QApplication::UnicodeUTF8), panel5);
+      GbActC = new QGroupBox(QApplication::translate("TFrmDatosChequeo", "Encuesta especial", 0), panel5);
       GbActC->setObjectName(QString::fromUtf8("GbActC"));
       GbActC->setGeometry(QRect(8, 36, 500, 120));      
       GbActC->setVisible(false);
@@ -181,22 +176,22 @@ TFrmDatosChequeo::TFrmDatosChequeo(QWidget* parent, const char* name, Qt::Window
       ButAyuda->setObjectName(QString::fromUtf8("ButAyuda"));
       ButAyuda->setGeometry(QRect(376, 18, 120, 25));
 
-      this->setWindowTitle(QApplication::translate("TFrmDatosChequeo", "Datos de Chequeo", 0, QApplication::UnicodeUTF8));
-      LabTD1->setText(QApplication::translate("TFrmDatosChequeo", "Indicar tabla Datos 1", 0, QApplication::UnicodeUTF8));
-      LabTD2->setText(QApplication::translate("TFrmDatosChequeo", "Indicar tabla Datos 2", 0, QApplication::UnicodeUTF8));
-      LabAux->setText(QApplication::translate("TFrmDatosChequeo", "Si es m\303\241s de una tabla separar\npor comas (, )", 0, QApplication::UnicodeUTF8));
-      LabVar->setText(QApplication::translate("TFrmDatosChequeo", "Indicar variables a chequear", 0, QApplication::UnicodeUTF8));
-      LabAux2->setText(QApplication::translate("TFrmDatosChequeo", "Si es m\303\241s de una variable separar por comas (, )", 0, QApplication::UnicodeUTF8));
-      ButChequear->setText(QApplication::translate("TFrmDatosChequeo", "Chequear", 0, QApplication::UnicodeUTF8));
-      ButCancelar->setText(QApplication::translate("TFrmDatosChequeo", "Cancelar", 0, QApplication::UnicodeUTF8));
-      ButAyuda->setText(QApplication::translate("TFrmDatosChequeo", "Ayuda", 0, QApplication::UnicodeUTF8));
-      LabVarConteo->setText(QApplication::translate("TFrmDatosChequeo", "Variable de conteo", 0, QApplication::UnicodeUTF8));
-      EdtVarConteo->setToolTip(QApplication::translate("TFrmDatosChequeo", "Comprueba que esa combinaci\303\263n esta en la tabla tanta veces como indica esta variable", 0, QApplication::UnicodeUTF8));
-      LabPorcentaje->setText(QApplication::translate("TFrmDatosChequeo", "Porcentaje", 0, QApplication::UnicodeUTF8));
-      EdtPorcentaje->setText(QApplication::translate("TFrmDatosChequeo", "100", 0, QApplication::UnicodeUTF8));
-      LabTanto->setText(QApplication::translate("TFrmDatosChequeo", "%", 0, QApplication::UnicodeUTF8));
-      LabVariablesC->setText(QApplication::translate("TFrmDatosChequeo", "Variables", 0, QApplication::UnicodeUTF8));
-      LabOperadorC->setText(QApplication::translate("TFrmDatosChequeo", "Operador", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFrmDatosChequeo", "Datos de Chequeo", 0));
+      LabTD1->setText(QApplication::translate("TFrmDatosChequeo", "Indicar tabla Datos 1", 0));
+      LabTD2->setText(QApplication::translate("TFrmDatosChequeo", "Indicar tabla Datos 2", 0));
+      LabAux->setText(QApplication::translate("TFrmDatosChequeo", "Si es m\303\241s de una tabla separar\npor comas (, )", 0));
+      LabVar->setText(QApplication::translate("TFrmDatosChequeo", "Indicar variables a chequear", 0));
+      LabAux2->setText(QApplication::translate("TFrmDatosChequeo", "Si es m\303\241s de una variable separar por comas (, )", 0));
+      ButChequear->setText(QApplication::translate("TFrmDatosChequeo", "Chequear", 0));
+      ButCancelar->setText(QApplication::translate("TFrmDatosChequeo", "Cancelar", 0));
+      ButAyuda->setText(QApplication::translate("TFrmDatosChequeo", "Ayuda", 0));
+      LabVarConteo->setText(QApplication::translate("TFrmDatosChequeo", "Variable de conteo", 0));
+      EdtVarConteo->setToolTip(QApplication::translate("TFrmDatosChequeo", "Comprueba que esa combinaci\303\263n esta en la tabla tanta veces como indica esta variable", 0));
+      LabPorcentaje->setText(QApplication::translate("TFrmDatosChequeo", "Porcentaje", 0));
+      EdtPorcentaje->setText(QApplication::translate("TFrmDatosChequeo", "100", 0));
+      LabTanto->setText(QApplication::translate("TFrmDatosChequeo", "%", 0));
+      LabVariablesC->setText(QApplication::translate("TFrmDatosChequeo", "Variables", 0));
+      LabOperadorC->setText(QApplication::translate("TFrmDatosChequeo", "Operador", 0));
       CbxOperadorC->clear();
       CbxOperadorC->insertItems(0, QStringList()
        << "<"
@@ -206,7 +201,7 @@ TFrmDatosChequeo::TFrmDatosChequeo(QWidget* parent, const char* name, Qt::Window
        << "!="
        << "="
       );
-      LabValorC->setText(QApplication::translate("TFrmDatosChequeo", "Valor", 0, QApplication::UnicodeUTF8));
+      LabValorC->setText(QApplication::translate("TFrmDatosChequeo", "Valor", 0));
 
       connect(ButChequear, SIGNAL(clicked()), parent, SLOT(ButChequearClick()));
       connect(ButCancelar, SIGNAL(clicked()), parent, SLOT(ButCancelarClick()));

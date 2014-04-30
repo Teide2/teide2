@@ -37,7 +37,7 @@ public:
       int NumVar = 0;
 
       NombreBaseDatos = QCoreApplication::applicationDirPath() + "/" + GetValorTag(NombreMetafile, "RBD");
-      NombreBaseDatos = QDir::convertSeparators(NombreBaseDatos);
+      NombreBaseDatos = QDir::toNativeSeparators(NombreBaseDatos);
 
       if (!QFile::exists(NombreBaseDatos))
         return false;
@@ -113,7 +113,7 @@ public:
                         tag.appendChild(t1);
                       }
                       QString xml3 = doc3.toString();
-                      QFile file3(QDir::convertSeparators(QCoreApplication::applicationDirPath() + "/data/" + texto + ".xml"));
+                      QFile file3(QDir::toNativeSeparators(QCoreApplication::applicationDirPath() + "/data/" + texto + ".xml"));
                       if (file3.open(QIODevice::WriteOnly))   {
                         QTextStream stream(&file3);
                         stream << "<?xml version='1.0' encoding='ISO-8859-1'?>\n";
@@ -128,7 +128,7 @@ public:
           cont++;
         }
         QString xml = doc.toString();
-        QFile file(QDir::convertSeparators(QCoreApplication::applicationDirPath() + "/data/" + NombreVariables + ".xml"));
+        QFile file(QDir::toNativeSeparators(QCoreApplication::applicationDirPath() + "/data/" + NombreVariables + ".xml"));
         if (file.open(QIODevice::WriteOnly))   {
           QTextStream stream(&file);
           stream << "<?xml version='1.0' encoding='ISO-8859-1'?>\n";
@@ -166,7 +166,7 @@ public:
             }
           }
           QString xml = doc.toString();
-          QFile file(QDir::convertSeparators(QCoreApplication::applicationDirPath() + "/data/" + TablasMicroDatos->at(i) + ".xml"));
+          QFile file(QDir::toNativeSeparators(QCoreApplication::applicationDirPath() + "/data/" + TablasMicroDatos->at(i) + ".xml"));
 
           if (file.open(QIODevice::WriteOnly))   {
             QTextStream stream(&file);
@@ -196,7 +196,7 @@ public:
           }
         }
         QString xml2 = doc2.toString();
-        QFile file2(QDir::convertSeparators(QCoreApplication::applicationDirPath() + "/data/" + NombreEdits + ".xml"));
+        QFile file2(QDir::toNativeSeparators(QCoreApplication::applicationDirPath() + "/data/" + NombreEdits + ".xml"));
         if (file2.open(QIODevice::WriteOnly))   {
           QTextStream stream(&file2);
           stream << "<?xml version='1.0' encoding='ISO-8859-1'?>\n";
@@ -222,7 +222,7 @@ public:
           tag.appendChild(t1);
         }
         QString xml3 = doc3.toString();
-        QFile file3(QDir::convertSeparators(QCoreApplication::applicationDirPath() + "/data/" + NombreMissing + ".xml"));
+        QFile file3(QDir::toNativeSeparators(QCoreApplication::applicationDirPath() + "/data/" + NombreMissing + ".xml"));
         if (file3.open(QIODevice::WriteOnly))   {
           QTextStream stream(&file3);
           stream << "<?xml version='1.0' encoding='ISO-8859-1'?>\n";

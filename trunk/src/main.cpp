@@ -24,10 +24,11 @@
 #include <QtSql>
 #include <QDebug>
 #include <QtPlugin>
-#include <QTextEdit>
+#include <QStyleFactory>
+//#include <QTextEdit>
 #include <QTranslator>
 #include <qcoreapplication.h>
-#include <qapplication.h>
+#include <QApplication>
 #include <qdir.h>
 #include <qpixmap.h>
 #include <qtimer.h>
@@ -47,7 +48,11 @@ int main( int argc, char ** argv )
 
     QApplication::setColorSpec( QApplication::ManyColor );
     QApplication a( argc, argv );
-    a.setStyle(new QCleanlooksStyle);
+    a.setStyle("Fusion");
+    QFont font;
+    font.setFamily(("Tahoma"));
+    font.setPointSize(10);
+    a.setFont(font);
     //a.installTranslator(&translator);
     QStringList l_libPaths;
 
@@ -65,7 +70,8 @@ int main( int argc, char ** argv )
 
     Scrollarea *scrollarea = new Scrollarea(0, w2);
     scrollarea->setWidget(w2);
-    if (qApp->desktop ()->availableGeometry(-1).width() < 1100) {
+     QDesktopWidget *desktop = QApplication::desktop();
+    if (desktop->/*availableGeometry(-1).*/width() < 1100) {
          w2->setGeometry(0, 0, 1276, 714);
          scrollarea->setWindowFlags(Qt::WindowMinimizeButtonHint);         
     }
@@ -75,7 +81,7 @@ int main( int argc, char ** argv )
     w2->ContandoEjecucion();
     a.setActiveWindow( w2 );
     QString start = QCoreApplication::applicationDirPath();
-    QString meta = QDir::convertSeparators("/images/teide.png");
+    QString meta = QDir::toNativeSeparators("/images/teide.png");
     scrollarea->setWindowIcon(QPixmap((start+meta)));
 
     TFrmFlash *FrmFlash = new TFrmFlash(0, "entrada", Qt::SplashScreen);
@@ -83,7 +89,7 @@ int main( int argc, char ** argv )
     FrmFlash->show();
     QTimer * counter = new QTimer( FrmFlash );
     QObject::connect( counter, SIGNAL(timeout()), FrmFlash, SLOT(hide()) );
-    if (qApp->desktop ()->availableGeometry(1).width() < 1100) {
+    if (desktop->/*availableGeometry(1).*/width() < 1100) {
         scrollarea->setGeometry(20, 20, 800, 600);
         QObject::connect( counter, SIGNAL(timeout()), scrollarea, SLOT( show()));
     }else

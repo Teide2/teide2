@@ -28,9 +28,7 @@ TFrmEntradaDatos::TFrmEntradaDatos(QWidget* parent, const char* name, Qt::Window
       if (this->objectName().isEmpty())
         this->setObjectName(QString::fromUtf8("TFrmEntradaDatos"));
       this->resize(313, 97);
-      QFont font;
-      font.setFamily(QString::fromUtf8("Tahoma"));
-      this->setFont(font);
+
       LabEntradaDatos1 = new QLabel(this);
       LabEntradaDatos1->setObjectName(QString::fromUtf8("LabEntradaDatos1"));
       LabEntradaDatos1->setGeometry(QRect(8, 8, 227, 18));
@@ -44,10 +42,10 @@ TFrmEntradaDatos::TFrmEntradaDatos(QWidget* parent, const char* name, Qt::Window
       ButCancelar->setObjectName(QString::fromUtf8("ButCancelar"));
       ButCancelar->setGeometry(QRect(184, 56, 120, 25));
 
-      this->setWindowTitle(QApplication::translate("TFrmEntradaDatos", "Entrada de Datos", 0, QApplication::UnicodeUTF8));
-      LabEntradaDatos1->setText(QApplication::translate("TFrmEntradaDatos", "Introduzca el nombre base de la tabla", 0, QApplication::UnicodeUTF8));
-      ButAceptar->setText(QApplication::translate("TFrmEntradaDatos", "Aceptar", 0, QApplication::UnicodeUTF8));
-      ButCancelar->setText(QApplication::translate("TFrmEntradaDatos", "Cancelar", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFrmEntradaDatos", "Entrada de Datos", 0));
+      LabEntradaDatos1->setText(QApplication::translate("TFrmEntradaDatos", "Introduzca el nombre base de la tabla", 0));
+      ButAceptar->setText(QApplication::translate("TFrmEntradaDatos", "Aceptar", 0));
+      ButCancelar->setText(QApplication::translate("TFrmEntradaDatos", "Cancelar", 0));
     }
     
     void TFrmEntradaDatos::FijarEtiqueta1(QString Texto)

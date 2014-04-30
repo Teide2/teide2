@@ -28,9 +28,6 @@ TFrmAvisoFiltro::TFrmAvisoFiltro(QWidget* parent, const char* name, Qt::WindowFl
           if (this->objectName().isEmpty())
         this->setObjectName(QString::fromUtf8("TFrmAvisoFiltro"));
     this->resize(403, 384);
-    QFont font;
-    font.setFamily(QString::fromUtf8("Tahoma"));
-    this->setFont(font);
 
     ButOk = new QPushButton(this);
     ButOk->setObjectName(QString::fromUtf8("ButOk"));
@@ -43,12 +40,12 @@ TFrmAvisoFiltro::TFrmAvisoFiltro(QWidget* parent, const char* name, Qt::WindowFl
     ButMasDetalle->setObjectName(QString::fromUtf8("ButMasDetalle"));
     ButMasDetalle->setGeometry(QRect(308, 355, 91, 25));
 
-    this->setWindowTitle(QApplication::translate("TFrmAvisoFiltro", "Informaci\303\263n...", 0, QApplication::UnicodeUTF8));
-    ButOk->setText(QApplication::translate("TFrmAvisoFiltro", "OK", 0, QApplication::UnicodeUTF8));
-    ButMasDetalle->setText(QApplication::translate("TFrmAvisoFiltro", "m\303\241s detalles", 0, QApplication::UnicodeUTF8));
-    MemInfo->append(QApplication::translate("TFrmAvisoFiltro", "TEIDE ha detectado variables que no admiten el NO_PROCEDE y tienen filtro.\nEstas variables son:\n", 0, QApplication::UnicodeUTF8));
+    this->setWindowTitle(QApplication::translate("TFrmAvisoFiltro", "Informaci\303\263n...", 0));
+    ButOk->setText(QApplication::translate("TFrmAvisoFiltro", "OK", 0));
+    ButMasDetalle->setText(QApplication::translate("TFrmAvisoFiltro", "m\303\241s detalles", 0));
+    MemInfo->append(QApplication::translate("TFrmAvisoFiltro", "TEIDE ha detectado variables que no admiten el NO_PROCEDE y tienen filtro.\nEstas variables son:\n", 0));
     MemInfo->append(Aviso);
-    MemInfo->append(QApplication::translate("TFrmAvisoFiltro", "\nTEIDE ha modificado estas variables para que si admitan el NO_PROCEDE.", 0, QApplication::UnicodeUTF8));
+    MemInfo->append(QApplication::translate("TFrmAvisoFiltro", "\nTEIDE ha modificado estas variables para que si admitan el NO_PROCEDE.", 0));
 
     QObject::connect(ButOk, SIGNAL(clicked()), this, SLOT(ButOkClick()));
     QObject::connect(ButMasDetalle, SIGNAL(clicked()), this, SLOT(ButMasDetalleClick()));
@@ -66,7 +63,7 @@ TFrmAvisoFiltro::TFrmAvisoFiltro(QWidget* parent, const char* name, Qt::WindowFl
     }
     void TFrmAvisoFiltro::ButMasDetalleClick()
     {
-       MemInfo->append(QApplication::translate("TFrmAvisoFiltro", "\nCuando una variable no admite el NO_PROCEDE y trae una condici\303\263n dentro de su campo FILTRO, esto es equivalente a que la condici\303\263n sea una regla.", 0, QApplication::UnicodeUTF8));
-       MemInfo->append(QApplication::translate("TFrmAvisoFiltro", "Si realmente es esto lo que usted quiere, le recomendamos que quite el filtro de la variable afectada y lo ponga en la tabla REGLA como regla.", 0, QApplication::UnicodeUTF8));
+       MemInfo->append(QApplication::translate("TFrmAvisoFiltro", "\nCuando una variable no admite el NO_PROCEDE y trae una condici\303\263n dentro de su campo FILTRO, esto es equivalente a que la condici\303\263n sea una regla.", 0));
+       MemInfo->append(QApplication::translate("TFrmAvisoFiltro", "Si realmente es esto lo que usted quiere, le recomendamos que quite el filtro de la variable afectada y lo ponga en la tabla REGLA como regla.", 0));
     }
 

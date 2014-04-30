@@ -27,14 +27,10 @@ TMensajeCarga::TMensajeCarga(QWidget* parent, Qt::WindowFlags fl, QString mensaj
     {
         if (this->objectName().isEmpty())
             this->setObjectName(QString::fromUtf8("TMensajeCarga"));        
-        this->setGeometry(parent->width()/2 - 60, parent->height()/2-60, 379, 193);
-        //this->setWindowFlags(Qt::WindowMinMaxButtonsHint);
-        //setWindowFlags(Qt::FramelessWindowHint);
-        //setWindowFlags(Qt::WindowTitleHint);
+        this->setGeometry(parent->width()/2 - 60, parent->height()/2-60, 420, 193);       
         padre = parent;
-        QFont font;
-        font.setFamily(QString::fromUtf8("Tahoma"));
-        this->setFont(font);
+        information = informacion;
+
         mensaje = new QLabel(mensajeI, this, Qt::Widget);
         mensaje->setObjectName(QString::fromUtf8("mensaje"));
         mensaje->setGeometry(30, 30, 600, 81);
@@ -48,11 +44,11 @@ TMensajeCarga::TMensajeCarga(QWidget* parent, Qt::WindowFlags fl, QString mensaj
         MemInfo = new QTextEdit(this);
         MemInfo->setObjectName(QString::fromUtf8("MemInfo"));
         MemInfo->setGeometry(13, 200, 651, 361);
-        MemInfo->setText(informacion);
+        MemInfo->setText(information);
         MemInfo->setReadOnly(true);
 
-        this->setWindowTitle(QApplication::translate("TMensajeCarga", "Informaci\303\263n...", 0, QApplication::UnicodeUTF8));
-        ButOk->setText(QApplication::translate("TMensajeCarga", "OK", 0, QApplication::UnicodeUTF8));
+        this->setWindowTitle(QApplication::translate("TMensajeCarga", "Informaci\303\263n...", 0));
+        ButOk->setText(QApplication::translate("TMensajeCarga", "OK", 0));
 
         QObject::connect(ButOk, SIGNAL(clicked()), this, SLOT(ButOkClick()));
         QObject::connect(ButOk, SIGNAL(clicked()), parent, SLOT(Actualizacion_interfaz_usuario()));
@@ -71,10 +67,12 @@ TMensajeCarga::TMensajeCarga(QWidget* parent, Qt::WindowFlags fl, QString mensaj
     {
         if (ButDetalles->text() == "Mostrar Detalles...")
         {
+            MemInfo->setText(information);
             ButDetalles->setText(tr("Ocultar Detalles..."));
             this->resize(679, 579);
         }else
         {
+            MemInfo->setText("");
             ButDetalles->setText(tr("Mostrar Detalles..."));
             this->resize(679, 193);
         }

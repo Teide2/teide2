@@ -30,9 +30,7 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
 
       if (this->objectName().isEmpty())
         this->setObjectName(("TFmeTest"));
-      QFont font;
-      font.setFamily(("Tahoma"));
-      this->setFont(font);
+
       PanContenedor = new QFrame(this);
       PanContenedor->setObjectName(("PanContenedor"));
       PanContenedor->setGeometry(QRect(0, 0, this->width(), this->height()-50));
@@ -70,14 +68,14 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
 
       LabIrARegistroPorNumero = new QLabel(PanInfo);
       LabIrARegistroPorNumero->setObjectName(("LabIrARegistroPorNumero"));
-      LabIrARegistroPorNumero->setGeometry(QRect(8, 14, 90, 18));
+      LabIrARegistroPorNumero->setGeometry(QRect(8, 14, 95, 18));
       EdtIrARegistroPorNumero = new QLineEdit(PanInfo);
       EdtIrARegistroPorNumero->setObjectName(("EdtIrARegistroPorNumero"));
-      EdtIrARegistroPorNumero->setGeometry(QRect(100, 10, 33, 23));
+      EdtIrARegistroPorNumero->setGeometry(QRect(107, 10, 33, 23));
 
       LabIrARegistroPorNombre = new QLabel(PanInfo);
       LabIrARegistroPorNombre->setObjectName(("LabIrARegistroPorNombre"));
-      LabIrARegistroPorNombre->setGeometry(QRect(140, 14, 90, 18));
+      LabIrARegistroPorNombre->setGeometry(QRect(142, 14, 95, 18));
       CbxIrARegistroPorNombre = new QComboBox(PanInfo);
       CbxIrARegistroPorNombre->setObjectName(("CbxIrARegistroPorNombre"));
       CbxIrARegistroPorNombre->setGeometry(QRect(240, 10, 145, 23));
@@ -85,7 +83,7 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
 
       LabIrAEdit = new QLabel(PanInfo);
       LabIrAEdit->setObjectName(("LabIrAEdit"));
-      LabIrAEdit->setGeometry(QRect(395, 14, 62, 18));
+      LabIrAEdit->setGeometry(QRect(395, 14, 72, 18));
       EdtIrAEdit = new QLineEdit(PanInfo);
       EdtIrAEdit->setObjectName(("EdtIrAEdit"));
       EdtIrAEdit->setGeometry(QRect(462, 10, 33, 23));
@@ -97,10 +95,10 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
       SbrBarraEditActual->setFrameShadow(QFrame::Raised);
       LabEditActual = new QLabel(SbrBarraEditActual);
       LabEditActual->setObjectName(("LabEditActual"));
-      LabEditActual->setGeometry(QRect(5, 14, 75, 18));
+      LabEditActual->setGeometry(QRect(5, 14, 85, 18));
       EdtEdit = new QLineEdit(SbrBarraEditActual);
       EdtEdit->setObjectName(("EdtEdit"));
-      EdtEdit->setGeometry(QRect(85, 10, 641, 23));
+      EdtEdit->setGeometry(QRect(88, 10, 641, 23));
       EdtEdit->setReadOnly(true);
       QPalette palette( QApplication::palette() );
       palette.setColor( QPalette::Active, QPalette::Base, Qt::gray );
@@ -125,16 +123,16 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
       PanExclusion->setFrameShadow(QFrame::Raised);
       LabExclusionRegistros = new QLabel(PanExclusion);
       LabExclusionRegistros->setObjectName(("LabExclusionRegistros"));
-      LabExclusionRegistros->setGeometry(QRect(8, 8, 303, 18));
+      LabExclusionRegistros->setGeometry(QRect(8, 8, 323, 18));
       LabExclusionEdits = new QLabel(PanExclusion);
       LabExclusionEdits->setObjectName(("LabExclusionEdits"));
-      LabExclusionEdits->setGeometry(QRect(382, 8, 291, 18));
+      LabExclusionEdits->setGeometry(QRect(382, 8, 311, 18));
       EdtExclusionRegistros = new QLineEdit(PanExclusion);
       EdtExclusionRegistros->setObjectName(("EdtExclusionRegistros"));
-      EdtExclusionRegistros->setGeometry(QRect(317, 4, 41, 23));
+      EdtExclusionRegistros->setGeometry(QRect(338, 4, 41, 23));
       EdtExclusionEdits = new QLineEdit(PanExclusion);
       EdtExclusionEdits->setObjectName(("EdtExclusionEdits"));
-      EdtExclusionEdits->setGeometry(QRect(680, 4, 41, 23));
+      EdtExclusionEdits->setGeometry(QRect(683, 4, 41, 23));
       ButAplicarExclusion = new QPushButton(PanExclusion);
       ButAplicarExclusion->setObjectName(("ButAplicarExclusion"));
       ButAplicarExclusion->setGeometry(QRect(740, 4, 273, 25));
@@ -149,25 +147,25 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
       PanSalvarPorcentajesError->setFrameShadow(QFrame::Raised);
       LabUmbralErrorEdits = new QLabel(PanSalvarPorcentajesError);
       LabUmbralErrorEdits->setObjectName(("LabUmbralErrorEdits"));
-      LabUmbralErrorEdits->setGeometry(QRect(248, 13, 161, 18));
+      LabUmbralErrorEdits->setGeometry(QRect(268, 13, 181, 18));
       Label1 = new QLabel(PanSalvarPorcentajesError);
       Label1->setObjectName(("Label1"));
-      Label1->setGeometry(QRect(463, 13, 15, 18));
+      Label1->setGeometry(QRect(503, 13, 15, 18));
       LabUmbralErrorRegistros = new QLabel(PanSalvarPorcentajesError);
       LabUmbralErrorRegistros->setObjectName(("LabUmbralErrorRegistros"));
-      LabUmbralErrorRegistros->setGeometry(QRect(540, 13, 161, 18));
+      LabUmbralErrorRegistros->setGeometry(QRect(530, 13, 181, 18));
       Label3 = new QLabel(PanSalvarPorcentajesError);
       Label3->setObjectName(("Label3"));
       Label3->setGeometry(QRect(760, 13, 15, 18));
       ButSalvarErrorEdits = new QPushButton(PanSalvarPorcentajesError);
       ButSalvarErrorEdits->setObjectName(("ButSalvarerrorEdits"));
-      ButSalvarErrorEdits->setGeometry(QRect(8, 8, 225, 25));
+      ButSalvarErrorEdits->setGeometry(QRect(8, 8, 255, 25));
       ButSalvarErrorRegistros = new QPushButton(PanSalvarPorcentajesError);
       ButSalvarErrorRegistros->setObjectName(("ButSalvarErrorRegistros"));
-      ButSalvarErrorRegistros->setGeometry(QRect(784, 8, 238, 25));
+      ButSalvarErrorRegistros->setGeometry(QRect(784, 8, 265, 25));
       EdtUmbralErrorEdits = new QSpinBox(PanSalvarPorcentajesError);
       EdtUmbralErrorEdits->setObjectName(("EdtUmbralErrorEdits"));
-      EdtUmbralErrorEdits->setGeometry(QRect(410, 10, 46, 23));
+      EdtUmbralErrorEdits->setGeometry(QRect(450, 10, 46, 23));
       EdtUmbralErrorEdits->setSingleStep(5);
       EdtUmbralErrorRegistros = new QSpinBox(PanSalvarPorcentajesError);
       EdtUmbralErrorRegistros->setObjectName(("EdtUmbralErrorRegistros"));
@@ -222,54 +220,54 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
       menu->addAction( QObject::tr("Aumentar el ancho de las columnas..."), this, SLOT(MitAumentarColumnasClick()));
       menu->addAction( QObject::tr("Disminuir el ancho de las columnas..."), this, SLOT(MitDisminuirColumnasClick()));
 
-      this->setWindowTitle(QApplication::translate("TFmeTest", "Form", 0, QApplication::UnicodeUTF8));
-      PanExclusion->setToolTip(QApplication::translate("TFmeTest", "Panel de exclusi\303\263n.", 0, QApplication::UnicodeUTF8));
-      LabExclusionRegistros->setText(QApplication::translate("TFmeTest", "Excluir REGISTROS con n\303\272mero de errores mayor de", 0, QApplication::UnicodeUTF8));
-      LabExclusionEdits->setText(QApplication::translate("TFmeTest", "Excluir REGLAS con n\303\272mero de errores mayor de", 0, QApplication::UnicodeUTF8));
-      EdtExclusionRegistros->setToolTip(QApplication::translate("TFmeTest", "Porcentaje de exclusi\303\263n por encima del cual se excluir\303\241n los registros que superen esta cifra.", 0, QApplication::UnicodeUTF8));
-      EdtExclusionRegistros->setText(QApplication::translate("TFmeTest", "0", 0, QApplication::UnicodeUTF8));
-      EdtExclusionEdits->setToolTip(QApplication::translate("TFmeTest", "Porcentaje de exclusi\303\263n por encima del cual se excluir\303\241n las reglas que superen esta cifra.", 0, QApplication::UnicodeUTF8));
-      EdtExclusionEdits->setText(QApplication::translate("TFmeTest", "0", 0, QApplication::UnicodeUTF8));
-      ButAplicarExclusion->setText(QApplication::translate("TFmeTest", "Aplicar Exclusi\303\263n", 0, QApplication::UnicodeUTF8));
-      ButAplicarExclusion->setToolTip(QApplication::translate("TFmeTest", "Pulse aqu\303\255 para aplicar la exclusi\303\263n.", 0, QApplication::UnicodeUTF8));
-      view2->setToolTip(QApplication::translate("TFmeTest", "Informaci\303\263n del registro activo.(CTRL)", 0, QApplication::UnicodeUTF8));
-      view->setToolTip(QApplication::translate("TFmeTest", "Rejilla de visualizaci\303\263n de los resultados de la evaluaci\303\263n.(ALT)", 0, QApplication::UnicodeUTF8));
-      view->verticalHeader()->setToolTip(QApplication::translate("TFmeTest", "ID registro || Total errores", 0, QApplication::UnicodeUTF8));
-      view->horizontalHeader()->setToolTip(QApplication::translate("TFmeTest", "ID regla\nTotal errores", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFmeTest", "Form", 0));
+      PanExclusion->setToolTip(QApplication::translate("TFmeTest", "Panel de exclusi\303\263n.", 0));
+      LabExclusionRegistros->setText(QApplication::translate("TFmeTest", "Excluir REGISTROS con n\303\272mero de errores mayor de", 0));
+      LabExclusionEdits->setText(QApplication::translate("TFmeTest", "Excluir REGLAS con n\303\272mero de errores mayor de", 0));
+      EdtExclusionRegistros->setToolTip(QApplication::translate("TFmeTest", "Porcentaje de exclusi\303\263n por encima del cual se excluir\303\241n los registros que superen esta cifra.", 0));
+      EdtExclusionRegistros->setText(QApplication::translate("TFmeTest", "0", 0));
+      EdtExclusionEdits->setToolTip(QApplication::translate("TFmeTest", "Porcentaje de exclusi\303\263n por encima del cual se excluir\303\241n las reglas que superen esta cifra.", 0));
+      EdtExclusionEdits->setText(QApplication::translate("TFmeTest", "0", 0));
+      ButAplicarExclusion->setText(QApplication::translate("TFmeTest", "Aplicar Exclusi\303\263n", 0));
+      ButAplicarExclusion->setToolTip(QApplication::translate("TFmeTest", "Pulse aqu\303\255 para aplicar la exclusi\303\263n.", 0));
+      view2->setToolTip(QApplication::translate("TFmeTest", "Informaci\303\263n del registro activo.(CTRL)", 0));
+      view->setToolTip(QApplication::translate("TFmeTest", "Rejilla de visualizaci\303\263n de los resultados de la evaluaci\303\263n.(ALT)", 0));
+      view->verticalHeader()->setToolTip(QApplication::translate("TFmeTest", "ID registro || Total errores", 0));
+      view->horizontalHeader()->setToolTip(QApplication::translate("TFmeTest", "ID regla\nTotal errores", 0));
       LabBarraEstado1->setText("");
       LabBarraEstado2->setText("");
-      LabIrARegistroPorNumero->setText(QApplication::translate("TFmeTest", "Ir a reg. (num)", 0, QApplication::UnicodeUTF8));
-      LabIrARegistroPorNombre->setText(QApplication::translate("TFmeTest", "Ir a reg. (nom)", 0, QApplication::UnicodeUTF8));
-      LabIrAEdit->setText(QApplication::translate("TFmeTest", "Ir a regla", 0, QApplication::UnicodeUTF8));
-      LabEditActual->setText(QApplication::translate("TFmeTest", "Regla actual", 0, QApplication::UnicodeUTF8));
-      EdtEdit->setToolTip(QApplication::translate("TFmeTest", "Regla activa.", 0, QApplication::UnicodeUTF8));
-      EdtIrARegistroPorNumero->setToolTip(QApplication::translate("TFmeTest", "Indique el n\303\272mero de registro y pulse enter para ir a \303\251l.", 0, QApplication::UnicodeUTF8));
-      CbxIrARegistroPorNombre->setToolTip(QApplication::translate("TFmeTest", "Seleccione el registro que desea visualizar.", 0, QApplication::UnicodeUTF8));
-      EdtIrAEdit->setToolTip(QApplication::translate("TFmeTest", "Indique un n\303\272mero de regla y pulse ENTER parar ir a ella.", 0, QApplication::UnicodeUTF8));
-      GbxHistograma->setTitle(QApplication::translate("TFmeTest", "Porcentajes de error", 0, QApplication::UnicodeUTF8));
-      LabUmbralErrorEdits->setText(QApplication::translate("TFmeTest", "Porcentaje umbral de error", 0, QApplication::UnicodeUTF8));
-      Label1->setText(QApplication::translate("TFmeTest", "%", 0, QApplication::UnicodeUTF8));
-      LabUmbralErrorRegistros->setText(QApplication::translate("TFmeTest", "Porcentaje umbral de error", 0, QApplication::UnicodeUTF8));
-      Label3->setText(QApplication::translate("TFmeTest", "%", 0, QApplication::UnicodeUTF8));
-      ButSalvarErrorEdits->setText(QApplication::translate("TFmeTest", "Salvar porcentajes de error de reglas", 0, QApplication::UnicodeUTF8));
-      ButSalvarErrorRegistros->setText(QApplication::translate("TFmeTest", "Salvar porcentajes de error de registros", 0, QApplication::UnicodeUTF8));
-      ButSalvarErrorEdits->setToolTip(QApplication::translate("TFmeTest", "Salvar porcentajes de error de reglas en fichero", 0, QApplication::UnicodeUTF8));
-      ButSalvarErrorRegistros->setToolTip(QApplication::translate("TFmeTest", "Salvar porcentajes de error de registros en fichero", 0, QApplication::UnicodeUTF8));
-      EdtUmbralErrorEdits->setToolTip(QApplication::translate("TFmeTest", "Umbral para salvar reglas con un porcentaje de error", 0, QApplication::UnicodeUTF8));
-      EdtUmbralErrorRegistros->setToolTip(QApplication::translate("TFmeTest", "Umbral para salvar registros con un porcentaje de error", 0, QApplication::UnicodeUTF8));
-      LabOperacion->setText(QApplication::translate("TFmeTest", "Operaci\303\263n en curso", 0, QApplication::UnicodeUTF8));
-      LabProgreso->setText(QApplication::translate("TFmeTest", "Progreso de la operaci\303\263n", 0, QApplication::UnicodeUTF8));
-      LabPorcentaje->setText(QApplication::translate("TFmeTest", "% completado", 0, QApplication::UnicodeUTF8));
-      LabElemento->setText(QApplication::translate("TFmeTest", "# completado", 0, QApplication::UnicodeUTF8));
-      EdtOperacion->setToolTip(QApplication::translate("TFmeTest", "Nombre de la operaci\303\263n que esta siendo ejecutada actualmente.", 0, QApplication::UnicodeUTF8));
-      EdtOperacion->setText(QApplication::translate("TFmeTest", "Evaluaci\303\263n de las reglas expl\303\255citas sobre los microdatos.", 0, QApplication::UnicodeUTF8));
-      PbrProgreso->setToolTip(QApplication::translate("TFmeTest", "Muestra del progreso de la operaci\303\263n.", 0, QApplication::UnicodeUTF8));
-      EdtPorcentaje->setToolTip(QApplication::translate("TFmeTest", "Porcentaje completado de la operaci\303\263n.", 0, QApplication::UnicodeUTF8));
-      EdtElemento->setToolTip(QApplication::translate("TFmeTest", "Elemento actual en proceso / N\303\272mero total de elementos a procesar", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->setToolTip(QApplication::translate("TFmeTest", "Seleccione el modo de vizualizaci\303\263n de los registros.", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeTest", "Visualizar todos", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeTest", "Visualizar registros correctos", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeTest", "Visualizar registros incorrectos", 0, QApplication::UnicodeUTF8));
+      LabIrARegistroPorNumero->setText(QApplication::translate("TFmeTest", "Ir a reg. (num)", 0));
+      LabIrARegistroPorNombre->setText(QApplication::translate("TFmeTest", "Ir a reg. (nom)", 0));
+      LabIrAEdit->setText(QApplication::translate("TFmeTest", "Ir a regla", 0));
+      LabEditActual->setText(QApplication::translate("TFmeTest", "Regla actual", 0));
+      EdtEdit->setToolTip(QApplication::translate("TFmeTest", "Regla activa.", 0));
+      EdtIrARegistroPorNumero->setToolTip(QApplication::translate("TFmeTest", "Indique el n\303\272mero de registro y pulse enter para ir a \303\251l.", 0));
+      CbxIrARegistroPorNombre->setToolTip(QApplication::translate("TFmeTest", "Seleccione el registro que desea visualizar.", 0));
+      EdtIrAEdit->setToolTip(QApplication::translate("TFmeTest", "Indique un n\303\272mero de regla y pulse ENTER parar ir a ella.", 0));
+      GbxHistograma->setTitle(QApplication::translate("TFmeTest", "Porcentajes de error", 0));
+      LabUmbralErrorEdits->setText(QApplication::translate("TFmeTest", "Porcentaje umbral de error", 0));
+      Label1->setText(QApplication::translate("TFmeTest", "%", 0));
+      LabUmbralErrorRegistros->setText(QApplication::translate("TFmeTest", "Porcentaje umbral de error", 0));
+      Label3->setText(QApplication::translate("TFmeTest", "%", 0));
+      ButSalvarErrorEdits->setText(QApplication::translate("TFmeTest", "Salvar porcentajes de error de reglas", 0));
+      ButSalvarErrorRegistros->setText(QApplication::translate("TFmeTest", "Salvar porcentajes de error de registros", 0));
+      ButSalvarErrorEdits->setToolTip(QApplication::translate("TFmeTest", "Salvar porcentajes de error de reglas en fichero", 0));
+      ButSalvarErrorRegistros->setToolTip(QApplication::translate("TFmeTest", "Salvar porcentajes de error de registros en fichero", 0));
+      EdtUmbralErrorEdits->setToolTip(QApplication::translate("TFmeTest", "Umbral para salvar reglas con un porcentaje de error", 0));
+      EdtUmbralErrorRegistros->setToolTip(QApplication::translate("TFmeTest", "Umbral para salvar registros con un porcentaje de error", 0));
+      LabOperacion->setText(QApplication::translate("TFmeTest", "Operaci\303\263n en curso", 0));
+      LabProgreso->setText(QApplication::translate("TFmeTest", "Progreso de la operaci\303\263n", 0));
+      LabPorcentaje->setText(QApplication::translate("TFmeTest", "% completado", 0));
+      LabElemento->setText(QApplication::translate("TFmeTest", "# completado", 0));
+      EdtOperacion->setToolTip(QApplication::translate("TFmeTest", "Nombre de la operaci\303\263n que esta siendo ejecutada actualmente.", 0));
+      EdtOperacion->setText(QApplication::translate("TFmeTest", "Evaluaci\303\263n de las reglas expl\303\255citas sobre los microdatos.", 0));
+      PbrProgreso->setToolTip(QApplication::translate("TFmeTest", "Muestra del progreso de la operaci\303\263n.", 0));
+      EdtPorcentaje->setToolTip(QApplication::translate("TFmeTest", "Porcentaje completado de la operaci\303\263n.", 0));
+      EdtElemento->setToolTip(QApplication::translate("TFmeTest", "Elemento actual en proceso / N\303\272mero total de elementos a procesar", 0));
+      VisualizarReg->setToolTip(QApplication::translate("TFmeTest", "Seleccione el modo de vizualizaci\303\263n de los registros.", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeTest", "Visualizar todos", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeTest", "Visualizar registros correctos", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeTest", "Visualizar registros incorrectos", 0));
 
       QObject::connect(ButAplicarExclusion, SIGNAL(clicked()), this, SLOT(ButAplicarExclusionClick()));
       QObject::connect(view2, SIGNAL(doubleClicked(const QModelIndex&)), this, SLOT(SgrRejillaRegistroDblClick(const QModelIndex&)));
@@ -333,7 +331,7 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
       connect(FrmIrAVariable->GetButCancelar(), SIGNAL(clicked()), this, SLOT(ButCancelarIrAVariableClick()));
       
 
-      MemLogs->append(QApplication::translate("", "Creando la clase de evaluaci\303\263n de reglas generales", 0, QApplication::UnicodeUTF8));
+      MemLogs->append(QApplication::translate("", "Creando la clase de evaluaci\303\263n de reglas generales", 0));
       QApplication::processEvents();
 
       // Fijamos un nombre
@@ -341,11 +339,9 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
       this->ListaIds = ListaIds;
       // Fijar la cantidad de datos
       FijarCantidadDatos();  
-      //MemLogs->append("q pasa1");
-      //QApplication::processEvents();
+
       CargarEnLista();
-      //MemLogs->append("q pasa2");
-      //QApplication::processEvents();
+
       // Fijar la lista de variables
       ListaVariables = FmeVariablesAsociadas->GetListaVariables();
 
@@ -429,23 +425,23 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
     void TFmeTest::ActualizarUmbralExclusion()
     {
 
-      //try
-      //{
+      try
+      {
         UmbralExclusionRegistros = (unsigned)EdtExclusionRegistros->text().toInt();
-      /*}
+      }
       catch(...)
       {
         UmbralExclusionRegistros = (unsigned)(PORCENTAJE_INICIAL_EXCLUSION_REG_TEST * NumEdits);
-      }*/
+      }
 
-      //try
-      //{
+      try
+      {
         UmbralExclusionEdits = (unsigned)EdtExclusionEdits->text().toInt();
-      /*}
+      }
       catch(...)
       {
         UmbralExclusionEdits = (unsigned)(PORCENTAJE_INICIAL_EXCLUSION_EDITS * NumRegistros);
-      }*/
+      }
 
       if (UmbralExclusionRegistros > NumEdits)
         UmbralExclusionRegistros = (unsigned)(PORCENTAJE_INICIAL_EXCLUSION_REG_TEST * NumEdits);
@@ -698,12 +694,8 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeTest::CargarEnLista()
     {
-      CbxIrARegistroPorNombre->setDuplicatesEnabled(true);
-      //MemLogs->append("q pasa12");
-      //QApplication::processEvents();
-      CbxIrARegistroPorNombre->insertItems(0, *ListaIds);
-      //MemLogs->append("q pasa13");
-      //QApplication::processEvents();
+      CbxIrARegistroPorNombre->setDuplicatesEnabled(true);      
+      CbxIrARegistroPorNombre->insertItems(0, *ListaIds);      
       CbxIrARegistroPorNombre->setCurrentIndex(0);
       CbxIrARegistroPorNombre->setInsertPolicy(QComboBox::NoInsert);
     }
@@ -1339,7 +1331,7 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
 
       t->append("");
       t->append("======================================================");
-      t->append(QApplication::translate("", "Reglas que est\303\241n excluidas", 0, QApplication::UnicodeUTF8));
+      t->append(QApplication::translate("", "Reglas que est\303\241n excluidas", 0));
       t->append("======================================================");
       t->append("");
 
@@ -1376,7 +1368,7 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
       unsigned i, j, n = 0;
       QString Linea;
 
-      t->append(QApplication::translate("", "Porcentajes de error de registros (evaluaci\303\263n de reglas)", 0, QApplication::UnicodeUTF8));
+      t->append(QApplication::translate("", "Porcentajes de error de registros (evaluaci\303\263n de reglas)", 0));
       if (PorcentajeUmbral > 0)
       {
         t->append("======================================================");
@@ -1402,7 +1394,7 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
 
       t->append("");
       t->append("======================================================");
-      t->append(QApplication::translate("", "Registros que est\303\241n excluidos", 0, QApplication::UnicodeUTF8));
+      t->append(QApplication::translate("", "Registros que est\303\241n excluidos", 0));
       t->append("======================================================");
       t->append("");
 
@@ -1462,10 +1454,6 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
 
       CargarTestEnRejilla();
 
-      /*GbxHistograma->setActiveSerieColumnas(false);
-      GbxHistograma->setActiveSerieRegistros(true);
-      GbxHistograma->setTitle(QApplication::translate("", "N\303\232MERO DE ERRORES [ejeX: Ordinal de registros, ejeY: N\303\272mero de errores]", 0, QApplication::UnicodeUTF8));
-*/
       MostrarInfoAsociada(1, 1, true);
       Cargado = true;
 
@@ -1563,7 +1551,7 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeTest::EdtEditClick()
     {
-      QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8),  EdtEdit->text(), "&Ok");
+      QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0),  EdtEdit->text(), "&Ok");
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PULSAR UNA TECLA EN EL EDIT DE IR A REGISTRO.
@@ -1572,15 +1560,15 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
     {
       int IndiceRegistro;
 
-      //try
-      //{
+      try
+      {
         IndiceRegistro = EdtIrARegistroPorNumero->text().toInt();
-      /*}
+      }
       catch (...)
       {
         EdtIrARegistroPorNumero->setText("");
         return;
-      }*/
+      }
       if ((IndiceRegistro >= 1) && (IndiceRegistro <= model->rowCount(view->currentIndex())))
         view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(view->currentIndex().column()), view->rowViewportPosition(IndiceRegistro))));
       EdtIrARegistroPorNumero->setText("");      
@@ -1600,15 +1588,15 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
     {
       int IndiceEdit;
 
-      //try
-      //{
+      try
+      {
         IndiceEdit = EdtIrAEdit->text().toInt();
-      /*}
+      }
       catch (...)
       {
         EdtIrAEdit->setText("");
         return;
-      }*/
+      }
       if ((IndiceEdit >= 1) && (IndiceEdit <= NumEdits))
         view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(IndiceEdit), view->rowViewportPosition(view->currentIndex().row()))));
       EdtIrAEdit->setText("");      
@@ -1769,7 +1757,7 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
     void TFmeTest::ButSalvarErrorEditsClick()
     {
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators(start + "/" + DIRECTORIO_STATS);
+      QString meta = QDir::toNativeSeparators(start + "/" + DIRECTORIO_STATS);
       QString NombreFichero = QFileDialog::getSaveFileName(this, tr("Guardar fichero stats"), meta, "TXT (*.txt)");
       if (!NombreFichero.isEmpty())
         SalvarPorcentajesErrorEdits(NombreFichero, (double)EdtUmbralErrorEdits->value());      
@@ -1780,7 +1768,7 @@ TFmeTest::TFmeTest(QWidget* parent, const char* name, Qt::WindowFlags fl, TFmeRa
     void TFmeTest::ButSalvarErrorRegistrosClick()
     {
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators(start + "/" + DIRECTORIO_STATS);
+      QString meta = QDir::toNativeSeparators(start + "/" + DIRECTORIO_STATS);
       QString NombreFichero = QFileDialog::getSaveFileName(this, tr("Guardar fichero stats"), meta, "TXT (*.txt)");
       if (!NombreFichero.isEmpty())
         SalvarPorcentajesErrorRegistros(NombreFichero, (double)EdtUmbralErrorRegistros->value());      

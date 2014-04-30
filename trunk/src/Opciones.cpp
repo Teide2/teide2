@@ -30,10 +30,7 @@ TFrmOpciones::TFrmOpciones(QWidget* parent, const char* name, Qt::WindowFlags fl
         this->setObjectName(QString::fromUtf8("TFrmOpciones"));
 
       this->resize(500, 308);
-      QFont font;
-      font.setFamily(QString::fromUtf8("Tahoma"));
-      font.setPointSize(8);
-      this->setFont(font);
+
       PgcOpciones = new QTabWidget(this);
       PgcOpciones->setObjectName(QString::fromUtf8("PgcOpciones"));
       PgcOpciones->setGeometry(QRect(0, 0, 500, 311));
@@ -41,82 +38,82 @@ TFrmOpciones::TFrmOpciones(QWidget* parent, const char* name, Qt::WindowFlags fl
       TshMissing->setObjectName(QString::fromUtf8("TshMissing"));
       ChbMiss1Valido = new QCheckBox(TshMissing);
       ChbMiss1Valido->setObjectName(QString::fromUtf8("ChbMiss1Valido"));
-      ChbMiss1Valido->setGeometry(QRect(8, 30, 371, 17));
+      ChbMiss1Valido->setGeometry(QRect(8, 30, 420, 17));
       ChbMiss2Valido = new QCheckBox(TshMissing);
       ChbMiss2Valido->setObjectName(QString::fromUtf8("ChbMiss2Valido"));
-      ChbMiss2Valido->setGeometry(QRect(8, 80, 375, 17));
+      ChbMiss2Valido->setGeometry(QRect(8, 80, 420, 17));
       ChbMiss3Valido = new QCheckBox(TshMissing);
       ChbMiss3Valido->setObjectName(QString::fromUtf8("ChbMiss3Valido"));
-      ChbMiss3Valido->setGeometry(QRect(8, 130, 371, 17));
+      ChbMiss3Valido->setGeometry(QRect(8, 130, 420, 17));
       ChbMiss4Valido = new QCheckBox(TshMissing);
       ChbMiss4Valido->setObjectName(QString::fromUtf8("ChbMiss4Valido"));
-      ChbMiss4Valido->setGeometry(QRect(8, 180, 371, 17));
+      ChbMiss4Valido->setGeometry(QRect(8, 180, 420, 17));
       PgcOpciones->addTab(TshMissing, QString());
       TshDistancia = new QWidget();
       TshDistancia->setObjectName(QString::fromUtf8("TshDistancia"));
       LabInfoDistancias = new QLabel(TshDistancia);
       LabInfoDistancias->setObjectName(QString::fromUtf8("LabInfoDistancias"));
-      LabInfoDistancias->setGeometry(QRect(8, 5, 302, 18));
+      LabInfoDistancias->setGeometry(QRect(8, 5, 352, 18));
       LabPesoAlfa = new QLabel(TshDistancia);
       LabPesoAlfa->setObjectName(QString::fromUtf8("LabPesoAlfa"));
-      LabPesoAlfa->setGeometry(QRect(8, 42, 161, 18));
+      LabPesoAlfa->setGeometry(QRect(8, 42, 200, 18));
       LabPesoBeta1 = new QLabel(TshDistancia);
       LabPesoBeta1->setObjectName(QString::fromUtf8("LabPesoBeta1"));
-      LabPesoBeta1->setGeometry(QRect(8, 72, 165, 18));
+      LabPesoBeta1->setGeometry(QRect(8, 72, 200, 18));
       LabMaxDistDonante = new QLabel(TshDistancia);
       LabMaxDistDonante->setObjectName(QString::fromUtf8("LabMaxDistDonante"));
-      LabMaxDistDonante->setGeometry(QRect(8, 159, 222, 18));
+      LabMaxDistDonante->setGeometry(QRect(8, 159, 310, 18));
       LabPesoGamma = new QLabel(TshDistancia);
       LabPesoGamma->setObjectName(QString::fromUtf8("LabPesoGamma"));
-      LabPesoGamma->setGeometry(QRect(8, 132, 176, 18));
+      LabPesoGamma->setGeometry(QRect(8, 132, 200, 18));
       LabPesoBeta2 = new QLabel(TshDistancia);
       LabPesoBeta2->setObjectName(QString::fromUtf8("LabPesoBeta2"));
-      LabPesoBeta2->setGeometry(QRect(8, 102, 165, 18));
+      LabPesoBeta2->setGeometry(QRect(8, 102, 200, 18));
       PanDivision1 = new QLineEdit(TshDistancia);
       PanDivision1->setObjectName(QString::fromUtf8("PanDivision1"));
-      PanDivision1->setGeometry(QRect(8, 21, 311, 5));      
+      PanDivision1->setGeometry(QRect(8, 21, 355, 5));
       QPalette palette( QApplication::palette() );
       palette.setColor( QPalette::Active, QPalette::Base, Qt::black );
       PanDivision1->setPalette(palette);
       EdtPesoAlfa = new QSpinBox(TshDistancia);
       EdtPesoAlfa->setObjectName(QString::fromUtf8("EdtPesoAlfa"));
-      EdtPesoAlfa->setGeometry(QRect(200, 35, 46, 23));
+      EdtPesoAlfa->setGeometry(QRect(215, 35, 46, 23));
       EdtPesoBeta1 = new QSpinBox(TshDistancia);
       EdtPesoBeta1->setObjectName(QString::fromUtf8("EdtPesoBeta1"));
-      EdtPesoBeta1->setGeometry(QRect(200, 65, 46, 23));
+      EdtPesoBeta1->setGeometry(QRect(215, 65, 46, 23));
       EdtPesoBeta2 = new QSpinBox(TshDistancia);
       EdtPesoBeta2->setObjectName(QString::fromUtf8("EdtPesoBeta2"));
-      EdtPesoBeta2->setGeometry(QRect(200, 95, 46, 23));
+      EdtPesoBeta2->setGeometry(QRect(215, 95, 46, 23));
       EdtPesoGamma = new QSpinBox(TshDistancia);
       EdtPesoGamma->setObjectName(QString::fromUtf8("EdtPesoGamma"));
-      EdtPesoGamma->setGeometry(QRect(200, 125, 46, 23));
+      EdtPesoGamma->setGeometry(QRect(215, 125, 46, 23));
       ButMinAlfa = new QPushButton(TshDistancia);
       ButMinAlfa->setObjectName(QString::fromUtf8("ButMinAlfa"));
-      ButMinAlfa->setGeometry(QRect(270, 35, 40, 23));
+      ButMinAlfa->setGeometry(QRect(275, 35, 40, 23));
       ButMaxAlfa = new QPushButton(TshDistancia);
       ButMaxAlfa->setObjectName(QString::fromUtf8("ButMaxAlfa"));
-      ButMaxAlfa->setGeometry(QRect(330, 35, 40, 23));
+      ButMaxAlfa->setGeometry(QRect(335, 35, 40, 23));
       ButMinBeta1 = new QPushButton(TshDistancia);
       ButMinBeta1->setObjectName(QString::fromUtf8("ButMinBeta1"));
-      ButMinBeta1->setGeometry(QRect(270, 65, 40, 23));
+      ButMinBeta1->setGeometry(QRect(275, 65, 40, 23));
       ButMaxBeta1 = new QPushButton(TshDistancia);
       ButMaxBeta1->setObjectName(QString::fromUtf8("ButMaxBeta1"));
-      ButMaxBeta1->setGeometry(QRect(330, 65, 40, 23));
+      ButMaxBeta1->setGeometry(QRect(335, 65, 40, 23));
       ButMinBeta2 = new QPushButton(TshDistancia);
       ButMinBeta2->setObjectName(QString::fromUtf8("ButMinBeta2"));
-      ButMinBeta2->setGeometry(QRect(270, 95, 40, 23));
+      ButMinBeta2->setGeometry(QRect(275, 95, 40, 23));
       ButMinGamma = new QPushButton(TshDistancia);
       ButMinGamma->setObjectName(QString::fromUtf8("ButMinGamma"));
-      ButMinGamma->setGeometry(QRect(270, 125, 40, 23));
+      ButMinGamma->setGeometry(QRect(275, 125, 40, 23));
       ButMaxBeta2 = new QPushButton(TshDistancia);
       ButMaxBeta2->setObjectName(QString::fromUtf8("ButMaxBeta2"));
-      ButMaxBeta2->setGeometry(QRect(330, 95, 40, 23));
+      ButMaxBeta2->setGeometry(QRect(335, 95, 40, 23));
       ButMaxGamma = new QPushButton(TshDistancia);
       ButMaxGamma->setObjectName(QString::fromUtf8("ButMaxGamma"));
-      ButMaxGamma->setGeometry(QRect(330, 125, 40, 23));
+      ButMaxGamma->setGeometry(QRect(335, 125, 40, 23));
       EdtMaxDistDonante = new QLineEdit(TshDistancia);
       EdtMaxDistDonante->setObjectName(QString::fromUtf8("EdtMaxDistDonante"));
-      EdtMaxDistDonante->setGeometry(QRect(242, 155, 81, 23));
+      EdtMaxDistDonante->setGeometry(QRect(320, 155, 81, 23));
 
       LabInfoDistancias2 = new QLabel(TshDistancia);
       LabInfoDistancias2->setObjectName(QString::fromUtf8("LabInfoDistancias2"));
@@ -139,7 +136,7 @@ TFrmOpciones::TFrmOpciones(QWidget* parent, const char* name, Qt::WindowFlags fl
       GbMetodoPesos->setGeometry(QRect(10, 29, 371, 161));
       RbMetodoPesosImpApar = new QRadioButton(GbMetodoPesos);
       RbMetodoPesosImpApar->setObjectName(QString::fromUtf8("RbMetodoPesosImpApar"));
-      RbMetodoPesosImpApar->setGeometry(QRect(10, 40, 271, 21));
+      RbMetodoPesosImpApar->setGeometry(QRect(10, 40, 295, 21));
       RbMetodoPesosAleatorio = new QRadioButton(GbMetodoPesos);
       RbMetodoPesosAleatorio->setObjectName(QString::fromUtf8("RbMetodoPesosAleatorio"));
       RbMetodoPesosAleatorio->setGeometry(QRect(10, 100, 95, 21));
@@ -148,10 +145,10 @@ TFrmOpciones::TFrmOpciones(QWidget* parent, const char* name, Qt::WindowFlags fl
       TshVarios->setObjectName(QString::fromUtf8("TshVarios"));
       ChbIgnorarEdits = new QCheckBox(TshVarios);
       ChbIgnorarEdits->setObjectName(QString::fromUtf8("ChbIgnorarEdits"));
-      ChbIgnorarEdits->setGeometry(QRect(10, 50, 191, 21));
+      ChbIgnorarEdits->setGeometry(QRect(10, 50, 210, 21));
       ChbIgnorarVariablesNoImputables = new QCheckBox(TshVarios);
       ChbIgnorarVariablesNoImputables->setObjectName(QString::fromUtf8("ChbIgnorarVariablesNoImputables"));
-      ChbIgnorarVariablesNoImputables->setGeometry(QRect(10, 130, 211, 21));
+      ChbIgnorarVariablesNoImputables->setGeometry(QRect(10, 130, 231, 21));
       PgcOpciones->addTab(TshVarios, QString());
       TshInforme = new QWidget();
       TshInforme->setObjectName(QString::fromUtf8("TshInforme"));
@@ -169,57 +166,57 @@ TFrmOpciones::TFrmOpciones(QWidget* parent, const char* name, Qt::WindowFlags fl
       TshImputacion->setObjectName(QString::fromUtf8("TshImputacion"));
       LabNumMaxRegDonantes = new QLabel(TshImputacion);
       LabNumMaxRegDonantes->setObjectName(QString::fromUtf8("NumMaxRegDonantes"));
-      LabNumMaxRegDonantes->setGeometry(QRect(20, 45, 232, 41));
+      LabNumMaxRegDonantes->setGeometry(QRect(20, 45, 292, 41));
       EdtNumMaxRegDonantes = new QLineEdit(TshImputacion);
       EdtNumMaxRegDonantes->setObjectName(("EdtNumMaxRegDonantes"));
-      EdtNumMaxRegDonantes->setGeometry(QRect(260, 50, 90, 21));
+      EdtNumMaxRegDonantes->setGeometry(QRect(300, 50, 90, 21));
       LabUmbralEnumVariables = new QLabel(TshImputacion);
       LabUmbralEnumVariables->setObjectName(QString::fromUtf8("LabUmbralEnumVariables"));
-      LabUmbralEnumVariables->setGeometry(QRect(20, 110, 242, 61));
+      LabUmbralEnumVariables->setGeometry(QRect(20, 110, 292, 61));
       EdtUmbralEnumVariables = new QLineEdit(TshImputacion);
       EdtUmbralEnumVariables->setObjectName(("EdtUmbralEnumVariables"));
-      EdtUmbralEnumVariables->setGeometry(QRect(260, 130, 90, 21));
+      EdtUmbralEnumVariables->setGeometry(QRect(300, 130, 90, 21));
       PgcOpciones->addTab(TshImputacion, QString());
 
       num_valores_missing = num_val_missing;
       cadenas_missing = cad_missing;
 
-      this->setWindowTitle(QApplication::translate("TFrmOpciones", "Opciones", 0, QApplication::UnicodeUTF8));
-      PgcOpciones->setTabText(PgcOpciones->indexOf(TshMissing), QApplication::translate("TFrmOpciones", "&Missing", 0, QApplication::UnicodeUTF8));
-      LabInfoDistancias2->setText(QApplication::translate("TFrmOpciones", "Especifique la forma de calcular las distancias", 0, QApplication::UnicodeUTF8));
-      LabInfoDistancias->setText(QApplication::translate("TFrmOpciones", "Especifique los valores de los pesos de las distancias", 0, QApplication::UnicodeUTF8));
-      LabPesoAlfa->setText(QApplication::translate("TFrmOpciones", "Peso de la distancia alfa ...", 0, QApplication::UnicodeUTF8));
-      LabPesoBeta1->setText(QApplication::translate("TFrmOpciones", "Peso de la distancia beta1 ...", 0, QApplication::UnicodeUTF8));
-      LabMaxDistDonante->setText(QApplication::translate("TFrmOpciones", "M\303\241xima distancia permitida al registro donante", 0, QApplication::UnicodeUTF8));
-      LabPesoGamma->setText(QApplication::translate("TFrmOpciones", "Peso de la distancia gamma ...", 0, QApplication::UnicodeUTF8));
-      LabPesoBeta2->setText(QApplication::translate("TFrmOpciones", "Peso de la distancia beta2 ...", 0, QApplication::UnicodeUTF8));
-      ButMinAlfa->setText(QApplication::translate("TFrmOpciones", "Min", 0, QApplication::UnicodeUTF8));
-      ButMaxAlfa->setText(QApplication::translate("TFrmOpciones", "Max", 0, QApplication::UnicodeUTF8));
-      ButMinBeta1->setText(QApplication::translate("TFrmOpciones", "Min", 0, QApplication::UnicodeUTF8));
-      ButMaxBeta1->setText(QApplication::translate("TFrmOpciones", "Max", 0, QApplication::UnicodeUTF8));
-      ButMinBeta2->setText(QApplication::translate("TFrmOpciones", "Min", 0, QApplication::UnicodeUTF8));
-      ButMinGamma->setText(QApplication::translate("TFrmOpciones", "Min", 0, QApplication::UnicodeUTF8));
-      ButMaxBeta2->setText(QApplication::translate("TFrmOpciones", "Max", 0, QApplication::UnicodeUTF8));
-      ButMaxGamma->setText(QApplication::translate("TFrmOpciones", "Max", 0, QApplication::UnicodeUTF8));
-      PgcOpciones->setTabText(PgcOpciones->indexOf(TshDistancia), QApplication::translate("TFrmOpciones", "&Distancias", 0, QApplication::UnicodeUTF8));
-      GbMetodoPesos->setTitle(QApplication::translate("TFrmOpciones", "M\303\251todos de asignaci\303\263n de pesos a variables", 0, QApplication::UnicodeUTF8));
-      RbMetodoPesosImpApar->setText(QApplication::translate("TFrmOpciones", "Peso de imputaci\303\263n + Aparici\303\263n en reglas", 0, QApplication::UnicodeUTF8));
-      RbMetodoPesosAleatorio->setText(QApplication::translate("TFrmOpciones", "Aleatorio", 0, QApplication::UnicodeUTF8));
-      PgcOpciones->setTabText(PgcOpciones->indexOf(TshPesosVariables), QApplication::translate("TFrmOpciones", "&Pesos", 0, QApplication::UnicodeUTF8));
-      ChbIgnorarEdits->setText(QApplication::translate("TFrmOpciones", "Ignorar las reglas expl\303\255citas", 0, QApplication::UnicodeUTF8));
-      ChbIgnorarVariablesNoImputables->setText(QApplication::translate("TFrmOpciones", "Ignorar variables no imputables", 0, QApplication::UnicodeUTF8));
-      PgcOpciones->setTabText(PgcOpciones->indexOf(TshVarios), QApplication::translate("TFrmOpciones", "&Varios", 0, QApplication::UnicodeUTF8));
-      GbMetodoInforme->setTitle(QApplication::translate("TFrmOpciones", "Informe de estad\303\255stica", 0, QApplication::UnicodeUTF8));
-      RbMetodoInformeResumido->setText(QApplication::translate("TFrmOpciones", "Resumido", 0, QApplication::UnicodeUTF8));
-      RbMetodoInformeExtenso->setText(QApplication::translate("TFrmOpciones", "Extenso", 0, QApplication::UnicodeUTF8));
-      PgcOpciones->setTabText(PgcOpciones->indexOf(TshInforme), QApplication::translate("TFrmOpciones", "&Informe", 0, QApplication::UnicodeUTF8));
-      LabNumMaxRegDonantes->setText(QApplication::translate("TFrmOpciones", "N\303\272mero m\303\241ximo de registros donantes \na considerar", 0, QApplication::UnicodeUTF8));
-      EdtNumMaxRegDonantes->setText(QApplication::translate("TFrmOpciones", "500", 0, QApplication::UnicodeUTF8));
-      LabUmbralEnumVariables->setText(QApplication::translate("TFrmOpciones", "N\303\272mero m\303\241ximo de variables a considerar \npara realizar las combinaciones en la \nimputaci\303\263n de variables de reglas", 0, QApplication::UnicodeUTF8));
-      EdtUmbralEnumVariables->setText(QApplication::translate("TFrmOpciones", "10", 0, QApplication::UnicodeUTF8));
-      PgcOpciones->setTabText(PgcOpciones->indexOf(TshImputacion), QApplication::translate("TFrmOpciones", "&CtesImputaci\303\263n", 0, QApplication::UnicodeUTF8));
-      RbMetodo1->setText(QApplication::translate("TFrmOpciones", "Calcular distancias mediante sumas", 0, QApplication::UnicodeUTF8));
-      RbMetodo2->setText(QApplication::translate("TFrmOpciones", "Calcular distancias mediante productos", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFrmOpciones", "Opciones", 0));
+      PgcOpciones->setTabText(PgcOpciones->indexOf(TshMissing), QApplication::translate("TFrmOpciones", "&Missing", 0));
+      LabInfoDistancias2->setText(QApplication::translate("TFrmOpciones", "Especifique la forma de calcular las distancias", 0));
+      LabInfoDistancias->setText(QApplication::translate("TFrmOpciones", "Especifique los valores de los pesos de las distancias", 0));
+      LabPesoAlfa->setText(QApplication::translate("TFrmOpciones", "Peso de la distancia alfa ...", 0));
+      LabPesoBeta1->setText(QApplication::translate("TFrmOpciones", "Peso de la distancia beta1 ...", 0));
+      LabMaxDistDonante->setText(QApplication::translate("TFrmOpciones", "M\303\241xima distancia permitida al registro donante", 0));
+      LabPesoGamma->setText(QApplication::translate("TFrmOpciones", "Peso de la distancia gamma ...", 0));
+      LabPesoBeta2->setText(QApplication::translate("TFrmOpciones", "Peso de la distancia beta2 ...", 0));
+      ButMinAlfa->setText(QApplication::translate("TFrmOpciones", "Min", 0));
+      ButMaxAlfa->setText(QApplication::translate("TFrmOpciones", "Max", 0));
+      ButMinBeta1->setText(QApplication::translate("TFrmOpciones", "Min", 0));
+      ButMaxBeta1->setText(QApplication::translate("TFrmOpciones", "Max", 0));
+      ButMinBeta2->setText(QApplication::translate("TFrmOpciones", "Min", 0));
+      ButMinGamma->setText(QApplication::translate("TFrmOpciones", "Min", 0));
+      ButMaxBeta2->setText(QApplication::translate("TFrmOpciones", "Max", 0));
+      ButMaxGamma->setText(QApplication::translate("TFrmOpciones", "Max", 0));
+      PgcOpciones->setTabText(PgcOpciones->indexOf(TshDistancia), QApplication::translate("TFrmOpciones", "&Distancias", 0));
+      GbMetodoPesos->setTitle(QApplication::translate("TFrmOpciones", "M\303\251todos de asignaci\303\263n de pesos a variables", 0));
+      RbMetodoPesosImpApar->setText(QApplication::translate("TFrmOpciones", "Peso de imputaci\303\263n + Aparici\303\263n en reglas", 0));
+      RbMetodoPesosAleatorio->setText(QApplication::translate("TFrmOpciones", "Aleatorio", 0));
+      PgcOpciones->setTabText(PgcOpciones->indexOf(TshPesosVariables), QApplication::translate("TFrmOpciones", "&Pesos", 0));
+      ChbIgnorarEdits->setText(QApplication::translate("TFrmOpciones", "Ignorar las reglas expl\303\255citas", 0));
+      ChbIgnorarVariablesNoImputables->setText(QApplication::translate("TFrmOpciones", "Ignorar variables no imputables", 0));
+      PgcOpciones->setTabText(PgcOpciones->indexOf(TshVarios), QApplication::translate("TFrmOpciones", "&Varios", 0));
+      GbMetodoInforme->setTitle(QApplication::translate("TFrmOpciones", "Informe de estad\303\255stica", 0));
+      RbMetodoInformeResumido->setText(QApplication::translate("TFrmOpciones", "Resumido", 0));
+      RbMetodoInformeExtenso->setText(QApplication::translate("TFrmOpciones", "Extenso", 0));
+      PgcOpciones->setTabText(PgcOpciones->indexOf(TshInforme), QApplication::translate("TFrmOpciones", "&Informe", 0));
+      LabNumMaxRegDonantes->setText(QApplication::translate("TFrmOpciones", "N\303\272mero m\303\241ximo de registros donantes \na considerar", 0));
+      EdtNumMaxRegDonantes->setText(QApplication::translate("TFrmOpciones", "500", 0));
+      LabUmbralEnumVariables->setText(QApplication::translate("TFrmOpciones", "N\303\272mero m\303\241ximo de variables a considerar \npara realizar las combinaciones en la \nimputaci\303\263n de variables de reglas", 0));
+      EdtUmbralEnumVariables->setText(QApplication::translate("TFrmOpciones", "10", 0));
+      PgcOpciones->setTabText(PgcOpciones->indexOf(TshImputacion), QApplication::translate("TFrmOpciones", "&CtesImputaci\303\263n", 0));
+      RbMetodo1->setText(QApplication::translate("TFrmOpciones", "Calcular distancias mediante sumas", 0));
+      RbMetodo2->setText(QApplication::translate("TFrmOpciones", "Calcular distancias mediante productos", 0));
 
       QObject::connect(ChbMiss1Valido, SIGNAL(clicked()), this, SLOT(ChbMiss1ValidoClick()));
       QObject::connect(ChbMiss2Valido, SIGNAL(clicked()), this, SLOT(ChbMiss2ValidoClick()));
@@ -360,22 +357,22 @@ TFrmOpciones::TFrmOpciones(QWidget* parent, const char* name, Qt::WindowFlags fl
     
     double TFrmOpciones::GetMaxDistDonante()
     {
-      double x;
+        double x;
 
-      if (EdtMaxDistDonante->text() == "INF")
-      {
-	x =  999.9; //MaxDouble;
-      }
-      else
-    //try
-    //{
-	  x = EdtMaxDistDonante->text().toDouble();
-/*	}
-	catch(...)
-	{
-	  x = 999.9; //MaxDouble;
-    }*/
-      return x;
+        if (EdtMaxDistDonante->text() == "INF")
+        {
+            x =  999.9; //MaxDouble;
+        }
+        else
+            try
+        {
+            x = EdtMaxDistDonante->text().toDouble();
+        }
+        catch(...)
+        {
+            x = 999.9; //MaxDouble;
+        }
+        return x;
     }
     int TFrmOpciones::GetNumMaxRegDonantes()
     {

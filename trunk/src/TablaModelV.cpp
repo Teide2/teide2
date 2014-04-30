@@ -31,8 +31,9 @@
 
   void TablaModelV::setCurrencyMap(QString ** &map)   // cuando modifiquemos la matriz
   {
-     distances = map;     
-     reset();
+     beginResetModel();
+     distances = map;
+     endResetModel();     
   }
 
   QStringList TablaModelV::getCabeceraV()
@@ -113,12 +114,7 @@
     }
     if (role == Qt::ForegroundRole)
       return QColor(Qt::white);
-    if (role == Qt::FontRole) {
-      QFont font;
-      font.setFamily(("Tahoma"));
-      font.setPointSize( 8 );      
-      return QFont(font);
-    }
+
     return QVariant();
   }
 

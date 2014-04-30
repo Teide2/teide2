@@ -2,9 +2,9 @@ TEMPLATE = app
 
 RC_FILE = myapp.rc
 unix {
-    LIBS += -L/home/salome/qwt-5.2.1/lib/
+    LIBS += -L/home/salome/Qt/qwt-6.1.0/lib/
     LIBS += -lqwt
-    INCLUDEPATH += /home/salome/qwt-5.2.1/src/
+    INCLUDEPATH += /home/salome/Qt/qwt-6.1.0/src/
 }
 TRANSLATIONS = teide2tr_ing2.ts
 win32 { 
@@ -18,7 +18,7 @@ win32 {
     #CONFIG += debug
     QMAKE_YACC = bison
     QMAKE_LEX = flex
-    LIBS += -LC:\Qt\qwt-6.0.1-MGW32\lib
+    LIBS += -LC:\Qt\qwt-6.1.0MinGW32\lib
     DebugBuild {
       LIBS += -lqwtd
     }
@@ -27,13 +27,14 @@ win32 {
     }
     CONFIG += embed_manifest_exe
     CONFIG -= embed_manifest_dll
-    INCLUDEPATH += C:\Qt\qwt-6.0.1-MGW32\src
+    INCLUDEPATH += C:\Qt\qwt-6.1.0MinGW32\src
 }
 
 QT += xml \
     sql \
     gui \
-    core
+    core \
+    widgets
 #QMAKE_CFLAGS += -g \    -pg
 #QMAKE_CXXFLAGS += -g \    -pg
 #QMAKE_LFLAGS += -pg
@@ -131,5 +132,7 @@ SOURCES += main.cpp \
     VariablesDeEdits.cpp \
     MensajeCarga.cpp    \
     MiTabla.cpp
+
+
 
 
