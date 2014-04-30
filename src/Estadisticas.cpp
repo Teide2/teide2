@@ -32,9 +32,7 @@
 
       if (this->objectName().isEmpty())
         this->setObjectName(QString::fromUtf8("TFmeEstadisticas"));
-      QFont font;
-      font.setFamily(QString::fromUtf8("Tahoma"));
-      this->setFont(font);
+
       PanProgreso = new QLineEdit(this);
       PanProgreso->setObjectName(QString::fromUtf8("PanProgreso"));
       PanProgreso->setGeometry(QRect(0, 0, this->width(), 90));
@@ -91,7 +89,9 @@
       SptSeparador->setFrameShape(QFrame::HLine);
       SptSeparador->setFrameShadow(QFrame::Sunken);
       SptSeparador->setLineWidth(3);
-      SptSeparador->setPixmap(QPixmap(QString::fromUtf8("images/linea.bmp")));
+      QString start = QCoreApplication::applicationDirPath();
+      QString meta = QDir::toNativeSeparators("/images/linea.bmp");
+      SptSeparador->setPixmap(QPixmap(start+meta));
       PanUtilidades = new QFrame(PanContenedor);
       PanUtilidades->setObjectName(QString::fromUtf8("PanUtilidades"));
       PanUtilidades->setGeometry(QRect(1, PanContenedor->height()-2-42, PanContenedor->width(), 42));
@@ -99,10 +99,10 @@
       PanUtilidades->setFrameShadow(QFrame::Raised);
       LabVariable = new QLabel(PanUtilidades);
       LabVariable->setObjectName(QString::fromUtf8("LabVariable"));
-      LabVariable->setGeometry(QRect(8, 10, 114, 18));
+      LabVariable->setGeometry(QRect(8, 10, 134, 18));
       CbxVariables = new QComboBox(PanUtilidades);
       CbxVariables->setObjectName(QString::fromUtf8("CbxVariables"));
-      CbxVariables->setGeometry(QRect(128, 8, 185, 23));
+      CbxVariables->setGeometry(QRect(158, 8, 185, 23));
       CbxVariables->setEditable(true);
       ButGuardarInforme = new QPushButton(PanUtilidades);
       ButGuardarInforme->setObjectName(QString::fromUtf8("ButGuardarInforme"));
@@ -122,8 +122,8 @@
       grid = new QwtPlotGrid;
       grid->enableXMin(true);
       grid->enableYMin(true);
-      grid->setMajPen(QPen(Qt::black, 0, Qt::DotLine));
-      grid->setMinPen(QPen(Qt::gray, 0 , Qt::DotLine));
+      grid->setMajorPen(QPen(Qt::black, 0, Qt::DotLine));
+      grid->setMinorPen(QPen(Qt::gray, 0 , Qt::DotLine));
       grid->attach(plot);
 
 
@@ -134,22 +134,22 @@
       gridM = new QwtPlotGrid;
       gridM->enableXMin(true);
       gridM->enableYMin(true);
-      gridM->setMajPen(QPen(Qt::black, 0, Qt::DotLine));
-      gridM->setMinPen(QPen(Qt::gray, 0 , Qt::DotLine));
+      gridM->setMajorPen(QPen(Qt::black, 0, Qt::DotLine));
+      gridM->setMinorPen(QPen(Qt::gray, 0 , Qt::DotLine));
       gridM->attach(plotM);
 
-      /*QwtPlotHistogram **/histogrampre = new QwtPlotHistogram();
-      histogrampre->setBrush(Qt::blue);//histogrampre->setColor(Qt::blue);
+      histogrampre = new QwtPlotHistogram();
+      histogrampre->setBrush(Qt::blue);
 
-      /*QwtPlotHistogram **/histogrampos = new QwtPlotHistogram();
-      histogrampos->setBrush(Qt::green); //histogrampos->setColor(Qt::green);
+      histogrampos = new QwtPlotHistogram();
+      histogrampos->setBrush(Qt::green);
 
-      /*QwtPlotHistogram **/histogrampreM = new QwtPlotHistogram();
+      histogrampreM = new QwtPlotHistogram();
 
-      histogrampreM->setBrush(Qt::blue);//histogrampre->setColor(Qt::blue);
-      /*QwtPlotHistogram **/histogramposM = new QwtPlotHistogram();
+      histogrampreM->setBrush(Qt::blue);
+      histogramposM = new QwtPlotHistogram();
 
-      histogramposM->setBrush(Qt::green); //histogrampos->setColor(Qt::green);
+      histogramposM->setBrush(Qt::green);
 
       ButAnterior = new QPushButton(PanUtilidades);
       ButAnterior->setObjectName(("ButAnterior"));
@@ -179,34 +179,34 @@
       EdtValoresMissing->setReadOnly(true);
       EdtValoresMissing->setPalette(palette);
 
-      this->setWindowTitle(QApplication::translate("TFmeEstadisticas", "Form", 0, QApplication::UnicodeUTF8));
-      LabOperacion->setText(QApplication::translate("TFmeEstadisticas", "Operaci\303\263n en curso", 0, QApplication::UnicodeUTF8));
-      LabProgreso->setText(QApplication::translate("TFmeEstadisticas", "Progreso de la operaci\303\263n", 0, QApplication::UnicodeUTF8));
-      LabPorcentaje->setText(QApplication::translate("TFmeEstadisticas", "% completado", 0, QApplication::UnicodeUTF8));
-      LabElemento->setText(QApplication::translate("TFmeEstadisticas", "# completado", 0, QApplication::UnicodeUTF8));
-      EdtOperacion->setToolTip(QApplication::translate("TFmeEstadisticas", "Nombre de la operaci\303\263n que esta siendo ejecutada actualmente.", 0, QApplication::UnicodeUTF8));
-      EdtOperacion->setText(QApplication::translate("TFmeEstadisticas", "Generaci\303\263n del informe resumen de las operaciones realizadas.", 0, QApplication::UnicodeUTF8));
-      PbrProgreso->setToolTip(QApplication::translate("TFmeEstadisticas", "Muestra del progreso de la operaci\303\263n.", 0, QApplication::UnicodeUTF8));
-      EdtPorcentaje->setToolTip(QApplication::translate("TFmeEstadisticas", "Porcentaje completado de la operaci\303\263n.", 0, QApplication::UnicodeUTF8));
-      EdtElemento->setToolTip(QApplication::translate("TFmeEstadisticas", "Elemento actual en proceso / N\303\272mero total de elementos a procesar", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFmeEstadisticas", "Form", 0));
+      LabOperacion->setText(QApplication::translate("TFmeEstadisticas", "Operaci\303\263n en curso", 0));
+      LabProgreso->setText(QApplication::translate("TFmeEstadisticas", "Progreso de la operaci\303\263n", 0));
+      LabPorcentaje->setText(QApplication::translate("TFmeEstadisticas", "% completado", 0));
+      LabElemento->setText(QApplication::translate("TFmeEstadisticas", "# completado", 0));
+      EdtOperacion->setToolTip(QApplication::translate("TFmeEstadisticas", "Nombre de la operaci\303\263n que esta siendo ejecutada actualmente.", 0));
+      EdtOperacion->setText(QApplication::translate("TFmeEstadisticas", "Generaci\303\263n del informe resumen de las operaciones realizadas.", 0));
+      PbrProgreso->setToolTip(QApplication::translate("TFmeEstadisticas", "Muestra del progreso de la operaci\303\263n.", 0));
+      EdtPorcentaje->setToolTip(QApplication::translate("TFmeEstadisticas", "Porcentaje completado de la operaci\303\263n.", 0));
+      EdtElemento->setToolTip(QApplication::translate("TFmeEstadisticas", "Elemento actual en proceso / N\303\272mero total de elementos a procesar", 0));
       SptSeparador->setText(QString());
-      LabVariable->setText(QApplication::translate("TFmeEstadisticas", "Variable a visualizar", 0, QApplication::UnicodeUTF8));
-      ButGuardarInforme->setText(QApplication::translate("TFmeEstadisticas", "Guardar informe", 0, QApplication::UnicodeUTF8));
-      GbxHistogramaFrecuencias->setToolTip(QApplication::translate("TFmeEstadisticas", "Histograma de porcentajes de error.", 0, QApplication::UnicodeUTF8));
-      GbxHistogramaFrecuencias->setTitle(QApplication::translate("TFmeEstadisticas", "Histogramas de frecuencias", 0, QApplication::UnicodeUTF8));
-      MemInfo->setToolTip(QApplication::translate("TFmeEstadisticas", "Resumen de operaciones", 0, QApplication::UnicodeUTF8));
-      CbxVariables->setToolTip(QApplication::translate("TFmeEstadisticas", "Seleccione la variable a mostrar", 0, QApplication::UnicodeUTF8));
-      ButGuardarInforme->setToolTip(QApplication::translate("TFmeEstadisticas", "Guarda informe de las operaciones en un fichero de texto", 0, QApplication::UnicodeUTF8));
+      LabVariable->setText(QApplication::translate("TFmeEstadisticas", "Variable a visualizar", 0));
+      ButGuardarInforme->setText(QApplication::translate("TFmeEstadisticas", "Guardar informe", 0));
+      GbxHistogramaFrecuencias->setToolTip(QApplication::translate("TFmeEstadisticas", "Histograma de porcentajes de error.", 0));
+      GbxHistogramaFrecuencias->setTitle(QApplication::translate("TFmeEstadisticas", "Histogramas de frecuencias", 0));
+      MemInfo->setToolTip(QApplication::translate("TFmeEstadisticas", "Resumen de operaciones", 0));
+      CbxVariables->setToolTip(QApplication::translate("TFmeEstadisticas", "Seleccione la variable a mostrar", 0));
+      ButGuardarInforme->setToolTip(QApplication::translate("TFmeEstadisticas", "Guarda informe de las operaciones en un fichero de texto", 0));
       ButSiguiente->setText(">");
       ButAnterior->setText("<");
-      ButAnterior->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los anteriores valores", 0, QApplication::UnicodeUTF8));
-      ButSiguiente->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los siguientes valores", 0, QApplication::UnicodeUTF8));
+      ButAnterior->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los anteriores valores", 0));
+      ButSiguiente->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los siguientes valores", 0));
       ButSiguienteM->setText(">");
       ButAnteriorM->setText("<");
-      ButAnteriorM->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los anteriores missings", 0, QApplication::UnicodeUTF8));
-      ButSiguienteM->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los siguientes missings", 0, QApplication::UnicodeUTF8));
-      EdtValoresRango->setText(QApplication::translate("TFmeEstadisticas", "VALORES RANGO", 0, QApplication::UnicodeUTF8));
-      EdtValoresMissing->setText(QApplication::translate("TFmeEstadisticas", "VALORES MISSING", 0, QApplication::UnicodeUTF8));
+      ButAnteriorM->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los anteriores missings", 0));
+      ButSiguienteM->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los siguientes missings", 0));
+      EdtValoresRango->setText(QApplication::translate("TFmeEstadisticas", "VALORES RANGO", 0));
+      EdtValoresMissing->setText(QApplication::translate("TFmeEstadisticas", "VALORES MISSING", 0));
 
       connect(CbxVariables, SIGNAL(activated ( const int & )), this, SLOT(CbxVariablesCloseUp(const int &)));
       connect(ButGuardarInforme, SIGNAL(clicked()), this, SLOT(ButGuardarInformeClick()));
@@ -222,7 +222,7 @@
       // Asociar las clases
       AsociarClases(FmeImputacionAsociada);
       this->FrmOpciones = FrmOpciones;
-      MemLogs->append(QApplication::translate("", "Creando la clase de estad\303\255sticas", 0, QApplication::UnicodeUTF8));
+      MemLogs->append(QApplication::translate("", "Creando la clase de estad\303\255sticas", 0));
       QApplication::processEvents();
 
       // Fijar la cantidad de datos
@@ -381,80 +381,6 @@
 
       MemInfo->moveCursor ( QTextCursor::Start, QTextCursor::MoveAnchor);
       PanContenedor->show();
-
-      /*histogrampre = new QwtPlotHistogram();
-      histogrampre->setBrush(Qt::green); //histogrampos->setColor(Qt::green);
-
-            QVector<QwtIntervalSample> samples(25);
-            for ( uint i = 0; i < 25; i++ )
-            {
-                       QwtInterval interval(double(i), i + 1.0);
-
-                       interval.setBorderFlags(QwtInterval::ExcludeMaximum);
-
-                       samples[i] = QwtIntervalSample(0, interval);
-           }
-            histogrampre->setData(new QwtIntervalSeriesData(samples));
-            histogrampre->attach(plotM);
-      histogrampos = new QwtPlotHistogram();
-      histogrampos->setBrush(Qt::green); //histogrampos->setColor(Qt::green);
-
-
-            for ( uint i = 0; i < 25; i++ )
-            {
-                       QwtInterval interval(double(i), i + 1.0);
-
-                       interval.setBorderFlags(QwtInterval::ExcludeMaximum);
-
-                       samples[i] = QwtIntervalSample(0, interval);
-           }
-            histogrampos->setData(new QwtIntervalSeriesData(samples));
-            histogrampos->attach(plot);
-
-      histogrampreM = new QwtPlotHistogram();
-      histogrampreM->setBrush(Qt::green); //histogrampos->setColor(Qt::green);
-
-
-            for ( uint i = 0; i < 25; i++ )
-            {
-                       QwtInterval interval(double(i), i + 1.0);
-
-                       interval.setBorderFlags(QwtInterval::ExcludeMaximum);
-
-                       samples[i] = QwtIntervalSample(0, interval);
-           }
-            histogrampreM->setData(new QwtIntervalSeriesData(samples));
-            histogrampreM->attach(plotM);
-      histogramposM = new QwtPlotHistogram();
-      histogramposM->setBrush(Qt::green); //histogrampos->setColor(Qt::green);
-
-
-            for ( uint i = 0; i < 25; i++ )
-            {
-                       QwtInterval interval(double(i), i + 1.0);
-
-                       interval.setBorderFlags(QwtInterval::ExcludeMaximum);
-
-                       samples[i] = QwtIntervalSample(0, interval);
-           }
-            histogramposM->setData(new QwtIntervalSeriesData(samples));
-            histogramposM->attach(plotM);
-            /*histogrampre->setData(new QwtIntervalSeriesData(samples));
-            histogrampre->attach(plot);
-            histogrampos->setData(new QwtIntervalSeriesData(samples));
-            histogrampos->attach(plot);
-            histogrampreM->setData(new QwtIntervalSeriesData(samples));
-            histogrampreM->attach(plotM);*/
-
-
-            //plot->setAxisScale(QwtPlot::yLeft, 0.0, posY_max);
-            //plot->setAxisScale(QwtPlot::xBottom, posX_min, ultimo);
-            //plot->replot();
-
-            //plot->show();*/
-
-
-
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Generar las estadisticas de la seccion de variables.
@@ -463,16 +389,16 @@
     {
 
 
-      MemInfo->append("1. " + QApplication::translate("", "Secci\303\263n de variables", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("1. " + QApplication::translate("", "Secci\303\263n de variables", 0));
       MemInfo->append("---------------------------------------------------------------------------------------------------------------");
-      MemInfo->append("1.1. " + QApplication::translate("", "N\303\272mero de variables num\303\251ricas", 0, QApplication::UnicodeUTF8) + ": " + QString::number(FmeVariablesAsociadas->GetNumVariables(), 10));
-      MemInfo->append("1.2. " + QApplication::translate("", "N\303\272mero de atributos", 0, QApplication::UnicodeUTF8) + ": " + QString::number(FmeVariablesAsociadas->GetNumAtributos(), 10));
+      MemInfo->append("1.1. " + QApplication::translate("", "N\303\272mero de variables num\303\251ricas", 0) + ": " + QString::number(FmeVariablesAsociadas->GetNumVariables(), 10));
+      MemInfo->append("1.2. " + QApplication::translate("", "N\303\272mero de atributos", 0) + ": " + QString::number(FmeVariablesAsociadas->GetNumAtributos(), 10));
       MemInfo->append("1.3. " + tr("Tipos de variables") + ": ");
       MemInfo->append("  1.3.1. " + tr("Continuas") + ": " + QString::number(FmeVariablesAsociadas->GetNumTiposVariable(T_CONTINUO), 10) + " [" + QString::number(FmeVariablesAsociadas->GetPorcentajeTiposVariable(T_CONTINUO), 'f', 2) + "%]");
       MemInfo->append("  1.3.2. " + tr("Discretas en rango") + ": " + QString::number(FmeVariablesAsociadas->GetNumTiposVariable(T_DISCRETO), 10) + " [" + QString::number(FmeVariablesAsociadas->GetPorcentajeTiposVariable(T_DISCRETO), 'f', 2) + "%]");
       MemInfo->append("  1.3.3. " + tr("Discretas en lista") + ": " + QString::number(FmeVariablesAsociadas->GetNumTiposVariable(T_MIXTO), 10) + " [" + QString::number(FmeVariablesAsociadas->GetPorcentajeTiposVariable(T_MIXTO), 'f', 2) + "%]");
       MemInfo->append("  1.3.4. " + tr("Ignorables") + ": " + QString::number(FmeVariablesAsociadas->GetNumTiposVariable(T_IGNORABLE), 10) + " [" + QString::number(FmeVariablesAsociadas->GetPorcentajeTiposVariable(T_IGNORABLE), 'f', 2) + "%]");
-      MemInfo->append("1.4. " + QApplication::translate("", "Admisi\303\263n de valores missing", 0, QApplication::UnicodeUTF8) + ": ");
+      MemInfo->append("1.4. " + QApplication::translate("", "Admisi\303\263n de valores missing", 0) + ": ");
       for (int i=0; i < FmeVariablesAsociadas->GetNum_valores_missing(); i++)
         MemInfo->append("  1.4." + QString::number(i+1, 10) + " " + FmeVariablesAsociadas->GetCadenas_Missing()->at(i) + ": " + QString::number(FmeVariablesAsociadas->GetNumAdmisionMissing(i), 10) + " [" + QString::number(FmeVariablesAsociadas->GetPorcentajeAdmisionMissing(i), 'f', 2) + "%]");
       MemInfo->append("1.5. " + tr("Existencia de filtros") + ": " + QString::number(FmeVariablesAsociadas->GetNumFiltros(), 10) + " [" + QString::number(FmeVariablesAsociadas->GetPorcentajeFiltros(), 'f', 2) + "%]");
@@ -484,10 +410,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEstadisticas::GenerarEstadisticasMicroDatos()
     {
-      MemInfo->append("2. " + QApplication::translate("", "Secci\303\263n de microdatos", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("2. " + QApplication::translate("", "Secci\303\263n de microdatos", 0));
       MemInfo->append("---------------------------------------------------------------------------------------------------------------");
-      MemInfo->append("2.1. " + QApplication::translate("", "N\303\272mero de registros", 0, QApplication::UnicodeUTF8) + ": " + QString::number(FmeMicroDatosAsociados->GetNumRegistros(), 10));
-      MemInfo->append("2.2. " + QApplication::translate("", "N\303\272mero de registros x N\303\272mero de variables", 0, QApplication::UnicodeUTF8) + ": " + QString::number(FmeMicroDatosAsociados->GetNumMicrodatos(), 10));
+      MemInfo->append("2.1. " + QApplication::translate("", "N\303\272mero de registros", 0) + ": " + QString::number(FmeMicroDatosAsociados->GetNumRegistros(), 10));
+      MemInfo->append("2.2. " + QApplication::translate("", "N\303\272mero de registros x N\303\272mero de variables", 0) + ": " + QString::number(FmeMicroDatosAsociados->GetNumMicrodatos(), 10));
       MemInfo->append("2.3. " + tr("Existencia de valores missing: "));
       for (int i=0; i < FmeVariablesAsociadas->GetNum_valores_missing(); i++)
           MemInfo->append("  2.3." + QString::number(i+1, 10) + " " + FmeVariablesAsociadas->GetCadenas_Missing()->at(i) + ": " + QString::number(FmeMicroDatosAsociados->GetNumMissing(i), 10) + " [" + QString::number(FmeMicroDatosAsociados->GetPorcentajeMissing(i), 'f', 2) + "%]");
@@ -499,9 +425,9 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEstadisticas::GenerarEstadisticasEdits()
     {
-      MemInfo->append("3. " + QApplication::translate("", "Secci\303\263n de reglas", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("3. " + QApplication::translate("", "Secci\303\263n de reglas", 0));
       MemInfo->append("---------------------------------------------------------------------------------------------------------------");
-      MemInfo->append("3.1. " + QApplication::translate("", "N\303\272mero de reglas", 0, QApplication::UnicodeUTF8) + ": " + QString::number(FmeEditsAsociados->GetNumEdits(), 10));
+      MemInfo->append("3.1. " + QApplication::translate("", "N\303\272mero de reglas", 0) + ": " + QString::number(FmeEditsAsociados->GetNumEdits(), 10));
       MemInfo->append("");
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -509,11 +435,11 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEstadisticas::GenerarEstadisticasRangos()
     {
-      MemInfo->append("4. " + QApplication::translate("", "Secci\303\263n de rangos y filtros", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("4. " + QApplication::translate("", "Secci\303\263n de rangos y filtros", 0));
       MemInfo->append("---------------------------------------------------------------------------------------------------------------");
       MemInfo->append("4.1. " + tr("Tiempo de proceso") + ": " + QString::number(FmeRangosAsociados->GetTiempoProcesoSegundos(), 'f', 2) + " " + tr("segundos"));
-      MemInfo->append("4.2. " + QApplication::translate("", "Umbral de errores de exclusi\303\263n de variables", 0, QApplication::UnicodeUTF8) + ": " + QString::number(FmeRangosAsociados->GetUmbralExclusionVariables(), 10));
-      MemInfo->append("4.3. " + QApplication::translate("", "Umbral de errores de exclusi\303\263n de registros", 0, QApplication::UnicodeUTF8) + ": " + QString::number(FmeRangosAsociados->GetUmbralExclusionRegistros(), 10));
+      MemInfo->append("4.2. " + QApplication::translate("", "Umbral de errores de exclusi\303\263n de variables", 0) + ": " + QString::number(FmeRangosAsociados->GetUmbralExclusionVariables(), 10));
+      MemInfo->append("4.3. " + QApplication::translate("", "Umbral de errores de exclusi\303\263n de registros", 0) + ": " + QString::number(FmeRangosAsociados->GetUmbralExclusionRegistros(), 10));
       MemInfo->append("4.4. " + tr("Registros") + ":");
       MemInfo->append("  4.4.1. " + tr("Registros excluidos a priori") + ": " + QString::number(FmeRangosAsociados->GetNumRegistrosExcluidosAPriori(), 10));
       MemInfo->append("  4.4.2. " + tr("Registros excluidos a posteriori") + ": " + QString::number(FmeRangosAsociados->GetNumRegistrosExcluidos(), 10));
@@ -531,11 +457,11 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEstadisticas::GenerarEstadisticasTest()
     {
-      MemInfo->append("5. " + QApplication::translate("", "Secci\303\263n de test", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("5. " + QApplication::translate("", "Secci\303\263n de test", 0));
       MemInfo->append("---------------------------------------------------------------------------------------------------------------");
       MemInfo->append("5.1. " + tr("Tiempo de proceso") + ": " + QString::number(FmeTestAsociado->GetTiempoProcesoSegundos(), 'f', 2) + " " + tr("segundos"));
-      MemInfo->append("5.2. " + QApplication::translate("", "Umbral de errores de exclusi\303\263n de reglas", 0, QApplication::UnicodeUTF8) + ": " + QString::number(FmeTestAsociado->GetUmbralExclusionEdits(), 10));
-      MemInfo->append("5.3. " + QApplication::translate("", "Umbral de errores de exclusi\303\263n de registros", 0, QApplication::UnicodeUTF8) + ": " + QString::number(FmeTestAsociado->GetUmbralExclusionRegistros(), 10));
+      MemInfo->append("5.2. " + QApplication::translate("", "Umbral de errores de exclusi\303\263n de reglas", 0) + ": " + QString::number(FmeTestAsociado->GetUmbralExclusionEdits(), 10));
+      MemInfo->append("5.3. " + QApplication::translate("", "Umbral de errores de exclusi\303\263n de registros", 0) + ": " + QString::number(FmeTestAsociado->GetUmbralExclusionRegistros(), 10));
       MemInfo->append("5.4. " + tr("Registros") + ":");
       MemInfo->append("  5.4.1. " + tr("Registros excluidos a priori") + ": " + QString::number(FmeTestAsociado->GetNumRegistrosExcluidosAPriori(), 10));
       MemInfo->append("  5.4.2. " + tr("Registros excluidos a posteriori") + ": " + QString::number(FmeTestAsociado->GetNumRegistrosExcluidos(), 10));
@@ -553,7 +479,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEstadisticas::GenerarEstadisticasImputacion()
     {
-      MemInfo->append("6. " + QApplication::translate("", "Secci\303\263n de imputaci\303\263n", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("6. " + QApplication::translate("", "Secci\303\263n de imputaci\303\263n", 0));
       MemInfo->append("---------------------------------------------------------------------------------------------------------------");
       MemInfo->append("6.1. " + tr("Tiempo de proceso") + ": " + QString::number(FmeImputacionAsociada->GetTiempoProcesoSegundos(), 'f', 2) + " " + tr(" segundos"));
       MemInfo->append("6.2. " + tr("Registros donantes") + ": " + QString::number(FmeImputacionAsociada->GetNumRegistrosDonantes(), 10) + " [" + QString::number(FmeImputacionAsociada->GetPorcentajeRegistrosDonantes(), 'f', 2) + "%]");
@@ -765,9 +691,9 @@
       unsigned i, j;
       QString Aux;
 
-      MemInfo->append("13. " + QApplication::translate("", "Exclusi\303\263n", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("13. " + QApplication::translate("", "Exclusi\303\263n", 0));
       MemInfo->append("---------------------------------------------------------------------------------------------------------------");
-      MemInfo->append("13.1. " + QApplication::translate("", "Exclusi\303\263n en rangos", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("13.1. " + QApplication::translate("", "Exclusi\303\263n en rangos", 0));
       MemInfo->append("  13.1.1. Variables");
       Aux = "";
       for (j = 0; j < NumVariables; j++)
@@ -780,7 +706,7 @@
         if (FmeRangosAsociados->RegistroExcluido(i))
           Aux += ("R" + QString::number(i + 1, 10) + " ");
       MemInfo->append("    " + Aux);
-      MemInfo->append("13.2. " + QApplication::translate("", "Exclusi\303\263n en test", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("13.2. " + QApplication::translate("", "Exclusi\303\263n en test", 0));
       MemInfo->append("  13.2.1. " + tr("Reglas"));
       Aux = "";
       for (j = 0; j < NumEdits; j++)
@@ -809,7 +735,7 @@
       RealizarResumenVariables(ResumenVariablesPosImputacion, FmeImputacionAsociada->GetMatrizMicroDatos());
 
       // Volcado de datos
-      MemInfo->append("14. " + QApplication::translate("", "Comparativa en resumen estad\303\255stico de variables", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("14. " + QApplication::translate("", "Comparativa en resumen estad\303\255stico de variables", 0));
       MemInfo->append("---------------------------------------------------------------------------------------------------------------");
       for (j = 0; j < NumVariables; j++)
       {
@@ -1081,7 +1007,7 @@
     void TFmeEstadisticas::GenerarImputacionVariables()
     {
       unsigned j;
-      MemInfo->append("17. " + QApplication::translate("", "Imputaci\303\263n sobre variables", 0, QApplication::UnicodeUTF8));
+      MemInfo->append("17. " + QApplication::translate("", "Imputaci\303\263n sobre variables", 0));
       MemInfo->append("---------------------------------------------------------------------------------------------------------------");
       MemInfo->append("");
       for (j = 0; j < NumVariables; j++) {
@@ -1100,7 +1026,7 @@
     {
       unsigned j;
       if (!resumido) {
-        MemInfo->append("18. " + QApplication::translate("", "Correspondencia entre nombres e \303\255ndices de variables", 0, QApplication::UnicodeUTF8));
+        MemInfo->append("18. " + QApplication::translate("", "Correspondencia entre nombres e \303\255ndices de variables", 0));
         MemInfo->append("---------------------------------------------------------------------------------------------------------------");
         MemInfo->append("");
         for (j = 0; j < NumVariables; j++)
@@ -1205,7 +1131,7 @@
 
       //f->SaveToFile(FicheroSalida);
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators(start + "/" + DIRECTORIO_STATS);
+      QString meta = QDir::toNativeSeparators(start + "/" + DIRECTORIO_STATS);
       FicheroSalida = QFileDialog::getSaveFileName(this, tr("Guardar fichero stats" ), meta, "TXT (*.txt)");
       if (!FicheroSalida.isEmpty()) {
         QFile file(FicheroSalida);
@@ -1230,7 +1156,7 @@
       QStringList *f;
 
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators(start + "/" + DIRECTORIO_STATS);
+      QString meta = QDir::toNativeSeparators(start + "/" + DIRECTORIO_STATS);
       FicheroSalida = QFileDialog::getSaveFileName(this, tr("Guardar fichero stats"), meta, "TXT (*.txt)");
       f = new QStringList();
       QFile file(FicheroSalida);
@@ -1329,18 +1255,8 @@
       NumValoresMissing = FmeVariablesAsociadas->GetNum_valores_missing();
       NumValoresRango = (double)ResumenVariablesPreImputacion[IndiceVariable][0].y - NumValoresMissing;
 
-      /*QwtPlotHistogram *histogrampre = new QwtPlotHistogram();
-      histogrampre->setBrush(Qt::blue);//histogrampre->setColor(Qt::blue);
-      /*QwtPlotHistogram *histogrampos = new QwtPlotHistogram();
-      histogrampos->setBrush(Qt::green); //histogrampos->setColor(Qt::green);*/
-
-      //QwtArray<QwtDoubleInterval> intervalspre(NumValoresRango);
-      //QVector<double> valuespre(NumValoresRango);
-      //QwtArray<QwtDoubleInterval> intervalspos(NumValoresRango);
-      //QVector<double> valuespos(NumValoresRango);
       QVector<QwtIntervalSample> samplespre(NumValoresRango);
-      //QVector<double> valuescol(100);
-      //QwtSeriesData<QwtIntervalSample> intervalsreg;
+
       QVector<QwtIntervalSample> samplespos(NumValoresRango);
 
       double posX = 0.0;
@@ -1355,25 +1271,21 @@
         posX = (double)ResumenVariablesPreImputacion[IndiceVariable][j].x;        
         value = (double)ResumenVariablesPreImputacion[IndiceVariable][j].y;
 
-        //intervalspre[i] = QwtDoubleInterval(posX, posX + double(width));
-        QwtInterval interval(posX, posX + 0.05/*double(width)*/);
+        QwtInterval interval(posX, posX + 0.05);
 
         interval.setBorderFlags(QwtInterval::ExcludeMaximum);
         samplespre[i] = QwtIntervalSample(value, interval);
-        //valuespre[i] = value;
 
-        if (posX > posX_max) posX_max = posX + 2*0.05/*(double)width*/;
+        if (posX > posX_max) posX_max = posX + 2*0.05;
         if (value > posY_max) posY_max = value;
         if (posX < posX_min) posX_min = posX;
 
         posX = (double)ResumenVariablesPosImputacion[IndiceVariable][j].x + 0.05/*double(width) + 0.3*/;
         value = (double)ResumenVariablesPosImputacion[IndiceVariable][j].y;
-        //intervalspos[i] = QwtDoubleInterval(posX, posX + double(width));
-        QwtInterval interval2(posX, posX + 0.05/*double(width)*/);
+        QwtInterval interval2(posX, posX + 0.05);
 
         interval2.setBorderFlags(QwtInterval::ExcludeMaximum);
         samplespos[i] = QwtIntervalSample(value, interval2);
-        //valuespos[i] = value;
 
         if (posX > posX_max) posX_max = posX + (double)width;
         if (value > posY_max) posY_max = value;
@@ -1381,12 +1293,11 @@
         j++;
       }
       if ( ( (!sig) && ((ultimo-100 > posX_min) || (ultimo != posX_min)) ) || ( (sig) && ((ultimo+100 < posX_max) || (ultimo != posX_max)) ) ) {  // pulsar dos veces cada boton para que funcione
-        //plot->clear();
-        histogrampre->setData(new QwtIntervalSeriesData(samplespre));//QwtIntervalData(intervalsreg, valuesreg));
-        //histogrampre->setData(QwtIntervalData(intervalspre, valuespre));
+
+        histogrampre->setData(new QwtIntervalSeriesData(samplespre));
         histogrampre->attach(plot);
-        histogrampos->setData(new QwtIntervalSeriesData(samplespos));//QwtIntervalData(intervalsreg, valuesreg));
-        //histogrampos->setData(QwtIntervalData(intervalspos, valuespos));
+        histogrampos->setData(new QwtIntervalSeriesData(samplespos));
+
         histogrampos->attach(plot);
         plot->setAxisScale(QwtPlot::yLeft, 0.0, posY_max);
         if (sig) {
@@ -1404,12 +1315,8 @@
         }
         plot->replot();        
       }      
-      samplespre.clear();
-      //valuespre.clear();
-      samplespos.clear();
-      //valuespos.clear();
-      //histogrampre->~HistogramItem();
-      //histogrampos->~HistogramItem();
+      samplespre.clear();      
+      samplespos.clear();      
     }
     void TFmeEstadisticas::ant_sig_histM(bool sig)
     {
@@ -1428,22 +1335,7 @@
         j = 3 + NumValoresRango; return;
       }else j = 1 + NumValoresRango;
 
-      /*HistogramItem *histogrampreM = new HistogramItem();
-      histogrampreM->setColor(Qt::blue);
-      HistogramItem *histogramposM = new HistogramItem();
-      histogramposM->setColor(Qt::green);*/
-      /*QwtPlotHistogram *histogrampreM = new QwtPlotHistogram();
-      histogrampreM->setBrush(Qt::blue);//histogrampre->setColor(Qt::blue);
-      /*QwtPlotHistogram *histogramposM = new QwtPlotHistogram();
-      histogramposM->setBrush(Qt::green); //histogrampos->setColor(Qt::green);*/
-
-      //QwtArray<QwtDoubleInterval> intervalspreM(NumValoresMissing);
-      //QVector<double> valuespreM(NumValoresMissing);
-      //QArray<QwtDoubleInterval> intervalsposM(NumValoresMissing);
-      //QVector<double> valuesposM(NumValoresMissing);
       QVector<QwtIntervalSample> samplespreM(NumValoresMissing);
-      //QVector<double> valuescol(100);
-      //QwtSeriesData<QwtIntervalSample> intervalsreg;
       QVector<QwtIntervalSample> samplesposM(NumValoresMissing);
 
       double posX = 0.0;
@@ -1458,26 +1350,21 @@
         posX = (double)ResumenVariablesPreImputacion[IndiceVariable][j].x;
         value = (double)ResumenVariablesPreImputacion[IndiceVariable][j].y;
 
-        //intervalspreM[i] = QwtDoubleInterval(posX, posX + double(width));
-        QwtInterval interval(posX, posX + 0.15/*double(width)*/);
+        QwtInterval interval(posX, posX + 0.15);
 
         interval.setBorderFlags(QwtInterval::ExcludeMaximum);
         samplespreM[i] = QwtIntervalSample(value, interval);
-        //valuespreM[i] = value;
 
-        if (posX > posX_max) posX_max = posX + 2*0.15/*(double)width*/;
+        if (posX > posX_max) posX_max = posX + 2*0.15;
         if (value > posY_max) posY_max = value;
         if (posX < posX_min) posX_min = posX;
 
-        posX = (double)ResumenVariablesPosImputacion[IndiceVariable][j].x + 0.15/*double(width) + 0.3*/;
-        //width = 0.5;
+        posX = (double)ResumenVariablesPosImputacion[IndiceVariable][j].x + 0.15;
         value = (double)ResumenVariablesPosImputacion[IndiceVariable][j].y;
-        //intervalsposM[i] = QwtDoubleInterval(posX, posX + double(width));
-        QwtInterval interval2(posX, posX + 0.15/*double(width)*/);
+        QwtInterval interval2(posX, posX + 0.15);
 
         interval2.setBorderFlags(QwtInterval::ExcludeMaximum);
         samplesposM[i] = QwtIntervalSample(value, interval2);
-        //valuesposM[i] = value;
 
         if (posX > posX_max) posX_max = posX + (double)width;
         if (value > posY_max) posY_max = value;
@@ -1485,13 +1372,9 @@
         j++;
       }
       if ( ( (!sig) && ((ultimoM-100 > posX_min) || (ultimoM != posX_min)) ) || ( (sig) && ((ultimoM+100 < posX_max) || (ultimoM != posX_max)) ) ) {  // pulsar dos veces cada boton para que funcione
-        //plotM->clear();
-        //histogrampreM->setData(QwtIntervalData(intervalspreM, valuespreM));
-        //histogrampreM->attach(plotM);
-        //histogramposM->setData(QwtIntervalData(intervalsposM, valuesposM));
-        histogrampreM->setData(new QwtIntervalSeriesData(samplespreM));//QwtIntervalData(intervalsreg, valuesreg));
+        histogrampreM->setData(new QwtIntervalSeriesData(samplespreM));
         histogrampreM->attach(plotM);
-        histogramposM->setData(new QwtIntervalSeriesData(samplesposM));//QwtIntervalData(intervalsreg, valuesreg));
+        histogramposM->setData(new QwtIntervalSeriesData(samplesposM));
 
         histogramposM->attach(plotM);
         plotM->setAxisScale(QwtPlot::yLeft, 0.0, posY_max);
@@ -1509,13 +1392,9 @@
           plotM->setAxisScale(QwtPlot::xBottom, max, ultimoM);
         }
         plotM->replot();
-      }
-      //intervalspreM.clear();
+      }      
       samplespreM.clear();
-      //intervalsposM.clear();
       samplesposM.clear();
-      /*histogrampreM->~HistogramItem();
-      histogramposM->~HistogramItem();*/
     }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1524,7 +1403,7 @@
     void TFmeEstadisticas::ButGuardarInformeClick()
     {      
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators(start + "/" + DIRECTORIO_STATS);
+      QString meta = QDir::toNativeSeparators(start + "/" + DIRECTORIO_STATS);
       QString NombreFichero = QFileDialog::getSaveFileName(this, tr("Guardar fichero stats" ), meta, "TXT (*.txt)");
 
       if (!NombreFichero.isEmpty()) {
@@ -1569,75 +1448,11 @@
       NumValoresMissing = FmeVariablesAsociadas->GetNum_valores_missing();
       NumValoresTotales = (double)ResumenVariablesPreImputacion[IndiceVariable][0].y;
       NumValoresRango = (double)ResumenVariablesPreImputacion[IndiceVariable][0].y - NumValoresMissing;
-      //qDebug() << NumValoresRango;
-      /*HistogramItem *histogrampre = new HistogramItem();
-      histogrampre->setColor(Qt::blue);
-      HistogramItem *histogrampos = new HistogramItem();
-      histogrampos->setColor(Qt::green);*/
-      //grid->detach();
-      /*delete plot;
-      delete grid;
 
-      //gridM->detach();
-      delete plotM;
-      delete gridM;
-      plot = new QwtPlot((QWidget*)PanContenedor);
-      plot->setGeometry(QRect(2, PanContenedor->height()/2 + 35, PanContenedor->width()/2 + PanContenedor->width()/4 - 25, PanContenedor->height()/2-87));
-      plot->setCanvasBackground(QColor(Qt::white));
-
-      grid = new QwtPlotGrid;
-      grid->enableXMin(true);
-      grid->enableYMin(true);
-      grid->setMajPen(QPen(Qt::black, 0, Qt::DotLine));
-      grid->setMinPen(QPen(Qt::gray, 0 , Qt::DotLine));
-      grid->attach(plot);
-
-
-      plotM = new QwtPlot((QWidget*)PanContenedor);
-      plotM->setGeometry(QRect(PanContenedor->width()/2 + PanContenedor->width()/4 - 15, PanContenedor->height()/2 + 35, PanContenedor->width()/4 - 15, PanContenedor->height()/2-87));
-      plotM->setCanvasBackground(QColor(Qt::white));
-
-      gridM = new QwtPlotGrid;
-      gridM->enableXMin(true);
-      gridM->enableYMin(true);
-      gridM->setMajPen(QPen(Qt::black, 0, Qt::DotLine));
-      gridM->setMinPen(QPen(Qt::gray, 0 , Qt::DotLine));
-      gridM->attach(plotM);*/
-
-      /*QwtPlotHistogram *histogrampre = new QwtPlotHistogram();
-      histogrampre->setBrush(Qt::blue);//histogrampre->setColor(Qt::blue);*/
-
-      /*QwtPlotHistogram *histogrampos = new QwtPlotHistogram();
-      histogrampos->setBrush(Qt::green); //histogrampos->setColor(Qt::green);*/
-
-
-      //QwtArray<QwtDoubleInterval> intervalspre(NumValoresRango);
-      //QVector<double> valuespre(NumValoresRango);
-      //QwtArray<QwtDoubleInterval> intervalspos(NumValoresRango);
-      //QVector<double> valuespos(NumValoresRango);
-      QVector<QwtIntervalSample> samplespre(NumValoresRango);
-      //QVector<double> valuescol(100);
-      //QwtSeriesData<QwtIntervalSample> intervalsreg;
+      QVector<QwtIntervalSample> samplespre(NumValoresRango);      
       QVector<QwtIntervalSample> samplespos(NumValoresRango);
 
-      /*HistogramItem *histogrampreM = new HistogramItem();
-      histogrampreM->setColor(Qt::blue);
-      HistogramItem *histogramposM = new HistogramItem();
-      histogramposM->setColor(Qt::green);*/
-      /*QwtPlotHistogram *histogrampreM = new QwtPlotHistogram();
-
-      histogrampreM->setBrush(Qt::blue);//histogrampre->setColor(Qt::blue);
-      /*QwtPlotHistogram *histogramposM = new QwtPlotHistogram();
-
-      histogramposM->setBrush(Qt::green); //histogrampos->setColor(Qt::green);*/
-
-      //QwtArray<QwtDoubleInterval> intervalspreM(NumValoresMissing);
-      //QVector<double> valuespreM(NumValoresMissing);
-      //QwtArray<QwtDoubleInterval> intervalsposM(NumValoresMissing);
-      //QVector<double> valuesposM(NumValoresMissing);
       QVector<QwtIntervalSample> samplespreM(NumValoresMissing);
-      //QVector<double> valuescol(100);
-      //QwtSeriesData<QwtIntervalSample> intervalsreg;
       QVector<QwtIntervalSample> samplesposM(NumValoresMissing);
 
       double posX = 0.0;
@@ -1651,26 +1466,21 @@
         posX = (double)ResumenVariablesPreImputacion[IndiceVariable][j].x;        
         value = (double)ResumenVariablesPreImputacion[IndiceVariable][j].y;
 
-        //intervalspre[i] = QwtDoubleInterval(posX, posX + double(width));
-        //posX = (double)(i+1);
-        QwtInterval interval(posX, posX + 0.05/*double(width)*/);
+        QwtInterval interval(posX, posX + 0.05);
 
         interval.setBorderFlags(QwtInterval::ExcludeMaximum);
-        samplespre[i] = QwtIntervalSample(value, interval);
-        //valuespre[i] = value;
+        samplespre[i] = QwtIntervalSample(value, interval);        
 
-        if (posX > posX_max) posX_max = posX + 2*0.05/*(double)width*/;
+        if (posX > posX_max) posX_max = posX + 2*0.05;
         if (value > posY_max) posY_max = value;
         if (posX < posX_min) posX_min = posX;
 
-        posX = (double)ResumenVariablesPosImputacion[IndiceVariable][j].x + 0.05/*double(width) + 0.3*/;
+        posX = (double)ResumenVariablesPosImputacion[IndiceVariable][j].x + 0.05;
         value = (double)ResumenVariablesPosImputacion[IndiceVariable][j].y;
-        //intervalspos[i] = QwtDoubleInterval(posX, posX + double(width));
-        QwtInterval interval2(posX, posX + 0.05/*double(width)*/);
+        QwtInterval interval2(posX, posX + 0.05);
 
         interval2.setBorderFlags(QwtInterval::ExcludeMaximum);
         samplespos[i] = QwtIntervalSample(value, interval2);
-        //valuespos[i] = value;
 
         if (posX > posX_max) posX_max = posX + (double)width;
         if (value > posY_max) posY_max = value;
@@ -1679,10 +1489,10 @@
       }
       if (posX_min+100 < posX_max) ultimo = posX_min+100;
       else ultimo = posX_max;
-      //plot->clearMask();//plot->repaint();//plot->clear();
-      histogrampre->setData(new QwtIntervalSeriesData(samplespre));//QwtIntervalData(intervalsreg, valuesreg));
 
-      histogrampos->setData(new QwtIntervalSeriesData(samplespos));//QwtIntervalData(intervalsreg, valuesreg));
+      histogrampre->setData(new QwtIntervalSeriesData(samplespre));
+
+      histogrampos->setData(new QwtIntervalSeriesData(samplespos));
 
       plot->setAxisScale(QwtPlot::yLeft, 0.0, posY_max);
       plot->setAxisScale(QwtPlot::xBottom, posX_min, ultimo);
@@ -1691,14 +1501,10 @@
       histogrampos->attach(plot);
       plot->replot();
       plot->show();
-      //intervalspre.clear();
 
-      samplespre.clear();
-      //intervalspos.clear();
-
+      samplespre.clear();      
       samplespos.clear();
-      //histogrampre->~HistogramItem();
-      //histogrampos->~HistogramItem();
+
 
       posX = 0.0;
       posX_max = 0.0;
@@ -1710,25 +1516,21 @@
         posX = (double)ResumenVariablesPreImputacion[IndiceVariable][j].x;
         value = (double)ResumenVariablesPreImputacion[IndiceVariable][j].y;
 
-        //intervalspreM[i] = QwtDoubleInterval(posX, posX + double(width));
-        QwtInterval interval(posX, posX + 0.15/*double(width)*/);
+        QwtInterval interval(posX, posX + 0.15);
 
         interval.setBorderFlags(QwtInterval::ExcludeMaximum);
         samplespreM[i] = QwtIntervalSample(value, interval);
-        //valuespreM[i] = value;
 
-        if (posX > posX_max) posX_max = posX + 2*0.15/*(double)width*/;
+        if (posX > posX_max) posX_max = posX + 2*0.15;
         if (value > posY_max) posY_max = value;
         if (posX < posX_min) posX_min = posX;
 
-        posX = (double)ResumenVariablesPosImputacion[IndiceVariable][j].x + 0.15/*double(width) + 0.3*/;
+        posX = (double)ResumenVariablesPosImputacion[IndiceVariable][j].x + 0.15;
         value = (double)ResumenVariablesPosImputacion[IndiceVariable][j].y;
-        QwtInterval interval2(posX, posX + 0.15/*double(width)*/);
+        QwtInterval interval2(posX, posX + 0.15);
 
         interval2.setBorderFlags(QwtInterval::ExcludeMaximum);
         samplesposM[i] = QwtIntervalSample(value, interval2);
-        //intervalsposM[i] = QwtDoubleInterval(posX, posX + double(width));
-        //valuesposM[i] = value;
 
         if (posX > posX_max) posX_max = posX + (double)width;
         if (value > posY_max) posY_max = value;
@@ -1737,22 +1539,20 @@
       }
       if (posX_min+100 < posX_max) ultimoM = posX_min+100;
       else ultimoM = posX_max;
-      //plotM->clear();
-      histogrampreM->setData(new QwtIntervalSeriesData(samplespreM));//QwtIntervalData(intervalsreg, valuesreg));
+
+      histogrampreM->setData(new QwtIntervalSeriesData(samplespreM));
       histogrampreM->attach(plotM);
-      histogramposM->setData(new QwtIntervalSeriesData(samplesposM));//QwtIntervalData(intervalsreg, valuesreg));
+      histogramposM->setData(new QwtIntervalSeriesData(samplesposM));
       histogramposM->attach(plotM);
       plotM->setAxisScale(QwtPlot::yLeft, 0.0, posY_max);
       plotM->setAxisScale(QwtPlot::xBottom, posX_min, ultimoM);
       plotM->replot();
 
       plotM->show();
-      //intervalspreM.clear();
-      samplespreM.clear();
-      //intervalsposM.clear();
+
+      samplespreM.clear();     
       samplesposM.clear();
-      /*histogrampreM->~HistogramItem();
-      histogramposM->~HistogramItem();*/
+
     }
     void TFmeEstadisticas::ButClick_sig()
     {

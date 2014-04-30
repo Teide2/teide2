@@ -22,7 +22,6 @@
 
 #include "Edits.h"
 
-
 TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSqlDatabase *AdcConexionBD, QString NombreTabla, TFmeMicroDatos *FmeMicroDatosAsociados, bool Xml, QString NombreBaseDatos, bool *correcto, bool excel, QTabWidget *PctContenedorPrincipal):QWidget(parent, fl)
     {
       unsigned i;
@@ -34,9 +33,6 @@ TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSql
       if (this->objectName().isEmpty())
         this->setObjectName(("TFmeEdits"));
 
-      QFont font;
-      font.setFamily(("Tahoma"));
-      this->setFont(font);
       PanContenedor = new QFrame(this);
       PanContenedor->setObjectName(("PanContenedor"));
       PanContenedor->setGeometry(QRect(0, 0, this->width(), this->height()-50));
@@ -85,16 +81,16 @@ TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSql
       CbxVariables->setEditable(true);
       LabMissing = new QLabel(PanVariables);
       LabMissing->setObjectName(("LabMissing"));
-      LabMissing->setGeometry(QRect(295, 5, 45, 16));
+      LabMissing->setGeometry(QRect(297, 5, 50, 16));
       CbxMissing = new QComboBox(PanVariables);
       CbxMissing->setObjectName(("CbxMissing"));
-      CbxMissing->setGeometry(QRect(340, 4, 129, 22));
+      CbxMissing->setGeometry(QRect(350, 4, 129, 22));
       EdtEdit = new QLineEdit(PanVariables);
       EdtEdit->setObjectName(("EdtEdit"));
       EdtEdit->setGeometry(QRect(525, 4, 415, 22));
       CbxOperadores = new QComboBox(PanVariables);
       CbxOperadores->setObjectName(("CbxOperadores"));
-      CbxOperadores->setGeometry(QRect(185, 4, 65, 22));
+      CbxOperadores->setGeometry(QRect(187, 4, 65, 22));
       CbxOperadores->setSizeAdjustPolicy(QComboBox::AdjustToContents);
       ButModificarEdit = new QPushButton(PanVariables);
       ButModificarEdit->setObjectName(("ButModificarEdit"));
@@ -115,30 +111,32 @@ TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSql
       LabValidacionSintactica->setGeometry(QRect(8, 8, 132, 18));
       ImgValidacionSintactica = new QPushButton(PanValidarEdit);
       ImgValidacionSintactica->setObjectName(("ImgValidacionSintactica"));
-      ImgValidacionSintactica->setGeometry(QRect(125, 5, 28, 24));
-      ImgValidacionSintactica->setIcon(QIcon(("images/right.bmp")));
+      ImgValidacionSintactica->setGeometry(QRect(145, 5, 28, 24));
+      QString start = QCoreApplication::applicationDirPath();
+      QString meta = QDir::toNativeSeparators("/images/right.bmp");
+      ImgValidacionSintactica->setIcon(QPixmap(start+meta, 0, Qt::AutoColor));
       LabValidacionLexica = new QLabel(PanValidarEdit);
       LabValidacionLexica->setObjectName(("LabValidacionLexica"));
-      LabValidacionLexica->setGeometry(QRect(170, 8, 111, 18));
+      LabValidacionLexica->setGeometry(QRect(185, 8, 111, 18));
       ImgValidacionLexica = new QPushButton(PanValidarEdit);
       ImgValidacionLexica->setObjectName(("ImgValidacionLexica"));
-      ImgValidacionLexica->setGeometry(QRect(267, 5, 28, 24));
-      ImgValidacionLexica->setIcon(QIcon(("images/right.bmp")));
+      ImgValidacionLexica->setGeometry(QRect(297, 5, 28, 24));
+      ImgValidacionLexica->setIcon(QPixmap(start+meta, 0, Qt::AutoColor));
       LabIrA = new QLabel(PanValidarEdit);
       LabIrA->setObjectName(("LabIrA"));
-      LabIrA->setGeometry(QRect(750, 9, 43, 16));
+      LabIrA->setGeometry(QRect(790, 9, 43, 16));
       LabFiltro = new QLabel(PanValidarEdit);
       LabFiltro->setObjectName(("LabFiltro"));
-      LabFiltro->setGeometry(QRect(300, 9, 101, 16));
+      LabFiltro->setGeometry(QRect(330, 9, 101, 16));
       EdtIrA = new QLineEdit(PanValidarEdit);
       EdtIrA->setObjectName(("EdtIrA"));
-      EdtIrA->setGeometry(QRect(790, 6, 33, 21));
+      EdtIrA->setGeometry(QRect(830, 6, 33, 21));
       ButSigEditMal = new QPushButton(PanValidarEdit);
       ButSigEditMal->setObjectName(("ButSigEditMal"));
-      ButSigEditMal->setGeometry(QRect(536, 6, 201, 21));
+      ButSigEditMal->setGeometry(QRect(560, 6, 221, 21));
       EdtFiltro = new QLineEdit(PanValidarEdit);
       EdtFiltro->setObjectName(("EdtFiltro"));
-      EdtFiltro->setGeometry(QRect(396, 6, 121, 21));
+      EdtFiltro->setGeometry(QRect(430, 6, 121, 21));
 
       view2 = new MiTabla(PanContenedor);
       view2->setGeometry(QRect(1, PanContenedor->height()-2-88-65, PanContenedor->width()-1, 65));
@@ -186,34 +184,34 @@ TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSql
        << "!"
        << "%"
       );
-      CbxOperadores->setToolTip(QApplication::translate("TFmeEdits", "Listado de posibles operadores y elementos l\303\251xicos", 0, QApplication::UnicodeUTF8));
+      CbxOperadores->setToolTip(QApplication::translate("TFmeEdits", "Listado de posibles operadores y elementos l\303\251xicos", 0));
       CbxMissing->setToolTip(QApplication::translate("TFmeEdits", "Listado de los valores missing"));
-      ButModificarEdit->setToolTip(QApplication::translate("TFmeEdits", "Pulse aqu\303\255 para modificar la regla actual", 0, QApplication::UnicodeUTF8));
+      ButModificarEdit->setToolTip(QApplication::translate("TFmeEdits", "Pulse aqu\303\255 para modificar la regla actual", 0));
       ButModificarEdit->setText(QApplication::translate("TFmeEdits", "MOD."));
-      ButInsertarEdit->setToolTip(QApplication::translate("TFmeEdits", "Pulse aqu\303\255 para insertar una nueva regla", 0, QApplication::UnicodeUTF8));
+      ButInsertarEdit->setToolTip(QApplication::translate("TFmeEdits", "Pulse aqu\303\255 para insertar una nueva regla", 0));
       ButInsertarEdit->setText(QApplication::translate("TFmeEdits", "INS."));
-      ButBorrarEdit->setToolTip(QApplication::translate("TFmeEdits", "Pulse aqu\303\255 para borrar la regla actual", 0, QApplication::UnicodeUTF8));
+      ButBorrarEdit->setToolTip(QApplication::translate("TFmeEdits", "Pulse aqu\303\255 para borrar la regla actual", 0));
       ButBorrarEdit->setText(QApplication::translate("TFmeEdits", "BOR."));
-      PanValidarEdit->setToolTip(QApplication::translate("TFmeEdits", "Informaci\303\263n sobre la validaci\303\263n de la regla actual.", 0, QApplication::UnicodeUTF8));
-      LabValidacionSintactica->setText(QApplication::translate("TFmeEdits", "Validaci\303\263n sint\303\241ctica", 0, QApplication::UnicodeUTF8));
-      ImgValidacionSintactica->setToolTip(QApplication::translate("TFmeEdits", "Validaci\303\263n sint\303\241ctica. En verde es correcta y en rojo hay errores.Pulse para ver el error", 0, QApplication::UnicodeUTF8));
+      PanValidarEdit->setToolTip(QApplication::translate("TFmeEdits", "Informaci\303\263n sobre la validaci\303\263n de la regla actual.", 0));
+      LabValidacionSintactica->setText(QApplication::translate("TFmeEdits", "Validaci\303\263n sint\303\241ctica", 0));
+      ImgValidacionSintactica->setToolTip(QApplication::translate("TFmeEdits", "Validaci\303\263n sint\303\241ctica. En verde es correcta y en rojo hay errores.Pulse para ver el error", 0));
       ImgValidacionSintactica->setText(QString());
-      LabValidacionLexica->setText(QApplication::translate("TFmeEdits", "Validaci\303\263n l\303\251xica", 0, QApplication::UnicodeUTF8));
-      ImgValidacionLexica->setToolTip(QApplication::translate("TFmeEdits", "Validaci\303\263n l\303\251xica. En verde es correcta y en rojo hay errores.Pulse para ver el error", 0, QApplication::UnicodeUTF8));
+      LabValidacionLexica->setText(QApplication::translate("TFmeEdits", "Validaci\303\263n l\303\251xica", 0));
+      ImgValidacionLexica->setToolTip(QApplication::translate("TFmeEdits", "Validaci\303\263n l\303\251xica. En verde es correcta y en rojo hay errores.Pulse para ver el error", 0));
       ImgValidacionLexica->setText(QString());
       LabIrA->setText(QApplication::translate("TFmeEdits", "Ir a ..."));
       LabFiltro->setText(QApplication::translate("TFmeEdits", "Filtrar reglas ..."));
-      EdtIrA->setToolTip(QApplication::translate("TFmeEdits", "Indique un n\303\272mero de regla y pulse ENTER parar ir a ella.", 0, QApplication::UnicodeUTF8));
-      ButSigEditMal->setToolTip(QApplication::translate("TFmeEdits", "Pulse aqu\303\255 para ir a la siguiente regla incorrecta de la lista.", 0, QApplication::UnicodeUTF8));
+      EdtIrA->setToolTip(QApplication::translate("TFmeEdits", "Indique un n\303\272mero de regla y pulse ENTER parar ir a ella.", 0));
+      ButSigEditMal->setToolTip(QApplication::translate("TFmeEdits", "Pulse aqu\303\255 para ir a la siguiente regla incorrecta de la lista.", 0));
       ButSigEditMal->setText(QApplication::translate("TFmeEdits", "Ir a la siguiente Regla incorrecta"));
       EdtFiltro->setToolTip(QApplication::translate("TFmeEdits", "Indique la variable y pulse ENTER para filtrar las reglas."));
-      view->setToolTip(QApplication::translate("TFmeEdits", "Rejilla de visualizaci\303\263n de reglas.", 0, QApplication::UnicodeUTF8));
-      view2->setToolTip(QApplication::translate("TFmeEdits", "Informaci\303\263n de la variable activa.", 0, QApplication::UnicodeUTF8));
+      view->setToolTip(QApplication::translate("TFmeEdits", "Rejilla de visualizaci\303\263n de reglas.", 0));
+      view2->setToolTip(QApplication::translate("TFmeEdits", "Informaci\303\263n de la variable activa.", 0));
       EdtEdit->setToolTip(QApplication::translate("TFmeEdits", "Editor de Reglas"));
-      VisualizarEd->setToolTip(QApplication::translate("TFmeEdits", "Seleccione el modo de vizualizaci\303\263n de las reglas.", 0, QApplication::UnicodeUTF8));
-      VisualizarEd->addItem(QApplication::translate("TFmeEdits", "Visualizar todas", 0, QApplication::UnicodeUTF8));
-      VisualizarEd->addItem(QApplication::translate("TFmeEdits", "Visualizar reglas correctas", 0, QApplication::UnicodeUTF8));
-      VisualizarEd->addItem(QApplication::translate("TFmeEdits", "Visualizar reglas incorrectas", 0, QApplication::UnicodeUTF8));
+      VisualizarEd->setToolTip(QApplication::translate("TFmeEdits", "Seleccione el modo de vizualizaci\303\263n de las reglas.", 0));
+      VisualizarEd->addItem(QApplication::translate("TFmeEdits", "Visualizar todas", 0));
+      VisualizarEd->addItem(QApplication::translate("TFmeEdits", "Visualizar reglas correctas", 0));
+      VisualizarEd->addItem(QApplication::translate("TFmeEdits", "Visualizar reglas incorrectas", 0));
 
       connect(CbxVariables, SIGNAL(activated ( const QString & )), this, SLOT(CbxVariablesCloseUp(const QString &)));
       connect(EdtEdit, SIGNAL(returnPressed()), this, SLOT(EdtEditEnter()));
@@ -254,12 +252,9 @@ TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSql
       MemLogs->append(tr("Cargando reglas de la tabla") + " \"" + NombreTabla + "\"");
       QApplication::processEvents();
       if (Xml) {
-        QDomDocument *doc = new QDomDocument("?xml");
-        QDomNode n;
-        QDomElement e, e1;
-        QDomNode n1;
+        QDomDocument *doc = new QDomDocument("?xml");       
 
-        QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+        QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
 
         if ((!file .open(QIODevice::ReadOnly)) || (!doc->setContent(&file)))
         {
@@ -267,6 +262,7 @@ TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSql
             QApplication::processEvents();
             file.close();
             *correcto = false;
+            delete doc;
             return;
         }
       }else {
@@ -297,8 +293,8 @@ TFmeEdits::TFmeEdits(QWidget* parent, const char* name, Qt::WindowFlags fl, QSql
       VectorInfoEdits = new TInfoEdits[NumEdits + MAX_EDITS];
 
       // Iconos de validación
-      IconoBien = RUTA_ICONO_BIEN;
-      IconoMal = RUTA_ICONO_MAL;
+      IconoBien = start+RUTA_ICONO_BIEN;
+      IconoMal = start+RUTA_ICONO_MAL;
 
       // Validar los edits
       MemLogs->append(tr("Validando reglas de la tabla") + " \"" + NombreTabla + "\"");
@@ -372,50 +368,9 @@ void TFmeEdits::ajustarSize ()
 
     LabBarraEstado2->setGeometry(QRect(3, 0, SbrBarraEstado2->width(), 19));
 
-    PanVariables->setGeometry(QRect(1, PanContenedor->height()-2-24-30, PanContenedor->width()-1, 30));
-
-    /*LabVariable->setGeometry(QRect(8, 5, 31, 16));
-
-    LabEdit->setGeometry(QRect(480, 5, 35, 16));
-
-    LabOperadores->setGeometry(QRect(150, 5, 38, 16));
-
-    CbxVariables->setGeometry(QRect(35, 4, 109, 22));
-
-    LabMissing->setGeometry(QRect(295, 5, 45, 16));
-
-    CbxMissing->setGeometry(QRect(340, 4, 129, 22));
-
-    EdtEdit->setGeometry(QRect(525, 4, 415, 22));
-
-    CbxOperadores->setGeometry(QRect(185, 4, 65, 22));
-
-    ButModificarEdit->setGeometry(QRect(943, 8, 49, 17));
-
-    ButInsertarEdit->setGeometry(QRect(994, 8, 49, 17));
-
-    ButBorrarEdit->setGeometry(QRect(1045, 8, 49, 17));*/
+    PanVariables->setGeometry(QRect(1, PanContenedor->height()-2-24-30, PanContenedor->width()-1, 30));   
 
     PanValidarEdit->setGeometry(QRect(1, PanContenedor->height()-2-56-30, PanContenedor->width()-1, 30));
-
-    /*LabValidacionSintactica->setGeometry(QRect(8, 8, 132, 18));
-
-    ImgValidacionSintactica->setGeometry(QRect(125, 5, 28, 24));
-
-    LabValidacionLexica->setGeometry(QRect(170, 8, 111, 18));
-
-    ImgValidacionLexica->setGeometry(QRect(267, 5, 28, 24));
-
-    LabIrA->setGeometry(QRect(750, 9, 43, 16));
-
-    LabFiltro->setGeometry(QRect(300, 9, 101, 16));
-
-    EdtIrA->setGeometry(QRect(790, 6, 33, 21));
-
-    ButSigEditMal->setGeometry(QRect(536, 6, 201, 21));
-
-    EdtFiltro->setGeometry(QRect(396, 6, 121, 21));*/
-
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Asociar las clases provenientes de etapas anteriores.
@@ -496,13 +451,13 @@ void TFmeEdits::ajustarSize ()
       palette2 = EdtEdit->palette();
       if (!EditActualCorrecto())
       {
-        EdtEdit->setText(QApplication::translate("", "Regla insertada en la base de datos. Revise la regla porque tiene errores sint\303\241cticos y/o l\303\251xicos", 0, QApplication::UnicodeUTF8));
+        EdtEdit->setText(QApplication::translate("", "Regla insertada en la base de datos. Revise la regla porque tiene errores sint\303\241cticos y/o l\303\251xicos", 0));
         palette.setColor( QPalette::Active, QPalette::Base, CL_FALSE );
         EdtEdit->setPalette(palette);
       }
       else
       {
-        EdtEdit->setText(QApplication::translate("", "Regla insertada en la base de datos. La regla es sint\303\241cticamente y l\303\251xicamente correcta", 0, QApplication::UnicodeUTF8));
+        EdtEdit->setText(QApplication::translate("", "Regla insertada en la base de datos. La regla es sint\303\241cticamente y l\303\251xicamente correcta", 0));
         palette.setColor( QPalette::Active, QPalette::Base, CL_TRUE );
         EdtEdit->setPalette(palette);
       }
@@ -536,11 +491,11 @@ void TFmeEdits::ajustarSize ()
         QDomElement e, e1;
         QDomNode n1;
 
-        QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+        QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
 
         if ((!file.open(QIODevice::ReadWrite)) || (!doc.setContent(&file)))
         {
-          QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), "", QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::Ok);
+          QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), 0), QMessageBox::Ok, QMessageBox::Ok);
           QApplication::processEvents();
           file.close();
           return;
@@ -572,9 +527,9 @@ void TFmeEdits::ajustarSize ()
         root.removeChild(n);
         file.close();
 
-        QFile file2(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+        QFile file2(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
         if (!file2.open(QIODevice::WriteOnly)) {
-          QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), "", QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::Ok);
+          QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), 0), QMessageBox::Ok, QMessageBox::Ok);
           QApplication::processEvents();
           file2.close();
           return;
@@ -586,7 +541,7 @@ void TFmeEdits::ajustarSize ()
         file2.close();
       }else {
         if (Excel) {
-          QMessageBox::warning(this, QApplication::translate("", "Informaci\303\263n", "", QApplication::UnicodeUTF8), QApplication::translate("", QString("TEIDE2 no puede borrar una fila en una tabla Excel, se proceder\303\241 a poner el valor vac\303\255o.\nNo olvide borrar manualmente, en el fichero Excel, estos valores vac\303\255os una vez ha terminado de trabajar con TEIDE2").toLatin1(), "", QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::Ok);
+          QMessageBox::warning(this, QApplication::translate("", "Informaci\303\263n", 0), QApplication::translate("", QString("TEIDE2 no puede borrar una fila en una tabla Excel, se proceder\303\241 a poner el valor vac\303\255o.\nNo olvide borrar manualmente, en el fichero Excel, estos valores vac\303\255os una vez ha terminado de trabajar con TEIDE2").toLatin1(), 0), QMessageBox::Ok, QMessageBox::Ok);
           query2->exec("UPDATE " + NombreTabla + " SET [CONDICION] = '' WHERE [ID] = " + id);
           query2->exec("UPDATE " + NombreTabla + " SET [DESCRIPCION] = '' WHERE [ID] = " + id);
           query2->exec("UPDATE " + NombreTabla + " SET [ID] = '' WHERE [CONDICION] = 'NULL' AND [DESCRIPCION] = ''");
@@ -613,8 +568,6 @@ void TFmeEdits::ajustarSize ()
       view->selectRow(view->currentIndex().row());
       MostrarInfoAsociada(view->currentIndex().row(), 0, true);
       view->emitirSennal();
-      //view->update(view->currentIndex());
-
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Cargar las Variables posibles en la lista desplegable.
@@ -656,16 +609,17 @@ void TFmeEdits::ajustarSize ()
         QDomElement e, e1;
         QDomNode n1;
 
-        QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+        QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
 
         if ((!file .open(QIODevice::ReadOnly)) || (!doc->setContent(&file)))
         {
           MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombreTabla + "\"]");
           QApplication::processEvents();
           file.close();
+          delete doc;
           return;
         }
-        MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
+        //MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
         QDomElement root = doc->documentElement();
         if (!root.tagName().contains("dataroot"))
          if (root.tagName() != "ROWSET")
@@ -673,9 +627,10 @@ void TFmeEdits::ajustarSize ()
            MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombreTabla + "\"]");
            QApplication::processEvents();
            file.close();
+           delete doc;
            return;
          }
-        MemLogs->append(tr("Leyendo fichero xml"));
+        //MemLogs->append(tr("Leyendo fichero xml"));
         QApplication::processEvents();
         QString CadenaSQL = NombreTabla;
         CadenaSQL.replace(".xml", "", Qt::CaseInsensitive);
@@ -706,6 +661,7 @@ void TFmeEdits::ajustarSize ()
           i++;
           n = n.nextSibling();
         }
+        delete doc;
       }else {      
         QString CadenaSQL = "SELECT " + VariablesALeer + ", ID FROM " + NombreTabla + " ORDER BY ID";
         QSqlQuery query(CadenaSQL, *AdqConsulta);
@@ -872,16 +828,17 @@ void TFmeEdits::ajustarSize ()
         QDomElement e, e1;
         QDomNode n1;
 
-        QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+        QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
         
         if ((!file .open(QIODevice::ReadOnly)) || (!doc->setContent(&file)))
         {
           MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombreTabla + "\"]");
           QApplication::processEvents();
           file.close();
+          delete doc;
           return;
         }
-        MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
+        //MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
         QDomElement root = doc->documentElement();
         if (!root.tagName().contains("dataroot"))
          if (root.tagName() != "ROWSET")
@@ -889,9 +846,10 @@ void TFmeEdits::ajustarSize ()
            MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombreTabla + "\"]");
            QApplication::processEvents();
            file.close();
+           delete doc;
            return;
          }
-        MemLogs->append(tr("Leyendo fichero xml"));
+        //MemLogs->append(tr("Leyendo fichero xml"));
         QApplication::processEvents();
         NumEdits = 0;
         NumEditsTotales = 0;
@@ -919,6 +877,7 @@ void TFmeEdits::ajustarSize ()
           NumEdits++;
           n = n.nextSibling();
         }
+        delete doc;
       }else {
         QString CadenaSQL = "SELECT ID, CONDICION FROM " + NombreTabla + " ORDER BY ID ASC";
         query2->exec(CadenaSQL);
@@ -1033,15 +992,15 @@ void TFmeEdits::ajustarSize ()
         QDomNode n1;
 
         QDomDocument doc("?xml");
-        QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+        QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
         if (!file.open(QIODevice::ReadOnly)) {
-          QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), "", QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::Ok);
+          QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), 0), QMessageBox::Ok, QMessageBox::Ok);
           QApplication::processEvents();
           file.close();
           return;
         }
         if (!doc.setContent(&file)) {
-          QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), "", QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::Ok);
+          QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), 0), QMessageBox::Ok, QMessageBox::Ok);
           QApplication::processEvents();
           file.close();
           return;
@@ -1066,9 +1025,9 @@ void TFmeEdits::ajustarSize ()
         t2.appendChild(doc.createTextNode("a"));
         tag.appendChild(t2);
 
-        QFile file2(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+        QFile file2(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
         if (!file2.open(QIODevice::WriteOnly)) {
-          QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), "", QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::Ok);
+          QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), 0), QMessageBox::Ok, QMessageBox::Ok);
           QApplication::processEvents();
           file2.close();
           return;
@@ -1113,11 +1072,11 @@ void TFmeEdits::ajustarSize ()
           QDomElement e, e1;
           QDomNode n1;
 
-          QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+          QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
 
           if ((!file.open(QIODevice::ReadWrite)) || (!doc.setContent(&file)))
           {
-            QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), "", QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), 0), QMessageBox::Ok, QMessageBox::Ok);
             QApplication::processEvents();
             file.close();
             return;
@@ -1159,9 +1118,9 @@ void TFmeEdits::ajustarSize ()
             n1 = n1.nextSibling();
           }
           file.close();
-          QFile file2(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+          QFile file2(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
           if (!file2.open(QIODevice::WriteOnly)) {
-            QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), "", QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), 0), QMessageBox::Ok, QMessageBox::Ok);
             QApplication::processEvents();
             file2.close();
             return;
@@ -1175,13 +1134,13 @@ void TFmeEdits::ajustarSize ()
           query2->exec("UPDATE " + NombreTabla + " SET CONDICION = '" + EdtEdit->text() + "' WHERE ID = " + id);
 
         ListaIds[view->currentIndex().row()] = id.toInt();
-	MatrizEditsS[view->currentIndex().row()][0] = EdtEdit->text();
+        MatrizEditsS[view->currentIndex().row()][0] = EdtEdit->text();
 
-	// Validación sintáctica y léxico
-	ValidarEditActual();
-	// Actualizar la validación del edit
-	ActualizarValidacionEdit(view->currentIndex().row());
-	// Actualizar la información
+        // Validación sintáctica y léxico
+        ValidarEditActual();
+        // Actualizar la validación del edit
+        ActualizarValidacionEdit(view->currentIndex().row());
+        // Actualizar la información
         EscribirInformacion();
         // Mostrar la información asociada al edit
         MostrarInfoAsociada(view->currentIndex().row(), 0, true);
@@ -1197,11 +1156,11 @@ void TFmeEdits::ajustarSize ()
           QDomElement e, e1;
           QDomNode n1;
           
-          QFile file(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+          QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
 
           if ((!file.open(QIODevice::ReadWrite)) || (!doc.setContent(&file)))
           {
-            QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), "", QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), 0), QMessageBox::Ok, QMessageBox::Ok);
             QApplication::processEvents();
             file.close();
             return;
@@ -1243,9 +1202,9 @@ void TFmeEdits::ajustarSize ()
             n1 = n1.nextSibling();
           }
           file.close();
-          QFile file2(QDir::convertSeparators(NombreBaseDatos + NombreTabla));
+          QFile file2(QDir::toNativeSeparators(NombreBaseDatos + NombreTabla));
           if (!file2.open(QIODevice::WriteOnly)) {
-            QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), "", QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::critical(this, tr("Error"), QApplication::translate("", QString("No se pudo realizar satisfactoriamente la consulta sobre la base de datos [\"" + NombreTabla + "\"]").toLatin1(), 0), QMessageBox::Ok, QMessageBox::Ok);
             QApplication::processEvents();
             file2.close();
             return;
@@ -1463,7 +1422,7 @@ void TFmeEdits::ajustarSize ()
     {
       if (model->rowCount(view->currentIndex()) > 0) {
         if (!VectorInfoEdits[listaV.indexOf(model->headerData(view->currentIndex().row(), Qt::Vertical, Qt::DisplayRole).toString())].Sintactico)
-            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), QApplication::translate("", "Error Sint\303\241ctico\nRevise los operadores:\n", 0, QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::NoButton);
+            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), QApplication::translate("", "Error Sint\303\241ctico\nRevise los operadores:\n", 0), QMessageBox::Ok, QMessageBox::NoButton);
       }
     }
     void TFmeEdits::ButValidacionLexicaClick()
@@ -1476,7 +1435,7 @@ void TFmeEdits::ajustarSize ()
             Edit = model->data(view->indexAt(QPoint(view->columnViewportPosition(0), view->rowViewportPosition(view->currentIndex().row()))), Qt::DisplayRole).toString();
             mappM = FmeVariablesAsociadas->GetMapMissing();
             EvaluarExpresion((char*)Edit.toLatin1().data(), FmeMicroDatosAsociados->GetMapRegistro(0), &mappM, &mensajeE);
-            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), QApplication::translate("", "Error L\303\251xico\n\"", 0, QApplication::UnicodeUTF8) + mensajeE + "\"", QMessageBox::Ok, QMessageBox::NoButton);
+            QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), QApplication::translate("", "Error L\303\251xico\n\"", 0) + mensajeE + "\"", QMessageBox::Ok, QMessageBox::NoButton);
         }
       }
     }
@@ -1544,15 +1503,15 @@ void TFmeEdits::ajustarSize ()
     {
       int IndiceEdit;
 
-      //try
-      //{
+      try
+      {
         IndiceEdit = EdtIrA->text().toInt();
-      /*}
+      }
       catch (...)
       {
         EdtIrA->setText("");
         return;
-      }*/
+      }
       if ((IndiceEdit >= 1) && (IndiceEdit <= (int)model->rowCount(view->currentIndex()))) {//NumEdits)) {
         view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(0), view->rowViewportPosition(IndiceEdit-1))));
         SgrRejillaSelectCell(view->currentIndex());        
@@ -1630,8 +1589,7 @@ void TFmeEdits::ajustarSize ()
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeEdits::VisualizarEdCloseUp(int index2)
     {      
-      QString **MatrizEditsA;
-      //QStringList listaHA;
+      QString **MatrizEditsA;      
       QStringList listaVA;
       bool *editcor;
       int i, j, k;      

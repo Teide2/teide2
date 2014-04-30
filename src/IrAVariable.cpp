@@ -32,9 +32,7 @@
       if (this->objectName().isEmpty())
         this->setObjectName(QString::fromUtf8("TFrmIrAVariable"));
       this->resize(361, 181);
-      QFont font;
-      font.setFamily(QString::fromUtf8("Tahoma"));
-      this->setFont(font);
+
       RgpMetodo = new QGroupBox(this);
       RgpMetodo->setObjectName(QString::fromUtf8("RgpMetodo"));
       RgpMetodo->setGeometry(QRect(8, 72, 105, 65));
@@ -69,14 +67,14 @@
       ButCancelar->setObjectName(QString::fromUtf8("ButCancelar"));
       ButCancelar->setGeometry(QRect(128, 16, 73, 25));
 
-      this->setWindowTitle(QApplication::translate("TFrmIrAVariable", "Ir a una variable...", 0, QApplication::UnicodeUTF8));
-      RgpMetodo->setTitle(QApplication::translate("TFrmIrAVariable", "M\303\251todo", 0, QApplication::UnicodeUTF8));
-      Rbnombre->setText(QApplication::translate("TFrmIrAVariable", "Por nombre", 0, QApplication::UnicodeUTF8));
-      Rbnumero->setText(QApplication::translate("TFrmIrAVariable", "Por n\303\272mero", 0, QApplication::UnicodeUTF8));
-      GbxPorNombre->setTitle(QApplication::translate("TFrmIrAVariable", "Por nombre", 0, QApplication::UnicodeUTF8));
-      GbxPorNumero->setTitle(QApplication::translate("TFrmIrAVariable", "Por n\303\272mero", 0, QApplication::UnicodeUTF8));
-      ButAplicar->setText(QApplication::translate("TFrmIrAVariable", "Aplicar", 0, QApplication::UnicodeUTF8));
-      ButCancelar->setText(QApplication::translate("TFrmIrAVariable", "Cancelar", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFrmIrAVariable", "Ir a una variable...", 0));
+      RgpMetodo->setTitle(QApplication::translate("TFrmIrAVariable", "M\303\251todo", 0));
+      Rbnombre->setText(QApplication::translate("TFrmIrAVariable", "Por nombre", 0));
+      Rbnumero->setText(QApplication::translate("TFrmIrAVariable", "Por n\303\272mero", 0));
+      GbxPorNombre->setTitle(QApplication::translate("TFrmIrAVariable", "Por nombre", 0));
+      GbxPorNumero->setTitle(QApplication::translate("TFrmIrAVariable", "Por n\303\272mero", 0));
+      ButAplicar->setText(QApplication::translate("TFrmIrAVariable", "Aplicar", 0));
+      ButCancelar->setText(QApplication::translate("TFrmIrAVariable", "Cancelar", 0));
 
       QObject::connect(Rbnombre, SIGNAL(clicked()), this, SLOT(RgpMetodoNombreClick()));
       QObject::connect(Rbnumero, SIGNAL(clicked()), this, SLOT(RgpMetodoNumeroClick()));

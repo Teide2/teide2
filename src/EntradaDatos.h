@@ -25,12 +25,12 @@
 
 #include <QtCore/QVariant>
 #include <QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QWidget>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QWidget>
 
 #include "Global.h"
 

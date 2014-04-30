@@ -32,9 +32,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
 
       if (this->objectName().isEmpty())
         this->setObjectName(("TFmeRangos"));
-      QFont font;
-      font.setFamily(("Tahoma"));
-      this->setFont(font);
+
       PanContenedor = new QFrame(this);
       PanContenedor->setObjectName(("PanContenedor"));
       PanContenedor->setGeometry(QRect(0, 0, this->width(), this->height()-50));
@@ -71,22 +69,22 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
       PanSalvarPorcentajesError->setFrameShadow(QFrame::Raised);
       LabUmbralErrorVariables = new QLabel(PanSalvarPorcentajesError);
       LabUmbralErrorVariables->setObjectName(("LabUmbralErrorVariables"));
-      LabUmbralErrorVariables->setGeometry(QRect(310, 13, 161, 18));
+      LabUmbralErrorVariables->setGeometry(QRect(280, 13, 191, 18));
       Label1 = new QLabel(PanSalvarPorcentajesError);
       Label1->setObjectName(("Label1"));
       Label1->setGeometry(QRect(520, 13, 15, 18));
       LabUmbralErrorRegistros = new QLabel(PanSalvarPorcentajesError);
       LabUmbralErrorRegistros->setObjectName(("LabUmbralErrorRegistros"));
-      LabUmbralErrorRegistros->setGeometry(QRect(580, 13, 156, 18));
+      LabUmbralErrorRegistros->setGeometry(QRect(550, 13, 186, 18));
       Label3 = new QLabel(PanSalvarPorcentajesError);
       Label3->setObjectName(("Label3"));
       Label3->setGeometry(QRect(790, 13, 15, 18));
       ButSalvarErrorVariables = new QPushButton(PanSalvarPorcentajesError);
       ButSalvarErrorVariables->setObjectName(("ButSalvarErrorVariables"));
-      ButSalvarErrorVariables->setGeometry(QRect(8, 8, 261, 25));
+      ButSalvarErrorVariables->setGeometry(QRect(8, 8, 265, 25));
       ButSalvarErrorRegistros = new QPushButton(PanSalvarPorcentajesError);
       ButSalvarErrorRegistros->setObjectName(("ButSalvarErrorRegistros"));
-      ButSalvarErrorRegistros->setGeometry(QRect(821, 8, 238, 25));
+      ButSalvarErrorRegistros->setGeometry(QRect(821, 8, 265, 25));
       EdtUmbralErrorVariables = new QSpinBox(PanSalvarPorcentajesError);
       EdtUmbralErrorVariables->setObjectName(("EdtUmbralErrorVariables"));
       EdtUmbralErrorVariables->setGeometry(QRect(470, 10, 43, 23));
@@ -108,33 +106,33 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
       SbrBarraNum->setFrameShadow(QFrame::Raised);
       LabNumFiltrosVariable = new QLabel(SbrBarraNum);
       LabNumFiltrosVariable->setObjectName(("LabNumFiltrosVariable"));
-      LabNumFiltrosVariable->setGeometry(QRect(8, 12, 141, 18));
+      LabNumFiltrosVariable->setGeometry(QRect(8, 12, 181, 18));
       EdtNumFiltrosVariable = new QLineEdit(SbrBarraNum);
       EdtNumFiltrosVariable->setObjectName(("EdtNumFiltrosVariable"));
-      EdtNumFiltrosVariable->setGeometry(QRect(150, 9, 41, 23));
+      EdtNumFiltrosVariable->setGeometry(QRect(185, 9, 41, 23));
       EdtNumFiltrosVariable->setReadOnly(true);
       QPalette palette( QApplication::palette() );
       palette.setColor( QPalette::Active, QPalette::Base, Qt::gray );
       EdtNumFiltrosVariable->setPalette(palette);
       LabNumEditsVariable = new QLabel(SbrBarraNum);
       LabNumEditsVariable->setObjectName(("LabNumEditsVariable"));
-      LabNumEditsVariable->setGeometry(QRect(205, 12, 154, 18));
+      LabNumEditsVariable->setGeometry(QRect(240, 12, 174, 18));
       EdtNumEditsVariable = new QLineEdit(SbrBarraNum);
       EdtNumEditsVariable->setObjectName(("EdtNumEditsVariable"));
-      EdtNumEditsVariable->setGeometry(QRect(360, 9, 41, 23));
+      EdtNumEditsVariable->setGeometry(QRect(420, 9, 41, 23));
       EdtNumEditsVariable->setReadOnly(true);
       EdtNumEditsVariable->setPalette(palette);
 
       LabIrARegistroPorNumero = new QLabel(PanInfo);
       LabIrARegistroPorNumero->setObjectName(("LabIrARegistroPorNumero"));
-      LabIrARegistroPorNumero->setGeometry(QRect(1, 12, 90, 18));
+      LabIrARegistroPorNumero->setGeometry(QRect(1, 12, 100, 18));
       EdtIrARegistroPorNumero = new QLineEdit(PanInfo);
       EdtIrARegistroPorNumero->setObjectName(("EdtIrARegistroPorNumero"));
-      EdtIrARegistroPorNumero->setGeometry(QRect(92, 9, 33, 23));
+      EdtIrARegistroPorNumero->setGeometry(QRect(102, 9, 33, 23));
 
       LabIrARegistroPorNombre = new QLabel(PanInfo);
       LabIrARegistroPorNombre->setObjectName(("LabIrARegistroPorNumero"));
-      LabIrARegistroPorNombre->setGeometry(QRect(143, 12, 90, 18));
+      LabIrARegistroPorNombre->setGeometry(QRect(143, 12, 100, 18));
       CbxIrARegistroPorNombre = new QComboBox(PanInfo);
       CbxIrARegistroPorNombre->setObjectName(("CbxIrARegistroPorNombre"));
       CbxIrARegistroPorNombre->setGeometry(QRect(238, 9, 145, 23));
@@ -179,13 +177,13 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
       PanExclusion->setFrameShadow(QFrame::Raised);
       LabExclusionRegistros = new QLabel(PanExclusion);
       LabExclusionRegistros->setObjectName(("LabExclusionRegistros"));
-      LabExclusionRegistros->setGeometry(QRect(8, 8, 319, 18));
+      LabExclusionRegistros->setGeometry(QRect(8, 8, 329, 18));
       EdtExclusionRegistros = new QLineEdit(PanExclusion);
       EdtExclusionRegistros->setObjectName(("EdtExclusionRegistros"));
       EdtExclusionRegistros->setGeometry(QRect(335, 4, 41, 23));
       LabExclusionVariables = new QLabel(PanExclusion);
       LabExclusionVariables->setObjectName(("LabExclusionVariables"));
-      LabExclusionVariables->setGeometry(QRect(400, 8, 315, 18));
+      LabExclusionVariables->setGeometry(QRect(400, 8, 325, 18));
       EdtExclusionVariables = new QLineEdit(PanExclusion);
       EdtExclusionVariables->setObjectName(("EdtExclusionVariables"));
       EdtExclusionVariables->setGeometry(QRect(720, 4, 41, 23));
@@ -248,58 +246,58 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
       menu->addAction( QObject::tr("Aumentar el ancho de las columnas..."), this, SLOT(MitAumentarColumnasClick()));
       menu->addAction( QObject::tr("Disminuir el ancho de las columnas..."), this, SLOT(MitDisminuirColumnasClick()));
 
-      this->setWindowTitle(QApplication::translate("TFmeRangos", "Form", 0, QApplication::UnicodeUTF8));
-      view->setToolTip(QApplication::translate("TFmeRangos", "Rejilla de visualizaci\303\263n de los resultados de la evaluaci\303\263n.(ALT)", 0, QApplication::UnicodeUTF8));
-      view->verticalHeader()->setToolTip(QApplication::translate("TFmeRangos", "ID registro || Total errores", 0, QApplication::UnicodeUTF8));
-      view->horizontalHeader()->setToolTip(QApplication::translate("TFmeRangos", "Variables\nTotal errores", 0, QApplication::UnicodeUTF8));
-      PanExclusion->setToolTip(QApplication::translate("TFmeRangos", "Panel de exclusi\303\263n.", 0, QApplication::UnicodeUTF8));
-      LabExclusionRegistros->setText(QApplication::translate("TFmeRangos", "Excluir REGISTROS con n\303\272mero de errores mayor de ...", 0, QApplication::UnicodeUTF8));
-      EdtExclusionRegistros->setToolTip(QApplication::translate("TFmeRangos", "Porcentaje de exclusi\303\263n por encima del cual se excluir\303\241n los registros que superen esta cifra.", 0, QApplication::UnicodeUTF8));
-      EdtExclusionRegistros->setText(QApplication::translate("TFmeRangos", "0", 0, QApplication::UnicodeUTF8));
-      LabExclusionVariables->setText(QApplication::translate("TFmeRangos", "Excluir VARIABLES con n\303\272mero de errores mayor de ...", 0, QApplication::UnicodeUTF8));
-      EdtExclusionVariables->setToolTip(QApplication::translate("TFmeRangos", "Porcentaje de exclusion por encima del cual se excluir\303\241n las variables que superen esta cifra.", 0, QApplication::UnicodeUTF8));
-      EdtExclusionVariables->setText(QApplication::translate("TFmeRangos", "0", 0, QApplication::UnicodeUTF8));
-      ButAplicarExclusion->setToolTip(QApplication::translate("TFmeRangos", "Pulse aqu\303\255 para aplicar la exclusi\303\263n.", 0, QApplication::UnicodeUTF8));
-      ButAplicarExclusion->setText(QApplication::translate("TFmeRangos", "Aplicar Exclusi\303\263n", 0, QApplication::UnicodeUTF8));
-      view2->setToolTip(QApplication::translate("TFmeRangos", "Informaci\303\263n del registro activo.(CTRL)", 0, QApplication::UnicodeUTF8));
-      view3->setToolTip(QApplication::translate("TFmeRangos", "Informaci\303\263n de la variable activa.", 0, QApplication::UnicodeUTF8));
-      LabIrAVariablePorNombre->setText(QApplication::translate("TFmeRangos", "Ir a var. (nom)", 0, QApplication::UnicodeUTF8));
-      LabIrARegistroPorNombre->setText(QApplication::translate("TFmeRangos", "Ir a reg. (nom)", 0, QApplication::UnicodeUTF8));
-      LabIrAVariablePorNumero->setText(QApplication::translate("TFmeRangos", "Ir a var. (num)", 0, QApplication::UnicodeUTF8));
-      LabIrARegistroPorNumero->setText(QApplication::translate("TFmeRangos", "Ir a reg. (num)", 0, QApplication::UnicodeUTF8));
-      LabNumFiltrosVariable->setText(QApplication::translate("TFmeRangos", "Num. filtros con variable", 0, QApplication::UnicodeUTF8));
-      LabNumEditsVariable->setText(QApplication::translate("TFmeRangos", "Num. reglas con variable", 0, QApplication::UnicodeUTF8));
-      EdtIrARegistroPorNumero->setToolTip(QApplication::translate("TFmeRangos", "Indique un n\303\272mero de registro y pulse ENTER parar ir a \303\251l.", 0, QApplication::UnicodeUTF8));
-      CbxIrAVariablePorNombre->setToolTip(QApplication::translate("TFmeRangos", "Seleccione la variable que desea visualizar.", 0, QApplication::UnicodeUTF8));
-      CbxIrARegistroPorNombre->setToolTip(QApplication::translate("TFmeRangos", "Seleccione el registro que desea visualizar.", 0, QApplication::UnicodeUTF8));
-      EdtIrAVariablePorNumero->setToolTip(QApplication::translate("TFmeRangos", "Indique un n\303\272mero de variable y pulse ENTER parar ir a ella.", 0, QApplication::UnicodeUTF8));
-      EdtNumFiltrosVariable->setToolTip(QApplication::translate("TFmeRangos", "Numero de filtros en los que aparece esta variable.", 0, QApplication::UnicodeUTF8));
-      EdtNumEditsVariable->setToolTip(QApplication::translate("TFmeRangos", "Numero de reglas en los que aparece esta variable.", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFmeRangos", "Form", 0));
+      view->setToolTip(QApplication::translate("TFmeRangos", "Rejilla de visualizaci\303\263n de los resultados de la evaluaci\303\263n.(ALT)", 0));
+      view->verticalHeader()->setToolTip(QApplication::translate("TFmeRangos", "ID registro || Total errores", 0));
+      view->horizontalHeader()->setToolTip(QApplication::translate("TFmeRangos", "Variables\nTotal errores", 0));
+      PanExclusion->setToolTip(QApplication::translate("TFmeRangos", "Panel de exclusi\303\263n.", 0));
+      LabExclusionRegistros->setText(QApplication::translate("TFmeRangos", "Excluir REGISTROS con n\303\272mero de errores mayor de ...", 0));
+      EdtExclusionRegistros->setToolTip(QApplication::translate("TFmeRangos", "Porcentaje de exclusi\303\263n por encima del cual se excluir\303\241n los registros que superen esta cifra.", 0));
+      EdtExclusionRegistros->setText(QApplication::translate("TFmeRangos", "0", 0));
+      LabExclusionVariables->setText(QApplication::translate("TFmeRangos", "Excluir VARIABLES con n\303\272mero de errores mayor de ...", 0));
+      EdtExclusionVariables->setToolTip(QApplication::translate("TFmeRangos", "Porcentaje de exclusion por encima del cual se excluir\303\241n las variables que superen esta cifra.", 0));
+      EdtExclusionVariables->setText(QApplication::translate("TFmeRangos", "0", 0));
+      ButAplicarExclusion->setToolTip(QApplication::translate("TFmeRangos", "Pulse aqu\303\255 para aplicar la exclusi\303\263n.", 0));
+      ButAplicarExclusion->setText(QApplication::translate("TFmeRangos", "Aplicar Exclusi\303\263n", 0));
+      view2->setToolTip(QApplication::translate("TFmeRangos", "Informaci\303\263n del registro activo.(CTRL)", 0));
+      view3->setToolTip(QApplication::translate("TFmeRangos", "Informaci\303\263n de la variable activa.", 0));
+      LabIrAVariablePorNombre->setText(QApplication::translate("TFmeRangos", "Ir a var. (nom)", 0));
+      LabIrARegistroPorNombre->setText(QApplication::translate("TFmeRangos", "Ir a reg. (nom)", 0));
+      LabIrAVariablePorNumero->setText(QApplication::translate("TFmeRangos", "Ir a var. (num)", 0));
+      LabIrARegistroPorNumero->setText(QApplication::translate("TFmeRangos", "Ir a reg. (num)", 0));
+      LabNumFiltrosVariable->setText(QApplication::translate("TFmeRangos", "Num. filtros con variable", 0));
+      LabNumEditsVariable->setText(QApplication::translate("TFmeRangos", "Num. reglas con variable", 0));
+      EdtIrARegistroPorNumero->setToolTip(QApplication::translate("TFmeRangos", "Indique un n\303\272mero de registro y pulse ENTER parar ir a \303\251l.", 0));
+      CbxIrAVariablePorNombre->setToolTip(QApplication::translate("TFmeRangos", "Seleccione la variable que desea visualizar.", 0));
+      CbxIrARegistroPorNombre->setToolTip(QApplication::translate("TFmeRangos", "Seleccione el registro que desea visualizar.", 0));
+      EdtIrAVariablePorNumero->setToolTip(QApplication::translate("TFmeRangos", "Indique un n\303\272mero de variable y pulse ENTER parar ir a ella.", 0));
+      EdtNumFiltrosVariable->setToolTip(QApplication::translate("TFmeRangos", "Numero de filtros en los que aparece esta variable.", 0));
+      EdtNumEditsVariable->setToolTip(QApplication::translate("TFmeRangos", "Numero de reglas en los que aparece esta variable.", 0));
       LabSbrBarraEstado1->setText("");
       LabSbrBarraEstado2->setText("");
-      LabUmbralErrorVariables->setText(QApplication::translate("TFmeRangos", "Porcentaje umbral de error", 0, QApplication::UnicodeUTF8));
-      Label1->setText(QApplication::translate("TFmeRangos", "%", 0, QApplication::UnicodeUTF8));
-      LabUmbralErrorRegistros->setText(QApplication::translate("TFmeRangos", "Porcentaje umbral de error", 0, QApplication::UnicodeUTF8));
-      Label3->setText(QApplication::translate("TFmeRangos", "%", 0, QApplication::UnicodeUTF8));
-      ButSalvarErrorVariables->setText(QApplication::translate("TFmeRangos", "Salvar porcentajes de error de variables", 0, QApplication::UnicodeUTF8));
-      ButSalvarErrorVariables->setToolTip(QApplication::translate("TFmeRangos", "Salvar porcentajes de error de variables en fichero", 0, QApplication::UnicodeUTF8));
-      ButSalvarErrorRegistros->setText(QApplication::translate("TFmeRangos", "Salvar porcentajes de error de registros", 0, QApplication::UnicodeUTF8));
-      ButSalvarErrorRegistros->setToolTip(QApplication::translate("TFmeRangos", "Salvar porcentajes de error de registros en fichero", 0, QApplication::UnicodeUTF8));
-      EdtUmbralErrorVariables->setToolTip(QApplication::translate("TFmeRangos", "Umbral para salvar variables con un porcentaje de error", 0, QApplication::UnicodeUTF8));
-      EdtUmbralErrorRegistros->setToolTip(QApplication::translate("TFmeRangos", "Umbral para salvar registros con un porcentaje de error", 0, QApplication::UnicodeUTF8));
-      LabProgreso->setText(QApplication::translate("TFmeRangos", "Progreso de la operaci\303\263n", 0, QApplication::UnicodeUTF8));
-      LabOperacion->setText(QApplication::translate("TFmeRangos", "Operaci\303\263n en curso", 0, QApplication::UnicodeUTF8));
-      LabPorcentaje->setText(QApplication::translate("TFmeRangos", "% completado", 0, QApplication::UnicodeUTF8));
-      LabElemento->setText(QApplication::translate("TFmeRangos", "# completado", 0, QApplication::UnicodeUTF8));
-      EdtOperacion->setToolTip(QApplication::translate("TFmeRangos", "Nombre de la operaci\303\263n que esta siendo ejecutada actualmente.", 0, QApplication::UnicodeUTF8));
-      EdtOperacion->setText(QApplication::translate("TFmeRangos", "Evaluaci\303\263n de las reglas de rangos sobre los microdatos.", 0, QApplication::UnicodeUTF8));
-      PbrProgreso->setToolTip(QApplication::translate("TFmeRangos", "Muestra del progreso de la operaci\303\263n.", 0, QApplication::UnicodeUTF8));
-      EdtPorcentaje->setToolTip(QApplication::translate("TFmeRangos", "Porcentaje completado de la operaci\303\263n.", 0, QApplication::UnicodeUTF8));
-      EdtElemento->setToolTip(QApplication::translate("TFmeRangos", "Elemento actual en proceso / N\303\272mero total de elementos a procesar", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->setToolTip(QApplication::translate("TFmeRangos", "Seleccione el modo de vizualizaci\303\263n de los registros.", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeRangos", "Visualizar todos", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeRangos", "Visualizar registros correctos", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeRangos", "Visualizar registros incorrectos", 0, QApplication::UnicodeUTF8));
+      LabUmbralErrorVariables->setText(QApplication::translate("TFmeRangos", "Porcentaje umbral de error", 0));
+      Label1->setText(QApplication::translate("TFmeRangos", "%", 0));
+      LabUmbralErrorRegistros->setText(QApplication::translate("TFmeRangos", "Porcentaje umbral de error", 0));
+      Label3->setText(QApplication::translate("TFmeRangos", "%", 0));
+      ButSalvarErrorVariables->setText(QApplication::translate("TFmeRangos", "Salvar porcentajes de error de variables", 0));
+      ButSalvarErrorVariables->setToolTip(QApplication::translate("TFmeRangos", "Salvar porcentajes de error de variables en fichero", 0));
+      ButSalvarErrorRegistros->setText(QApplication::translate("TFmeRangos", "Salvar porcentajes de error de registros", 0));
+      ButSalvarErrorRegistros->setToolTip(QApplication::translate("TFmeRangos", "Salvar porcentajes de error de registros en fichero", 0));
+      EdtUmbralErrorVariables->setToolTip(QApplication::translate("TFmeRangos", "Umbral para salvar variables con un porcentaje de error", 0));
+      EdtUmbralErrorRegistros->setToolTip(QApplication::translate("TFmeRangos", "Umbral para salvar registros con un porcentaje de error", 0));
+      LabProgreso->setText(QApplication::translate("TFmeRangos", "Progreso de la operaci\303\263n", 0));
+      LabOperacion->setText(QApplication::translate("TFmeRangos", "Operaci\303\263n en curso", 0));
+      LabPorcentaje->setText(QApplication::translate("TFmeRangos", "% completado", 0));
+      LabElemento->setText(QApplication::translate("TFmeRangos", "# completado", 0));
+      EdtOperacion->setToolTip(QApplication::translate("TFmeRangos", "Nombre de la operaci\303\263n que esta siendo ejecutada actualmente.", 0));
+      EdtOperacion->setText(QApplication::translate("TFmeRangos", "Evaluaci\303\263n de las reglas de rangos sobre los microdatos.", 0));
+      PbrProgreso->setToolTip(QApplication::translate("TFmeRangos", "Muestra del progreso de la operaci\303\263n.", 0));
+      EdtPorcentaje->setToolTip(QApplication::translate("TFmeRangos", "Porcentaje completado de la operaci\303\263n.", 0));
+      EdtElemento->setToolTip(QApplication::translate("TFmeRangos", "Elemento actual en proceso / N\303\272mero total de elementos a procesar", 0));
+      VisualizarReg->setToolTip(QApplication::translate("TFmeRangos", "Seleccione el modo de vizualizaci\303\263n de los registros.", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeRangos", "Visualizar todos", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeRangos", "Visualizar registros correctos", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeRangos", "Visualizar registros incorrectos", 0));
 
       QObject::connect(view, SIGNAL(doubleClicked(const QModelIndex&)), this, SLOT(SgrRejillaDblClick(const QModelIndex&)));
       QObject::connect(view, SIGNAL(clicked(const QModelIndex&)), this, SLOT(SgrRejillaSelectCell(const QModelIndex&)));
@@ -358,13 +356,8 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
       this->FrmCambiarMicrodato = FrmCambiarMicrodato;      
       this->FrmOpciones = FrmOpciones;
       this->principal = Frmprincipal;
-      MemLogs->append(QApplication::translate("", "Creando la clase de evaluaci\303\263n de reglas de rango", 0, QApplication::UnicodeUTF8));
+      MemLogs->append(QApplication::translate("", "Creando la clase de evaluaci\303\263n de reglas de rango", 0));
       QApplication::processEvents();
-
-      //MemLogs->append("num " + QString::number(ListaIds->size(), 10));
-
-
-      //QApplication::processEvents();
 
       // Fijamos un nombre
       this->Name = "FmeRangos" + FmeMicroDatosAsociados->GetNombreTabla();
@@ -378,22 +371,20 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
 
 
       // Inicializar la matriz de test  y la matriz de test de filtros
-      InicializarMatrizTest();      
-      //MemLogs->append("q pasa2");QApplication::processEvents();
-      //MemLogs->append("numR reg "+QString::number(NumRegistros,10));
+      InicializarMatrizTest();            
       QApplication::processEvents();
       // Inicializar los vectores totales
       InicializarVectoresTotales();
 
       // Inicializar los vectores de exclusion
       InicializarVectoresExclusion();
-//MemLogs->append("q pasa3");QApplication::processEvents();
+
       // Cargar las variables y los registro en la lista de seleccion
       CargarEnLista();
- //MemLogs->append("q pasa4");QApplication::processEvents();
+
       // Inicializar las rejillas      
       InicializarRejilla();
-//MemLogs->append("q pasa5");QApplication::processEvents();
+
       InicializarRejillaRegistro();
       model2 = new TablaModelInfoR(0, VectorDatosR, listaH2, listaV2);
       view2->setModel(model2);
@@ -465,23 +456,23 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeRangos::ActualizarUmbralExclusion()
     {
-      //try
-      //{
+      try
+      {
         UmbralExclusionRegistros = (unsigned)EdtExclusionRegistros->text().toInt();
-      /*}
+      }
       catch(...)
       {
         UmbralExclusionRegistros = (unsigned)(PORCENTAJE_INICIAL_EXCLUSION_REG_RANGOS * NumVariables);
-      }*/
+      }
 
-      //try
-      //{
+      try
+      {
         UmbralExclusionVariables = (unsigned)EdtExclusionVariables->text().toInt();
-      /*}
+      }
       catch(...)
       {
         UmbralExclusionVariables = (unsigned)(PORCENTAJE_INICIAL_EXCLUSION_VARIABLES * NumRegistros);
-      }*/
+      }
 
       if (UmbralExclusionRegistros > NumVariables)
         UmbralExclusionRegistros = (unsigned)(PORCENTAJE_INICIAL_EXCLUSION_REG_RANGOS * NumVariables);
@@ -515,8 +506,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeRangos::ActualizarInterfaceMicrodatoCambiado(unsigned IndiceRegistro, unsigned IndiceVariable, double Valor)
     {
-      unsigned j;
-      //bool ExReg = false;
+      unsigned j;      
       bool RegOK_0, RegOK_1;
 
       RegOK_0 = RegistroCorrecto(IndiceRegistro);
@@ -786,16 +776,11 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeRangos::CargarEnLista()
     {
-      CbxIrAVariablePorNombre->addItems(*ListaVariables);
-      //MemLogs->append("q pasa31");QApplication::processEvents();
+      CbxIrAVariablePorNombre->addItems(*ListaVariables);      
       CbxIrAVariablePorNombre->setCurrentIndex(0);
-      CbxIrAVariablePorNombre->setInsertPolicy(QComboBox::NoInsert);
-      //QStringList *ListaIds = ListaIds;
-      //MemLogs->append("q pasa32 ");QApplication::processEvents();
-      //MemLogs->append("q pasa32 " + QString::number(ListaIds->size(),10));QApplication::processEvents();
+      CbxIrAVariablePorNombre->setInsertPolicy(QComboBox::NoInsert);      
       CbxIrARegistroPorNombre->setDuplicatesEnabled (true);
-      CbxIrARegistroPorNombre->insertItems(0,*ListaIds);
-      //MemLogs->append("q pasa33");QApplication::processEvents();
+      CbxIrARegistroPorNombre->insertItems(0,*ListaIds);     
       CbxIrARegistroPorNombre->setCurrentIndex(0);
       CbxIrARegistroPorNombre->setInsertPolicy(QComboBox::NoInsert);
     }
@@ -1206,12 +1191,10 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
       // Cargamos los titulos
       MatrizTestS[0] = new QString[NumVariables+1];
       for (i = 1; i < (unsigned)NumRegistros + 1; i++) {        
-        listaV.append(ListaIds->at(i-1));
-        //MemLogs->append("q pasa41");QApplication::processEvents();
+        listaV.append(ListaIds->at(i-1));        
         MatrizTestS[i] = new QString[NumVariables+1];
         view->setRowHeight(i, 5);
-      }
-      //MemLogs->append("q pasa42");QApplication::processEvents();
+      }      
       view->setColumnWidth(0, ANCHO_COLUMNA_ESTANDAR);
       for (j = 1; j < (unsigned)NumVariables+1; j++) {        
         listaH.append("hola");
@@ -1551,7 +1534,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
 
       t->append("");
       t->append("======================================================");
-      t->append(QApplication::translate("", "Variables que est\303\241n excluidas", 0, QApplication::UnicodeUTF8));
+      t->append(QApplication::translate("", "Variables que est\303\241n excluidas", 0));
       t->append("======================================================");
       t->append("");
 
@@ -1589,7 +1572,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
       unsigned i, j, n;
       QString Linea;
 
-      t->append(QApplication::translate("", "Porcentajes de error de registros (evaluaci\303\263n de rangos y filtros)", 0, QApplication::UnicodeUTF8));
+      t->append(QApplication::translate("", "Porcentajes de error de registros (evaluaci\303\263n de rangos y filtros)", 0));
       if (PorcentajeUmbral > 0)
       {
       	t->append("======================================================");
@@ -1618,7 +1601,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
 
       t->append("");
       t->append("======================================================");
-      t->append(QApplication::translate("", "Registros que est\303\241n excluidos", 0, QApplication::UnicodeUTF8));
+      t->append(QApplication::translate("", "Registros que est\303\241n excluidos", 0));
       t->append("======================================================");
       t->append("");
 
@@ -1688,12 +1671,8 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
       IncSistemaProgreso2(" 5");
       CalcularNumResumen();
       IncSistemaProgreso2(" 6");
-
-      //GbxHistograma->setActiveSerieColumnas(false);
-      //GbxHistograma->setActiveSerieRegistros(true);
-
       IncSistemaProgreso2(" 7");      
-      //GbxHistograma->setTitle(QApplication::translate("", "N\303\232MERO DE ERRORES [ejeX: Ordinal de registros, ejeY: N\303\272mero de errores]", 0, QApplication::UnicodeUTF8));
+
       IncSistemaProgreso2(" 8");
       MostrarInfoAsociada(1, 1, true);
       IncSistemaProgreso2(" 9");
@@ -1802,15 +1781,15 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
     {
       int IndiceRegistro;
 
-      //try
-      //{
+      try
+      {
         IndiceRegistro = EdtIrARegistroPorNumero->text().toInt();
-      /*}
+      }
       catch (...)
       {
         EdtIrARegistroPorNumero->setText("");
         return;
-      }*/
+      }
       if ((IndiceRegistro >= 1) && (IndiceRegistro <= model->rowCount(view->currentIndex())-1)) //NumRegistros))
         view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(view->currentIndex().column()), view->rowViewportPosition(IndiceRegistro))));
       EdtIrARegistroPorNumero->setText("");
@@ -1825,15 +1804,15 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
     {
       int IndiceVariable;
 
-      //try
-      //{
+      try
+      {
         IndiceVariable = EdtIrAVariablePorNumero->text().toInt();
-      /*}
+      }
       catch (...)
       {
         EdtIrAVariablePorNumero->setText("");
         return;
-      }*/
+      }
       if ((IndiceVariable >= 1) && (IndiceVariable <= NumVariables))
         view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(IndiceVariable), view->rowViewportPosition(view->currentIndex().row()))));
       EdtIrAVariablePorNumero->setText("");
@@ -1910,8 +1889,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
     {
       unsigned Fila, Columna;
       if (VisualizarReg->currentIndex() != 1) {
-        QModelIndex index = view->currentIndex();
-      //Fila = index.row();
+        QModelIndex index = view->currentIndex();      
         Fila = listaV.indexOf(model->headerData(index.row(), Qt::Vertical, Qt::DisplayRole).toString());
         Columna = BuscarVariableErrorDerecha(Fila, index.column());
         index = view->indexAt(QPoint(view->columnViewportPosition(Columna), view->rowViewportPosition(index.row())));
@@ -1924,8 +1902,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
     {
       unsigned Fila, Columna;
       if (VisualizarReg->currentIndex() != 1) {
-        QModelIndex index = view->currentIndex();
-      //Fila = index.row();
+        QModelIndex index = view->currentIndex();      
         Fila = listaV.indexOf(model->headerData(index.row(), Qt::Vertical, Qt::DisplayRole).toString());
         Columna = BuscarVariableErrorIzquierda(Fila, index.column());
         index = view->indexAt(QPoint(view->columnViewportPosition(Columna), view->rowViewportPosition(index.row())));
@@ -1988,7 +1965,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
 
       if (listaH3[ColumnaActiva] == "FILTRO")
         if (!VectorDatosV[ColumnaActiva].isEmpty())
-          QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), VectorDatosV[ColumnaActiva]);
+          QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0), VectorDatosV[ColumnaActiva]);
 
       if (FmeVariablesAsociadas->GetCadenas_Missing()->contains(listaH3[ColumnaActiva]))
         FmeVariablesAsociadas->ConsultarTablaMissing();
@@ -2009,7 +1986,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
     void TFmeRangos::ButSalvarErrorVariablesClick()
     {
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators(start + "/" + DIRECTORIO_STATS);
+      QString meta = QDir::toNativeSeparators(start + "/" + DIRECTORIO_STATS);
       QString NombreFichero = QFileDialog::getSaveFileName(this, tr("Guardar fichero stats" ), meta, "TXT (*.txt)");
       if (!NombreFichero.isEmpty())
         SalvarPorcentajesErrorVariables(NombreFichero, (double)EdtUmbralErrorVariables->value());
@@ -2020,7 +1997,7 @@ TFmeRangos::TFmeRangos(QWidget* parent, const char* name, Qt::WindowFlags fl, TF
     void TFmeRangos::ButSalvarErrorRegistrosClick()
     {
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators(start + "/" + DIRECTORIO_STATS);
+      QString meta = QDir::toNativeSeparators(start + "/" + DIRECTORIO_STATS);
       QString NombreFichero = QFileDialog::getSaveFileName(this, tr("Guardar fichero stats" ), meta, "TXT (*.txt)");
       if (!NombreFichero.isEmpty())
         SalvarPorcentajesErrorRegistros(NombreFichero, (double)EdtUmbralErrorRegistros->value());

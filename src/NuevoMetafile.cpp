@@ -90,33 +90,33 @@ TFrmNuevoMetafile::TFrmNuevoMetafile(QWidget* parent, const char* name, Qt::Wind
       ButKey->setObjectName(QString::fromUtf8("ButKey"));
       ButKey->setGeometry(QRect(8, 232, 153, 25));
 
-      this->setWindowTitle(QApplication::translate("TFrmNuevoMetafile", "Nuevo Metafile", 0, QApplication::UnicodeUTF8));
-      GbxEditorMetafile->setTitle(QApplication::translate("TFrmNuevoMetafile", "Editor del Metafile", 0, QApplication::UnicodeUTF8));
-      MemMetafile->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Introduzca texto libre con la especificaci\303\263n del metafile ", 0, QApplication::UnicodeUTF8));
-      GbxNombreMetafile->setTitle(QApplication::translate("TFrmNuevoMetafile", "Nombre del Metafile", 0, QApplication::UnicodeUTF8));
-      EdtNombreMetafile->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Indique el nombre del metafile.", 0, QApplication::UnicodeUTF8));
-      ButNombreMetafile->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para seleccionar el metafile de destino. ", 0, QApplication::UnicodeUTF8));
-      ButNombreMetafile->setText(QApplication::translate("TFrmNuevoMetafile", "&Seleccionar...", 0, QApplication::UnicodeUTF8));
-      ButAceptar->setText(QApplication::translate("TFrmNuevoMetafile", "&Aceptar", 0, QApplication::UnicodeUTF8));
-      ButCancelar->setText(QApplication::translate("TFrmNuevoMetafile", "&Cancelar", 0, QApplication::UnicodeUTF8));
-      ButNom->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre del conjunto.", 0, QApplication::UnicodeUTF8));
-      ButNom->setText(QApplication::translate("TFrmNuevoMetafile", "Nombre del conjunto", 0, QApplication::UnicodeUTF8));
-      ButMd1->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla Microdatos 1. ", 0, QApplication::UnicodeUTF8));
-      ButMd1->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Microdatos 1", 0, QApplication::UnicodeUTF8));
-      ButMd2->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla de Microdatos 2.", 0, QApplication::UnicodeUTF8));
-      ButMd2->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Microdatos 2", 0, QApplication::UnicodeUTF8));
-      ButRbd->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de ruta de la base de datos. ", 0, QApplication::UnicodeUTF8));
-      ButRbd->setText(QApplication::translate("TFrmNuevoMetafile", "Ruta de la base de datos", 0, QApplication::UnicodeUTF8));
-      ButVar->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla de Variables.", 0, QApplication::UnicodeUTF8));
-      ButVar->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Variables", 0, QApplication::UnicodeUTF8));
-      ButMd3->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla de Microdatos 3.", 0, QApplication::UnicodeUTF8));
-      ButMd3->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Microdatos 3", 0, QApplication::UnicodeUTF8));
-      ButEdt->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla de Reglas.", 0, QApplication::UnicodeUTF8));
-      ButEdt->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Reglas", 0, QApplication::UnicodeUTF8));
-      ButMis->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla de Missing.", 0, QApplication::UnicodeUTF8));
-      ButMis->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Missing", 0, QApplication::UnicodeUTF8));
-      ButKey->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de la variable indentificadora (Key).", 0, QApplication::UnicodeUTF8));
-      ButKey->setText(QApplication::translate("TFrmNuevoMetafile", "Key", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFrmNuevoMetafile", "Nuevo Metafile", 0));
+      GbxEditorMetafile->setTitle(QApplication::translate("TFrmNuevoMetafile", "Editor del Metafile", 0));
+      MemMetafile->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Introduzca texto libre con la especificaci\303\263n del metafile ", 0));
+      GbxNombreMetafile->setTitle(QApplication::translate("TFrmNuevoMetafile", "Nombre del Metafile", 0));
+      EdtNombreMetafile->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Indique el nombre del metafile.", 0));
+      ButNombreMetafile->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para seleccionar el metafile de destino. ", 0));
+      ButNombreMetafile->setText(QApplication::translate("TFrmNuevoMetafile", "&Seleccionar...", 0));
+      ButAceptar->setText(QApplication::translate("TFrmNuevoMetafile", "&Aceptar", 0));
+      ButCancelar->setText(QApplication::translate("TFrmNuevoMetafile", "&Cancelar", 0));
+      ButNom->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre del conjunto.", 0));
+      ButNom->setText(QApplication::translate("TFrmNuevoMetafile", "Nombre del conjunto", 0));
+      ButMd1->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla Microdatos 1. ", 0));
+      ButMd1->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Microdatos 1", 0));
+      ButMd2->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla de Microdatos 2.", 0));
+      ButMd2->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Microdatos 2", 0));
+      ButRbd->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de ruta de la base de datos. ", 0));
+      ButRbd->setText(QApplication::translate("TFrmNuevoMetafile", "Ruta de la base de datos", 0));
+      ButVar->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla de Variables.", 0));
+      ButVar->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Variables", 0));
+      ButMd3->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla de Microdatos 3.", 0));
+      ButMd3->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Microdatos 3", 0));
+      ButEdt->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla de Reglas.", 0));
+      ButEdt->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Reglas", 0));
+      ButMis->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de nombre de tabla de Missing.", 0));
+      ButMis->setText(QApplication::translate("TFrmNuevoMetafile", "Tabla de Missing", 0));
+      ButKey->setToolTip(QApplication::translate("TFrmNuevoMetafile", "Pulse aqu\303\255 para a\303\261adir un tag de la variable indentificadora (Key).", 0));
+      ButKey->setText(QApplication::translate("TFrmNuevoMetafile", "Key", 0));
 
       QObject::connect(ButNombreMetafile, SIGNAL(clicked()), this, SLOT(ButNombreMetafileClick()));
       QObject::connect(ButAceptar, SIGNAL(clicked()), this, SLOT(ButAceptarClick()));
@@ -138,7 +138,7 @@ TFrmNuevoMetafile::TFrmNuevoMetafile(QWidget* parent, const char* name, Qt::Wind
     void TFrmNuevoMetafile::ButAceptarClick()
     {
       if (NombreFichero == "")
-        QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido ning\303\272n fichero", 0, QApplication::UnicodeUTF8), "&Ok");
+        QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido ning\303\272n fichero", 0), "&Ok");
       else  {
         QString text = MemMetafile->toPlainText ();
         QFile f( NombreFichero );
@@ -156,7 +156,7 @@ TFrmNuevoMetafile::TFrmNuevoMetafile(QWidget* parent, const char* name, Qt::Wind
     void TFrmNuevoMetafile::ButNombreMetafileClick()
     {
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators("/metafiles");
+      QString meta = QDir::toNativeSeparators("/metafiles");
       NombreFichero = QFileDialog::getSaveFileName(this, tr("Guardar fichero metafile"), start+meta, "VME (*.vme)");
       EdtNombreMetafile->setText(NombreFichero);
 
@@ -169,48 +169,48 @@ TFrmNuevoMetafile::TFrmNuevoMetafile(QWidget* parent, const char* name, Qt::Wind
 
     void TFrmNuevoMetafile::ButNomClick()
     {
-      MemMetafile->append(QApplication::translate("", "<NOM> \"Escriba aqu\303\255 el valor del tag\"", 0, QApplication::UnicodeUTF8));
+      MemMetafile->append(QApplication::translate("", "<NOM> \"Escriba aqu\303\255 el valor del tag\"", 0));
     }
 
     void TFrmNuevoMetafile::ButRbdClick()
     {      
-      MemMetafile->append(QApplication::translate("", "<RBD> \"Escriba aqu\303\255 el valor del tag\"", 0, QApplication::UnicodeUTF8));
+      MemMetafile->append(QApplication::translate("", "<RBD> \"Escriba aqu\303\255 el valor del tag\"", 0));
     }
 
     void TFrmNuevoMetafile::ButVarClick()
     {
       MemMetafile->append( "<VAR");
-      MemMetafile->insertPlainText(QApplication::translate("", "> \"Escriba aqu\303\255 el valor del tag\"", 0, QApplication::UnicodeUTF8));
+      MemMetafile->insertPlainText(QApplication::translate("", "> \"Escriba aqu\303\255 el valor del tag\"", 0));
     }
 
     void TFrmNuevoMetafile::ButMd1Click()
     {
-      MemMetafile->append(QApplication::translate("", "<MD1> \"Escriba aqu\303\255 el valor del tag\"", 0, QApplication::UnicodeUTF8));
+      MemMetafile->append(QApplication::translate("", "<MD1> \"Escriba aqu\303\255 el valor del tag\"", 0));
     }
 
     void TFrmNuevoMetafile::ButMd2Click()
     {
-      MemMetafile->append(QApplication::translate("", "<MD2> \"Escriba aqu\303\255 el valor del tag\"", 0, QApplication::UnicodeUTF8));
+      MemMetafile->append(QApplication::translate("", "<MD2> \"Escriba aqu\303\255 el valor del tag\"", 0));
     }
 
     void TFrmNuevoMetafile::ButMd3Click()
     {
-      MemMetafile->append(QApplication::translate("", "<MD3> \"Escriba aqu\303\255 el valor del tag\"", 0, QApplication::UnicodeUTF8));
+      MemMetafile->append(QApplication::translate("", "<MD3> \"Escriba aqu\303\255 el valor del tag\"", 0));
     }
 
     void TFrmNuevoMetafile::ButEdtClick()
     {
-      MemMetafile->append(QApplication::translate("", "<EDT> \"Escriba aqu\303\255 el valor del tag\"", 0, QApplication::UnicodeUTF8));
+      MemMetafile->append(QApplication::translate("", "<EDT> \"Escriba aqu\303\255 el valor del tag\"", 0));
     }
 
     void TFrmNuevoMetafile::ButMisClick()
     {
-      MemMetafile->append(QApplication::translate("", "<MIS> \"Escriba aqu\303\255 el valor del tag\"", 0, QApplication::UnicodeUTF8));
+      MemMetafile->append(QApplication::translate("", "<MIS> \"Escriba aqu\303\255 el valor del tag\"", 0));
 
     }
     void TFrmNuevoMetafile::ButKeyClick()
     {
-      MemMetafile->append(QApplication::translate("", "<KEY> \"Escriba aqu\303\255 el valor del tag\"", 0, QApplication::UnicodeUTF8));
+      MemMetafile->append(QApplication::translate("", "<KEY> \"Escriba aqu\303\255 el valor del tag\"", 0));
 
     }
 

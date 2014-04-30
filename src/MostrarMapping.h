@@ -25,9 +25,9 @@
 
 #include <QtCore/QVariant>
 #include <QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QWidget>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QWidget>
 #include "TablaModel.h"
 
 #include "EntradaDatos.h"
@@ -42,9 +42,7 @@ public:
       if (TFrmMostrarMapping->objectName().isEmpty())
         TFrmMostrarMapping->setObjectName(QString::fromUtf8("TFrmMostrarMapping"));
       TFrmMostrarMapping->resize(606, 165);
-      QFont font;
-      font.setFamily(QString::fromUtf8("Tahoma"));
-      TFrmMostrarMapping->setFont(font);
+
       view = new MiTabla(TFrmMostrarMapping);
       view->setGeometry(QRect(0, 0, 605, 165));
 
@@ -55,8 +53,8 @@ public:
 
     void retranslateUi(QFrame *TFrmMostrarMapping)
     {
-      TFrmMostrarMapping->setWindowTitle(QApplication::translate("TFrmMostrarMapping", "Form", 0, QApplication::UnicodeUTF8));
-      view->setToolTip(QApplication::translate("TFrmMostrarMapping", "Rejilla de visualizaci\303\263n del mapping entre c\303\263digos y literales de variables.", 0, QApplication::UnicodeUTF8));
+      TFrmMostrarMapping->setWindowTitle(QApplication::translate("TFrmMostrarMapping", "Form", 0));
+      view->setToolTip(QApplication::translate("TFrmMostrarMapping", "Rejilla de visualizaci\303\263n del mapping entre c\303\263digos y literales de variables.", 0));
     } // retranslateUi
 
 };

@@ -34,6 +34,7 @@
 #include <QDesktopWidget>
 #include <QLabel>
 #include <QScrollArea>
+#include <QDir>
 
 
 class TFrmAyudaChequear : public QWidget

@@ -51,8 +51,8 @@ public:
 
      MiBox(QWidget *parent, int ancho, QWidget *otro):QGroupBox(parent)
      {
-       setTitle(QApplication::translate("", "N\303\232MERO DE ERRORES [ejeX: Ordinal de registros, ejeY: N\303\272mero de errores]", 0, QApplication::UnicodeUTF8));
-       this->setToolTip(QApplication::translate("", "Histograma de porcentajes de error.", 0, QApplication::UnicodeUTF8));
+       setTitle(QApplication::translate("", "N\303\232MERO DE ERRORES [ejeX: Ordinal de registros, ejeY: N\303\272mero de errores]", 0));
+       this->setToolTip(QApplication::translate("", "Histograma de porcentajes de error.", 0));
 
        plotr = new QwtPlot((QWidget*)this);
        plotr->setGeometry(QRect(2, 18, ancho-2, 145));
@@ -60,8 +60,8 @@ public:
        gridr = new QwtPlotGrid;
        gridr->enableXMin(true);
        gridr->enableYMin(true);
-       gridr->setMajPen(QPen(Qt::black, 0, Qt::DotLine));
-       gridr->setMinPen(QPen(Qt::gray, 0 , Qt::DotLine));
+       gridr->setMajorPen(QPen(Qt::black, 0, Qt::DotLine));
+       gridr->setMinorPen(QPen(Qt::gray, 0 , Qt::DotLine));
        gridr->attach(plotr);
        plotc = new QwtPlot((QWidget*)this);
        plotc->setGeometry(QRect(2, 18, ancho-2, 145));
@@ -69,20 +69,20 @@ public:
        gridc = new QwtPlotGrid;
        gridc->enableXMin(true);
        gridc->enableYMin(true);
-       gridc->setMajPen(QPen(Qt::black, 0, Qt::DotLine));
-       gridc->setMinPen(QPen(Qt::gray, 0 , Qt::DotLine));
+       gridc->setMajorPen(QPen(Qt::black, 0, Qt::DotLine));
+       gridc->setMinorPen(QPen(Qt::gray, 0 , Qt::DotLine));
        gridc->attach(plotc);
        ultimo = 0;
 
        ButAnterior = new QPushButton(this);
        ButAnterior->setObjectName(("ButAnterior"));
        ButAnterior->setGeometry(QRect(((ancho-2)/2)-25, 0, 20, 20));
-       ButAnterior->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los anteriores", 0, QApplication::UnicodeUTF8));
+       ButAnterior->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los anteriores", 0));
        ButSiguiente = new QPushButton(this);
        ButSiguiente->setObjectName(("ButSiguiente"));
        ButSiguiente->setGeometry(QRect((ancho-2)/2, 0, 20, 20));
        ButSiguiente->setText(">");
-       ButSiguiente->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los siguientes", 0, QApplication::UnicodeUTF8));
+       ButSiguiente->setToolTip(QApplication::translate("", "Pulse aqu\303\255 para visualizar los siguientes", 0));
        ButAnterior->setText("<");
        QObject::connect(ButSiguiente, SIGNAL(clicked()), otro, SLOT(ButClick_sig()));
        QObject::connect(ButAnterior, SIGNAL(clicked()), otro, SLOT(ButClick_ant()));       
@@ -255,15 +255,15 @@ public:
           {
             activeSerieColumnas = false;
             activeSerieRegistros = true;
-            this->setTitle(QApplication::translate("", "N\303\232MERO DE ERRORES [ejeX: Ordinal de registros, ejeY: N\303\272mero de errores]", 0, QApplication::UnicodeUTF8));
+            this->setTitle(QApplication::translate("", "N\303\232MERO DE ERRORES [ejeX: Ordinal de registros, ejeY: N\303\272mero de errores]", 0));
             operar(0, 0);            
           }
           else
           {
             activeSerieRegistros = false;
             activeSerieColumnas = true;
-            if (variables) this->setTitle(QApplication::translate("", "N\303\232MERO DE ERRORES [ejeX: Ordinal de variables, ejeY: N\303\272mero de errores]", 0, QApplication::UnicodeUTF8));
-            else this->setTitle(QApplication::translate("", "N\303\232MERO DE ERRORES [ejeX: Ordinal de reglas, ejeY: N\303\272mero de errores]", 0, QApplication::UnicodeUTF8));
+            if (variables) this->setTitle(QApplication::translate("", "N\303\232MERO DE ERRORES [ejeX: Ordinal de variables, ejeY: N\303\272mero de errores]", 0));
+            else this->setTitle(QApplication::translate("", "N\303\232MERO DE ERRORES [ejeX: Ordinal de reglas, ejeY: N\303\272mero de errores]", 0));
             operar(0, 0);            
           }
        QGroupBox::mouseDoubleClickEvent ( event );

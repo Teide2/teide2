@@ -25,7 +25,7 @@
 
      MiTabla::MiTabla(QWidget *parent):QTableView(parent)
      {
-         verticalHeader()->setResizeMode ( QHeaderView::Interactive );
+         verticalHeader()->setSectionResizeMode ( QHeaderView::Interactive );
          verticalHeader()->setHighlightSections(true);
          horizontalHeader()->setHighlightSections(true);
          connect(verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(pruebaV(int)));
@@ -47,8 +47,7 @@
      }
 
      void MiTabla::emitirSennal()
-     {
-         //pruebaV(currentIndex().row());
+     {         
          QColor rojo = this->currentIndex().model()->data(this->currentIndex(), Qt::BackgroundRole).value<QColor>();
          QString color = rojo.name();
          setStyleSheet("selection-color: black;selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 " + color + ", stop: 1 gray);");

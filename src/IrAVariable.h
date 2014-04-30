@@ -26,14 +26,14 @@
 
 #include <QtCore/QVariant>
 #include <QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QComboBox>
-#include <QtGui/QFrame>
-#include <QtGui/QGroupBox>
-#include <QtGui/QPushButton>
-#include <QtGui/QRadioButton>
-#include <QtGui/QWidget>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QComboBox>
+#include <QFrame>
+#include <QGroupBox>
+#include <QPushButton>
+#include <QRadioButton>
+#include <QWidget>
 
 #include "Global.h"
 

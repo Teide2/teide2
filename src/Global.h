@@ -33,6 +33,7 @@
 #include <QList>
 #include <QDate>
 #include <QTime>
+#include <QDir>
 //#include "pintar.h"
 #include "MiTabla.h"
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,34 +115,34 @@ const int ANCHO_VARIABLES_EXTRALARGAS = 800;
 const int ENLACE_VACIO = -1;   
 const QString ERROR_METAFILE =  "__ERROR_METAFILE__";
 const unsigned MAX_EDITS = 100;
-const QString RUTA_ICONO_BIEN = "images/right.bmp";
-const QString RUTA_ICONO_MAL = "images/wrong.bmp";
+const QString RUTA_ICONO_BIEN = QDir::toNativeSeparators("/images/right.bmp");
+const QString RUTA_ICONO_MAL = QDir::toNativeSeparators("/images/wrong.bmp");
 const QColor CL_FALSE = QColor(Qt::red);
 const QColor CL_TRUE = QColor(0x00ff99);
 const QColor CL_IMPUTACION = Qt::yellow;
 const int NUM_ATRIBUTOS_VARIABLE = 11;
 const QString ATRIBUTOS_VARIABLE[NUM_ATRIBUTOS_VARIABLE] = {"NOMBRE", "INFO_VARIABLE", "RANGO", "FILTRO", "INFO_FILTRO", "SENTIDO_FILTRO", "IMPUTABLE", "TIPO", "PESO", "MAPPING", "IMP_NUM"};
-/*#ifdef LANG_SP
+
 const QString DESCRIPCION_ATRIBUTOS_VARIABLE[NUM_ATRIBUTOS_VARIABLE] =
 {
-  QApplication::translate("", "Nombre corto de la variable", "", QApplication::UnicodeUTF8),
-  QApplication::translate("", "Texto libre con explicaci\303\263n de la variable", "", QApplication::UnicodeUTF8),
-  QApplication::translate("", "Posibles valores de la variable", "", QApplication::UnicodeUTF8),
-  QApplication::translate("", "Condici\303\263n para que la variable pueda ser respondida", "", QApplication::UnicodeUTF8),
-  QApplication::translate("", "Texto libre con explicaci\303\263n del filtro", "", QApplication::UnicodeUTF8),
-  QApplication::translate("", "a)if (nofiltro) then (valor=NP) b)if (filtro) then (valor!=NP) c)a y b", "", QApplication::UnicodeUTF8),
-  QApplication::translate("", "Indica si la variable puede ser imputada", "", QApplication::UnicodeUTF8),
-  QApplication::translate("", "Tipo de la variable (0: CONTINUO, 1: DISCRETO EN LISTA, 2: DISCRETO EN RANGO)", "", QApplication::UnicodeUTF8),
+  QApplication::translate("", "Nombre corto de la variable", 0),
+  QApplication::translate("", "Texto libre con explicaci\303\263n de la variable", 0),
+  QApplication::translate("", "Posibles valores de la variable", 0),
+  QApplication::translate("", "Condici\303\263n para que la variable pueda ser respondida", 0),
+  QApplication::translate("", "Texto libre con explicaci\303\263n del filtro", 0),
+  QApplication::translate("", "a)if (nofiltro) then (valor=NP) b)if (filtro) then (valor!=NP) c)a y b", 0),
+  QApplication::translate("", "Indica si la variable puede ser imputada", 0),
+  QApplication::translate("", "Tipo de la variable (0: CONTINUO, 1: DISCRETO EN LISTA, 2: DISCRETO EN RANGO)", 0),
   //QApplication::translate("", "Indica si la variable admite el valor NO_PROCEDE", "", QApplication::UnicodeUTF8),
   //QApplication::translate("", "Indica si la variable admite el valor NO_SABE", "", QApplication::UnicodeUTF8),
   //QApplication::translate("", "Indica si la variable admite el valor NO_CONTESTA", "", QApplication::UnicodeUTF8),
   //QApplication::translate("", "Indica si la variable admite el valor NO_SABE/NO_CONTESTA", "", QApplication::UnicodeUTF8),
-  QApplication::translate("", "Ponderaci\303\263n de la variable", "", QApplication::UnicodeUTF8),
-  QApplication::translate("", "Tabla con las correspondencias entre c\303\263digos y literales", "", QApplication::UnicodeUTF8),
-  QApplication::translate("", "Tipo de imp para vbles num. (MEDIANA, MEDIA, MODA, MEDIA_R o una ecuaci\303\263n)", "", QApplication::UnicodeUTF8)
+  QApplication::translate("", "Ponderaci\303\263n de la variable", 0),
+  QApplication::translate("", "Tabla con las correspondencias entre c\303\263digos y literales", 0),
+  QApplication::translate("", "Tipo de imp para vbles num. (MEDIANA, MEDIA, MODA, MEDIA_R o una ecuaci\303\263n)", 0)
 };  
-#endif*/
 
+/*
 const QString DESCRIPCION_ATRIBUTOS_VARIABLE[NUM_ATRIBUTOS_VARIABLE] =
 {
   "Short name of the variable",
@@ -155,7 +156,7 @@ const QString DESCRIPCION_ATRIBUTOS_VARIABLE[NUM_ATRIBUTOS_VARIABLE] =
   "Relevance of the variable",
   "Table that matches codes and literals",
   "Imputation method for numeric variables (MEDIANA, MEDIA, MODA, MEDIA_R or a equation)"
-};
+};*/
 //const QStringList mes = (QStringList() << "Jan" << "Feb" << "Mar" << "Apr" << "May" << "Jun" << "Jul" << "Aug" << "Sep" << "Oct" << "Nov" << "Dec");
 const unsigned ANCHOS_VARIABLE[NUM_ATRIBUTOS_VARIABLE] = {150, 250, 150, 400, 400, 150, 100, 150, 100, 150, 400};
 const int NUM_ATRIBUTOS_EDIT = 2;

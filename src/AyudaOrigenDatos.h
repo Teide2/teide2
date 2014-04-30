@@ -40,7 +40,7 @@ public:
 
     browser = new QTextBrowser( this );
     QStringList str(path);    
-    QString meta = QDir::convertSeparators("dibujos/");
+    QString meta = QDir::toNativeSeparators("dibujos/");
     str.append(path + meta);
     browser->setSearchPaths(str);    
     browser->setFrameStyle( QFrame::Panel | QFrame::Sunken );

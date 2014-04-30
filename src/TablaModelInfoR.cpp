@@ -31,8 +31,9 @@
 
   void TablaModelInfoR::setCurrencyMap(QString * &map)   // cuando modifiquemos la matriz
   {
-     distances = map;
-     reset();
+      beginResetModel();
+      distances = map;
+      endResetModel();      
   }
   void TablaModelInfoR::setCabeceraV(QStringList &cabecV)   // cuando modifiquemos la cabecera vertical
   {
@@ -58,13 +59,7 @@
     if (role == Qt::TextAlignmentRole)
       return int(Qt::AlignCenter);
     if (role == Qt::DisplayRole)
-      return distances[index.column()]/*.replace(",0", "")*/;
-    if (role == Qt::FontRole) {
-      QFont font;
-      font.setFamily(("Tahoma"));
-      font.setPointSize( 8 );
-      return QFont(font);
-    }
+      return distances[index.column()]/*.replace(",0", "")*/;    
     if (role == Qt::BackgroundRole) {
       if (VectorPintar[index.column()] == "Red")
         return QColor(Qt::red);
@@ -91,13 +86,7 @@
   }
   
   QVariant TablaModelInfoR::headerData(int section, Qt::Orientation orientation , int role) const
-  {
-    if (role == Qt::FontRole) {
-      QFont font;
-      font.setFamily(("Tahoma"));
-      font.setPointSize( 8 );
-      return QFont(font);
-    }
+  {    
     if (role == Qt::BackgroundRole) {
       if (orientation == Qt::Horizontal){
         QLinearGradient gradiant(5, 0, 25, 25);
@@ -134,7 +123,8 @@
       }else {
        cabeceraV[section] = value.toString();
        emit headerDataChanged(Qt::Vertical, section, section);
-       reset();
+       beginResetModel();
+       endResetModel();       
       }
       return true;
     }

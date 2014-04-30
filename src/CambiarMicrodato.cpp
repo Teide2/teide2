@@ -30,9 +30,6 @@ TFrmCambiarMicrodato::TFrmCambiarMicrodato(QWidget* parent)
       if (this->objectName().isEmpty())
         this->setObjectName(QString::fromUtf8("TFrmCambiarMicrodato"));
       this->resize(267, 258);
-      QFont font;
-      font.setFamily(QString::fromUtf8("Tahoma"));
-      this->setFont(font);
       LabTitulo = new QLabel(this);
       LabTitulo->setObjectName(QString::fromUtf8("LabTitulo"));
       LabTitulo->setGeometry(QRect(8, 8, 226, 18));
@@ -88,14 +85,14 @@ TFrmCambiarMicrodato::TFrmCambiarMicrodato(QWidget* parent)
       ButCancelar->setObjectName(QString::fromUtf8("ButCancelar"));
       ButCancelar->setGeometry(QRect(144, 208, 75, 25));
 
-      this->setWindowTitle(QApplication::translate("TFrmCambiarMicrodato", "Cambiar Microdato", 0, QApplication::UnicodeUTF8));
-      LabTitulo->setText(QApplication::translate("TFrmCambiarMicrodato", "Introduzca el nuevo valor del microdato", 0, QApplication::UnicodeUTF8));
-      LabVariable->setText(QApplication::translate("TFrmCambiarMicrodato", "Variable a modificar", 0, QApplication::UnicodeUTF8));
-      LabRegistro->setText(QApplication::translate("TFrmCambiarMicrodato", "Registro a modificar", 0, QApplication::UnicodeUTF8));
-      LabValorAntiguoMicrodato->setText(QApplication::translate("TFrmCambiarMicrodato", "Valor antiguo del microdato", 0, QApplication::UnicodeUTF8));
-      LabValorNuevoMicrodato->setText(QApplication::translate("TFrmCambiarMicrodato", "Valor nuevo del microdato", 0, QApplication::UnicodeUTF8));
-      ButAceptar->setText(QApplication::translate("TFrmCambiarMicrodato", "Aceptar", 0, QApplication::UnicodeUTF8));
-      ButCancelar->setText(QApplication::translate("TFrmCambiarMicrodato", "Cancelar", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFrmCambiarMicrodato", "Cambiar Microdato", 0));
+      LabTitulo->setText(QApplication::translate("TFrmCambiarMicrodato", "Introduzca el nuevo valor del microdato", 0));
+      LabVariable->setText(QApplication::translate("TFrmCambiarMicrodato", "Variable a modificar", 0));
+      LabRegistro->setText(QApplication::translate("TFrmCambiarMicrodato", "Registro a modificar", 0));
+      LabValorAntiguoMicrodato->setText(QApplication::translate("TFrmCambiarMicrodato", "Valor antiguo del microdato", 0));
+      LabValorNuevoMicrodato->setText(QApplication::translate("TFrmCambiarMicrodato", "Valor nuevo del microdato", 0));
+      ButAceptar->setText(QApplication::translate("TFrmCambiarMicrodato", "Aceptar", 0));
+      ButCancelar->setText(QApplication::translate("TFrmCambiarMicrodato", "Cancelar", 0));
 
       QMetaObject::connectSlotsByName(this);
     }

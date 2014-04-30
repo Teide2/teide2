@@ -61,13 +61,13 @@ DatosOracle::DatosOracle(QWidget* parent, const char* name, Qt::WindowFlags fl, 
       ButCancelar->setObjectName(QString::fromUtf8("ButCancelar"));
       ButCancelar->setGeometry(QRect(210, 210, 81, 31));
 
-      this->setWindowTitle(QApplication::translate("DatosOracle", "Origen de la base de datos Oracle", 0, QApplication::UnicodeUTF8));
-      LbNombre->setText(QApplication::translate("DatosOracle", "Nombre:", 0, QApplication::UnicodeUTF8));
-      LbUsuario->setText(QApplication::translate("DatosOracle", "Usuario:", 0, QApplication::UnicodeUTF8));
-      LbPassword->setText(QApplication::translate("DatosOracle", "Password:", 0, QApplication::UnicodeUTF8));
-      LbHost->setText(QApplication::translate("DatosOracle", "Host:", 0, QApplication::UnicodeUTF8));
-      ButAceptar->setText(QApplication::translate("DatosOracle", "Aceptar", 0, QApplication::UnicodeUTF8));
-      ButCancelar->setText(QApplication::translate("DatosOracle", "Cancelar", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("DatosOracle", "Origen de la base de datos Oracle", 0));
+      LbNombre->setText(QApplication::translate("DatosOracle", "Nombre:", 0));
+      LbUsuario->setText(QApplication::translate("DatosOracle", "Usuario:", 0));
+      LbPassword->setText(QApplication::translate("DatosOracle", "Password:", 0));
+      LbHost->setText(QApplication::translate("DatosOracle", "Host:", 0));
+      ButAceptar->setText(QApplication::translate("DatosOracle", "Aceptar", 0));
+      ButCancelar->setText(QApplication::translate("DatosOracle", "Cancelar", 0));
 
       QMetaObject::connectSlotsByName(this);
       NomBaseDatos = NombreBaseDatos;

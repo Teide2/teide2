@@ -25,10 +25,10 @@
 
 #include <QtCore/QVariant>
 #include <QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QLabel>
-#include <QtGui/QWidget>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QLabel>
+#include <QWidget>
 #include <qpixmap.h>
 
 class TFrmFlash : public QWidget
@@ -44,7 +44,7 @@ public:
       label->setObjectName(QString::fromUtf8("label"));
       label->setGeometry(QRect(0, -10, 521, 401));
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators("/images/splash2.png");
+      QString meta = QDir::toNativeSeparators("/images/splash2.png");
       label->setPixmap(QPixmap(start+meta));      
 
       QSize size(511, 381);

@@ -29,9 +29,6 @@
 
       if (this->objectName().isEmpty())
         this->setObjectName(("TFmeImputacion"));
-      QFont font;
-      font.setFamily(("Tahoma"));
-      this->setFont(font);
 
       PanProgreso = new QLineEdit(this);
       PanProgreso->setObjectName(("PanProgreso"));
@@ -117,56 +114,56 @@
 
       LabIrARegistroPorNumero = new QLabel(PanIrA);
       LabIrARegistroPorNumero->setObjectName(("LabIrARegistroPorNumero"));
-      LabIrARegistroPorNumero->setGeometry(QRect(7, 12, 90, 18));
+      LabIrARegistroPorNumero->setGeometry(QRect(7, 12, 100, 18));
       EdtIrARegistroPorNumero = new QLineEdit(PanIrA);
       EdtIrARegistroPorNumero->setObjectName(("EdtIrARegistroPorNumero"));
-      EdtIrARegistroPorNumero->setGeometry(QRect(98, 8, 33, 23));
+      EdtIrARegistroPorNumero->setGeometry(QRect(106, 8, 33, 23));
 
       LabIrARegistroPorNombre = new QLabel(PanIrA);
       LabIrARegistroPorNombre->setObjectName(("LabIrARegistroPorNombre"));
-      LabIrARegistroPorNombre->setGeometry(QRect(135, 12, 90, 18));
+      LabIrARegistroPorNombre->setGeometry(QRect(146, 12, 100, 18));
       CbxIrARegistroPorNombre = new QComboBox(PanIrA);
       CbxIrARegistroPorNombre->setObjectName(("CbxIrARegistroPorNombre"));
-      CbxIrARegistroPorNombre->setGeometry(QRect(230, 8, 135, 23));
+      CbxIrARegistroPorNombre->setGeometry(QRect(250, 8, 135, 23));
       CbxIrARegistroPorNombre->setEditable(true);
 
       LabIrAVariablePorNumero = new QLabel(PanIrA);
       LabIrAVariablePorNumero->setObjectName(("LabIrAVariablePorNumero"));
-      LabIrAVariablePorNumero->setGeometry(QRect(380, 12, 111, 18));
+      LabIrAVariablePorNumero->setGeometry(QRect(390, 12, 111, 18));
       EdtIrAVariablePorNumero = new QLineEdit(PanIrA);
       EdtIrAVariablePorNumero->setObjectName(("EdtIrAVariablePorNumero"));
-      EdtIrAVariablePorNumero->setGeometry(QRect(480, 8, 33, 23));
+      EdtIrAVariablePorNumero->setGeometry(QRect(490, 8, 33, 23));
 
       LabIrAVariablePorNombre = new QLabel(PanIrA);
       LabIrAVariablePorNombre->setObjectName(("LabIrAVariablePorNombre"));
       LabIrAVariablePorNombre->setGeometry(QRect(525, 12, 111, 18));
       CbxIrAVariablePorNombre = new QComboBox(PanIrA);
       CbxIrAVariablePorNombre->setObjectName(("CbxIrAVariablePorNombre"));
-      CbxIrAVariablePorNombre->setGeometry(QRect(620, 8, 125, 23));
+      CbxIrAVariablePorNombre->setGeometry(QRect(623, 8, 125, 23));
       CbxIrAVariablePorNombre->setEditable(true);
 
       LabNumVariablesAImputarBasico = new QLabel(PanIrA2);
       LabNumVariablesAImputarBasico->setObjectName(("LabNumVariablesAImputarBasico"));
-      LabNumVariablesAImputarBasico->setGeometry(QRect(5, 12, 60, 18));
+      LabNumVariablesAImputarBasico->setGeometry(QRect(5, 12, 65, 18));
       EdtNumVariablesAImputarBasico = new QLineEdit(PanIrA2);
       EdtNumVariablesAImputarBasico->setObjectName(("EdtNumVariablesAImputarBasico"));
-      EdtNumVariablesAImputarBasico->setGeometry(QRect(65, 8, 33, 23));
+      EdtNumVariablesAImputarBasico->setGeometry(QRect(71, 8, 33, 23));
       EdtNumVariablesAImputarBasico->setReadOnly(true);
       palette.setColor( QPalette::Active, QPalette::Base, Qt::gray );
       EdtNumVariablesAImputarBasico->setPalette(palette);
 
       LabNumVariablesAImputar = new QLabel(PanIrA2);
       LabNumVariablesAImputar->setObjectName(("LabNumVariablesAImputar"));
-      LabNumVariablesAImputar->setGeometry(QRect(108, 12, 57, 18));
+      LabNumVariablesAImputar->setGeometry(QRect(110, 12, 60, 18));
       EdtNumVariablesAImputar = new QLineEdit(PanIrA2);
       EdtNumVariablesAImputar->setObjectName(("EdtNumVariablesAImputar"));
-      EdtNumVariablesAImputar->setGeometry(QRect(170, 8, 33, 23));
+      EdtNumVariablesAImputar->setGeometry(QRect(180, 8, 33, 23));
       EdtNumVariablesAImputar->setReadOnly(true);
       EdtNumVariablesAImputar->setPalette(palette);
 
       LabNumVariablesImputadas = new QLabel(PanIrA2);
       LabNumVariablesImputadas->setObjectName(("LabNumVariablesImputadas"));
-      LabNumVariablesImputadas->setGeometry(QRect(213, 12, 62, 18));
+      LabNumVariablesImputadas->setGeometry(QRect(213, 12, 65, 18));
       EdtNumVariablesImputadas = new QLineEdit(PanIrA2);
       EdtNumVariablesImputadas->setObjectName(("EdtNumVariablesImputadas"));
       EdtNumVariablesImputadas->setGeometry(QRect(280, 8, 33, 23));
@@ -175,10 +172,10 @@
 
       LabMicroDatoOriginal = new QLabel(PanIrA2);
       LabMicroDatoOriginal->setObjectName(("LabMicroDatoOriginal"));
-      LabMicroDatoOriginal->setGeometry(QRect(343, 12, 129, 20));
+      LabMicroDatoOriginal->setGeometry(QRect(320, 12, 129, 20));
       EdtMicroDatoOriginal = new QLineEdit(PanIrA2);
       EdtMicroDatoOriginal->setObjectName(("EdtMicroDatoOriginal"));
-      EdtMicroDatoOriginal->setGeometry(QRect(420, 8, 50, 23));
+      EdtMicroDatoOriginal->setGeometry(QRect(410, 8, 50, 23));
       EdtMicroDatoOriginal->setReadOnly(true);
       EdtMicroDatoOriginal->setPalette(palette);
     
@@ -207,33 +204,33 @@
       LabNumRegistrosDonantes->setGeometry(QRect(745, 8, 107, 19));
       LabNavRegDonantes = new QLabel(PanRegistroDonante);
       LabNavRegDonantes->setObjectName(("LabNavRegDonantes"));
-      LabNavRegDonantes->setGeometry(QRect(8, 8, 146, 19));
+      LabNavRegDonantes->setGeometry(QRect(8, 8, 165, 19));
       LabDistanciaAlfa = new QLabel(PanRegistroDonante);
       LabDistanciaAlfa->setObjectName(("LabDistanciaAlfa"));
-      LabDistanciaAlfa->setGeometry(QRect(289, 10, 156, 19));
+      LabDistanciaAlfa->setGeometry(QRect(259, 10, 196, 19));
       UpdRegistroDonante_sig = new QPushButton(PanRegistroDonante);
       UpdRegistroDonante_sig->setObjectName(("UpdRegistroDonante_sig"));
-      UpdRegistroDonante_sig->setGeometry(QRect(185, 6, 25, 25));
+      UpdRegistroDonante_sig->setGeometry(QRect(200, 6, 25, 25));
       UpdRegistroDonante_ant = new QPushButton(PanRegistroDonante);
       UpdRegistroDonante_ant->setObjectName(("UpdRegistroDonante_ant"));
-      UpdRegistroDonante_ant->setGeometry(QRect(160, 6, 25, 25));
+      UpdRegistroDonante_ant->setGeometry(QRect(175, 6, 25, 25));
       EdtDistancia = new QLineEdit(PanRegistroDonante);
       EdtDistancia->setObjectName(("EdtDistancia"));
-      EdtDistancia->setGeometry(QRect(459, 6, 81, 21));
+      EdtDistancia->setGeometry(QRect(449, 6, 81, 21));
       EdtDistancia->setReadOnly(true);
       EdtDistancia->setPalette(palette);
       ButCambiarRegistroDonante = new QPushButton(PanRegistroDonante);
       ButCambiarRegistroDonante->setObjectName(("ButCambiarRegistroDonante"));
-      ButCambiarRegistroDonante->setGeometry(QRect(550, 6, 185, 23));
+      ButCambiarRegistroDonante->setGeometry(QRect(538, 6, 205, 23));
       EdtMensajeRegistroDonante = new QLineEdit(PanRegistroDonante);
       EdtMensajeRegistroDonante->setObjectName(("EdtMensajeRegistroDonante"));
-      EdtMensajeRegistroDonante->setGeometry(QRect(905, 5, 140, 21));
+      EdtMensajeRegistroDonante->setGeometry(QRect(945, 5, 160, 21));
       palette.setColor( QPalette::Active, QPalette::Base, Qt::darkGreen );
       EdtMensajeRegistroDonante->setPalette(palette);
       EdtMensajeRegistroDonante->setReadOnly(true);
       EdtIndiceRegistroDonante = new QLineEdit(PanRegistroDonante);
       EdtIndiceRegistroDonante->setObjectName(("EdtIndiceRegistroDonante"));
-      EdtIndiceRegistroDonante->setGeometry(QRect(841, 5, 57, 21));
+      EdtIndiceRegistroDonante->setGeometry(QRect(858, 5, 57, 21));
       EdtIndiceRegistroDonante->setReadOnly(true);
       palette.setColor( QPalette::Active, QPalette::Base, Qt::gray );
       EdtIndiceRegistroDonante->setPalette(palette);
@@ -248,119 +245,126 @@
       ShpMicroDatoSimImputar->setObjectName(("ShpMicroDatoSimImputar"));
       ShpMicroDatoSimImputar->setGeometry(QRect(8, 5, 15, 15));
       ShpMicroDatoSimImputar->setFrameShape(QFrame::Box);
-      ShpMicroDatoSimImputar->setPixmap(QPixmap("images/blanco.bmp"));
+      QString start = QCoreApplication::applicationDirPath();
+      QString meta = QDir::toNativeSeparators("/images/blanco.bmp");
+      ShpMicroDatoSimImputar->setPixmap(QPixmap(start+meta));
       LabMicroDatoSinImputar = new QLabel(PanLeyenda);
       LabMicroDatoSinImputar->setObjectName(("LabMicroDatoSinImputar"));
       LabMicroDatoSinImputar->setGeometry(QRect(32, 5, 114, 19));
       ShpMicroDatoImputado = new QLabel(PanLeyenda);
       ShpMicroDatoImputado->setObjectName(("ShpMicroDatoImputado"));
-      ShpMicroDatoImputado->setGeometry(QRect(152, 5, 15, 15));
+      ShpMicroDatoImputado->setGeometry(QRect(132, 5, 15, 15));
       ShpMicroDatoImputado->setFrameShape(QFrame::Box);
-      ShpMicroDatoImputado->setPixmap(QPixmap(("images/amarillo.bmp")));
+      meta = QDir::toNativeSeparators("/images/amarillo.bmp");
+      ShpMicroDatoImputado->setPixmap(QPixmap(start+meta));
       LabMicroDatoImputado = new QLabel(PanLeyenda);
       LabMicroDatoImputado->setObjectName(("LabMicroDatoImputado"));
-      LabMicroDatoImputado->setGeometry(QRect(176, 5, 118, 19));
+      LabMicroDatoImputado->setGeometry(QRect(156, 5, 118, 19));
       ShpRegistroDonante = new QLabel(PanLeyenda);
       ShpRegistroDonante->setObjectName(("ShpRegistroDonante"));
-      ShpRegistroDonante->setGeometry(QRect(292, 5, 15, 15));
+      ShpRegistroDonante->setGeometry(QRect(272, 5, 15, 15));
       ShpRegistroDonante->setFrameShape(QFrame::Box);
-      ShpRegistroDonante->setPixmap(QPixmap(("images/azul.bmp")));
+      meta = QDir::toNativeSeparators("/images/azul.bmp");
+      ShpRegistroDonante->setPixmap(QPixmap(start+meta));
       LabRegistroDonante = new QLabel(PanLeyenda);
       LabRegistroDonante->setObjectName(("LabRegistroDonante"));
-      LabRegistroDonante->setGeometry(QRect(313, 5, 85, 19));
+      LabRegistroDonante->setGeometry(QRect(293, 5, 90, 19));
       ShpRegistroExcluido = new QLabel(PanLeyenda);
       ShpRegistroExcluido->setObjectName(("ShpRegistroExcluido"));
-      ShpRegistroExcluido->setGeometry(QRect(408, 5, 15, 15));
+      ShpRegistroExcluido->setGeometry(QRect(388, 5, 15, 15));
       ShpRegistroExcluido->setFrameShape(QFrame::Box);
-      ShpRegistroExcluido->setPixmap(QPixmap(("images/carne.bmp")));
+      meta = QDir::toNativeSeparators("/images/carne.bmp");
+      ShpRegistroExcluido->setPixmap(QPixmap(start+meta));
       LabRegistroExcluido = new QLabel(PanLeyenda);
       LabRegistroExcluido->setObjectName(("LabRegistroExcluido"));
-      LabRegistroExcluido->setGeometry(QRect(432, 5, 77, 19));
+      LabRegistroExcluido->setGeometry(QRect(412, 5, 90, 19));
       ShpRegistroIncorrecto = new QLabel(PanLeyenda);
       ShpRegistroIncorrecto->setObjectName(("ShpRegistroIncorrecto"));
       ShpRegistroIncorrecto->setGeometry(QRect(520, 5, 15, 15));
       ShpRegistroIncorrecto->setFrameShape(QFrame::Box);
-      ShpRegistroIncorrecto->setPixmap(QPixmap(("images/rojo.bmp")));
+      meta = QDir::toNativeSeparators("/images/rojo.bmp");
+      ShpRegistroIncorrecto->setPixmap(QPixmap(start+meta));
       LabRegistroIncorrecto = new QLabel(PanLeyenda);
       LabRegistroIncorrecto->setObjectName(("LabRegistroIncorrecto"));
-      LabRegistroIncorrecto->setGeometry(QRect(544, 5, 94, 19));
+      LabRegistroIncorrecto->setGeometry(QRect(544, 5, 100, 19));
       ShpMicroDatoSimImputarIncorrecto = new QLabel(PanLeyenda);
       ShpMicroDatoSimImputarIncorrecto->setObjectName(("ShpMicroDatoSimImputarIncorrecto"));
-      ShpMicroDatoSimImputarIncorrecto->setGeometry(QRect(644, 5, 15, 15));
+      ShpMicroDatoSimImputarIncorrecto->setGeometry(QRect(654, 5, 15, 15));
       ShpMicroDatoSimImputarIncorrecto->setFrameShape(QFrame::Box);
-      ShpMicroDatoSimImputarIncorrecto->setPixmap(QPixmap("images/magenta.bmp"));
+      meta = QDir::toNativeSeparators("/images/magenta.bmp");
+      ShpMicroDatoSimImputarIncorrecto->setPixmap(QPixmap(start+meta));
       LabMicroDatoSinImputarIncorrecto = new QLabel(PanLeyenda);
       LabMicroDatoSinImputarIncorrecto->setObjectName(("LabMicroDatoSinImputarIncorrecto"));
-      LabMicroDatoSinImputarIncorrecto->setGeometry(QRect(665, 5, 170, 19));
+      LabMicroDatoSinImputarIncorrecto->setGeometry(QRect(675, 5, 170, 19));
 
       view = new MiTabla(PanContenedor);
       view->setGeometry(QRect(1, 0, PanContenedor->width()-1, PanLeyenda->y()-2));
       view->verticalHeader()->setDefaultSectionSize(20);
 
-      this->setWindowTitle(QApplication::translate("TFmeImputacion", "Form", 0, QApplication::UnicodeUTF8));
-      LabOperacion->setText(QApplication::translate("TFmeImputacion", "Operaci\303\263n en curso", 0, QApplication::UnicodeUTF8));
-      LabProgreso->setText(QApplication::translate("TFmeImputacion", "Progreso de la operaci\303\263n", 0, QApplication::UnicodeUTF8));
-      LabPorcentaje->setText(QApplication::translate("TFmeImputacion", "% completado", 0, QApplication::UnicodeUTF8));
-      LabElemento->setText(QApplication::translate("TFmeImputacion", "# completado", 0, QApplication::UnicodeUTF8));
-      EdtOperacion->setToolTip(QApplication::translate("TFmeImputacion", "Nombre de la operaci\303\263n que esta siendo ejecutada actualmente.", 0, QApplication::UnicodeUTF8));
-      EdtOperacion->setText(QApplication::translate("TFmeImputacion", "Imputaci\303\263n de los microdatos.", 0, QApplication::UnicodeUTF8));
-      PbrProgreso->setToolTip(QApplication::translate("TFmeImputacion", "Muestra del progreso de la operaci\303\263n.", 0, QApplication::UnicodeUTF8));
-      EdtPorcentaje->setToolTip(QApplication::translate("TFmeImputacion", "Porcentaje completado de la operaci\303\263n.", 0, QApplication::UnicodeUTF8));
-      EdtElemento->setToolTip(QApplication::translate("TFmeImputacion", "Elemento actual en proceso / N\303\272mero total de elementos a procesar", 0, QApplication::UnicodeUTF8));
-      LabIrARegistroPorNumero->setText(QApplication::translate("TFmeImputacion", "Ir a reg. (num.)", 0, QApplication::UnicodeUTF8));
-      LabIrARegistroPorNombre->setText(QApplication::translate("TFmeImputacion", "Ir a reg. (nom.)", 0, QApplication::UnicodeUTF8));
-      LabIrAVariablePorNombre->setText(QApplication::translate("TFmeImputacion", "Ir a var. (nom.)", 0, QApplication::UnicodeUTF8));
-      LabMicroDatoOriginal->setText(QApplication::translate("TFmeImputacion", "Dato original", 0, QApplication::UnicodeUTF8));
-      LabNumVariablesAImputarBasico->setText(QApplication::translate("TFmeImputacion", "#Var. Bas.", 0, QApplication::UnicodeUTF8));
-      LabNumVariablesAImputar->setText(QApplication::translate("TFmeImputacion", "#Var. Ext.", 0, QApplication::UnicodeUTF8));
-      LabNumVariablesImputadas->setText(QApplication::translate("TFmeImputacion", "#Var. Imp.", 0, QApplication::UnicodeUTF8));
-      LabIrAVariablePorNumero->setText(QApplication::translate("TFmeImputacion", "Ir a var. (num.)", 0, QApplication::UnicodeUTF8));
-      CbxIrAVariablePorNombre->setToolTip(QApplication::translate("TFmeImputacion", "Seleccione la variable que desea visualizar.", 0, QApplication::UnicodeUTF8));
-      CbxIrARegistroPorNombre->setToolTip(QApplication::translate("TFmeImputacion", "Seleccione el registro que desea visualizar.", 0, QApplication::UnicodeUTF8));
-      EdtMicroDatoOriginal->setToolTip(QApplication::translate("TFmeImputacion", "Dato original sin imputaci\303\263n", 0, QApplication::UnicodeUTF8));
-      EdtNumVariablesAImputarBasico->setToolTip(QApplication::translate("TFmeImputacion", "N\303\272mero de variables b\303\241sicas a imputar.", 0, QApplication::UnicodeUTF8));
-      EdtNumVariablesAImputar->setToolTip(QApplication::translate("TFmeImputacion", "N\303\272mero de variables extendidas a imputar (componentes conexas)", 0, QApplication::UnicodeUTF8));
-      EdtNumVariablesImputadas->setToolTip(QApplication::translate("TFmeImputacion", "N\303\272mero total de variables imputadas en este registro.", 0, QApplication::UnicodeUTF8));
-      EdtIrAVariablePorNumero->setToolTip(QApplication::translate("TFmeImputacion", "Indique un n\303\272mero de variable y pulse ENTER parar ir a ella.", 0, QApplication::UnicodeUTF8));
-      EdtIrARegistroPorNumero->setToolTip(QApplication::translate("TFmeImputacion", "Indique el n\303\272mero de registro y pulse enter para ir a \303\251l.", 0, QApplication::UnicodeUTF8));
-      PanRegistroDonante->setToolTip(QApplication::translate("TFmeImputacion", "Panel de registros donantes", 0, QApplication::UnicodeUTF8));
-      UpdRegistroDonante_sig->setText(QApplication::translate("TFmeImputacion", ">", 0, QApplication::UnicodeUTF8));
-      UpdRegistroDonante_ant->setText(QApplication::translate("TFmeImputacion", "<", 0, QApplication::UnicodeUTF8));
-      LabNumRegistrosDonantes->setText(QApplication::translate("TFmeImputacion", "# Reg. donante", 0, QApplication::UnicodeUTF8));
-      LabNavRegDonantes->setText(QApplication::translate("TFmeImputacion", "Navegador reg. donantes", 0, QApplication::UnicodeUTF8));
-      LabDistanciaAlfa->setText(QApplication::translate("TFmeImputacion", "Distancia al registro actual", 0, QApplication::UnicodeUTF8));
-      EdtDistancia->setToolTip(QApplication::translate("TFmeImputacion", "Distancia del registro actual al donante actual sobre las variables b\303\241sicas a imputar.", 0, QApplication::UnicodeUTF8));
-      ButCambiarRegistroDonante->setToolTip(QApplication::translate("TFmeImputacion", "Pulse aqu\303\255 para cambiar el registro donante al registro actual.", 0, QApplication::UnicodeUTF8));
-      ButCambiarRegistroDonante->setText(QApplication::translate("TFmeImputacion", "CAMBIAR REGISTRO DONANTE", 0, QApplication::UnicodeUTF8));
-      EdtMensajeRegistroDonante->setToolTip(QApplication::translate("TFmeImputacion", "El registro actual mostrado en esta rejilla es el donante.", 0, QApplication::UnicodeUTF8));
-      EdtMensajeRegistroDonante->setText(QApplication::translate("TFmeImputacion", "REGISTRO DONANTE !!", 0, QApplication::UnicodeUTF8));
-      EdtIndiceRegistroDonante->setToolTip(QApplication::translate("TFmeImputacion", "Registro donante actual / N\303\272mero total de registros donantes", 0, QApplication::UnicodeUTF8));
-      view2->setToolTip(QApplication::translate("TFmeImputacion", "Informaci\303\263n de la variable", 0, QApplication::UnicodeUTF8));
-      view->setToolTip(QApplication::translate("TFmeImputacion", "Rejilla de visualizaci\303\263n de microdatos imputados.(ALT  Ir a dato imputado) (SHIFT  Ir a posible dato incorrecto)", 0, QApplication::UnicodeUTF8));
-      view->verticalHeader()->setToolTip(QApplication::translate("TFmeImputacion", "ID registro", 0, QApplication::UnicodeUTF8));
-      view->horizontalHeader()->setToolTip(QApplication::translate("TFmeImputacion", "Variables", 0, QApplication::UnicodeUTF8));
-      view3->setToolTip(QApplication::translate("TFmeImputacion", "Informaci\303\263n del registro donante actual.", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFmeImputacion", "Form", 0));
+      LabOperacion->setText(QApplication::translate("TFmeImputacion", "Operaci\303\263n en curso", 0));
+      LabProgreso->setText(QApplication::translate("TFmeImputacion", "Progreso de la operaci\303\263n", 0));
+      LabPorcentaje->setText(QApplication::translate("TFmeImputacion", "% completado", 0));
+      LabElemento->setText(QApplication::translate("TFmeImputacion", "# completado", 0));
+      EdtOperacion->setToolTip(QApplication::translate("TFmeImputacion", "Nombre de la operaci\303\263n que esta siendo ejecutada actualmente.", 0));
+      EdtOperacion->setText(QApplication::translate("TFmeImputacion", "Imputaci\303\263n de los microdatos.", 0));
+      PbrProgreso->setToolTip(QApplication::translate("TFmeImputacion", "Muestra del progreso de la operaci\303\263n.", 0));
+      EdtPorcentaje->setToolTip(QApplication::translate("TFmeImputacion", "Porcentaje completado de la operaci\303\263n.", 0));
+      EdtElemento->setToolTip(QApplication::translate("TFmeImputacion", "Elemento actual en proceso / N\303\272mero total de elementos a procesar", 0));
+      LabIrARegistroPorNumero->setText(QApplication::translate("TFmeImputacion", "Ir a reg. (num.)", 0));
+      LabIrARegistroPorNombre->setText(QApplication::translate("TFmeImputacion", "Ir a reg. (nom.)", 0));
+      LabIrAVariablePorNombre->setText(QApplication::translate("TFmeImputacion", "Ir a var. (nom.)", 0));
+      LabMicroDatoOriginal->setText(QApplication::translate("TFmeImputacion", "Dato original", 0));
+      LabNumVariablesAImputarBasico->setText(QApplication::translate("TFmeImputacion", "#Var. Bas.", 0));
+      LabNumVariablesAImputar->setText(QApplication::translate("TFmeImputacion", "#Var. Ext.", 0));
+      LabNumVariablesImputadas->setText(QApplication::translate("TFmeImputacion", "#Var. Imp.", 0));
+      LabIrAVariablePorNumero->setText(QApplication::translate("TFmeImputacion", "Ir a var. (num.)", 0));
+      CbxIrAVariablePorNombre->setToolTip(QApplication::translate("TFmeImputacion", "Seleccione la variable que desea visualizar.", 0));
+      CbxIrARegistroPorNombre->setToolTip(QApplication::translate("TFmeImputacion", "Seleccione el registro que desea visualizar.", 0));
+      EdtMicroDatoOriginal->setToolTip(QApplication::translate("TFmeImputacion", "Dato original sin imputaci\303\263n", 0));
+      EdtNumVariablesAImputarBasico->setToolTip(QApplication::translate("TFmeImputacion", "N\303\272mero de variables b\303\241sicas a imputar.", 0));
+      EdtNumVariablesAImputar->setToolTip(QApplication::translate("TFmeImputacion", "N\303\272mero de variables extendidas a imputar (componentes conexas)", 0));
+      EdtNumVariablesImputadas->setToolTip(QApplication::translate("TFmeImputacion", "N\303\272mero total de variables imputadas en este registro.", 0));
+      EdtIrAVariablePorNumero->setToolTip(QApplication::translate("TFmeImputacion", "Indique un n\303\272mero de variable y pulse ENTER parar ir a ella.", 0));
+      EdtIrARegistroPorNumero->setToolTip(QApplication::translate("TFmeImputacion", "Indique el n\303\272mero de registro y pulse enter para ir a \303\251l.", 0));
+      PanRegistroDonante->setToolTip(QApplication::translate("TFmeImputacion", "Panel de registros donantes", 0));
+      UpdRegistroDonante_sig->setText(QApplication::translate("TFmeImputacion", ">", 0));
+      UpdRegistroDonante_ant->setText(QApplication::translate("TFmeImputacion", "<", 0));
+      LabNumRegistrosDonantes->setText(QApplication::translate("TFmeImputacion", "# Reg. donante", 0));
+      LabNavRegDonantes->setText(QApplication::translate("TFmeImputacion", "Navegador reg. donantes", 0));
+      LabDistanciaAlfa->setText(QApplication::translate("TFmeImputacion", "Distancia al registro actual", 0));
+      EdtDistancia->setToolTip(QApplication::translate("TFmeImputacion", "Distancia del registro actual al donante actual sobre las variables b\303\241sicas a imputar.", 0));
+      ButCambiarRegistroDonante->setToolTip(QApplication::translate("TFmeImputacion", "Pulse aqu\303\255 para cambiar el registro donante al registro actual.", 0));
+      ButCambiarRegistroDonante->setText(QApplication::translate("TFmeImputacion", "CAMBIAR REGISTRO DONANTE", 0));
+      EdtMensajeRegistroDonante->setToolTip(QApplication::translate("TFmeImputacion", "El registro actual mostrado en esta rejilla es el donante.", 0));
+      EdtMensajeRegistroDonante->setText(QApplication::translate("TFmeImputacion", "REGISTRO DONANTE !!", 0));
+      EdtIndiceRegistroDonante->setToolTip(QApplication::translate("TFmeImputacion", "Registro donante actual / N\303\272mero total de registros donantes", 0));
+      view2->setToolTip(QApplication::translate("TFmeImputacion", "Informaci\303\263n de la variable", 0));
+      view->setToolTip(QApplication::translate("TFmeImputacion", "Rejilla de visualizaci\303\263n de microdatos imputados.(ALT  Ir a dato imputado) (SHIFT  Ir a posible dato incorrecto)", 0));
+      view->verticalHeader()->setToolTip(QApplication::translate("TFmeImputacion", "ID registro", 0));
+      view->horizontalHeader()->setToolTip(QApplication::translate("TFmeImputacion", "Variables", 0));
+      view3->setToolTip(QApplication::translate("TFmeImputacion", "Informaci\303\263n del registro donante actual.", 0));
       LabBarraEstado1->setText("");
       LabBarraEstado2->setText("");
-      PanLeyenda->setToolTip(QApplication::translate("TFmeImputacion", "Leyenda de imputaci\303\263n", 0, QApplication::UnicodeUTF8));
+      PanLeyenda->setToolTip(QApplication::translate("TFmeImputacion", "Leyenda de imputaci\303\263n", 0));
       ShpMicroDatoSimImputar->setText("");
-      LabMicroDatoSinImputar->setText(QApplication::translate("TFmeImputacion", "Dato original", 0, QApplication::UnicodeUTF8));
+      LabMicroDatoSinImputar->setText(QApplication::translate("TFmeImputacion", "Dato original", 0));
       ShpMicroDatoImputado->setText("");
-      LabMicroDatoImputado->setText(QApplication::translate("TFmeImputacion", "Dato imputado", 0, QApplication::UnicodeUTF8));
+      LabMicroDatoImputado->setText(QApplication::translate("TFmeImputacion", "Dato imputado", 0));
       ShpRegistroDonante->setText("");
-      LabRegistroDonante->setText(QApplication::translate("TFmeImputacion", "Reg. correcto", 0, QApplication::UnicodeUTF8));
+      LabRegistroDonante->setText(QApplication::translate("TFmeImputacion", "Reg. correcto", 0));
       ShpRegistroExcluido->setText("");
-      LabRegistroExcluido->setText(QApplication::translate("TFmeImputacion", "Reg. excluido", 0, QApplication::UnicodeUTF8));
+      LabRegistroExcluido->setText(QApplication::translate("TFmeImputacion", "Reg. excluido", 0));
       ShpRegistroIncorrecto->setText("");
-      LabRegistroIncorrecto->setText(QApplication::translate("TFmeImputacion", "Reg. incorrecto", 0, QApplication::UnicodeUTF8));
+      LabRegistroIncorrecto->setText(QApplication::translate("TFmeImputacion", "Reg. incorrecto", 0));
       ShpMicroDatoSimImputarIncorrecto->setText("");
-      LabMicroDatoSinImputarIncorrecto->setText(QApplication::translate("TFmeImputacion", "Posible dato incorrecto", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->setToolTip(QApplication::translate("TFmeImputacion", "Seleccione el modo de vizualizaci\303\263n de los registros.", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeImputacion", "Visualizar todos", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeImputacion", "Visualizar correctos", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeImputacion", "Visualizar incorrectos", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeImputacion", "Visualizar warnig", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeImputacion", "Visualizar reg. seg\303\272n expresi\303\263n", 0, QApplication::UnicodeUTF8));
+      LabMicroDatoSinImputarIncorrecto->setText(QApplication::translate("TFmeImputacion", "Posible dato incorrecto", 0));
+      VisualizarReg->setToolTip(QApplication::translate("TFmeImputacion", "Seleccione el modo de vizualizaci\303\263n de los registros.", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeImputacion", "Visualizar todos", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeImputacion", "Visualizar correctos", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeImputacion", "Visualizar incorrectos", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeImputacion", "Visualizar warnig", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeImputacion", "Visualizar reg. seg\303\272n expresi\303\263n", 0));
 
       QObject::connect(EdtIrARegistroPorNumero, SIGNAL(returnPressed()), this, SLOT(EdtIrARegistroPorNumeroKeyDown()));
       QObject::connect(CbxIrAVariablePorNombre, SIGNAL(activated ( const int & )), this, SLOT(CbxIrAVariablePorNombreCloseUp(const int &)));
@@ -422,7 +426,7 @@
       this->FrmCambiarMicrodato = FrmCambiarMicrodato;
       this->FrmOpciones = FrmOpciones;
 
-      MemLogs->append(QApplication::translate("", "Creando la clase de imputaci\303\263n de microdatos", 0, QApplication::UnicodeUTF8));
+      MemLogs->append(QApplication::translate("", "Creando la clase de imputaci\303\263n de microdatos", 0));
       QApplication::processEvents();
 
       // Fijamos un nombre
@@ -592,7 +596,7 @@
 
       EscribirInformacion();
       QApplication::processEvents();
-      QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), tr("MicroDatos salvados correctamente"), QMessageBox::Ok, QMessageBox::NoButton);
+      QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0), tr("MicroDatos salvados correctamente"), QMessageBox::Ok, QMessageBox::NoButton);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Asociar las clases provenientes de etapas anteriores.
@@ -1462,7 +1466,7 @@
       double PesoAlfa, PesoBeta1, PesoBeta2, PesoGamma, PesoVariable, inc, da, db1, db2, dg;
       TipoRegistroDonante *VectorRegistrosDonantesAux;
 
-      InicSistemaProgreso(QApplication::translate("", "Creaci\303\263n de la matriz de registros donantes", 0, QApplication::UnicodeUTF8), NumRegistros - NumRegistrosExcluidos - NumRegistrosDonantes);
+      InicSistemaProgreso(QApplication::translate("", "Creaci\303\263n de la matriz de registros donantes", 0), NumRegistros - NumRegistrosExcluidos - NumRegistrosDonantes);
 
       // Inicializamos la nueva
       InicializarMatrizRegistrosDonantes();
@@ -1651,20 +1655,9 @@
     }
     void TFmeImputacion::ordenar()
     {
-      unsigned iv, i, j;
+      unsigned iv, j;
       double p;
 
-      /*for (i=0; i < NumVariables; i++)
-        for (j=0; j < NumVariables; j++)
-          if (VectorPesosVariables[j].Peso < VectorPesosVariables[j+1].Peso) {
-            iv = VectorPesosVariables[j+1].IndiceVariable;
-            p = VectorPesosVariables[j+1].Peso;
-            VectorPesosVariables[j+1].IndiceVariable = VectorPesosVariables[j].IndiceVariable;
-            VectorPesosVariables[j+1].Peso = VectorPesosVariables[j].Peso;
-            VectorPesosVariables[j].IndiceVariable = iv;
-            VectorPesosVariables[j].Peso = p;
-          }*/
-      int pasada=0;
       int necesario;
       do {
           necesario=0;
@@ -1678,8 +1671,7 @@
                 VectorPesosVariables[j].Peso = p;
                 necesario = 1;
               }
-          }
-          //pasada++;
+          }          
       } while (necesario);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1922,30 +1914,6 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Genera las combinaciones de n sobre m.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /*bool TFmeImputacion::GeneraNSobreM(bool *Patron, unsigned *VectorIndices, double *RegistroTest, double *RegistroDonante, double *RegistroBackup, unsigned IndiceRegistro, unsigned n, unsigned m, unsigned k, unsigned t, QSet<unsigned> VariablesModificadas)
-    {
-        numletras = n;
-        combina = m;
-        serie = 1;
-        for(i=0; i<combina; i++)
-            serie *= numLetras;
-        for(i=0;i<serie;i++)
-            Patron[i]=false;
-        subSerie = serie/numLetras;
-        for(i=0;i<combina;i++) {
-            per=1 ; let=0;
-            for(j=0;j<serie;j++) {
-                permuta[j]+=letras[let];
-                per+=1;
-                if(per>subSerie) {
-                    per=1; let+=1;
-                    if(let>numLetras-1) let=0;
-                }
-            }
-            subSerie /= numLetras;
-        }
-    }*/
-
     bool TFmeImputacion::GeneraNSobreM(bool *Patron, unsigned *VectorIndices, double *RegistroTest, double *RegistroDonante, double *RegistroBackup, unsigned IndiceRegistro, unsigned n, unsigned m, unsigned k, unsigned t, QSet<unsigned> VariablesModificadas)
     {
           bool salir = false;
@@ -2035,34 +2003,7 @@
             }
             return false;
         }
-    }
-   /* bool TFmeImputacion::GeneraNSobreM(bool *Patron, unsigned *VectorIndices, double *RegistroTest, double *RegistroDonante, double *RegistroBackup, unsigned IndiceRegistro, unsigned n, unsigned m, unsigned k, unsigned t, QSet<unsigned> VariablesModificadas)
-    {
-      if (t == m)
-      {
-        if (EvaluarRegistroConPatron(Patron, VectorIndices, RegistroTest, RegistroDonante, n, IndiceRegistro, VariablesModificadas))
-          return true;
-        else
-        {
-          RestaurarRegistro(RegistroTest, RegistroBackup);
-          return false;
-        }
-      }
-      else
-        if (k < n)
-        {
-          Patron[k] = true;
-          if (!GeneraNSobreM(Patron, VectorIndices, RegistroTest, RegistroDonante, RegistroBackup, IndiceRegistro, n, m, k+1, t+1, VariablesModificadas))
-          {
-            Patron[k] = false;
-            return GeneraNSobreM(Patron, VectorIndices, RegistroTest, RegistroDonante, RegistroBackup, IndiceRegistro, n, m, k+1, t, VariablesModificadas);
-          }
-          else
-            return true;
-        }
-        else
-          return false;
-    }*/
+    } 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Devolver la posicion que tiene una variable dentro del vector de aparicion en edit.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2117,7 +2058,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeImputacion::InicializarEstructurasImputacion()
     {
-      InicSistemaProgreso(QApplication::translate("", "Inicializaci\303\263n de estructuras de imputaci\303\263n (I) [espere por favor...]", 0, QApplication::UnicodeUTF8), 10);
+      InicSistemaProgreso(QApplication::translate("", "Inicializaci\303\263n de estructuras de imputaci\303\263n (I) [espere por favor...]", 0), 10);
 
       // Crear el vector de pesos de variables
       CrearVectorPesosVariables();
@@ -2150,7 +2091,7 @@
       CrearMatrizRegistrosDonantes();
 
       IncSistemaProgreso();
-      InicSistemaProgreso(QApplication::translate("", "Inicializaci\303\263n de estructuras de imputaci\303\263n (II) [espere por favor...]", 0, QApplication::UnicodeUTF8), 5);
+      InicSistemaProgreso(QApplication::translate("", "Inicializaci\303\263n de estructuras de imputaci\303\263n (II) [espere por favor...]", 0), 5);
 
       // Eliminar las variables no imputables
       EliminarVariablesNoImputables();
@@ -2199,7 +2140,7 @@
 
       InicializarEstructurasImputacion();
 
-      InicSistemaProgreso(QApplication::translate("", "Imputaci\303\263n de microdatos", 0, QApplication::UnicodeUTF8), NumRegistros - NumRegistrosExcluidos - NumRegistrosDonantes);
+      InicSistemaProgreso(QApplication::translate("", "Imputaci\303\263n de microdatos", 0), NumRegistros - NumRegistrosExcluidos - NumRegistrosDonantes);
 
       RegistroTest = new double[NumVariables];
       RegistroTestMin = new double[NumVariables];
@@ -2219,8 +2160,7 @@
         ImputacionVar = new bool[NumRegistros];
         for (i = 0; i < NumRegistros; i++)
         {
-          ImputacionVar[i] = false;
-          //if (i == 1905) {
+          ImputacionVar[i] = false;          
           if ((!RegistroDonante(i)) && (!RegistroExcluido(i)))
           {
             if (MatrizRegistrosDonantes[i][0].Distancia > MaximaDistancia)
@@ -2295,8 +2235,7 @@
             }
 
             IncSistemaProgreso();
-          }
-          //}
+          }          
         }
       }      
       view->hideColumn(0);
@@ -2527,9 +2466,6 @@
 
           if (Fijar) {
             view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(Columna), view->rowViewportPosition(Fila2))));
-            //QColor rojo = model->data(view->currentIndex(), Qt::BackgroundRole).value<QColor>(); //view->currentIndex().model()->data(view->currentIndex(), Qt::BackgroundRole).value<QColor>();
-            //QString color = rojo.name();
-            //setStyleSheet("selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 " + color + ", stop: 1 gray);");
             view->focusPolicy();
           }
           if (MatrizImputacion[Fila][Columna-1]) {
@@ -2653,21 +2589,7 @@
       if ((*VarA).Peso > (*VarB).Peso)
         return 1;
       return 0;
-    }
-    /*int OrdenacionPesosVariablesDescendente(const void *A, const void *B)
-    {
-          TipoPesoVariable *VarA, *VarB;
-
-          VarA = (TipoPesoVariable *)A;
-          VarB = (TipoPesoVariable *)B;
-          if ((*VarA).Peso > (*VarB).Peso)
-            return -1;
-          if ((*VarA).Peso == (*VarB).Peso)
-            return 0;
-          if ((*VarA).Peso < (*VarB).Peso)
-            return 1;
-          return 0;
-     }*/
+    }    
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Calcular la media del vector de entrada.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2976,17 +2898,18 @@
           docS.appendChild(rootS);
           
           TablaEntrada = NombresTablas->at(i);
-	  if (NumTablas == 1)
-	    TablaSalida = NombreBaseTablaSalida + "_" + SUFIJOSALIDA + ".xml";
-	  else
-	    TablaSalida = NombreBaseTablaSalida + "_T" + QString::number(i+1) + "_" + SUFIJOSALIDA + ".xml";
+          if (NumTablas == 1)
+            TablaSalida = NombreBaseTablaSalida + "_" + SUFIJOSALIDA + ".xml";
+          else
+            TablaSalida = NombreBaseTablaSalida + "_T" + QString::number(i+1) + "_" + SUFIJOSALIDA + ".xml";
 
-          QFile file(QDir::convertSeparators(NombreBaseDatos + TablaEntrada));
+          QFile file(QDir::toNativeSeparators(NombreBaseDatos + TablaEntrada));
           if ((!file.open(QIODevice::ReadOnly)) || (!docE->setContent(&file)))
           {
             QMessageBox::critical(this, tr("Error"), tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + TablaSalida + "\"]", QMessageBox::Ok, QMessageBox::NoButton);
             QApplication::processEvents();
             file.close();
+            delete docE;
             return;
           }
 
@@ -2997,6 +2920,7 @@
               QMessageBox::critical(this, tr("Error"), tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + TablaSalida + "\"]", QMessageBox::Ok, QMessageBox::NoButton);
               QApplication::processEvents();
               file.close();
+              delete docE;
               return;
             }
 
@@ -3032,7 +2956,8 @@
                       j = listaH.indexOf(e1.tagName());
                       if (MatrizImputacion[k][j-1])
                       {
-	                Valor = MatrizMicroDatosS[k][j].replace(',', '.');
+                        Valor = MatrizMicroDatosS[k][j];
+                        //Valor = Valor.replace(',', '.');
                         QDomElement t = docS.createElement(e1.tagName());
                         t.appendChild(docS.createTextNode(Valor));
                         tag.appendChild(t);
@@ -3053,12 +2978,13 @@
           }          
           file.close();
           QString xml = docS.toString();
-          QFile file2(QDir::convertSeparators(NombreBaseDatos + TablaSalida));
+          QFile file2(QDir::toNativeSeparators(NombreBaseDatos + TablaSalida));
           if (file2.open(QIODevice::WriteOnly))   {
             QTextStream stream(&file2);
             stream << xml;
           }
         }
+        delete docE;
       }else {
         // Si la clave es ID presuponemos que es autonumerica
         if (Key == "ID")
@@ -3109,7 +3035,8 @@
 	    {
 	      if (MatrizImputacion[k][j])
 	      {	      
-                Valor = MatrizMicroDatosS[k][j+1].replace(',', '.').replace(".0", "");
+                Valor = MatrizMicroDatosS[k][j+1];
+                //Valor = Valor.replace(',', '.').replace(".0", "");
                 if (!Oracle) {
                   if (Excel)
                     ValoresActualizacion += " " + (listaH.at(j+1) + " = '" + Valor + "',");
@@ -3150,7 +3077,7 @@
         progress.hide();
         QApplication::processEvents();
       }
-      QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), tr("MicroDatos salvados correctamente"), QMessageBox::Ok, QMessageBox::NoButton);
+      QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0), tr("MicroDatos salvados correctamente"), QMessageBox::Ok, QMessageBox::NoButton);
     }
     QString TFmeImputacion::SustCaracter(QString Cadena, char CarABuscar, char CarSustitucion)
     {
@@ -3266,12 +3193,7 @@
       // Calcular Estadisticas
       CalcularEstadisticas();
 
-      MostrarInfoAsociada(0, 1, true);
-      //QColor rojo = model->data(view->indexAt(QPoint(view->columnViewportPosition(5), view->rowViewportPosition(5))), Qt::BackgroundRole).value<QColor>(); //view->currentIndex().model()->data(view->currentIndex(), Qt::BackgroundRole).value<QColor>();
-      //QString color = rojo.name();
-      //view->setStyleSheet("selection-color: black;selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 " + color + ", stop: 1 gray);");
-      //SgrRejillaSelectCell(view->currentIndex());
-
+      MostrarInfoAsociada(0, 1, true);      
       repintar();
 
     }
@@ -3456,8 +3378,7 @@
       DesImputarMicroDatoRegistroDonante(IndiceRegistroAImputar);
       ImputarMicroDatoRegistroDonante(IndiceRegistroAImputar, IndiceRegistroDonante);
       MostrarInfoAsociada(IndiceRegistroAImputar, actual, true);
-      view->setFocus();
-      //MostrarInfoAsociada(IndiceRegistroAImputar, view->currentIndex().column(), true);
+      view->setFocus();      
     }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3476,15 +3397,15 @@
     {
       unsigned IndiceRegistro;
 
-      //try
-      //{
+      try
+      {
         IndiceRegistro = EdtIrARegistroPorNumero->text().toInt();
-      /*}
+      }
       catch (...)
       {
         EdtIrARegistroPorNumero->setText("");
         return;
-      }*/
+      }
       if ((IndiceRegistro >= 1) && (IndiceRegistro <= NumRegistros))
         view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(view->currentIndex().column()), view->rowViewportPosition(IndiceRegistro-1))));
       EdtIrARegistroPorNumero->setText("");
@@ -3506,15 +3427,15 @@
     {
       unsigned IndiceVariable;
 
-      //try
-      //{
+      try
+      {
       IndiceVariable = EdtIrAVariablePorNumero->text().toInt();
-      /*}
+      }
       catch (...)
       {
       EdtIrAVariablePorNumero->setText("");
       return;
-      }*/
+      }
       if ((IndiceVariable >= 1) && (IndiceVariable <= NumVariables))
         view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(IndiceVariable), view->rowViewportPosition(view->currentIndex().row()))));
       EdtIrAVariablePorNumero->setText("");
@@ -3662,7 +3583,7 @@
 
       if (listaH2[ColumnaActiva] == "FILTRO")
         if (!VectorDatosV[ColumnaActiva].isEmpty())
-          QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), VectorDatosV[ColumnaActiva]);
+          QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0), VectorDatosV[ColumnaActiva]);
 
       if (FmeVariablesAsociadas->GetCadenas_Missing()->contains(listaH2[ColumnaActiva]))
         FmeVariablesAsociadas->ConsultarTablaMissing();
@@ -3753,7 +3674,7 @@
     void TFmeImputacion::MitSalvarMicrodatosFicheroClick()
     {
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators(start + "/" + DIRECTORIO_STATS + "/" + FICHERO_SALIDA_MICRODATOS + "_" + FmeVariablesAsociadas->GetNombreConjunto() + "_OUT");
+      QString meta = QDir::toNativeSeparators(start + "/" + DIRECTORIO_STATS + "/" + FICHERO_SALIDA_MICRODATOS + "_" + FmeVariablesAsociadas->GetNombreConjunto() + "_OUT");
       QString NombreFichero = QFileDialog::getSaveFileName(this, tr("Guardar fichero"), meta, "TXT (*.txt)");
       if (NombreFichero == "")
         QMessageBox::warning(this, "Warning",  tr("No ha introducido ningun fichero"), "&Ok");
@@ -3914,13 +3835,13 @@
            mappM = FmeVariablesAsociadas->GetMapMissing();
            switch (EvaluarExpresion((char*)exp.toLatin1().data(), mapp, &mappM))
            {
-                case ERROR_SINTACTICO: QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), QApplication::translate("", "Error Sint\303\241ctico", 0, QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::NoButton);
+                case ERROR_SINTACTICO: QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), QApplication::translate("", "Error Sint\303\241ctico", 0), QMessageBox::Ok, QMessageBox::NoButton);
                                        i = NumRegistros;
                                        break;
-                case ERROR_LEXICO: QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), QApplication::translate("", "Error L\303\251xico", 0, QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::NoButton);
+                case ERROR_LEXICO: QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), QApplication::translate("", "Error L\303\251xico", 0), QMessageBox::Ok, QMessageBox::NoButton);
                                    i = NumRegistros;
                                    break;
-                case ERROR_SINTACTICO_Y_LEXICO: QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), QApplication::translate("", "Error Sint\303\241ctico y L\303\251xico", 0, QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::NoButton);
+                case ERROR_SINTACTICO_Y_LEXICO: QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), QApplication::translate("", "Error Sint\303\241ctico y L\303\251xico", 0), QMessageBox::Ok, QMessageBox::NoButton);
                                                 i = NumRegistros;
                                                 break;
                 case VERDADERO: MatrizMicroDatosSelec[k] = new QString[NumVariables];
@@ -3934,7 +3855,7 @@
       }
       //poner una condicion para q solo entre cuando no hay error
       if (NumRegistrosSelec == 0) {
-          QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), QApplication::translate("", "No se han encontrado registros", 0, QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::NoButton);
+          QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), QApplication::translate("", "No se han encontrado registros", 0), QMessageBox::Ok, QMessageBox::NoButton);
           VisualizarReg->setCurrentIndex(0);
       }else {
         delete model;
@@ -3951,7 +3872,7 @@
     void TFmeImputacion::ButAceptarPedirExpresionClick()
     {
       if (wpedexp->getExpresion() == "")
-        QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido ninguna expresi\303\263n", 0, QApplication::UnicodeUTF8), "&Ok");
+        QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido ninguna expresi\303\263n", 0), "&Ok");
       else {
         wpedexp->hide();
         cargarmodelo4(wpedexp->getExpresion());

@@ -46,42 +46,37 @@ TFrmAbrirMetafile::TFrmAbrirMetafile(QWidget* parent, const char* name, Qt::Wind
       LabNumRegistros = new QLabel(GbxSeleccionMetafile);
       LabNumRegistros->setObjectName(QString::fromUtf8("LabNumRegistros"));
       LabNumRegistros->setGeometry(QRect(8, 55, 156, 18));
-      QFont font;
-      font.setFamily(QString::fromUtf8("Tahoma"));
-      LabNumRegistros->setFont(font);
 
       LabPorcCont = new QLabel(GbxSeleccionMetafile);
       LabPorcCont->setObjectName(QString::fromUtf8("LabPorcCont"));
       LabPorcCont->setGeometry(QRect(8, 130, 266, 18));
-      LabPorcCont->setFont(font);
 
       Label2 = new QLabel(GbxSeleccionMetafile);
       Label2->setObjectName(QString::fromUtf8("Label2"));
       Label2->setGeometry(QRect(60, 150, 11, 18));
-      Label2->setFont(font);
 
       LabCondicionLectura = new QLabel(GbxSeleccionMetafile);
       LabCondicionLectura->setObjectName(QString::fromUtf8("LabCondicionLectura"));
       LabCondicionLectura->setGeometry(QRect(8, 185, 248, 18));
-      LabCondicionLectura->setFont(font);
 
+      QString start = QCoreApplication::applicationDirPath();
+      QString meta = QDir::toNativeSeparators("/images/interrogacion.bmp");
       ButAyudaCond = new QPushButton(GbxSeleccionMetafile);
       ButAyudaCond->setObjectName(QString::fromUtf8("ButAyudaCond"));
       ButAyudaCond->setGeometry(QRect(259, 185, 20, 20));
-      ButAyudaCond->setIcon(QIcon(QDir::convertSeparators("images/interrogacion.bmp")));
+      ButAyudaCond->setIcon(QPixmap(start+meta, 0, Qt::AutoColor));
 
       menu = new QMenu(ButAyudaCond);
       menu->setTitle("Consejos a tener en cuenta");
-      menu->addAction( QApplication::translate("TFrmAbrirMetafile", "S\303\263lo se puede poner condici\303\263n de lectura si la base de datos consta de una sola tabla de datos", 0, QApplication::UnicodeUTF8));
+      menu->addAction( QApplication::translate("TFrmAbrirMetafile", "S\303\263lo se puede poner condici\303\263n de lectura si la base de datos consta de una sola tabla de datos", 0));
       menu->addSeparator();
       menu->addAction(QObject::tr("Se debe tener en cuenta el tipo de variable: "));
       menu->addAction(QObject::tr("  Si es texto, poner comillas(') Ej: varTexto = 'esd'"));
-      menu->addAction(QApplication::translate("TFrmAbrirMetafile", "  Si es un n\303\272mero, no poner comillas(') Ej: varnum = 10", 0, QApplication::UnicodeUTF8));
+      menu->addAction(QApplication::translate("TFrmAbrirMetafile", "  Si es un n\303\272mero, no poner comillas(') Ej: varnum = 10", 0));
 
       FlbFichero = new QLineEdit(GbxSeleccionMetafile);
       FlbFichero->setObjectName(QString::fromUtf8("FlbFichero"));
       FlbFichero->setGeometry(QRect(8, 24, 560, 19));
-      FlbFichero->setFont(font);
       FlbFichero->setReadOnly(true);
 
       ButExaminar = new QPushButton(GbxSeleccionMetafile);
@@ -91,14 +86,9 @@ TFrmAbrirMetafile::TFrmAbrirMetafile(QWidget* parent, const char* name, Qt::Wind
       ButAceptar = new QPushButton(GbxSeleccionMetafile);
       ButAceptar->setObjectName(QString::fromUtf8("ButAceptar"));
       ButAceptar->setGeometry(QRect(230, 245, 97, 25));
-      ButAceptar->setFont(font);
       ButCancelar = new QPushButton(GbxSeleccionMetafile);
       ButCancelar->setObjectName(QString::fromUtf8("ButCancelar"));
       ButCancelar->setGeometry(QRect(430, 245, 97, 25));
-      QFont font1;
-      font1.setFamily(QString::fromUtf8("Tahoma"));
-      font1.setPointSize(8);
-      ButCancelar->setFont(font1);
 
       EdtNumRegistros = new QLineEdit(GbxSeleccionMetafile);
       EdtNumRegistros->setObjectName(QString::fromUtf8("EdtNumRegistros"));
@@ -107,7 +97,6 @@ TFrmAbrirMetafile::TFrmAbrirMetafile(QWidget* parent, const char* name, Qt::Wind
       ChbContaminar = new QCheckBox(GbxSeleccionMetafile);
       ChbContaminar->setObjectName(QString::fromUtf8("ChbContaminar"));
       ChbContaminar->setGeometry(QRect(8, 110, 151, 17));
-      ChbContaminar->setFont(font);
 
       EdtPorcentajeContaminacion = new QSpinBox(GbxSeleccionMetafile);
       EdtPorcentajeContaminacion->setObjectName(QString::fromUtf8("EdtPorcentajeContaminacion"));
@@ -118,21 +107,21 @@ TFrmAbrirMetafile::TFrmAbrirMetafile(QWidget* parent, const char* name, Qt::Wind
       EdtCondicionLectura->setObjectName(QString::fromUtf8("EdtCondicionLectura"));
       EdtCondicionLectura->setGeometry(QRect(8, 205, 649, 21));
 
-      this->setWindowTitle(QApplication::translate("TFrmAbrirMetafile", "Abrir Metafile", 0, QApplication::UnicodeUTF8));
-      GbxMetafile->setTitle(QApplication::translate("TFrmAbrirMetafile", "&Vista previa del Metafile", 0, QApplication::UnicodeUTF8));
-      MemMetafile->setToolTip(QApplication::translate("TFrmAbrirMetafile", "Visualizaci\303\263n previa del contenido del metafile seleccionado. ", 0, QApplication::UnicodeUTF8));
-      GbxSeleccionMetafile->setToolTip(QApplication::translate("TFrmAbrirMetafile", "Selecci\303\263n del directorio de trabajo", 0, QApplication::UnicodeUTF8));
-      GbxSeleccionMetafile->setTitle(QApplication::translate("TFrmAbrirMetafile", "Selecci\303\263n del Metafile", 0, QApplication::UnicodeUTF8));
-      LabNumRegistros->setText(QApplication::translate("TFrmAbrirMetafile", "Num. registros a cargar", 0, QApplication::UnicodeUTF8));
-      LabPorcCont->setText(QApplication::translate("TFrmAbrirMetafile", "Porcentaje de contaminaci\303\263n por registro", 0, QApplication::UnicodeUTF8));
-      Label2->setText(QApplication::translate("TFrmAbrirMetafile", "%", 0, QApplication::UnicodeUTF8));
-      LabCondicionLectura->setText(QApplication::translate("TFrmAbrirMetafile", "Condici\303\263n de lectura en base de datos", 0, QApplication::UnicodeUTF8));
-      FlbFichero->setToolTip(QApplication::translate("TFrmAbrirMetafile", "Ruta del metafile seleccionado.", 0, QApplication::UnicodeUTF8));
-      ButExaminar->setText(QApplication::translate("TFrmAbrirMetafile", "&Examinar", 0, QApplication::UnicodeUTF8));
-      ButAceptar->setText(QApplication::translate("TFrmAbrirMetafile", "&Aceptar", 0, QApplication::UnicodeUTF8));
-      ButCancelar->setText(QApplication::translate("TFrmAbrirMetafile", "&Cancelar", 0, QApplication::UnicodeUTF8));
-      ChbContaminar->setText(QApplication::translate("TFrmAbrirMetafile", "Contaminar datos", 0, QApplication::UnicodeUTF8));
-      ButAyudaCond->setToolTip(QApplication::translate("TFrmAbrirMetafile", "Informaci\303\263n sobre cuando se puede poner condici\303\263n de lectura", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFrmAbrirMetafile", "Abrir Metafile", 0));
+      GbxMetafile->setTitle(QApplication::translate("TFrmAbrirMetafile", "&Vista previa del Metafile", 0));
+      MemMetafile->setToolTip(QApplication::translate("TFrmAbrirMetafile", "Visualizaci\303\263n previa del contenido del metafile seleccionado. ", 0));
+      GbxSeleccionMetafile->setToolTip(QApplication::translate("TFrmAbrirMetafile", "Selecci\303\263n del directorio de trabajo", 0));
+      GbxSeleccionMetafile->setTitle(QApplication::translate("TFrmAbrirMetafile", "Selecci\303\263n del Metafile", 0));
+      LabNumRegistros->setText(QApplication::translate("TFrmAbrirMetafile", "Num. registros a cargar", 0));
+      LabPorcCont->setText(QApplication::translate("TFrmAbrirMetafile", "Porcentaje de contaminaci\303\263n por registro", 0));
+      Label2->setText(QApplication::translate("TFrmAbrirMetafile", "%", 0));
+      LabCondicionLectura->setText(QApplication::translate("TFrmAbrirMetafile", "Condici\303\263n de lectura en base de datos", 0));
+      FlbFichero->setToolTip(QApplication::translate("TFrmAbrirMetafile", "Ruta del metafile seleccionado.", 0));
+      ButExaminar->setText(QApplication::translate("TFrmAbrirMetafile", "&Examinar", 0));
+      ButAceptar->setText(QApplication::translate("TFrmAbrirMetafile", "&Aceptar", 0));
+      ButCancelar->setText(QApplication::translate("TFrmAbrirMetafile", "&Cancelar", 0));
+      ChbContaminar->setText(QApplication::translate("TFrmAbrirMetafile", "Contaminar datos", 0));
+      ButAyudaCond->setToolTip(QApplication::translate("TFrmAbrirMetafile", "Informaci\303\263n sobre cuando se puede poner condici\303\263n de lectura", 0));
 
       connect(ButExaminar, SIGNAL(clicked()), this, SLOT(ButExaminarClick()));
       connect(ButCancelar, SIGNAL(clicked()), this, SLOT(ButCancelarClick()));
@@ -157,7 +146,6 @@ TFrmAbrirMetafile::TFrmAbrirMetafile(QWidget* parent, const char* name, Qt::Wind
 
     void TFrmAbrirMetafile::ButExaminarClick()
     {
-        //qDebug() << QCoreApplication::applicationDirPath();
       QString start = QCoreApplication::applicationDirPath() + "/metafiles";
       QString line;
       NombreMetafile = QFileDialog::getOpenFileName(this, tr("Abrir fichero metafile"), start, "VME (*.vme)");
@@ -182,37 +170,37 @@ TFrmAbrirMetafile::TFrmAbrirMetafile(QWidget* parent, const char* name, Qt::Wind
 
         if (!cadena.contains("<NOM>", Qt::CaseSensitive))
         {
-            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <NOM>", 0, QApplication::UnicodeUTF8), "&Ok");
+            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <NOM>", 0), "&Ok");
             return false;
         }
         if (!cadena.contains("<RBD>", Qt::CaseSensitive))
         {
-            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <RBD>", 0, QApplication::UnicodeUTF8), "&Ok");
+            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <RBD>", 0), "&Ok");
             return false;
         }
         if (!cadena.contains("<VAR>", Qt::CaseSensitive))
         {
-            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <.", 0, QApplication::UnicodeUTF8) + "VAR>", "&Ok");
+            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <.", 0) + "VAR>", "&Ok");
             return false;
         }
         if (!cadena.contains("<MD1>", Qt::CaseSensitive))
         {
-            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <MD1>", 0, QApplication::UnicodeUTF8), "&Ok");
+            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <MD1>", 0), "&Ok");
             return false;
         }
         if (!cadena.contains("<EDT>", Qt::CaseSensitive))
         {
-            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <EDT>", 0, QApplication::UnicodeUTF8), "&Ok");
+            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <EDT>", 0), "&Ok");
             return false;
         }
         if (!cadena.contains("<MIS>", Qt::CaseSensitive))
         {
-            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <MIS>", 0, QApplication::UnicodeUTF8), "&Ok");
+            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <MIS>", 0), "&Ok");
             return false;
         }
         if (!cadena.contains("<KEY>", Qt::CaseSensitive))
         {
-            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <KEY>", 0, QApplication::UnicodeUTF8), "&Ok");
+            QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido el tab <KEY>", 0), "&Ok");
             return false;
         }
         return true;

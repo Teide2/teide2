@@ -31,9 +31,6 @@
       setGeometry(0, 0, parent->width()-2, parent->height()-15);
       if (this->objectName().isEmpty())
         this->setObjectName(("TFmeMicroDatos"));
-      QFont font;
-      font.setFamily(("Tahoma"));
-      this->setFont(font);
 
       PanContenedorM = new QFrame(this);
       PanContenedorM->setGeometry(QRect(0, 0, this->width(), this->height()-50));
@@ -54,32 +51,32 @@
       PanIrA->setFrameShape(QFrame::Box);
       PanIrA->setFrameShadow(QFrame::Raised);
       LabIrARegistro = new QLabel(PanIrA);
-      LabIrARegistro->setGeometry(QRect(3, 5, 90, 18));
+      LabIrARegistro->setGeometry(QRect(3, 5, 95, 18));
       EdtIrARegistro = new QLineEdit(PanIrA);
-      EdtIrARegistro->setGeometry(QRect(95, 5, 33, 21));
+      EdtIrARegistro->setGeometry(QRect(105, 5, 33, 21));
 
       LabBuscarID = new QLabel(PanIrA);
-      LabBuscarID->setGeometry(QRect(135, 5, 90, 18));
+      LabBuscarID->setGeometry(QRect(150, 5, 95, 18));
       CbxBuscarID = new QComboBox(PanIrA);
-      CbxBuscarID->setGeometry(QRect(228, 5, 130, 21));
+      CbxBuscarID->setGeometry(QRect(248, 5, 130, 21));
       CbxBuscarID->setEditable(true);
 
       LabIrAVariablePorNumero = new QLabel(PanIrA);
-      LabIrAVariablePorNumero->setGeometry(QRect(375, 5, 140, 18));
+      LabIrAVariablePorNumero->setGeometry(QRect(385, 5, 140, 18));
       EdtIrAVariablePorNumero = new QLineEdit(PanIrA);
-      EdtIrAVariablePorNumero->setGeometry(QRect(490, 5, 33, 21));
+      EdtIrAVariablePorNumero->setGeometry(QRect(485, 5, 33, 21));
 
       LabIrAVariablePorNombre = new QLabel(PanIrA);
       LabIrAVariablePorNombre->setObjectName(("LabIrAVariablePorNombre"));
-      LabIrAVariablePorNombre->setGeometry(QRect(561, 5, 140, 18));
+      LabIrAVariablePorNombre->setGeometry(QRect(531, 5, 140, 18));
       CbxIrAVariable = new QComboBox(PanIrA);
-      CbxIrAVariable->setGeometry(QRect(670, 5, 130, 21));
+      CbxIrAVariable->setGeometry(QRect(630, 5, 130, 21));
       CbxIrAVariable->setEditable(true);
 
       LabMapping = new QLabel(PanIrA);
-      LabMapping->setGeometry(QRect(815, 5, 55, 18));
+      LabMapping->setGeometry(QRect(775, 5, 55, 18));
       EdtMapping = new QLineEdit(PanIrA);
-      EdtMapping->setGeometry(QRect(875, 5, 313, 21));
+      EdtMapping->setGeometry(QRect(835, 5, 313, 21));
       EdtMapping->setReadOnly(true);
 
       SbrBarraEstado = new QFrame(PanContenedorM);
@@ -111,21 +108,21 @@
       menu->addAction( QObject::tr("Aumentar el ancho de las columnas..."), this, SLOT(MitAumentarColumnasClick()));
       menu->addAction( QObject::tr("Disminuir el ancho de las columnas..."), this, SLOT(MitDisminuirColumnasClick()));
     
-      this->setWindowTitle(QApplication::translate("TFmeMicroDatos", "Form", 0, QApplication::UnicodeUTF8));
-      LabBuscarID->setText(QApplication::translate("TFmeMicroDatos", "Ir a reg. (nom)", 0, QApplication::UnicodeUTF8));
-      CbxBuscarID->setToolTip(QApplication::translate("TFmeMicroDatos", "Indique el nombre de registro para acceder a \303\251l.", 0, QApplication::UnicodeUTF8));
-      LabIrARegistro->setText(QApplication::translate("TFmeMicroDatos", "Ir a reg. (num)", 0, QApplication::UnicodeUTF8));
-      LabIrAVariablePorNombre->setText(QApplication::translate("TFmeMicroDatos", "Ir a var. (nom) ", 0, QApplication::UnicodeUTF8));
-      LabMapping->setText(QApplication::translate("TFmeMicroDatos", "Mapping ", 0, QApplication::UnicodeUTF8));
-      LabIrAVariablePorNumero->setText(QApplication::translate("TFmeMicroDatos", "Ir a var. (num) ", 0, QApplication::UnicodeUTF8));
-      EdtIrARegistro->setToolTip(QApplication::translate("TFmeMicroDatos", "Indique un n\303\272mero de registro y pulse ENTER parar ir a \303\251l.", 0, QApplication::UnicodeUTF8));
-      EdtMapping->setToolTip(QApplication::translate("TFmeMicroDatos", "Mapping del valor de la variable a su c\303\263digo literal correspondiente.", 0, QApplication::UnicodeUTF8));
-      EdtIrAVariablePorNumero->setToolTip(QApplication::translate("TFmeMicroDatos", "Indique un n\303\272mero de variable y pulse ENTER parar ir a ella.", 0, QApplication::UnicodeUTF8));
-      view->setToolTip(QApplication::translate("TFmeMicroDatos", "Rejilla de visualizaci\303\263n de microdatos con variables num\303\251ricas.", 0, QApplication::UnicodeUTF8));
-      view2->setToolTip(QApplication::translate("TFmeMicroDatos", "Informaci\303\263n de la variable activa.", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->setToolTip(QApplication::translate("TFmeMicroDatos", "Seleccione el modo de vizualizaci\303\263n de los registros.", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeMicroDatos", "Visualizar todos", 0, QApplication::UnicodeUTF8));
-      VisualizarReg->addItem(QApplication::translate("TFmeMicroDatos", "Visualizar reg. seg\303\272n expresi\303\263n", 0, QApplication::UnicodeUTF8));
+      this->setWindowTitle(QApplication::translate("TFmeMicroDatos", "Form", 0));
+      LabBuscarID->setText(QApplication::translate("TFmeMicroDatos", "Ir a reg. (nom)", 0));
+      CbxBuscarID->setToolTip(QApplication::translate("TFmeMicroDatos", "Indique el nombre de registro para acceder a \303\251l.", 0));
+      LabIrARegistro->setText(QApplication::translate("TFmeMicroDatos", "Ir a reg. (num)", 0));
+      LabIrAVariablePorNombre->setText(QApplication::translate("TFmeMicroDatos", "Ir a var. (nom) ", 0));
+      LabMapping->setText(QApplication::translate("TFmeMicroDatos", "Mapping ", 0));
+      LabIrAVariablePorNumero->setText(QApplication::translate("TFmeMicroDatos", "Ir a var. (num) ", 0));
+      EdtIrARegistro->setToolTip(QApplication::translate("TFmeMicroDatos", "Indique un n\303\272mero de registro y pulse ENTER parar ir a \303\251l.", 0));
+      EdtMapping->setToolTip(QApplication::translate("TFmeMicroDatos", "Mapping del valor de la variable a su c\303\263digo literal correspondiente.", 0));
+      EdtIrAVariablePorNumero->setToolTip(QApplication::translate("TFmeMicroDatos", "Indique un n\303\272mero de variable y pulse ENTER parar ir a ella.", 0));
+      view->setToolTip(QApplication::translate("TFmeMicroDatos", "Rejilla de visualizaci\303\263n de microdatos con variables num\303\251ricas.", 0));
+      view2->setToolTip(QApplication::translate("TFmeMicroDatos", "Informaci\303\263n de la variable activa.", 0));
+      VisualizarReg->setToolTip(QApplication::translate("TFmeMicroDatos", "Seleccione el modo de vizualizaci\303\263n de los registros.", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeMicroDatos", "Visualizar todos", 0));
+      VisualizarReg->addItem(QApplication::translate("TFmeMicroDatos", "Visualizar reg. seg\303\272n expresi\303\263n", 0));
 
       QObject::connect(view, SIGNAL(clicked(const QModelIndex&)), this, SLOT(SgrRejillaSelectCell(const QModelIndex&)));
       QObject::connect(view, SIGNAL(pressed ( const QModelIndex& )), this, SLOT(VisualizarMenu(const QModelIndex&)));
@@ -185,7 +182,7 @@
       //qDebug() << MatrizMicroDatosS[0][46];
       QApplication::processEvents();
       // Chequear la completitud de los registros y crear la matriz de datos asociada
-      MemLogs->append(QApplication::translate("", "Completitud y validaci\303\263n de los registros del conjunto", 0, QApplication::UnicodeUTF8) + " \"" + NombreConjunto + "\"");
+      MemLogs->append(QApplication::translate("", "Completitud y validaci\303\263n de los registros del conjunto", 0) + " \"" + NombreConjunto + "\"");
       QApplication::processEvents();
       ChequearCompletitudRegistros();
 
@@ -212,17 +209,13 @@
       // Rellenar el combo de ir a
       CbxIrAVariable->addItems (* FmeVariablesAsociadas->GetListaVariables());
       CbxIrAVariable->setCurrentIndex (0);
-      CbxIrAVariable->setInsertPolicy(QComboBox::NoInsert);
-      //MemLogs->append("num id "+QString::number(ListaIds->size(),10));
-      //MemLogs->append("num reg "+QString::number(NumRegistros,10));
-      //QApplication::processEvents();
+      CbxIrAVariable->setInsertPolicy(QComboBox::NoInsert);      
       CbxBuscarID->addItems (* ListaIds);
       CbxBuscarID->setCurrentIndex (0);
       CbxBuscarID->setInsertPolicy(QComboBox::NoInsert);
 
       // Calcular los porcentajes estadisticos
-      CalcularEstadisticas();
-      //qDebug() << MatrizMicroDatosS[0][46];
+      CalcularEstadisticas();      
       // Inicializacion de los microdatos modificados posteriormente
       MicroDatosModificados.clear();      
 
@@ -256,8 +249,7 @@
             LabBarraEstado1->setGeometry(QRect(4, 0, SbrBarraEstado->width()/2 - 1, 19));
      }*/
     void TFmeMicroDatos::ajustarSize ( )
-    {
-            //parentWidget()->resizeEvent(event);
+    {            
             this->setGeometry(0, 0, parentWidget()->width()-2, parentWidget()->height()-15);
 
             PanContenedorM->setGeometry(QRect(0, 0, this->width(), this->height()-50));
@@ -295,7 +287,7 @@
     {
       unsigned i, j;
       bool error = false;
-      QString s;
+      QString s, valor;
 
       MatrizMicroDatos = new double*[NumRegistros];
       for (i = 0; i < NumRegistros; i++)
@@ -304,31 +296,28 @@
         for (j = 0; j < NumVariables; j++)
         {
 	// partimos de la premisa que el sistema windows tiene la coma como separador por defecto de decimales
-          //try
-          //{
-            MatrizMicroDatos[i][j] = MatrizMicroDatosS[i][j].toDouble();
-            //qDebug() << MatrizMicroDatosS[i][j].toDouble() << ":" << MatrizMicroDatos[i][j];
-          /*}
+          try
+          {
+            valor = MatrizMicroDatosS[i][j];
+            MatrizMicroDatos[i][j] = valor.replace(',', '.').toDouble();            
+          }
           catch (...)
           {
             error = true;
-          }*/
+          }
           // si hay un error podemos pensar que se debe a que el separador ha cambiado a un punto
           if (error)
           {
-            //try
-            //{
-              MatrizMicroDatosS[i][j] = MatrizMicroDatosS[i][j].replace(',', '.');
-              //qDebug() << MatrizMicroDatosS[i][j].toDouble();
+            try
+            {
+              MatrizMicroDatosS[i][j].replace(',', '.');
               MatrizMicroDatos[i][j] = MatrizMicroDatosS[i][j].toDouble();
-              //qDebug() << MatrizMicroDatos[i][j];
-
-            /*}
+            }
             catch (...)
             {              
-              MemLogs->append("ERROR: " + QApplication::translate("", "Conversi\303\263n en la variable", 0, QApplication::UnicodeUTF8) + " " + FmeVariablesAsociadas->GetNombreVariable(j) + " " + QApplication::translate("", "Conversi\303\263n en el registro", 0, QApplication::UnicodeUTF8) + " " + s.setNum(i + 1, 10) + ".");
+              MemLogs->append("ERROR: " + QApplication::translate("", "Conversi\303\263n en la variable", 0) + " " + FmeVariablesAsociadas->GetNombreVariable(j) + " " + QApplication::translate("", "Conversi\303\263n en el registro", 0) + " " + s.setNum(i + 1, 10) + ".");
               QApplication::processEvents();
-            }*/
+            }
           }
         }
       }
@@ -351,33 +340,31 @@
           Valor = MatrizMicroDatosS[i][j];
           if (Valor.isEmpty())
           {            
-            MemLogs->append("ERROR: " + (QString)STR0049 + " " + FmeVariablesAsociadas->GetNombreVariable(j) + " " + QApplication::translate("", "Conversi\303\263n en el registro", 0, QApplication::UnicodeUTF8) + " " + QString::number(i+1, 10) + " " + QApplication::translate("", "est\303\241 vac\303\255o", 0, QApplication::UnicodeUTF8));
+            MemLogs->append("ERROR: " + (QString)STR0049 + " " + FmeVariablesAsociadas->GetNombreVariable(j) + " " + QApplication::translate("", "Conversi\303\263n en el registro", 0) + " " + QString::number(i+1, 10) + " " + QApplication::translate("", "est\303\241 vac\303\255o", 0));
             QApplication::processEvents();
           }else {
             // partimos de la premisa que el sistema windows tiene la coma como separador por defecto de decimales
-            //try
-            //{
-              MatrizMicroDatos[i][j] = Valor.toDouble();
-              //qDebug() << MatrizMicroDatos[i][j];
-            /*}
+            try
+            {
+              MatrizMicroDatos[i][j] = Valor.replace(',', '.').toDouble();              
+            }
             catch (...)
             {
               error = true;
-            }*/
+            }
             // si hay un error podemos pensar que se debe a que el separador ha cambiado a un punto
             if (error)
             {
-              //try
-              //{
+              try
+              {
                 MatrizMicroDatosS[i][j] = Valor.replace(',', '.');
-                MatrizMicroDatos[i][j] = Valor.toDouble();
-                //qDebug() << MatrizMicroDatosS[i][j] << MatrizMicroDatos[i][j];
-              /*}
+                MatrizMicroDatos[i][j] = Valor.toDouble();                
+              }
               catch (...)
               {                
-                MemLogs->append("ERROR: " + QApplication::translate("", "Conversi\303\263n en la variable", 0, QApplication::UnicodeUTF8) + " " + FmeVariablesAsociadas->GetNombreVariable(j) + " " + QApplication::translate("", "Conversi\303\263n en el registro", 0, QApplication::UnicodeUTF8) + " " + s.setNum((i + 1), 10) + ".");
+                MemLogs->append("ERROR: " + QApplication::translate("", "Conversi\303\263n en la variable", 0) + " " + FmeVariablesAsociadas->GetNombreVariable(j) + " " + QApplication::translate("", "Conversi\303\263n en el registro", 0) + " " + s.setNum((i + 1), 10) + ".");
                 QApplication::processEvents();
-              }*/
+              }
             }
           }
         }
@@ -450,16 +437,16 @@
           MemLogs->append(tr("Realizando la consulta sobre la tabla") + " " + NombresTablas->at(i) + " ...");
           QApplication::processEvents();
           
-          QFile file(QDir::convertSeparators(NombreBaseDatos + NombresTablas->at(i)));
+          QFile file(QDir::toNativeSeparators(NombreBaseDatos + NombresTablas->at(i)));
 
           if ((!file .open(QIODevice::ReadOnly)) || (!doc->setContent(&file)))
           {
             MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombresTablas->at(i) + "\"]");
             QApplication::processEvents();
             file.close();
+            delete doc;
             return;
-          }
-          MemLogs->append(tr("Fichero xml cumple con el estandar W3C/XML"));
+          }          
           
           QDomElement root = doc->documentElement();
           if (!root.tagName().contains("dataroot"))
@@ -468,9 +455,9 @@
             MemLogs->append("ERROR: " + tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + NombresTablas->at(i) + "\"]");
             QApplication::processEvents();
             file.close();
+            delete doc;
             return;
-          }
-          MemLogs->append(tr("Leyendo fichero xml"));
+          }          
           QApplication::processEvents();
 
           NumVariablesTablas.push_back(0);
@@ -490,9 +477,7 @@
                   if (!e1.isNull()) {
                     if (e1.tagName() == Key)
                     {
-                        IndiceRegistro = listaV.indexOf(e1.text());
-                        //MemLogs->append("ind " + QString::number(IndiceRegistro, 10)+"ID " + e1.text());
-                        //QApplication::processEvents();
+                        IndiceRegistro = listaV.indexOf(e1.text());                        
                     }
                   }
                   n1 = n1.nextSibling();
@@ -522,6 +507,7 @@
           }
         }
         ReestructurarTablaM();
+        delete doc;
       }else {
         for (i = 0; i < NumTablas; i++)
         {
@@ -560,10 +546,8 @@
                           aux2 = (int)aux;
                           MatrizMicroDatosS[IndiceRegistro][IndiceVariable] = QString::number(aux2, 10);
                       }else {
-                          s = query.value(IndiceVariableTabla).toString();
-                          //qDebug() << s;
-                          MatrizMicroDatosS[IndiceRegistro][IndiceVariable] = s.replace('.', ',');
-                          //qDebug() << MatrizMicroDatosS[IndiceRegistro][IndiceVariable];
+                          s = query.value(IndiceVariableTabla).toString();                          
+                          MatrizMicroDatosS[IndiceRegistro][IndiceVariable] = s.replace('.', ',');                          
                       }
                   }
                   if (IndiceRegistro == 0) NumVariablesTablas[i]++;
@@ -785,8 +769,6 @@
 
     QStringList *TFmeMicroDatos::GetListaRegistros()
     {
-        //MemLogs->append("num reg "+QString::number(NumRegistros,10));
-        //QApplication::processEvents();
       return ListaIds;
     }
 
@@ -835,104 +817,105 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void TFmeMicroDatos::MostrarInfoAsociada(unsigned Fila, unsigned Columna, unsigned numreg, bool Fijar)
     {
-      static unsigned UltimaColumna = 0, UltimaFila = 0;
-      QString CadenaSQL, Mapping, Valor, TablaMapping, Codigo;
+        static unsigned UltimaColumna = 0, UltimaFila = 0;
+        QString CadenaSQL, Mapping, Valor, TablaMapping, Codigo;
 
-      listaV2[0] = FmeVariablesAsociadas->getlistaV(Columna);
-      model2->setCabeceraV(listaV2);
-      model2->setHeaderData(0, Qt::Vertical, QVariant(), Qt::DisplayRole);
-      for (int i = 0; i < FmeVariablesAsociadas->GetNumAtributos(); i++)   {
-         VectorDatosS[i] = FmeVariablesAsociadas->getMatrizVariablesS(Columna, i);
-         if (i < 8) view2->setColumnWidth ( i, ANCHOS_VARIABLE[i]);
-         else
-             if (i < 8 + FmeVariablesAsociadas->GetNum_valores_missing()) view2->setColumnWidth ( i, 100);
-             else view2->setColumnWidth ( i, ANCHOS_VARIABLE[i - FmeVariablesAsociadas->GetNum_valores_missing()]);
-      }
+        listaV2[0] = FmeVariablesAsociadas->getlistaV(Columna);
+        model2->setCabeceraV(listaV2);
+        model2->setHeaderData(0, Qt::Vertical, QVariant(), Qt::DisplayRole);
+        for (int i = 0; i < FmeVariablesAsociadas->GetNumAtributos(); i++)   {
+            VectorDatosS[i] = FmeVariablesAsociadas->getMatrizVariablesS(Columna, i);
+            if (i < 8) view2->setColumnWidth ( i, ANCHOS_VARIABLE[i]);
+            else
+                if (i < 8 + FmeVariablesAsociadas->GetNum_valores_missing()) view2->setColumnWidth ( i, 100);
+                else view2->setColumnWidth ( i, ANCHOS_VARIABLE[i - FmeVariablesAsociadas->GetNum_valores_missing()]);
+        }
 
-      repintarVariable((!VectorDatosS[listaH2.indexOf("FILTRO")].isEmpty()), (MatrizMicroDatosS[Fila][Columna] == "False"));
-      UltimaColumna = Columna;
-      UltimaFila = Fila;
+        repintarVariable((!VectorDatosS[listaH2.indexOf("FILTRO")].isEmpty()), (MatrizMicroDatosS[Fila][Columna] == "False"));
+        UltimaColumna = Columna;
+        UltimaFila = Fila;
 
-      // Consulta de MicroDatos      
-      Valor = model->data(view->indexAt(QPoint(view->columnViewportPosition(Columna), view->rowViewportPosition(Fila))), Qt::DisplayRole).toString();
-      Mapping = FmeVariablesAsociadas->GetCadenaMissing(Valor.toDouble());
-      Valor.replace(',', '.');
+        // Consulta de MicroDatos
+        Valor = model->data(view->indexAt(QPoint(view->columnViewportPosition(Columna), view->rowViewportPosition(Fila))), Qt::DisplayRole).toString();
+        Mapping = FmeVariablesAsociadas->GetCadenaMissing(Valor.replace(',', '.').toDouble());
+        //Valor.replace(',', '.');
 
-      bool salirX = false;
-      if (Mapping.isEmpty())
-      {
-        TablaMapping = FmeVariablesAsociadas->GetValorAtributo(Columna, ATR_MAPPING, FmeVariablesAsociadas->GetNum_valores_missing());
-        if (!TablaMapping.isEmpty())
+        bool salirX = false;
+        if (Mapping.isEmpty())
         {
-          if (Xml) {
-            QDomDocument *doc = new QDomDocument("?xml");
-            QDomNode n;
-            QDomElement e, e1;
-            QDomNode n1;
-
-            QFile file(QDir::convertSeparators(NombreBaseDatos + TablaMapping + ".xml"));
-            if ((!file .open(QIODevice::ReadOnly)) || (!doc->setContent(&file)))
+            TablaMapping = FmeVariablesAsociadas->GetValorAtributo(Columna, ATR_MAPPING, FmeVariablesAsociadas->GetNum_valores_missing());
+            if (!TablaMapping.isEmpty())
             {
-               file.close();
-               Mapping = tr("NO HAY MAPPING DISPONIBLE");
-               salirX=true;
-            }
-            if (!salirX) {
-                QDomElement root = doc->documentElement();
-                if (!root.tagName().contains("dataroot"))
-                if (root.tagName() != "ROWSET")
-                {
-                    file.close();
-                    Mapping = tr("NO HAY MAPPING DISPONIBLE");
-                    salirX = true;
-                }
-                if (!salirX) {
-                    n = root.firstChild();
-                    while (!n.isNull())
+                if (Xml) {
+                    QDomDocument *doc = new QDomDocument("?xml");
+                    QDomNode n;
+                    QDomElement e, e1;
+                    QDomNode n1;
+
+                    QFile file(QDir::toNativeSeparators(NombreBaseDatos + TablaMapping + ".xml"));
+                    if ((!file .open(QIODevice::ReadOnly)) || (!doc->setContent(&file)))
                     {
-                        e = n.toElement();
-                        if (!e.isNull()) {
-                            if ((e.tagName() == TablaMapping) || (e.tagName() == "ROW")) {
-                                n1 = n.firstChild();
-                                while (!n1.isNull())
-                                {
-                                    e1 = n1.toElement();
-                                    if (!e1.isNull()) {
-                                        if (e1.tagName() == "CODIGO") Codigo = e1.text();
-                                        if (e1.tagName() == "DESCRIPCION") Mapping = e1.text();
+                        file.close();
+                        Mapping = tr("NO HAY MAPPING DISPONIBLE");
+                        salirX=true;
+                    }
+                    if (!salirX) {
+                        QDomElement root = doc->documentElement();
+                        if (!root.tagName().contains("dataroot"))
+                            if (root.tagName() != "ROWSET")
+                            {
+                                file.close();
+                                Mapping = tr("NO HAY MAPPING DISPONIBLE");
+                                salirX = true;
+                            }
+                        if (!salirX) {
+                            n = root.firstChild();
+                            while (!n.isNull())
+                            {
+                                e = n.toElement();
+                                if (!e.isNull()) {
+                                    if ((e.tagName() == TablaMapping) || (e.tagName() == "ROW")) {
+                                        n1 = n.firstChild();
+                                        while (!n1.isNull())
+                                        {
+                                            e1 = n1.toElement();
+                                            if (!e1.isNull()) {
+                                                if (e1.tagName() == "CODIGO") Codigo = e1.text();
+                                                if (e1.tagName() == "DESCRIPCION") Mapping = e1.text();
+                                            }
+                                            n1 = n1.nextSibling();
+                                        }
                                     }
-                                    n1 = n1.nextSibling();
                                 }
+                                if (Codigo != Valor) Mapping = tr("NO HAY MAPPING DISPONIBLE");
+                                else break;
+                                n = n.nextSibling();
                             }
                         }
-                        if (Codigo != Valor) Mapping = tr("NO HAY MAPPING DISPONIBLE");
-                        else break;
-                        n = n.nextSibling();
                     }
+                    file.close();
+                    delete doc;
+                }else {
+                    if (Excel) CadenaSQL = "SELECT * FROM [" + TablaMapping + "$] WHERE CODIGO = " + Valor;
+                    else CadenaSQL = "SELECT * FROM " + TablaMapping + " WHERE CODIGO = " + Valor;
+                    query5->exec(CadenaSQL);
+                    if (query5->isActive()){
+                        QSqlRecord record2 = query5->record();
+                        query5->first();
+                        Mapping = query5->value(record2.indexOf("DESCRIPCION")).toString();
+                    }else
+                        Mapping = tr("NO HAY MAPPING DISPONIBLE");
                 }
             }
-            file.close();            
-          }else {
-            if (Excel) CadenaSQL = "SELECT * FROM [" + TablaMapping + "$] WHERE CODIGO = " + Valor;
-            else CadenaSQL = "SELECT * FROM " + TablaMapping + " WHERE CODIGO = " + Valor;          
-            query5->exec(CadenaSQL);
-            if (query5->isActive()){
-              QSqlRecord record2 = query5->record();
-              query5->first();
-	      Mapping = query5->value(record2.indexOf("DESCRIPCION")).toString();	    
-	    }else
-              Mapping = tr("NO HAY MAPPING DISPONIBLE");
-          }
-	}
-      }      
-      EdtMapping->setText(Mapping);
-      LabBarraEstado1->setText(tr("Registro") + " " + QString::number(Fila+1, 10) + "/" + QString::number(model->rowCount(view->currentIndex()), 10) + " [ " + (QString)STR0049 + " = " + QString::number(Columna+1, 10) + "]");
-      if (Fijar) {
-        view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(Columna), view->rowViewportPosition(Fila))));
-        QColor rojo = view->currentIndex().model()->data(view->currentIndex(), Qt::BackgroundRole).value<QColor>();
-        QString color = rojo.name();
-        setStyleSheet("selection-color: black;selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 " + color + ", stop: 1 gray);");
-      }
+        }
+        EdtMapping->setText(Mapping);
+        LabBarraEstado1->setText(tr("Registro") + " " + QString::number(Fila+1, 10) + "/" + QString::number(model->rowCount(view->currentIndex()), 10) + " [ " + (QString)STR0049 + " = " + QString::number(Columna+1, 10) + "]");
+        if (Fijar) {
+            view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(Columna), view->rowViewportPosition(Fila))));
+            QColor rojo = view->currentIndex().model()->data(view->currentIndex(), Qt::BackgroundRole).value<QColor>();
+            QString color = rojo.name();
+            setStyleSheet("selection-color: black;selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 " + color + ", stop: 1 gray);");
+        }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Pinta la rejilla variable.
@@ -1011,7 +994,7 @@
 
       EscribirInformacion();
       QApplication::processEvents();
-      QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), tr("MicroDatos salvados correctamente"), QMessageBox::Ok, QMessageBox::NoButton);
+      QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0), tr("MicroDatos salvados correctamente"), QMessageBox::Ok, QMessageBox::NoButton);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Salvar datos en la base de datos.
@@ -1050,12 +1033,13 @@
           else
             TablaSalida = NombreTablaBaseSalida + "_T" + QString::number(i+1, 10) + "_" + SUFIJOENTRADA + ".xml";
 
-          QFile file(QDir::convertSeparators(NombreBaseDatos + TablaEntrada));
+          QFile file(QDir::toNativeSeparators(NombreBaseDatos + TablaEntrada));
           if ((!file.open(QIODevice::ReadOnly)) || (!docE->setContent(&file)))
           {
             QMessageBox::critical(this, tr("Error"), tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + TablaSalida + "\"]", QMessageBox::Ok, QMessageBox::NoButton);
             QApplication::processEvents();
             file.close();
+            delete docE;
             return;
           }
 
@@ -1066,6 +1050,7 @@
               QMessageBox::critical(this, tr("Error"), tr("No se pudo realizar satisfactoriamente la consulta sobre la base de datos") +  " [\"" + TablaSalida + "\"]", QMessageBox::Ok, QMessageBox::NoButton);
               QApplication::processEvents();
               file.close();
+              delete docE;
               return;
             }
 
@@ -1098,7 +1083,8 @@
                     d.columna = j;
                     if (encontrar(d))
                     {
-	              Valor = MatrizMicroDatosS[k][j].replace(',', '.');
+                      Valor = MatrizMicroDatosS[k][j];
+                      //Valor = Valor.replace(',', '.');
                       QDomElement t = docS.createElement(e1.tagName());
                       t.appendChild(docS.createTextNode(Valor));
                       tag.appendChild(t);
@@ -1119,7 +1105,7 @@
           }
           file.close();
           QString xml = docS.toString();
-          QFile file2(QDir::convertSeparators(NombreBaseDatos + TablaSalida));
+          QFile file2(QDir::toNativeSeparators(NombreBaseDatos + TablaSalida));
           if (file2.open(QIODevice::WriteOnly))   {
             QTextStream stream(&file2);
             stream << xml;
@@ -1183,7 +1169,8 @@
               d.columna = j;
               if (encontrar(d))
               {
-                Valor = MatrizMicroDatosS[k][j].replace(',', '.');
+                Valor = MatrizMicroDatosS[k][j];
+                //Valor = Valor.replace(',', '.');
 	        ValoresActualizacion += ("`" + model->headerData(j, Qt::Horizontal, Qt::DisplayRole).toString() + "` = " + ComillasCampos + Valor + ComillasCampos + ",");
                 actualizar = true;
                 cont++;
@@ -1207,7 +1194,7 @@
       }
       progress.setValue(NumTablas*NumRegistros);      
       if (cont == MicroDatosModificados.size()) {
-        QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), tr("MicroDatos salvados correctamente"), QMessageBox::Ok, QMessageBox::NoButton);
+        QMessageBox::information(this, QApplication::translate("", "Informaci\303\263n", 0), tr("MicroDatos salvados correctamente"), QMessageBox::Ok, QMessageBox::NoButton);
       }else {
         QString cadena = tr(QString("Se ha actualizado " + QString::number(cont) + " datos de " + QString::number(MicroDatosModificados.size()) + " microdatos modificados.").toLatin1(), "");
         QMessageBox::critical(this, tr("Error"), cadena, QMessageBox::Ok, QMessageBox::NoButton);
@@ -1248,15 +1235,15 @@
     {
       unsigned IndiceRegistro;
 
-      //try
-      //{
+      try
+      {
         IndiceRegistro = EdtIrARegistro->text().toInt();
-      /*}
+      }
       catch (...)
       {
         EdtIrARegistro->setText("");
 	    return;
-      }*/
+      }
       if ((IndiceRegistro >= 1) && (IndiceRegistro <= model->rowCount(view->currentIndex()))) {//NumRegistros))  {
         view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(view->currentIndex().column()), view->rowViewportPosition(IndiceRegistro-1))));
       }
@@ -1299,15 +1286,15 @@
     {
       unsigned IndiceVariable;
 
-      //try
-      //{
+      try
+      {
         IndiceVariable = EdtIrAVariablePorNumero->text().toInt();
-      /*}
+      }
       catch (...)
       {
         EdtIrAVariablePorNumero->setText("");
         return;
-      }*/
+      }
       if ((IndiceVariable >= 1) && (IndiceVariable <= NumVariables))        
         view->setCurrentIndex(view->indexAt(QPoint(view->columnViewportPosition(IndiceVariable-1), view->rowViewportPosition(view->currentIndex().row()))));
       EdtIrAVariablePorNumero->setText("");
@@ -1338,7 +1325,7 @@
     void TFmeMicroDatos::MitSalvarMicrodatosFicheroClick()
     {      
       QString start = QCoreApplication::applicationDirPath();
-      QString meta = QDir::convertSeparators(start+"/" + DIRECTORIO_DATA + "/DATA_" + NombreConjunto + "_IN");
+      QString meta = QDir::toNativeSeparators(start+"/" + DIRECTORIO_DATA + "/DATA_" + NombreConjunto + "_IN");
       QString NombreFichero = QFileDialog::getSaveFileName(this, tr("Guardar fichero"), meta, "TXT (*.txt)");
       if (NombreFichero == "")
         QMessageBox::warning(this, "Warning",  tr("No ha introducido ningun fichero"), "&Ok");
@@ -1429,7 +1416,7 @@
       }
       //poner una condicion para q solo entre cuando no hay error
       if (NumRegistrosSelec == 0) {
-          QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0, QApplication::UnicodeUTF8), QApplication::translate("", "No se han encontrado registros", 0, QApplication::UnicodeUTF8), QMessageBox::Ok, QMessageBox::NoButton);
+          QMessageBox::information(0, QApplication::translate("", "Informaci\303\263n", 0), QApplication::translate("", "No se han encontrado registros", 0), QMessageBox::Ok, QMessageBox::NoButton);
           VisualizarReg->setCurrentIndex(0);
       }else {
         delete model;
@@ -1444,7 +1431,7 @@
     void TFmeMicroDatos::ButAceptarPedirExpresionClick()
     {
       if (wpedexp->getExpresion() == "")
-        QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido ninguna expresi\303\263n", 0, QApplication::UnicodeUTF8), "&Ok");
+        QMessageBox::warning(this, "Warning",  QApplication::translate("", "No ha introducido ninguna expresi\303\263n", 0), "&Ok");
       else {
         wpedexp->hide();
         cargarmodelo2(wpedexp->getExpresion());
