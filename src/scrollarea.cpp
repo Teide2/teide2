@@ -29,6 +29,7 @@ Scrollarea::Scrollarea( QWidget* parent, QWidget* hijo):QScrollArea( parent ) {
        hij = hijo;       
        WidthMax = this->maximumWidth();
        HeightMax = this->maximumHeight();
+       setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
        connect(this, SIGNAL(miSignal()), hij, SLOT(ajustarSize()));       
    }
 
@@ -36,11 +37,12 @@ Scrollarea::~Scrollarea() {    }
 
 void Scrollarea::resizeEvent ( QResizeEvent * event ) 
     {
-       QSize areaSize;
+       /*QSize areaSize;
        QSize widgetSize;
 
        if (windowState()!= Qt::WindowMaximized)
        {
+           //QMessageBox::warning(this, "Warning",  QApplication::translate("", "Min", 0), "&Ok");
            hij->setGeometry(0, 0, 1276, 746);
            emit miSignal();
 
@@ -55,9 +57,12 @@ void Scrollarea::resizeEvent ( QResizeEvent * event )
            else this->resize(this->width(), this->height());
            if (widgetSize.width() - areaSize.width() <= 0)  this->resize(this->width(), 763);
            else this->resize(this->width(), this->height());
-       }else{     
-           this->resize(this->visibleRegion().boundingRect().width(), this->visibleRegion().boundingRect().height());
-           hij->setGeometry(0,0,this->visibleRegion().boundingRect().width()-5,this->visibleRegion().boundingRect().height()-5);//hij->resize(hij->maximumSize());//hij->resize(viewport()->size());
+       }else{
+           //QMessageBox::warning(this, "Warning",  "Max"+QString::number(QGuiApplication::primaryScreen()->availableGeometry().width(),10)+" " + QString::number(QGuiApplication::primaryScreen()->availableGeometry().height(),10)+"\n" +QString::number(this->visibleRegion().boundingRect().width(),10)+ " "+ QString::number(this->visibleRegion().boundingRect().height(),10), "&Ok");
+           this->resize(QGuiApplication::primaryScreen()->availableGeometry().width(), QGuiApplication::primaryScreen()->availableGeometry().height()-22);
+           hij->setGeometry(0,0,QGuiApplication::primaryScreen()->availableGeometry().width()-5,QGuiApplication::primaryScreen()->availableGeometry().height()-30);//hij->resize(hij->maximumSize());//hij->resize(viewport()->size());
+           updateGeometry();
+           //hij->setGeometry(0,0,this->visibleRegion().boundingRect().width()-5,this->visibleRegion().boundingRect().height()-5);//hij->resize(hij->maximumSize());//hij->resize(viewport()->size());
            emit miSignal();
 
            areaSize = viewport()->size();
@@ -67,7 +72,7 @@ void Scrollarea::resizeEvent ( QResizeEvent * event )
            verticalScrollBar()->setRange(0, widgetSize.height() - areaSize.height());
            horizontalScrollBar()->setPageStep(widgetSize.width());
            horizontalScrollBar()->setRange(0, widgetSize.width() - areaSize.width());           
-       }
+       }*/
     }
 
 void Scrollarea::actualizartitulo(QString titulo)

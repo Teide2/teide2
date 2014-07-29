@@ -71,7 +71,7 @@ int main( int argc, char ** argv )
     Scrollarea *scrollarea = new Scrollarea(0, w2);
     scrollarea->setWidget(w2);
      QDesktopWidget *desktop = QApplication::desktop();
-    if (desktop->/*availableGeometry(-1).*/width() < 1100) {
+    if (QGuiApplication::primaryScreen()->availableGeometry().width() < 1100) {
          w2->setGeometry(0, 0, 1276, 714);
          scrollarea->setWindowFlags(Qt::WindowMinimizeButtonHint);         
     }
@@ -89,7 +89,7 @@ int main( int argc, char ** argv )
     FrmFlash->show();
     QTimer * counter = new QTimer( FrmFlash );
     QObject::connect( counter, SIGNAL(timeout()), FrmFlash, SLOT(hide()) );
-    if (desktop->/*availableGeometry(1).*/width() < 1100) {
+    if (QGuiApplication::primaryScreen()->availableGeometry().width() < 1100) {
         scrollarea->setGeometry(20, 20, 800, 600);
         QObject::connect( counter, SIGNAL(timeout()), scrollarea, SLOT( show()));
     }else

@@ -32,7 +32,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
       connect(qApp->desktop (), SIGNAL(resized(int)), this, SLOT(probando(int)));
 
       //this->setMaximumSize(scrollarea->viewport());
-      if (qApp->desktop ()->/*availableGeometry(1).*/width() < 1100) {
+      if (QGuiApplication::primaryScreen()->availableGeometry().width() < 1100) {
           /*if (windowState() == Qt::WindowMaximized) {
             this->showFullScreen();
           }else*/
@@ -42,7 +42,7 @@ TFrmPrincipal::TFrmPrincipal(QWidget* parent, int argc, char ** argv):QMainWindo
         #ifdef linux
           this->setGeometry(QRect(QPoint(0, 0), this->maximumSize()));
         #else
-          this->showFullScreen();
+          this->setGeometry(0, 0, QGuiApplication::primaryScreen()->availableGeometry().width()-10, QGuiApplication::primaryScreen()->availableGeometry().height()-24);//this->showFullScreen();
         #endif
       }
       

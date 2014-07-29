@@ -30,6 +30,7 @@
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QMessageBox>
+#include <QScreen>
 
 class Scrollarea : public QScrollArea
 {
