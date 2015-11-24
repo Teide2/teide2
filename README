@@ -1,7 +1,8 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 *                                                                           *
 *                       Fecha: Abril, 2013		                              *
-*                       Autora: M-S Hernández-García                        *
+*                       Autores: M-S Hernández-García                       *
+*                                J-J Salazar González                       *
 *                                                                           *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 /****************************************************************************
@@ -9,8 +10,8 @@
 **  Breve descripción del proyecto.                                        **
 **                                                                         **
 ****************************************************************************/
-  Las siglas TEIDE2 proceden de Técnicas de Edición e Imputación de Datos 
-Estadísticos, versión 2.
+  Las siglas TEIDE2 proceden de "Técnicas de Edición e Imputación de Datos 
+Estadísticos, versión 2".
   Los institutos de estadística reciben gran cantidad de datos a través de
 encuestas. De la calidad de estas encuestas dependen las conclusiones que se
 extraen. Por ello es fundamental depurar las encuestas, eliminando los errores
@@ -119,3 +120,14 @@ la posibilidad de trabajar con XML y Oracle. Y ahora en los últimos meses se
 ha realizado una mejora en el uso de ficheros de entrada en XML, Oracle y se 
 dado la opción de tomar los datos desde tablas en Microsoft Excel 
 (http://teide2.wordpress.com/).
+
+
+/*****************************************************************************
+**                                                                          **
+**  Agradecimentos.                                                         **
+**                                                                          **
+*****************************************************************************/
+Agradecimientos al "Instituto Canario de Estadística" por las sugerencias de 
+sus técnicos durante la fase de desarrollo, a la "Universidad de La Laguna" 
+por haber sido cede de dicho desarrollo, y al "Ministerio de Economía y 
+Competitividad" por el apoyo económico.
