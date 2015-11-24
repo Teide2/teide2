@@ -1,12 +1,12 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 *                                                                           *
-*                       Fecha: Abril, 2013		                    *
+*                       Fecha: Abril, 2013		                              *
 *                       Autores: M-S Hernández-García                       *
-*                                J-J Salazar González                       *
+*                                J-J Salazar-González                       *
 *                                                                           *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 /****************************************************************************
-**  								                             **
+**  								                                                       **
 **  Breve descripción del proyecto.                                        **
 **                                                                         **
 ****************************************************************************/
@@ -48,11 +48,11 @@ mediante tablas en Oracle.
  
 
 /*****************************************************************************
-**				   				                             **
+**				   				                                                        **
 **  Descripción del árbol de directorios del proyecto.                      **
 **                                                                          **
 *****************************************************************************/
- En trunk podemos encontrar:
+ En master podemos encontrar:
     * directorio src: donde se encuentra el código fuente (.cpp, .h, .pro,
                      .l, .y, .rc y .ico).
     * directorio help: Ayuda Teide2.
@@ -64,18 +64,16 @@ mediante tablas en Oracle.
  
 
 /*****************************************************************************
-**							   	                             **
+**							   	                                                        **
 **  Obtener el proyecto.                                                    **
 **                                                                          **
 *****************************************************************************/
-En http://code.google.com/p/teide2/source/browse/#svn%2Ftrunk se encuentra el 
-código fuente (src). En http://code.google.com/p/teide2/downloads/list se 
-encuentra TEIDE2.zip con los binarios y librerías necesarias para la ejecución.
+En https://github.com/Teide2/teide2/master/ se encuentra el código fuente (src). 
 ******************************************************************************
 
 
 /*****************************************************************************
-**							                                 **
+**							                                                            **
 **  Requisitos del proyecto.                                                **
 **                                                                          **
 *****************************************************************************/
@@ -89,7 +87,7 @@ MinGW, Qt o Qwt habrá que usar las dll de las versiones utilizadas.
 
 
 /*****************************************************************************
-**									                             **
+**									                                                        **
 **  Instalación del proyecto.                                               **
 **                                                                          **
 *****************************************************************************/
@@ -100,7 +98,7 @@ que este fichero tiene todo lo necesario para la correcta ejecución de Teide2.
 
 
 /*****************************************************************************
-**									                             **
+**									                                                        **
 **  Documentación del proyecto.                                             **
 **                                                                          **
 *****************************************************************************/
@@ -109,7 +107,7 @@ que este fichero tiene todo lo necesario para la correcta ejecución de Teide2.
 
 
 /*****************************************************************************
-**									                             **
+**									                                                        **
 **  Información adicional.                                                  **
 **                                                                          **
 *****************************************************************************/
