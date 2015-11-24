@@ -31,12 +31,12 @@ cuando una variable debe tomar el valor NO_PROCEDE.
   Cuando se han cargado los datos se procede a la depuración o edición. Se
 detectan que registros son incorrectos, esto sucede cuando los valores de una 
 variable no están dentro de un rango señalado o no cumplen una determinada regla.
-  Una vez detectados los registros correctos e incorrectos se procede  a la 
+  Una vez detectados los registros correctos e incorrectos se procede a la 
 imputación o corrección de los mismos. En este caso se usa la metodología del 
 registro donante usando el criterio de modificar el menor número de variables 
 (Fellegi & Holt 1979). Los registros donantes son aquéllos que se han considerado 
-correctos. El donante más próximo (el más que se le parece según una función de 
-distancia) propone valores al registro incorrecto para su total corrección.
+correctos. El donante más próximo (el más que se le parece según una "función de 
+distancia") propone valores al registro incorrecto para su total corrección.
   Si ya se ha realizado la edición e imputación TEIDE2 muestra un informe con
 los datos obtenidos: como puede ser el número de registros imputados, variables
 modificadas, registros donantes, etc.
@@ -48,7 +48,7 @@ mediante tablas en Oracle.
  
 
 /*****************************************************************************
-**				   				                                                       **
+**				   				                                                        **
 **  Descripción del árbol de directorios del proyecto.                      **
 **                                                                          **
 *****************************************************************************/
@@ -64,7 +64,7 @@ mediante tablas en Oracle.
  
 
 /*****************************************************************************
-**							   	                                                       **
+**							   	                                                        **
 **  Obtener el proyecto.                                                    **
 **                                                                          **
 *****************************************************************************/
